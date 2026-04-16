@@ -185,57 +185,6 @@
       </div>
     </section>
 
-    <!-- Retrieval A/B Section -->
-    <section class="section">
-      <h2 class="section-title">检索质量 A/B 对比</h2>
-      <p class="section-sub">消歧后图谱在 Agent 仿真过程中的 GraphRAG 检索表现对比（natural_traffic 模式）</p>
-      <div class="ab-grid">
-        <div v-for="task in tasks" :key="'ab' + task.index" class="ab-card">
-          <div class="ab-task-label">Task {{ task.index }}</div>
-          <div class="ab-row">
-            <div class="ab-col">
-              <div class="ab-col-label raw">Raw</div>
-              <div class="ab-stat">
-                <span class="ab-val">{{ task.retrieval.raw.calls }}</span>
-                <span class="ab-unit">search 调用</span>
-              </div>
-              <div class="ab-stat">
-                <span class="ab-val warn">{{ task.retrieval.raw.emptyCalls }}</span>
-                <span class="ab-unit">空结果次数</span>
-              </div>
-              <div class="ab-stat">
-                <span class="ab-val">{{ task.retrieval.raw.emptyRate }}</span>
-                <span class="ab-unit">空结果率</span>
-              </div>
-            </div>
-            <div class="ab-divider">vs</div>
-            <div class="ab-col">
-              <div class="ab-col-label disamb">Disamb</div>
-              <div class="ab-stat">
-                <span class="ab-val teal">{{ task.retrieval.disamb.calls }}</span>
-                <span class="ab-unit">search 调用</span>
-              </div>
-              <div class="ab-stat">
-                <span class="ab-val" :class="task.retrieval.deltaEmptyCalls < 0 ? 'teal' : (task.retrieval.deltaEmptyCalls > 0 ? 'warn' : '')">
-                  {{ task.retrieval.disamb.emptyCalls }}
-                </span>
-                <span class="ab-unit">空结果次数</span>
-              </div>
-              <div class="ab-stat">
-                <span class="ab-val" :class="task.retrieval.disamb.emptyRateNum < task.retrieval.raw.emptyRateNum ? 'teal' : ''">
-                  {{ task.retrieval.disamb.emptyRate }}
-                </span>
-                <span class="ab-unit">空结果率</span>
-              </div>
-            </div>
-          </div>
-          <div class="ab-delta" :class="task.retrieval.deltaEmptyCalls < 0 ? 'delta-good' : (task.retrieval.deltaEmptyCalls > 0 ? 'delta-bad' : 'delta-neutral')">
-            空结果变化：{{ task.retrieval.deltaEmptyCalls > 0 ? '+' : '' }}{{ task.retrieval.deltaEmptyCalls }}
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Tech Stack -->
     <section class="section tech-section">
       <h2 class="section-title">技术栈</h2>
@@ -276,11 +225,6 @@ const tasks = [
     merges: [],
     raw:    { nodes: 77,  edges: 70,  isolatedRatio: 0.25974,  avgDegree: 1.8182,  duplicateGroups: 4 },
     disamb: { nodes: 24,  edges: 121, isolatedRatio: 0.041667, avgDegree: 10.083,  duplicateGroups: 0 },
-    retrieval: {
-      raw:    { calls: 183, emptyCalls: 25,  emptyRate: '13.7%', emptyRateNum: 0.137 },
-      disamb: { calls: 85,  emptyCalls: 36,  emptyRate: '42.4%', emptyRateNum: 0.424 },
-      deltaEmptyCalls: -11,
-    },
   },
   {
     index: 2,
@@ -293,11 +237,6 @@ const tasks = [
     ],
     raw:    { nodes: 43,  edges: 52,  isolatedRatio: 0.046512, avgDegree: 2.4186, duplicateGroups: 2 },
     disamb: { nodes: 22,  edges: 45,  isolatedRatio: 0.0,      avgDegree: 4.0909, duplicateGroups: 0 },
-    retrieval: {
-      raw:    { calls: 202, emptyCalls: 27,  emptyRate: '13.4%', emptyRateNum: 0.134 },
-      disamb: { calls: 131, emptyCalls: 120, emptyRate: '91.6%', emptyRateNum: 0.916 },
-      deltaEmptyCalls: -93,
-    },
   },
   {
     index: 3,
@@ -308,11 +247,6 @@ const tasks = [
     merges: [],
     raw:    { nodes: 18, edges: 21, isolatedRatio: 0.111111, avgDegree: 2.3333, duplicateGroups: 1 },
     disamb: { nodes: 11, edges: 13, isolatedRatio: 0.0,      avgDegree: 2.3636, duplicateGroups: 0 },
-    retrieval: {
-      raw:    { calls: 57, emptyCalls: 32, emptyRate: '56.1%', emptyRateNum: 0.561 },
-      disamb: { calls: 43, emptyCalls: 32, emptyRate: '74.4%', emptyRateNum: 0.744 },
-      deltaEmptyCalls: 0,
-    },
   },
 ]
 
@@ -716,74 +650,6 @@ function taskMetrics(task) {
 }
 .legend-raw { color: #64748b; }
 .legend-disamb { color: #14b8a6; }
-
-/* ── A/B Grid ── */
-.ab-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-  margin-top: 24px;
-}
-.ab-card {
-  background: #0f172a;
-  border: 1px solid #1e293b;
-  border-radius: 12px;
-  padding: 20px;
-}
-.ab-task-label {
-  font-size: 12px;
-  font-weight: 600;
-  color: #14b8a6;
-  letter-spacing: 0.06em;
-  margin-bottom: 14px;
-}
-.ab-row {
-  display: flex;
-  align-items: stretch;
-  gap: 8px;
-}
-.ab-col {
-  flex: 1;
-  background: #080c14;
-  border-radius: 8px;
-  padding: 10px;
-}
-.ab-col-label {
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.ab-col-label.raw { color: #64748b; }
-.ab-col-label.disamb { color: #14b8a6; }
-.ab-stat {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-  margin-bottom: 6px;
-}
-.ab-val { font-size: 15px; font-weight: 600; color: #cbd5e1; }
-.ab-val.teal { color: #14b8a6; }
-.ab-val.warn { color: #f97316; }
-.ab-unit { font-size: 10px; color: #475569; }
-.ab-divider {
-  display: flex;
-  align-items: center;
-  font-size: 12px;
-  color: #334155;
-  flex-shrink: 0;
-  padding: 0 2px;
-}
-.ab-delta {
-  margin-top: 12px;
-  font-size: 12px;
-  text-align: center;
-  padding: 6px;
-  border-radius: 6px;
-}
-.delta-good { background: #14b8a610; color: #14b8a6; }
-.delta-bad  { background: #f9731610; color: #f97316; }
-.delta-neutral { background: #1e293b; color: #64748b; }
 
 /* ── Tech ── */
 .tech-section { margin-bottom: 60px; }
