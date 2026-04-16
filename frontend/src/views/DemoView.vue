@@ -160,8 +160,27 @@
           </div>
           <div v-else class="no-merge">所有候选对均判定为不同实体，无合并（精准保守策略）</div>
 
-          <!-- Chart -->
-          <div :ref="el => { if(el) chartRefs[task.index] = el }" class="task-chart"></div>
+          <!-- CSS bar chart: nodes / edges / avg_degree -->
+          <div class="bar-chart">
+            <div class="bar-chart-title">图谱指标对比</div>
+            <div v-for="metric in taskMetrics(task)" :key="metric.label" class="bar-row">
+              <div class="bar-label">{{ metric.label }}</div>
+              <div class="bar-track">
+                <div class="bar-fill raw" :style="{ width: metric.rawPct + '%' }">
+                  <span class="bar-val">{{ metric.rawVal }}</span>
+                </div>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill disamb" :style="{ width: metric.disambPct + '%' }">
+                  <span class="bar-val">{{ metric.disambVal }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="bar-legend">
+              <span class="legend-raw">■ 消歧前 Raw</span>
+              <span class="legend-disamb">■ 消歧后 Disamb</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -246,9 +265,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import * as echarts from 'echarts'
-
 // ── Static demo data ────────────────────────────────────────────────────────
 const tasks = [
   {
@@ -300,68 +316,32 @@ const tasks = [
   },
 ]
 
-// ── ECharts ─────────────────────────────────────────────────────────────────
-const chartRefs = ref({})
-const chartInstances = []
-
-function buildChartOption(task) {
-  return {
-    backgroundColor: 'transparent',
-    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
-    legend: {
-      data: ['消歧前 Raw', '消歧后 Disamb'],
-      textStyle: { color: '#94a3b8' },
-      bottom: 0,
+// ── CSS bar chart helper ─────────────────────────────────────────────────────
+function taskMetrics(task) {
+  const maxNodes = 77, maxEdges = 121, maxDeg = 10.083
+  return [
+    {
+      label: '节点数',
+      rawVal: task.raw.nodes,
+      disambVal: task.disamb.nodes,
+      rawPct: Math.round(task.raw.nodes / maxNodes * 100),
+      disambPct: Math.round(task.disamb.nodes / maxNodes * 100),
     },
-    grid: { left: 48, right: 12, top: 32, bottom: 44 },
-    xAxis: {
-      type: 'category',
-      data: ['节点数', '边数', '平均度'],
-      axisLabel: { color: '#94a3b8', fontSize: 11 },
-      axisLine: { lineStyle: { color: '#334155' } },
+    {
+      label: '边数',
+      rawVal: task.raw.edges,
+      disambVal: task.disamb.edges,
+      rawPct: Math.round(task.raw.edges / maxEdges * 100),
+      disambPct: Math.round(task.disamb.edges / maxEdges * 100),
     },
-    yAxis: {
-      type: 'value',
-      axisLabel: { color: '#94a3b8', fontSize: 11 },
-      splitLine: { lineStyle: { color: '#1e293b' } },
+    {
+      label: '平均度',
+      rawVal: task.raw.avgDegree.toFixed(2),
+      disambVal: task.disamb.avgDegree.toFixed(2),
+      rawPct: Math.round(task.raw.avgDegree / maxDeg * 100),
+      disambPct: Math.round(task.disamb.avgDegree / maxDeg * 100),
     },
-    series: [
-      {
-        name: '消歧前 Raw',
-        type: 'bar',
-        barMaxWidth: 32,
-        data: [task.raw.nodes, task.raw.edges, task.raw.avgDegree],
-        itemStyle: { color: '#475569', borderRadius: [3, 3, 0, 0] },
-      },
-      {
-        name: '消歧后 Disamb',
-        type: 'bar',
-        barMaxWidth: 32,
-        data: [task.disamb.nodes, task.disamb.edges, task.disamb.avgDegree],
-        itemStyle: { color: '#14b8a6', borderRadius: [3, 3, 0, 0] },
-      },
-    ],
-  }
-}
-
-onMounted(() => {
-  tasks.forEach(task => {
-    const el = chartRefs.value[task.index]
-    if (!el) return
-    const chart = echarts.init(el, null, { renderer: 'canvas' })
-    chart.setOption(buildChartOption(task))
-    chartInstances.push(chart)
-  })
-  window.addEventListener('resize', resizeCharts)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', resizeCharts)
-  chartInstances.forEach(c => c.dispose())
-})
-
-function resizeCharts() {
-  chartInstances.forEach(c => c.resize())
+  ]
 }
 </script>
 
@@ -679,11 +659,63 @@ function resizeCharts() {
   border: 1px dashed #1e293b;
 }
 
-/* Chart */
-.task-chart {
-  height: 180px;
-  width: 100%;
+/* CSS bar chart */
+.bar-chart {
+  background: #080c14;
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #1e293b;
 }
+.bar-chart-title {
+  font-size: 11px;
+  color: #475569;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.bar-label {
+  font-size: 11px;
+  color: #64748b;
+  width: 36px;
+  flex-shrink: 0;
+}
+.bar-track {
+  flex: 1;
+  background: #1e293b;
+  border-radius: 3px;
+  height: 20px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+  min-width: 24px;
+  transition: width 0.6s ease;
+}
+.bar-fill.raw { background: #475569; }
+.bar-fill.disamb { background: #14b8a6; }
+.bar-val {
+  font-size: 10px;
+  color: #f8fafc;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.bar-legend {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+  font-size: 10px;
+}
+.legend-raw { color: #64748b; }
+.legend-disamb { color: #14b8a6; }
 
 /* ── A/B Grid ── */
 .ab-grid {
