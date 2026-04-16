@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "progress": 100,
+  "message": "报告生成完成",
+  "current_section": null,
+  "completed_sections": [
+    "事件催化：从信任崩塌到标准重构",
+    "多方博弈：监管、企业与公众的互动演化",
+    "信任修复周期与行业重塑路径",
+    "潜在风险与政策警示"
+  ],
+  "updated_at": "2026-04-10T10:04:45.360058"
+}

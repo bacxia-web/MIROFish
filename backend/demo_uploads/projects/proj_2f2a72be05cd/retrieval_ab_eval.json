@@ -1,0 +1,18 @@
+{
+  "project_id": "proj_2f2a72be05cd",
+  "raw_graph_id": "mirofish_c7f280e842304ae6",
+  "disamb_graph_id": "mirofish_41281db6e06645ce",
+  "raw": {
+    "search_graph_calls": 0,
+    "empty_calls": 0,
+    "result_hits_sum": 0
+  },
+  "disamb": {
+    "search_graph_calls": 0,
+    "empty_calls": 0,
+    "result_hits_sum": 0
+  },
+  "delta_empty_calls": 0,
+  "updated_at": "2026-04-09T08:21:20.288724+00:00",
+  "workload_mode": "natural_traffic"
+}

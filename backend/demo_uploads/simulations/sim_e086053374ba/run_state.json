@@ -1,0 +1,246 @@
+{
+  "simulation_id": "sim_e086053374ba",
+  "project_id": "proj_25db0b6648c0",
+  "graph_id": "mirofish_95cd20a42c5d4f79",
+  "runner_status": "stopped",
+  "current_round": 10,
+  "total_rounds": 10,
+  "simulated_hours": 0,
+  "total_simulation_hours": 168,
+  "progress_percent": 100.0,
+  "twitter_current_round": 10,
+  "reddit_current_round": 10,
+  "twitter_simulated_hours": 0,
+  "reddit_simulated_hours": 0,
+  "twitter_running": false,
+  "reddit_running": false,
+  "twitter_completed": true,
+  "reddit_completed": true,
+  "twitter_actions_count": 8,
+  "reddit_actions_count": 8,
+  "total_actions_count": 16,
+  "started_at": "2026-04-09T17:07:39.097842",
+  "updated_at": "2026-04-09T17:08:21.443952",
+  "completed_at": "2026-04-09T18:30:59.060649",
+  "error": "服务器关闭，模拟被终止",
+  "process_pid": 32449,
+  "recent_actions": [
+    {
+      "round_num": 1,
+      "timestamp": "2026-04-09T17:08:20.248078",
+      "platform": "reddit",
+      "agent_id": 1,
+      "agent_name": "法律声明",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "315晚会再次点名预制菜行业乱象，监管部门应立即启动《预制菜国家标准》修订程序，明确原料来源、加工流程及检测机制，不能让‘糟心肉’成为常态。",
+        "post_id": 4
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 1,
+      "timestamp": "2026-04-09T17:08:20.247965",
+      "platform": "reddit",
+      "agent_id": 4,
+      "agent_name": "高学历的核心团队",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为普通消费者，我再也不敢买梅菜扣肉预制菜了。你们说‘标准化生产’，可谁来保证‘标准’不被偷工减料？信任重建要靠法律和监管，不是道歉。",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 1,
+      "timestamp": "2026-04-09T17:08:20.247783",
+      "platform": "reddit",
+      "agent_id": 8,
+      "agent_name": "政府各部门",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "官方通报已查封涉事企业，但处罚力度太轻。年年曝光年年有，这次必须严查到底，建立预制菜原料溯源黑名单制度！",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 1,
+      "timestamp": "2026-04-09T17:08:20.247446",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "经纬快评",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "梅菜扣肉里的‘糟心肉’曝光！用未经处理的槽头肉替代五花肉，这还是我们敢吃的预制菜吗？食品安全岂能被扣在碗外！",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 2,
+      "timestamp": "2026-04-09T17:08:02.697481",
+      "platform": "twitter",
+      "agent_id": 1,
+      "agent_name": "法律声明",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "315晚会再次点名预制菜行业乱象，监管部门应立即启动《预制菜国家标准》修订程序，明确原料来源、加工流程及检测机制，不能让‘糟心肉’成为常态。",
+        "post_id": 4
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 2,
+      "timestamp": "2026-04-09T17:08:02.696877",
+      "platform": "twitter",
+      "agent_id": 4,
+      "agent_name": "高学历的核心团队",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为普通消费者，我再也不敢买梅菜扣肉预制菜了。你们说‘标准化生产’，可谁来保证‘标准’不被偷工减料？信任重建要靠法律和监管，不是道歉。",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 2,
+      "timestamp": "2026-04-09T17:08:02.696462",
+      "platform": "twitter",
+      "agent_id": 8,
+      "agent_name": "政府各部门",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "官方通报已查封涉事企业，但处罚力度太轻。年年曝光年年有，这次必须严查到底，建立预制菜原料溯源黑名单制度！",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 2,
+      "timestamp": "2026-04-09T17:08:02.696022",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "经纬快评",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "梅菜扣肉里的‘糟心肉’曝光！用未经处理的槽头肉替代五花肉，这还是我们敢吃的预制菜吗？食品安全岂能被扣在碗外！",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T17:07:50.778109",
+      "platform": "reddit",
+      "agent_id": 1,
+      "agent_name": "法律声明",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "315晚会再次点名预制菜行业乱象，监管部门应立即启动《预制菜国家标准》修订程序，明确原料来源、加工流程及检测机制，不能让‘糟心肉’成为常态。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T17:07:50.777986",
+      "platform": "reddit",
+      "agent_id": 4,
+      "agent_name": "高学历的核心团队",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为普通消费者，我再也不敢买梅菜扣肉预制菜了。你们说‘标准化生产’，可谁来保证‘标准’不被偷工减料？信任重建要靠法律和监管，不是道歉。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T17:07:50.777836",
+      "platform": "reddit",
+      "agent_id": 8,
+      "agent_name": "政府各部门",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "官方通报已查封涉事企业，但处罚力度太轻。年年曝光年年有，这次必须严查到底，建立预制菜原料溯源黑名单制度！"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T17:07:50.777636",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "经纬快评",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "梅菜扣肉里的‘糟心肉’曝光！用未经处理的槽头肉替代五花肉，这还是我们敢吃的预制菜吗？食品安全岂能被扣在碗外！"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T17:07:50.727013",
+      "platform": "twitter",
+      "agent_id": 1,
+      "agent_name": "法律声明",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "315晚会再次点名预制菜行业乱象，监管部门应立即启动《预制菜国家标准》修订程序，明确原料来源、加工流程及检测机制，不能让‘糟心肉’成为常态。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T17:07:50.726925",
+      "platform": "twitter",
+      "agent_id": 4,
+      "agent_name": "高学历的核心团队",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为普通消费者，我再也不敢买梅菜扣肉预制菜了。你们说‘标准化生产’，可谁来保证‘标准’不被偷工减料？信任重建要靠法律和监管，不是道歉。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T17:07:50.726839",
+      "platform": "twitter",
+      "agent_id": 8,
+      "agent_name": "政府各部门",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "官方通报已查封涉事企业，但处罚力度太轻。年年曝光年年有，这次必须严查到底，建立预制菜原料溯源黑名单制度！"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T17:07:50.726741",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "经纬快评",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "梅菜扣肉里的‘糟心肉’曝光！用未经处理的槽头肉替代五花肉，这还是我们敢吃的预制菜吗？食品安全岂能被扣在碗外！"
+      },
+      "result": null,
+      "success": true
+    }
+  ],
+  "rounds_count": 0
+}

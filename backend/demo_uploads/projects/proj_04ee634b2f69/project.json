@@ -1,0 +1,409 @@
+{
+  "project_id": "proj_04ee634b2f69",
+  "name": "Unnamed Project",
+  "status": "graph_building",
+  "created_at": "2026-03-13T16:44:35.474589",
+  "updated_at": "2026-04-07T16:28:57.805112",
+  "files": [
+    {
+      "filename": "张涛访谈稿.txt",
+      "size": 70300
+    }
+  ],
+  "total_text_length": 25147,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "ProductManager",
+        "description": "AI product managers focusing on model integration and user experience design.",
+        "attributes": [
+          {
+            "name": "specialization",
+            "type": "text",
+            "description": "Specific area of expertise like LLM or Computer Vision."
+          },
+          {
+            "name": "experience_years",
+            "type": "number",
+            "description": "Years of experience in product management."
+          },
+          {
+            "name": "current_project",
+            "type": "text",
+            "description": "Current main product or initiative being worked on."
+          }
+        ],
+        "examples": [
+          "Zhang Tao",
+          "Hidecloud"
+        ]
+      },
+      {
+        "name": "CompanyExecutive",
+        "description": "C-level executives or heads leading AI ventures and strategy.",
+        "attributes": [
+          {
+            "name": "position_title",
+            "type": "text",
+            "description": "Official job title within the organization."
+          },
+          {
+            "name": "department",
+            "type": "text",
+            "description": "Department or division they lead."
+          },
+          {
+            "name": "public_profile",
+            "type": "text",
+            "description": "Level of public visibility and media presence."
+          }
+        ],
+        "examples": [
+          "Wang Xiaochuan",
+          "Sam Altman"
+        ]
+      },
+      {
+        "name": "TechResearcher",
+        "description": "Academics or engineers publishing technical papers and models.",
+        "attributes": [
+          {
+            "name": "research_focus",
+            "type": "text",
+            "description": "Primary research direction such as Diffusion or Transformers."
+          },
+          {
+            "name": "publication_count",
+            "type": "number",
+            "description": "Number of published papers or technical reports."
+          },
+          {
+            "name": "institution",
+            "type": "text",
+            "description": "Affiliated university, lab, or company."
+          }
+        ],
+        "examples": [
+          "Huawei Lab Researcher",
+          "Stability AI Engineer"
+        ]
+      },
+      {
+        "name": "MediaHost",
+        "description": "Podcast hosts or journalists covering tech news and industry trends.",
+        "attributes": [
+          {
+            "name": "platform_handle",
+            "type": "text",
+            "description": "Social media handle or podcast channel name."
+          },
+          {
+            "name": "audience_size",
+            "type": "number",
+            "description": "Estimated number of followers or listeners."
+          },
+          {
+            "name": "content_type",
+            "type": "text",
+            "description": "Type of content produced such as interviews or analysis."
+          }
+        ],
+        "examples": [
+          "42 Chapter Jing Host",
+          "Xiaoyuzhou Interviewer"
+        ]
+      },
+      {
+        "name": "AIStartup",
+        "description": "Early-stage companies developing specific AI applications or products.",
+        "attributes": [
+          {
+            "name": "funding_stage",
+            "type": "text",
+            "description": "Current investment stage like Seed or Series A."
+          },
+          {
+            "name": "product_category",
+            "type": "text",
+            "description": "Main product category such as绘画 or Chatbot."
+          },
+          {
+            "name": "founding_year",
+            "type": "number",
+            "description": "Year the company was established."
+          }
+        ],
+        "examples": [
+          "Guangnian Zhijie",
+          "Baichuan Intelligence"
+        ]
+      },
+      {
+        "name": "TechPlatform",
+        "description": "Infrastructure providers offering model APIs or development tools.",
+        "attributes": [
+          {
+            "name": "service_type",
+            "type": "text",
+            "description": "Type of service provided like API or Model Hub."
+          },
+          {
+            "name": "api_access",
+            "type": "boolean",
+            "description": "Whether public API access is available."
+          },
+          {
+            "name": "pricing_model",
+            "type": "text",
+            "description": "Cost structure for using their services."
+          }
+        ],
+        "examples": [
+          "Hugging Face",
+          "Stable Diffusion Ecosystem"
+        ]
+      },
+      {
+        "name": "MediaOutlet",
+        "description": "Organizations distributing content or hosting podcasts and articles.",
+        "attributes": [
+          {
+            "name": "media_format",
+            "type": "text",
+            "description": "Format of distribution like Podcast or Website."
+          },
+          {
+            "name": "distribution_channel",
+            "type": "text",
+            "description": "Primary channels used to reach audience."
+          },
+          {
+            "name": "target_audience",
+            "type": "text",
+            "description": "Intended demographic or professional group."
+          }
+        ],
+        "examples": [
+          "Xiaoyuzhou",
+          "42 Chapter Jing"
+        ]
+      },
+      {
+        "name": "CompetitorOrg",
+        "description": "Established tech giants competing for market share and users.",
+        "attributes": [
+          {
+            "name": "market_share",
+            "type": "text",
+            "description": "Estimated percentage of market control."
+          },
+          {
+            "name": "main_product",
+            "type": "text",
+            "description": "Flagship product competing with new entrants."
+          },
+          {
+            "name": "global_presence",
+            "type": "boolean",
+            "description": "Whether operations span multiple countries."
+          }
+        ],
+        "examples": [
+          "Douyin",
+          "TikTok"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "Any natural person capable of speaking or interacting on social media.",
+        "attributes": [
+          {
+            "name": "display_label",
+            "type": "text",
+            "description": "Publicly visible name or alias."
+          },
+          {
+            "name": "bio",
+            "type": "text",
+            "description": "Short description of background or interests."
+          },
+          {
+            "name": "activity_level",
+            "type": "text",
+            "description": "Frequency of posting or engagement."
+          }
+        ],
+        "examples": [
+          "Ordinary User",
+          "Industry Observer"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "Any organizational entity capable of official communication or action.",
+        "attributes": [
+          {
+            "name": "org_label",
+            "type": "text",
+            "description": "Official registered or business name."
+          },
+          {
+            "name": "headquarters",
+            "type": "text",
+            "description": "Location of main office or base."
+          },
+          {
+            "name": "industry_sector",
+            "type": "text",
+            "description": "Primary industry or field of operation."
+          }
+        ],
+        "examples": [
+          "Small Company",
+          "Temporary Group"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "WORKS_FOR",
+        "description": "Indicates employment relationship between a person and an organization.",
+        "source_targets": [
+          {
+            "source": "ProductManager",
+            "target": "AIStartup"
+          },
+          {
+            "source": "CompanyExecutive",
+            "target": "AIStartup"
+          },
+          {
+            "source": "TechResearcher",
+            "target": "TechPlatform"
+          },
+          {
+            "source": "Person",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "AFFILIATED_WITH",
+        "description": "Indicates academic or professional affiliation without direct employment.",
+        "source_targets": [
+          {
+            "source": "TechResearcher",
+            "target": "Organization"
+          },
+          {
+            "source": "Person",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPORTS_ON",
+        "description": "Indicates media coverage of an organization or individual.",
+        "source_targets": [
+          {
+            "source": "MediaHost",
+            "target": "CompanyExecutive"
+          },
+          {
+            "source": "MediaOutlet",
+            "target": "AIStartup"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COMPETES_WITH",
+        "description": "Indicates market competition between two organizations.",
+        "source_targets": [
+          {
+            "source": "AIStartup",
+            "target": "CompetitorOrg"
+          },
+          {
+            "source": "Organization",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "FOLLOWS",
+        "description": "Indicates social media following relationship between entities.",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Person",
+            "target": "Organization"
+          },
+          {
+            "source": "Organization",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "RESPONDS_TO",
+        "description": "Indicates a reply or comment from one entity to another.",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Person",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "MENTIONS",
+        "description": "Indicates public discussion or reference in content.",
+        "source_targets": [
+          {
+            "source": "MediaHost",
+            "target": "CompanyExecutive"
+          },
+          {
+            "source": "Person",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "INFLUENCES",
+        "description": "Indicates opinion leadership or impact on sentiment.",
+        "source_targets": [
+          {
+            "source": "CompanyExecutive",
+            "target": "Person"
+          },
+          {
+            "source": "TechResearcher",
+            "target": "ProductManager"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "基于文本内容，识别出 AI 行业舆论模拟中的关键主体。设计了 8 个具体实体类型（产品经理、高管、研究员、媒体主持、初创公司、技术平台、媒体机构、竞争对手）和 2 个兜底类型（个人、组织），覆盖文中提到的张涛、王小川、光年之外、小宇宙等核心角色。关系类型设计为 8 种，涵盖工作、竞争、报道、互动等社媒常见行为，支持模拟信息传播路径和舆论影响。属性设计避免保留字，聚焦于身份、业务和影响力特征。",
+  "graph_id": "mirofish_248e3124e894402a",
+  "graph_build_task_id": "d820a135-1040-4968-ad59-c5b4338a8eae",
+  "simulation_requirement": "怎么学习Ai产品",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

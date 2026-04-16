@@ -1,0 +1,426 @@
+{
+  "project_id": "proj_5f6472188012",
+  "name": "Unnamed Project",
+  "status": "ontology_generated",
+  "created_at": "2026-03-12T15:16:14.566852",
+  "updated_at": "2026-03-12T15:17:55.012656",
+  "files": [
+    {
+      "filename": "红楼梦5页.pdf",
+      "size": 710601
+    }
+  ],
+  "total_text_length": 14504,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "GovernmentOfficial",
+        "description": "Government officials holding public office and authority",
+        "attributes": [
+          {
+            "name": "official_rank",
+            "type": "text",
+            "description": "Rank or title of the official position"
+          },
+          {
+            "name": "jurisdiction",
+            "type": "text",
+            "description": "Geographic or functional area of authority"
+          },
+          {
+            "name": "department",
+            "type": "text",
+            "description": "Government department or agency"
+          }
+        ],
+        "examples": [
+          "Jia Yucun",
+          "Lin Ruhai"
+        ]
+      },
+      {
+        "name": "Scholar",
+        "description": "Intellectuals, tutors, and learned individuals",
+        "attributes": [
+          {
+            "name": "academic_title",
+            "type": "text",
+            "description": "Academic or scholarly title"
+          },
+          {
+            "name": "research_field",
+            "type": "text",
+            "description": "Area of scholarly focus"
+          },
+          {
+            "name": "reputation",
+            "type": "text",
+            "description": "Public standing or reputation"
+          }
+        ],
+        "examples": [
+          "Zhen Shiyin",
+          "Jia Yucun (early)"
+        ]
+      },
+      {
+        "name": "ReligiousFigure",
+        "description": "Monks, taoists, and spiritual leaders",
+        "attributes": [
+          {
+            "name": "sect",
+            "type": "text",
+            "description": "Religious sect or tradition"
+          },
+          {
+            "name": "temple_affiliation",
+            "type": "text",
+            "description": "Associated temple or monastery"
+          },
+          {
+            "name": "spiritual_title",
+            "type": "text",
+            "description": "Religious title or rank"
+          }
+        ],
+        "examples": [
+          "Miao Yu",
+          "Zhen Shi Dao Ren"
+        ]
+      },
+      {
+        "name": "Merchant",
+        "description": "Business owners and traders",
+        "attributes": [
+          {
+            "name": "business_sector",
+            "type": "text",
+            "description": "Industry or trade sector"
+          },
+          {
+            "name": "business_name",
+            "type": "text",
+            "description": "Name of the business or shop"
+          },
+          {
+            "name": "trade_region",
+            "type": "text",
+            "description": "Primary region of commerce"
+          }
+        ],
+        "examples": [
+          "Cold Zixing"
+        ]
+      },
+      {
+        "name": "FamilyHead",
+        "description": "Patriarchs or matriarchs leading a family clan",
+        "attributes": [
+          {
+            "name": "clan_name",
+            "type": "text",
+            "description": "Surname or clan identifier"
+          },
+          {
+            "name": "generation_status",
+            "type": "text",
+            "description": "Generation level within the family"
+          },
+          {
+            "name": "authority_level",
+            "type": "text",
+            "description": "Level of decision-making power"
+          }
+        ],
+        "examples": [
+          "Jia Zheng",
+          "Lady Dowager"
+        ]
+      },
+      {
+        "name": "FamilyMember",
+        "description": "General members within a family clan",
+        "attributes": [
+          {
+            "name": "clan_name",
+            "type": "text",
+            "description": "Surname or clan identifier"
+          },
+          {
+            "name": "birth_order",
+            "type": "text",
+            "description": "Order of birth among siblings"
+          },
+          {
+            "name": "marital_status",
+            "type": "text",
+            "description": "Current marital status"
+          }
+        ],
+        "examples": [
+          "Jia Baoyu",
+          "Lin Daiyu"
+        ]
+      },
+      {
+        "name": "DomesticStaff",
+        "description": "Servants, maids, and household employees",
+        "attributes": [
+          {
+            "name": "employer_family",
+            "type": "text",
+            "description": "Family clan employing the staff"
+          },
+          {
+            "name": "service_role",
+            "type": "text",
+            "description": "Specific job or duty"
+          },
+          {
+            "name": "tenure",
+            "type": "text",
+            "description": "Duration of service"
+          }
+        ],
+        "examples": [
+          "Jiao Xing",
+          "Huo Qi"
+        ]
+      },
+      {
+        "name": "Temple",
+        "description": "Religious institutions and monasteries",
+        "attributes": [
+          {
+            "name": "temple_title",
+            "type": "text",
+            "description": "Official name of the temple"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Physical location"
+          },
+          {
+            "name": "temple_sect",
+            "type": "text",
+            "description": "Religious sect associated"
+          }
+        ],
+        "examples": [
+          "Hulu Temple",
+          "Zhizhong Temple"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "Any natural person not belonging to other specific types",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Complete name of the person"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Current residence or location"
+          },
+          {
+            "name": "occupation",
+            "type": "text",
+            "description": "General occupation or role"
+          }
+        ],
+        "examples": [
+          "Passerby",
+          "Unnamed Relative"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "Any organization not belonging to other specific types",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Official name of the organization"
+          },
+          {
+            "name": "industry",
+            "type": "text",
+            "description": "Industry or sector"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Headquarters or location"
+          }
+        ],
+        "examples": [
+          "Local Guild",
+          "Unknown Company"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "WORKS_FOR",
+        "description": "Employment or service relationship",
+        "source_targets": [
+          {
+            "source": "DomesticStaff",
+            "target": "FamilyHead"
+          },
+          {
+            "source": "DomesticStaff",
+            "target": "FamilyMember"
+          },
+          {
+            "source": "GovernmentOfficial",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "BELONGS_TO",
+        "description": "Membership or affiliation with a group",
+        "source_targets": [
+          {
+            "source": "FamilyMember",
+            "target": "FamilyHead"
+          },
+          {
+            "source": "Person",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "OFFICIATES_IN",
+        "description": "Holding office within a jurisdiction",
+        "source_targets": [
+          {
+            "source": "GovernmentOfficial",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "AFFILIATED_WITH",
+        "description": "Religious or spiritual affiliation",
+        "source_targets": [
+          {
+            "source": "ReligiousFigure",
+            "target": "Temple"
+          },
+          {
+            "source": "Person",
+            "target": "Temple"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "TRADES_WITH",
+        "description": "Business or commercial interaction",
+        "source_targets": [
+          {
+            "source": "Merchant",
+            "target": "FamilyHead"
+          },
+          {
+            "source": "Merchant",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "MENTORS",
+        "description": "Teaching or guidance relationship",
+        "source_targets": [
+          {
+            "source": "Scholar",
+            "target": "FamilyMember"
+          },
+          {
+            "source": "Scholar",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "MARRIED_TO",
+        "description": "Marital relationship between individuals",
+        "source_targets": [
+          {
+            "source": "FamilyMember",
+            "target": "FamilyMember"
+          },
+          {
+            "source": "Person",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "FRIENDS_WITH",
+        "description": "Social friendship or acquaintance",
+        "source_targets": [
+          {
+            "source": "Scholar",
+            "target": "Scholar"
+          },
+          {
+            "source": "Person",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "VISITS",
+        "description": "Physical or social visitation",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Temple"
+          },
+          {
+            "source": "FamilyMember",
+            "target": "Temple"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "DONATES_TO",
+        "description": "Financial or material support",
+        "source_targets": [
+          {
+            "source": "FamilyHead",
+            "target": "Temple"
+          },
+          {
+            "source": "Merchant",
+            "target": "Temple"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "基于《红楼梦》前几回内容设计，提取了官场、学界、宗教、商界及家族内部 hierarchy 等关键角色。实体类型涵盖具体社会角色（如官员、学者、僧道、商人、家族成员、仆役）及组织（寺庙），并保留 Person 和 Organization 作为兜底类型。关系类型模拟了社交媒体中的雇佣、隶属、合作、互动及支持等行为，适合舆论传播路径模拟。",
+  "graph_id": null,
+  "graph_build_task_id": null,
+  "simulation_requirement": "试试",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

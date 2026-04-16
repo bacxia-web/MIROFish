@@ -1,0 +1,12 @@
+{
+  "report_id": "report_baa967b70960",
+  "simulation_id": "sim_978727d452aa",
+  "graph_id": "mirofish_6338819831794e5d",
+  "simulation_requirement": "继续",
+  "status": "failed",
+  "outline": null,
+  "markdown_content": "",
+  "created_at": "2026-04-07T19:10:18.451147",
+  "completed_at": "",
+  "error": "'NoneType' object has no attribute 'facts'"
+}

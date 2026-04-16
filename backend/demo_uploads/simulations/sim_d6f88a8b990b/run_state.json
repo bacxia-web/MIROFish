@@ -1,0 +1,232 @@
+{
+  "simulation_id": "sim_d6f88a8b990b",
+  "project_id": "proj_7682ced9acaa",
+  "graph_id": "mirofish_22e61e055a664ece",
+  "runner_status": "stopped",
+  "current_round": 168,
+  "total_rounds": 168,
+  "simulated_hours": 0,
+  "total_simulation_hours": 168,
+  "progress_percent": 100.0,
+  "twitter_current_round": 168,
+  "reddit_current_round": 168,
+  "twitter_simulated_hours": 0,
+  "reddit_simulated_hours": 0,
+  "twitter_running": false,
+  "reddit_running": false,
+  "twitter_completed": true,
+  "reddit_completed": true,
+  "twitter_actions_count": 7,
+  "reddit_actions_count": 8,
+  "total_actions_count": 15,
+  "started_at": "2026-04-10T16:12:41.926498",
+  "updated_at": "2026-04-10T16:13:10.061356",
+  "completed_at": "2026-04-13T10:51:19.418527",
+  "error": "服务器关闭，模拟被终止",
+  "process_pid": 17384,
+  "recent_actions": [
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T16:13:08.379888",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "河南卫视",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "独家观察：阿里内部会议定调三年不担心亏损，但在 Q3 突然收紧补贴力度而维持骑手高激励，这一策略看似矛盾实则精妙。意在通过牺牲部分用户短期体验来筛选高净值订单，同时稳住核心运力以应对美团的反攻。然而，这种“降本增效”的代价可能由普通用户承担，引发关于“涨价”与“服务缩水”的舆论反弹。",
+        "post_id": 4
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T16:13:08.379783",
+      "platform": "reddit",
+      "agent_id": 26,
+      "agent_name": "百雀羚",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为商家，最烦这种“挤牙膏”式的规则调整。补贴降了，平台却要求我们保持同样的出餐速度和配送标准，流量分配权重还在向头部倾斜。这不是逼着我们搞恶性价格战吗？中小商家怎么活？#平台规则 #流量分配 #商家困境",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T16:13:08.379645",
+      "platform": "reddit",
+      "agent_id": 12,
+      "agent_name": "央视春晚",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "兄弟们，平台说补贴降了但激励不变，可实际上单量密度没上去，跑一单的成本反而高了。现在的算法就是逼着大家抢单，稍微慢点就被限流。这种内卷下去，最后苦的还是咱们骑手和消费者。#骑手心声 #恶性竞争 #蜂鸟运力线",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T16:13:08.379474",
+      "platform": "reddit",
+      "agent_id": 12,
+      "agent_name": "央视春晚",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "Q3 补贴环比砍了 20%，骑手激励却纹丝不动？这不明摆着让用户买单吗！以前还能薅点羊毛，现在不仅单价涨了，优惠券还少了。配送时效要是再跟不上，这闪购谁还敢用？#淘宝闪购 #涨价 #配送时效",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 8,
+      "timestamp": "2026-04-10T16:12:57.788998",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "河南卫视",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "独家观察：阿里内部会议定调三年不担心亏损，但在 Q3 突然收紧补贴力度而维持骑手高激励，这一策略看似矛盾实则精妙。意在通过牺牲部分用户短期体验来筛选高净值订单，同时稳住核心运力以应对美团的反攻。然而，这种“降本增效”的代价可能由普通用户承担，引发关于“涨价”与“服务缩水”的舆论反弹。",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 8,
+      "timestamp": "2026-04-10T16:12:57.788845",
+      "platform": "twitter",
+      "agent_id": 26,
+      "agent_name": "百雀羚",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为商家，最烦这种“挤牙膏”式的规则调整。补贴降了，平台却要求我们保持同样的出餐速度和配送标准，流量分配权重还在向头部倾斜。这不是逼着我们搞恶性价格战吗？中小商家怎么活？#平台规则 #流量分配 #商家困境",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 8,
+      "timestamp": "2026-04-10T16:12:57.788573",
+      "platform": "twitter",
+      "agent_id": 12,
+      "agent_name": "央视春晚",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "兄弟们，平台说补贴降了但激励不变，可实际上单量密度没上去，跑一单的成本反而高了。现在的算法就是逼着大家抢单，稍微慢点就被限流。这种内卷下去，最后苦的还是咱们骑手和消费者。#骑手心声 #恶性竞争 #蜂鸟运力线",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:49.635505",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "河南卫视",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "独家观察：阿里内部会议定调三年不担心亏损，但在 Q3 突然收紧补贴力度而维持骑手高激励，这一策略看似矛盾实则精妙。意在通过牺牲部分用户短期体验来筛选高净值订单，同时稳住核心运力以应对美团的反攻。然而，这种“降本增效”的代价可能由普通用户承担，引发关于“涨价”与“服务缩水”的舆论反弹。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:49.635402",
+      "platform": "reddit",
+      "agent_id": 12,
+      "agent_name": "央视春晚",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "兄弟们，平台说补贴降了但激励不变，可实际上单量密度没上去，跑一单的成本反而高了。现在的算法就是逼着大家抢单，稍微慢点就被限流。这种内卷下去，最后苦的还是咱们骑手和消费者。#骑手心声 #恶性竞争 #蜂鸟运力线"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:49.634864",
+      "platform": "reddit",
+      "agent_id": 26,
+      "agent_name": "百雀羚",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为商家，最烦这种“挤牙膏”式的规则调整。补贴降了，平台却要求我们保持同样的出餐速度和配送标准，流量分配权重还在向头部倾斜。这不是逼着我们搞恶性价格战吗？中小商家怎么活？#平台规则 #流量分配 #商家困境"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:49.634523",
+      "platform": "reddit",
+      "agent_id": 12,
+      "agent_name": "央视春晚",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "Q3 补贴环比砍了 20%，骑手激励却纹丝不动？这不明摆着让用户买单吗！以前还能薅点羊毛，现在不仅单价涨了，优惠券还少了。配送时效要是再跟不上，这闪购谁还敢用？#淘宝闪购 #涨价 #配送时效"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:49.578484",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "河南卫视",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "独家观察：阿里内部会议定调三年不担心亏损，但在 Q3 突然收紧补贴力度而维持骑手高激励，这一策略看似矛盾实则精妙。意在通过牺牲部分用户短期体验来筛选高净值订单，同时稳住核心运力以应对美团的反攻。然而，这种“降本增效”的代价可能由普通用户承担，引发关于“涨价”与“服务缩水”的舆论反弹。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:49.578315",
+      "platform": "twitter",
+      "agent_id": 12,
+      "agent_name": "央视春晚",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "兄弟们，平台说补贴降了但激励不变，可实际上单量密度没上去，跑一单的成本反而高了。现在的算法就是逼着大家抢单，稍微慢点就被限流。这种内卷下去，最后苦的还是咱们骑手和消费者。#骑手心声 #恶性竞争 #蜂鸟运力线"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:49.578158",
+      "platform": "twitter",
+      "agent_id": 26,
+      "agent_name": "百雀羚",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为商家，最烦这种“挤牙膏”式的规则调整。补贴降了，平台却要求我们保持同样的出餐速度和配送标准，流量分配权重还在向头部倾斜。这不是逼着我们搞恶性价格战吗？中小商家怎么活？#平台规则 #流量分配 #商家困境"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:49.577592",
+      "platform": "twitter",
+      "agent_id": 12,
+      "agent_name": "央视春晚",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "Q3 补贴环比砍了 20%，骑手激励却纹丝不动？这不明摆着让用户买单吗！以前还能薅点羊毛，现在不仅单价涨了，优惠券还少了。配送时效要是再跟不上，这闪购谁还敢用？#淘宝闪购 #涨价 #配送时效"
+      },
+      "result": null,
+      "success": true
+    }
+  ],
+  "rounds_count": 0
+}

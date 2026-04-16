@@ -1,0 +1,246 @@
+{
+  "simulation_id": "sim_7c7a7e808a90",
+  "project_id": "proj_2d98c5f4470f",
+  "graph_id": "mirofish_2ca888baa60448d7",
+  "runner_status": "completed",
+  "current_round": 168,
+  "total_rounds": 168,
+  "simulated_hours": 0,
+  "total_simulation_hours": 168,
+  "progress_percent": 100.0,
+  "twitter_current_round": 168,
+  "reddit_current_round": 168,
+  "twitter_simulated_hours": 0,
+  "reddit_simulated_hours": 0,
+  "twitter_running": false,
+  "reddit_running": false,
+  "twitter_completed": true,
+  "reddit_completed": true,
+  "twitter_actions_count": 8,
+  "reddit_actions_count": 8,
+  "total_actions_count": 16,
+  "started_at": "2026-04-10T09:52:20.013641",
+  "updated_at": "2026-04-10T09:52:40.163182",
+  "completed_at": "2026-04-10T10:21:45.325648",
+  "error": "服务器关闭，模拟被终止",
+  "process_pid": 24228,
+  "recent_actions": [
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T09:52:38.519403",
+      "platform": "reddit",
+      "agent_id": 3,
+      "agent_name": "河南卫视",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "用户反馈显示，配送时效下降成为新痛点，平台需加强履约能力建设。",
+        "post_id": 4
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T09:52:38.519084",
+      "platform": "reddit",
+      "agent_id": 2,
+      "agent_name": "阿里云",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "平台规则变动影响商家与骑手利益，流量分配机制应更透明，避免恶性竞争。",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T09:52:38.518638",
+      "platform": "reddit",
+      "agent_id": 12,
+      "agent_name": "百雀羚",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "骑手激励不变，但补贴减少，商家抱怨平台规则不合理，流量分配失衡，亟待优化。",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T09:52:38.518394",
+      "platform": "reddit",
+      "agent_id": 1,
+      "agent_name": "淘宝",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "2026年第三季度补贴力度环比下降20%，用户侧关注点或将转向‘涨价/减量’，平台需警惕用户流失风险。",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T09:52:34.750268",
+      "platform": "twitter",
+      "agent_id": 3,
+      "agent_name": "河南卫视",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "用户反馈显示，配送时效下降成为新痛点，平台需加强履约能力建设。",
+        "post_id": 4
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T09:52:34.749994",
+      "platform": "twitter",
+      "agent_id": 2,
+      "agent_name": "阿里云",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "平台规则变动影响商家与骑手利益，流量分配机制应更透明，避免恶性竞争。",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T09:52:34.749600",
+      "platform": "twitter",
+      "agent_id": 12,
+      "agent_name": "百雀羚",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "骑手激励不变，但补贴减少，商家抱怨平台规则不合理，流量分配失衡，亟待优化。",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T09:52:34.749397",
+      "platform": "twitter",
+      "agent_id": 1,
+      "agent_name": "淘宝",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "2026年第三季度补贴力度环比下降20%，用户侧关注点或将转向‘涨价/减量’，平台需警惕用户流失风险。",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:52:28.452191",
+      "platform": "reddit",
+      "agent_id": 3,
+      "agent_name": "河南卫视",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "用户反馈显示，配送时效下降成为新痛点，平台需加强履约能力建设。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:52:28.452077",
+      "platform": "reddit",
+      "agent_id": 2,
+      "agent_name": "阿里云",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "平台规则变动影响商家与骑手利益，流量分配机制应更透明，避免恶性竞争。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:52:28.451963",
+      "platform": "reddit",
+      "agent_id": 12,
+      "agent_name": "百雀羚",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "骑手激励不变，但补贴减少，商家抱怨平台规则不合理，流量分配失衡，亟待优化。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:52:28.451781",
+      "platform": "reddit",
+      "agent_id": 1,
+      "agent_name": "淘宝",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "2026年第三季度补贴力度环比下降20%，用户侧关注点或将转向‘涨价/减量’，平台需警惕用户流失风险。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:52:28.377569",
+      "platform": "twitter",
+      "agent_id": 3,
+      "agent_name": "河南卫视",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "用户反馈显示，配送时效下降成为新痛点，平台需加强履约能力建设。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:52:28.377483",
+      "platform": "twitter",
+      "agent_id": 2,
+      "agent_name": "阿里云",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "平台规则变动影响商家与骑手利益，流量分配机制应更透明，避免恶性竞争。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:52:28.377390",
+      "platform": "twitter",
+      "agent_id": 12,
+      "agent_name": "百雀羚",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "骑手激励不变，但补贴减少，商家抱怨平台规则不合理，流量分配失衡，亟待优化。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:52:28.377262",
+      "platform": "twitter",
+      "agent_id": 1,
+      "agent_name": "淘宝",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "2026年第三季度补贴力度环比下降20%，用户侧关注点或将转向‘涨价/减量’，平台需警惕用户流失风险。"
+      },
+      "result": null,
+      "success": true
+    }
+  ],
+  "rounds_count": 0
+}

@@ -1,0 +1,27 @@
+{
+  "simulation_id": "sim_7c7a7e808a90",
+  "project_id": "proj_2d98c5f4470f",
+  "graph_id": "mirofish_2ca888baa60448d7",
+  "enable_twitter": true,
+  "enable_reddit": true,
+  "status": "stopped",
+  "entities_count": 22,
+  "profiles_count": 22,
+  "entity_types": [
+    "Aiassistant",
+    "Person",
+    "Platform",
+    "MediaOutlet",
+    "Organization",
+    "Merchant",
+    "TechCompany"
+  ],
+  "config_generated": true,
+  "config_reasoning": "时间配置: 模拟场景聚焦于2026年第三季度补贴力度环比下降20%后的用户行为与平台反应，涉及骑手、商家、用户等多方互动。目标群体为东八区（UTC+8）的活跃网民及行业从业者，主要集中在晚间高峰时段进行讨论和传播。考虑到用户群体以年轻人为主，且关注热点话题，因此将高峰时段设为19-22点；同时，由于涉及平台策略调整、补贴变化等敏感话题，需保持较高活跃度以模拟舆论发酵过程，故设置较高的agent数量上限。此外，考虑到突发事件可能引发夜间讨论，off_peak_hours仅限凌晨0-5点，其余时间仍维持一定活跃度。 | 事件配置: 根据模拟情境，补贴减少直接影响用户体验与商家利润，因此‘涨价/减量’成为用户侧主要关注点；而骑手激励不变但补贴减少，会引发骑手与商家对平台资源分配公平性的质疑，进而演变为对平台规则和流量分配的关注。平台需平衡各方利益，避免舆论向负面方向发展。 | Agent配置: 成功生成 22 个 | 初始帖子分配: 4 个帖子已分配发布者",
+  "current_round": 0,
+  "twitter_status": "not_started",
+  "reddit_status": "not_started",
+  "created_at": "2026-04-10T09:50:04.270729",
+  "updated_at": "2026-04-10T10:21:45.140439",
+  "error": null
+}

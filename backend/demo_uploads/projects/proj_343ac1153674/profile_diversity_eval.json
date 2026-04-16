@@ -1,0 +1,20 @@
+{
+  "project_id": "proj_343ac1153674",
+  "graph_id_raw": "mirofish_50e8eda2ef624af2",
+  "graph_id_disamb": "mirofish_8bd136ea45f14b6a",
+  "raw": {
+    "simulation_id": "sim_715ddced1fff",
+    "profile_count": 154,
+    "pair_count": 11781,
+    "cosine_median": 0.4325,
+    "cosine_p90": 0.6291
+  },
+  "disamb": {
+    "simulation_id": "sim_57df3032cc64",
+    "profile_count": 48,
+    "pair_count": 1128,
+    "cosine_median": 0.4314,
+    "cosine_p90": 0.6616
+  },
+  "generated_at": "2026-04-10T07:44:20.051789+00:00"
+}

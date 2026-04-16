@@ -4,12 +4,13 @@ MiroFish Backend - Flask应用工厂
 
 import os
 import warnings
+import pathlib
 
 # 抑制 multiprocessing resource_tracker 的警告（来自第三方库如 transformers）
 # 需要在所有其他导入之前设置
 warnings.filterwarnings("ignore", message=".*resource_tracker.*")
 
-from flask import Flask, request
+from flask import Flask, request, send_from_directory
 from flask_cors import CORS
 
 from .config import Config
@@ -86,7 +87,25 @@ def create_app(config_class=Config):
     @app.route('/health')
     def health():
         return {'status': 'ok', 'service': 'MiroFish Backend'}
-    
+
+    # 静态前端服务（生产模式）：把 Vue 构建产物托管在 Flask 上
+    frontend_dist = os.environ.get(
+        'FRONTEND_DIST',
+        str(pathlib.Path(__file__).parent.parent.parent / 'frontend' / 'dist')
+    )
+    if os.path.isdir(frontend_dist):
+        @app.route('/', defaults={'path': ''})
+        @app.route('/<path:path>')
+        def serve_frontend(path):
+            # API 路由由蓝图处理，不走这里
+            full = os.path.join(frontend_dist, path)
+            if path and os.path.isfile(full):
+                return send_from_directory(frontend_dist, path)
+            return send_from_directory(frontend_dist, 'index.html')
+
+        if should_log_startup:
+            logger.info(f"前端静态文件目录: {frontend_dist}")
+
     if should_log_startup:
         logger.info("MiroFish Backend 启动完成")
     

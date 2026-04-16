@@ -1,0 +1,24 @@
+{
+  "simulation_id": "sim_ad24b9305109",
+  "project_id": "proj_e9a4b03f23a6",
+  "graph_id": "mirofish_89fb8b0789ab4907",
+  "enable_twitter": true,
+  "enable_reddit": true,
+  "status": "stopped",
+  "entities_count": 40,
+  "profiles_count": 40,
+  "entity_types": [
+    "GovernmentAgency",
+    "MediaOutlet",
+    "SocialMediaPlatform",
+    "Company"
+  ],
+  "config_generated": true,
+  "config_reasoning": "时间配置: 本模拟聚焦‘糟心肉’事件对预制菜国标的推动，主要参与群体为普通消费者、媒体、监管机构及食品行业从业者。消费者活跃高峰在晚间19-22点，符合社交媒体使用习惯；监管与企业响应集中在工作时段9-18点；凌晨0-5点设为低谷期。总模拟时长120小时（5天），覆盖舆情发酵、官方回应、公众情绪演变及标准讨论全过程。每小时激活Agent数根据话题热度动态浮动，峰值时段可触发密集互动以模拟舆论爆发。 | 事件配置:  | Agent配置: 成功生成 40 个 | 初始帖子分配: 1 个帖子已分配发布者",
+  "current_round": 0,
+  "twitter_status": "not_started",
+  "reddit_status": "not_started",
+  "created_at": "2026-04-09T19:10:48.660164",
+  "updated_at": "2026-04-09T21:09:18.189972",
+  "error": null
+}

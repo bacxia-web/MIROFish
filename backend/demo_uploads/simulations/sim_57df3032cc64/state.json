@@ -1,0 +1,23 @@
+{
+  "simulation_id": "sim_57df3032cc64",
+  "project_id": "proj_343ac1153674",
+  "graph_id": "mirofish_8bd136ea45f14b6a",
+  "enable_twitter": true,
+  "enable_reddit": true,
+  "status": "running",
+  "entities_count": 24,
+  "profiles_count": 24,
+  "entity_types": [
+    "MediaOutlet",
+    "GovernmentAgency",
+    "Company"
+  ],
+  "config_generated": true,
+  "config_reasoning": "时间配置: 模拟'糟心肉'事件对预制菜国标出台的推动力，需覆盖一周周期以观察舆论持续发酵与政策响应。目标用户群体为关注食品安全的大众及媒体从业者，主要活跃时间为晚间高峰时段（19-22点），早间（6-8点）有基础活跃度，工作日白天（9-18点）中等活跃。由于事件涉及食品安全与公众信任，需保持较长时长的模拟以反映信任修复周期。考虑到事件具有突发性和持续性，高峰时段设置较宽，低谷时段设定为凌晨0-5点，以符合东八区用户作息习惯。 | 事件配置: 根据原始文档内容提取核心关键词，结合事件传播路径与舆论走向，设计了媒体、政府机构和企业的初始发言内容，分别体现事件曝光、监管响应与行业反思三个维度，以推动舆论向‘推动预制菜国标出台’的方向发展。 | Agent配置: 成功生成 24 个 | 初始帖子分配: 4 个帖子已分配发布者",
+  "current_round": 0,
+  "twitter_status": "not_started",
+  "reddit_status": "not_started",
+  "created_at": "2026-04-10T09:39:25.410776",
+  "updated_at": "2026-04-10T09:44:41.840806",
+  "error": null
+}

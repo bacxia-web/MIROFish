@@ -1,0 +1,530 @@
+{
+  "project_id": "proj_7a14fdc7bd1f",
+  "name": "Unnamed Project",
+  "status": "graph_completed",
+  "created_at": "2026-04-08T17:05:21.297968",
+  "updated_at": "2026-04-08T17:13:00.824509",
+  "files": [
+    {
+      "filename": "前2回.pdf",
+      "size": 540493
+    }
+  ],
+  "total_text_length": 14257,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "GovernmentOfficial",
+        "description": "Government officials who can participate in social media discussions",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the official"
+          },
+          {
+            "name": "position",
+            "type": "text",
+            "description": "Current position or title"
+          },
+          {
+            "name": "department",
+            "type": "text",
+            "description": "Government department or agency"
+          }
+        ],
+        "examples": [
+          "甄士隐",
+          "贾雨村"
+        ]
+      },
+      {
+        "name": "BusinessExecutive",
+        "description": "Executives from companies or organizations involved in social media",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the executive"
+          },
+          {
+            "name": "title",
+            "type": "text",
+            "description": "Job title or role"
+          },
+          {
+            "name": "company",
+            "type": "text",
+            "description": "Company or organization they work for"
+          }
+        ],
+        "examples": [
+          "林如海",
+          "贾政"
+        ]
+      },
+      {
+        "name": "Academic",
+        "description": "Scholars, professors, or researchers active on social media",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the academic"
+          },
+          {
+            "name": "affiliation",
+            "type": "text",
+            "description": "University or institution they are affiliated with"
+          },
+          {
+            "name": "field_of_study",
+            "type": "text",
+            "description": "Area of expertise or research field"
+          }
+        ],
+        "examples": [
+          "冷子兴",
+          "贾代善"
+        ]
+      },
+      {
+        "name": "MediaPerson",
+        "description": "Journalists or media professionals participating in online discussions",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the media person"
+          },
+          {
+            "name": "media_outlet",
+            "type": "text",
+            "description": "News organization or media platform"
+          },
+          {
+            "name": "role",
+            "type": "text",
+            "description": "Role within the media organization (e.g., reporter, editor)"
+          }
+        ],
+        "examples": [
+          "空空道人",
+          "贾雨村"
+        ]
+      },
+      {
+        "name": "PublicFigure",
+        "description": "Celebrities or well-known individuals with a strong social media presence",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the public figure"
+          },
+          {
+            "name": "fame_source",
+            "type": "text",
+            "description": "Source of their fame (e.g., entertainment, sports, art)"
+          },
+          {
+            "name": "influence_level",
+            "type": "text",
+            "description": "Level of influence on social media"
+          }
+        ],
+        "examples": [
+          "神瑛侍者",
+          "绛珠仙子"
+        ]
+      },
+      {
+        "name": "LegalProfessional",
+        "description": "Lawyers or legal experts engaging in social media discussions",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the legal professional"
+          },
+          {
+            "name": "firm",
+            "type": "text",
+            "description": "Law firm or legal organization"
+          },
+          {
+            "name": "specialization",
+            "type": "text",
+            "description": "Area of legal expertise"
+          }
+        ],
+        "examples": [
+          "警幻仙子",
+          "赤瑕宫神瑛侍者"
+        ]
+      },
+      {
+        "name": "Ngorepresentative",
+        "description": "Representatives from non-governmental organizations active on social media",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the representative"
+          },
+          {
+            "name": "organization",
+            "type": "text",
+            "description": "Name of the NGO they represent"
+          },
+          {
+            "name": "cause",
+            "type": "text",
+            "description": "Social or environmental cause they advocate for"
+          }
+        ],
+        "examples": [
+          "封肃",
+          "霍启"
+        ]
+      },
+      {
+        "name": "Educator",
+        "description": "Teachers or educators participating in social media discussions",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the educator"
+          },
+          {
+            "name": "institution",
+            "type": "text",
+            "description": "School or educational institution"
+          },
+          {
+            "name": "subject_taught",
+            "type": "text",
+            "description": "Subject or field of education"
+          }
+        ],
+        "examples": [
+          "甄英莲",
+          "娇杏"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "General individual entity for people not fitting into specific categories",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the person"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Residence or current location"
+          },
+          {
+            "name": "description",
+            "type": "text",
+            "description": "Brief description of the person's background"
+          }
+        ],
+        "examples": [
+          "路人甲",
+          "匿名网友"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "General organization entity for groups not fitting into specific categories",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Name of the organization"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Headquarters or main location"
+          },
+          {
+            "name": "description",
+            "type": "text",
+            "description": "Brief description of the organization's purpose"
+          }
+        ],
+        "examples": [
+          "葫芦庙",
+          "智通寺"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "WORKS_FOR",
+        "description": "Indicates employment relationship between an individual and an organization",
+        "source_targets": [
+          {
+            "source": "GovernmentOfficial",
+            "target": "Organization"
+          },
+          {
+            "source": "BusinessExecutive",
+            "target": "Organization"
+          },
+          {
+            "source": "Academic",
+            "target": "Organization"
+          },
+          {
+            "source": "MediaPerson",
+            "target": "Organization"
+          },
+          {
+            "source": "LegalProfessional",
+            "target": "Organization"
+          },
+          {
+            "source": "Ngorepresentative",
+            "target": "Organization"
+          },
+          {
+            "source": "Educator",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPRESENTS",
+        "description": "Indicates representation relationship between an individual and an organization",
+        "source_targets": [
+          {
+            "source": "GovernmentOfficial",
+            "target": "Organization"
+          },
+          {
+            "source": "BusinessExecutive",
+            "target": "Organization"
+          },
+          {
+            "source": "Ngorepresentative",
+            "target": "Organization"
+          },
+          {
+            "source": "MediaPerson",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COMMENTED_ON",
+        "description": "Indicates that one entity commented on another entity's content",
+        "source_targets": [
+          {
+            "source": "GovernmentOfficial",
+            "target": "Person"
+          },
+          {
+            "source": "BusinessExecutive",
+            "target": "Person"
+          },
+          {
+            "source": "Academic",
+            "target": "Person"
+          },
+          {
+            "source": "MediaPerson",
+            "target": "Person"
+          },
+          {
+            "source": "PublicFigure",
+            "target": "Person"
+          },
+          {
+            "source": "LegalProfessional",
+            "target": "Person"
+          },
+          {
+            "source": "Ngorepresentative",
+            "target": "Person"
+          },
+          {
+            "source": "Educator",
+            "target": "Person"
+          },
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Organization",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "RESPONDED_TO",
+        "description": "Indicates that one entity responded to another entity's content",
+        "source_targets": [
+          {
+            "source": "GovernmentOfficial",
+            "target": "Person"
+          },
+          {
+            "source": "BusinessExecutive",
+            "target": "Person"
+          },
+          {
+            "source": "Academic",
+            "target": "Person"
+          },
+          {
+            "source": "MediaPerson",
+            "target": "Person"
+          },
+          {
+            "source": "PublicFigure",
+            "target": "Person"
+          },
+          {
+            "source": "LegalProfessional",
+            "target": "Person"
+          },
+          {
+            "source": "Ngorepresentative",
+            "target": "Person"
+          },
+          {
+            "source": "Educator",
+            "target": "Person"
+          },
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Organization",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "SHARED_CONTENT_WITH",
+        "description": "Indicates that one entity shared content with another entity",
+        "source_targets": [
+          {
+            "source": "GovernmentOfficial",
+            "target": "Person"
+          },
+          {
+            "source": "BusinessExecutive",
+            "target": "Person"
+          },
+          {
+            "source": "Academic",
+            "target": "Person"
+          },
+          {
+            "source": "MediaPerson",
+            "target": "Person"
+          },
+          {
+            "source": "PublicFigure",
+            "target": "Person"
+          },
+          {
+            "source": "LegalProfessional",
+            "target": "Person"
+          },
+          {
+            "source": "Ngorepresentative",
+            "target": "Person"
+          },
+          {
+            "source": "Educator",
+            "target": "Person"
+          },
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Organization",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "FOLLOWS",
+        "description": "Indicates that one entity follows another entity on social media",
+        "source_targets": [
+          {
+            "source": "GovernmentOfficial",
+            "target": "Person"
+          },
+          {
+            "source": "BusinessExecutive",
+            "target": "Person"
+          },
+          {
+            "source": "Academic",
+            "target": "Person"
+          },
+          {
+            "source": "MediaPerson",
+            "target": "Person"
+          },
+          {
+            "source": "PublicFigure",
+            "target": "Person"
+          },
+          {
+            "source": "LegalProfessional",
+            "target": "Person"
+          },
+          {
+            "source": "Ngorepresentative",
+            "target": "Person"
+          },
+          {
+            "source": "Educator",
+            "target": "Person"
+          },
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Organization",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "The text provides a rich narrative involving various social entities including government officials, business executives, academics, media professionals, public figures, legal professionals, NGO representatives, and educators. These entities interact through social media-like platforms, commenting, responding, sharing content, and following each other. The design includes 8 specific entity types based on these roles and 2 general兜底 types for individuals and organizations not fitting into specific categories.",
+  "graph_id": "mirofish_6c93f169fdb54d5e",
+  "graph_id_raw": "mirofish_f09bbf497c394b7b",
+  "graph_id_disamb": "mirofish_6c93f169fdb54d5e",
+  "graph_build_task_id": "b7f7b25e-74e3-49bc-a5bc-247963b68edd",
+  "quality_metrics": {
+    "updated_at": "2026-04-08T09:13:00.823973+00:00",
+    "node_count_disamb": 56,
+    "node_count_raw": 57
+  },
+  "simulation_requirement": "继续\r\n",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

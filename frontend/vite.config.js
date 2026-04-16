@@ -5,7 +5,8 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: '/MIROFish/',
+  // GitHub Pages 用 /MIROFish/，Render 等全栈部署用 /
+  base: process.env.VITE_BASE_URL || '/MIROFish/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),

@@ -1,0 +1,22 @@
+{
+  "updated_at": "2026-04-09T05:16:40.027186+00:00",
+  "project_id": "proj_c5d06f3a0096",
+  "graph": {
+    "by_variant": {},
+    "delta": {}
+  },
+  "simulation": {
+    "by_variant": {
+      "raw": {},
+      "disamb": {}
+    },
+    "note": "每次准备仿真会按当前 graph_id 刷新对应列；双列对比需分别用 raw/disamb 各跑一次。"
+  },
+  "retrieval": {
+    "by_variant": {
+      "raw": {},
+      "disamb": {}
+    },
+    "note": "统计自最近一次聚合起至本次 refresh 之间的 search_graph 调用（按 graph_id 分桶）。"
+  }
+}

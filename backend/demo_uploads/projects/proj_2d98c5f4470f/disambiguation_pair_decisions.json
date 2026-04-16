@@ -1,0 +1,33 @@
+{
+  "graph_id_raw": "mirofish_272a8500795d47dc",
+  "graph_id_disamb": "mirofish_2ca888baa60448d7",
+  "generated_at": "2026-04-10T15:44:20.200291",
+  "summary": {
+    "pair_decisions": 1,
+    "merged_groups": 1,
+    "precision_merge_rate": 1.0,
+    "final_merged_count": 1,
+    "bootstrap_from_merges": true
+  },
+  "pair_decision_details": [
+    {
+      "pair_index": 0,
+      "entity_a": {
+        "uuid": "7e0411f1-dd18-4c95-9f37-1aa6c28d6f71",
+        "name": "吴泽明",
+        "label": "Person"
+      },
+      "entity_b": {
+        "uuid": "7534aceb-3bb9-417a-91d8-62649f9eba41",
+        "name": "范禹",
+        "label": "Person"
+      },
+      "same_entity": true,
+      "confidence": 1.0,
+      "canonical_name": "吴泽明",
+      "final_merged": true,
+      "reject_reason": "",
+      "bootstrap_from_merges": true
+    }
+  ]
+}

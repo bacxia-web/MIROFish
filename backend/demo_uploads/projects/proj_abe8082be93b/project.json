@@ -1,0 +1,497 @@
+{
+  "project_id": "proj_abe8082be93b",
+  "name": "Unnamed Project",
+  "status": "ontology_generated",
+  "created_at": "2026-04-07T17:28:31.763875",
+  "updated_at": "2026-04-07T17:29:52.869977",
+  "files": [
+    {
+      "filename": "README.md",
+      "size": 9840
+    }
+  ],
+  "total_text_length": 9691,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "Student",
+        "description": "Higher education institution student",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the student"
+          },
+          {
+            "name": "student_id",
+            "type": "text",
+            "description": "Student identification number"
+          },
+          {
+            "name": "major",
+            "type": "text",
+            "description": "Academic major"
+          }
+        ],
+        "examples": [
+          "Wuhan University student",
+          "University of California student"
+        ]
+      },
+      {
+        "name": "Professor",
+        "description": "Academic faculty member at higher education institution",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the professor"
+          },
+          {
+            "name": "department",
+            "type": "text",
+            "description": "Academic department"
+          },
+          {
+            "name": "academic_title",
+            "type": "text",
+            "description": "Academic rank or title"
+          }
+        ],
+        "examples": [
+          "Wuhan University professor",
+          "Harvard University professor"
+        ]
+      },
+      {
+        "name": "University",
+        "description": "Institution of higher education",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Official name of the university"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Geographic location"
+          },
+          {
+            "name": "established_year",
+            "type": "text",
+            "description": "Year of establishment"
+          }
+        ],
+        "examples": [
+          "Wuhan University",
+          "Tsinghua University"
+        ]
+      },
+      {
+        "name": "MediaOutlet",
+        "description": "News media organization",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Official name of the media outlet"
+          },
+          {
+            "name": "website",
+            "type": "text",
+            "description": "Official website URL"
+          },
+          {
+            "name": "main_focus",
+            "type": "text",
+            "description": "Primary content focus"
+          }
+        ],
+        "examples": [
+          "Bilibili",
+          "X (Twitter)"
+        ]
+      },
+      {
+        "name": "Celebrity",
+        "description": "Public figure or internet influencer",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name or stage name"
+          },
+          {
+            "name": "platform",
+            "type": "text",
+            "description": "Primary social media platform"
+          },
+          {
+            "name": "follower_count",
+            "type": "text",
+            "description": "Approximate follower count"
+          }
+        ],
+        "examples": [
+          "MiroFish official account",
+          "Influencer on X"
+        ]
+      },
+      {
+        "name": "GovernmentOfficial",
+        "description": "Government agency employee in official position",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the official"
+          },
+          {
+            "name": "position",
+            "type": "text",
+            "description": "Official position title"
+          },
+          {
+            "name": "department",
+            "type": "text",
+            "description": "Government department"
+          }
+        ],
+        "examples": [
+          "Education Ministry official",
+          "Local government representative"
+        ]
+      },
+      {
+        "name": "Researcher",
+        "description": "Professional engaged in research activities",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the researcher"
+          },
+          {
+            "name": "research_field",
+            "type": "text",
+            "description": "Primary research area"
+          },
+          {
+            "name": "affiliation",
+            "type": "text",
+            "description": "Institutional affiliation"
+          }
+        ],
+        "examples": [
+          "MiroFish project researcher",
+          "AI research scientist"
+        ]
+      },
+      {
+        "name": "Company",
+        "description": "Commercial business entity",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Official company name"
+          },
+          {
+            "name": "industry",
+            "type": "text",
+            "description": "Primary industry sector"
+          },
+          {
+            "name": "headquarters",
+            "type": "text",
+            "description": "Corporate headquarters location"
+          }
+        ],
+        "examples": [
+          "Shanda Group",
+          "Tech startup company"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "General natural person not fitting other specific types",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the person"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Geographic location"
+          },
+          {
+            "name": "role",
+            "type": "text",
+            "description": "General role or identity"
+          }
+        ],
+        "examples": [
+          "Ordinary netizen",
+          "Local resident"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "General organizational entity not fitting other specific types",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Official organization name"
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "description": "Type of organization"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Geographic location"
+          }
+        ],
+        "examples": [
+          "Small community group",
+          "Temporary interest group"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "POSTS_ON",
+        "description": "Publishes content on a social media platform",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "MediaOutlet"
+          },
+          {
+            "source": "Student",
+            "target": "MediaOutlet"
+          },
+          {
+            "source": "Professor",
+            "target": "MediaOutlet"
+          },
+          {
+            "source": "Celebrity",
+            "target": "MediaOutlet"
+          },
+          {
+            "source": "GovernmentOfficial",
+            "target": "MediaOutlet"
+          },
+          {
+            "source": "Researcher",
+            "target": "MediaOutlet"
+          },
+          {
+            "source": "Company",
+            "target": "MediaOutlet"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COMMENTS_ON",
+        "description": "Provides comments on a post or content",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Student",
+            "target": "Student"
+          },
+          {
+            "source": "Professor",
+            "target": "Professor"
+          },
+          {
+            "source": "Celebrity",
+            "target": "Celebrity"
+          },
+          {
+            "source": "GovernmentOfficial",
+            "target": "GovernmentOfficial"
+          },
+          {
+            "source": "Researcher",
+            "target": "Researcher"
+          },
+          {
+            "source": "Company",
+            "target": "Company"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "SHARES",
+        "description": "Forwards content to others",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Student",
+            "target": "Student"
+          },
+          {
+            "source": "Professor",
+            "target": "Professor"
+          },
+          {
+            "source": "Celebrity",
+            "target": "Celebrity"
+          },
+          {
+            "source": "GovernmentOfficial",
+            "target": "GovernmentOfficial"
+          },
+          {
+            "source": "Researcher",
+            "target": "Researcher"
+          },
+          {
+            "source": "Company",
+            "target": "Company"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "FOLLOWS",
+        "description": "Subscribes to another account's content",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Student",
+            "target": "Student"
+          },
+          {
+            "source": "Professor",
+            "target": "Professor"
+          },
+          {
+            "source": "Celebrity",
+            "target": "Celebrity"
+          },
+          {
+            "source": "GovernmentOfficial",
+            "target": "GovernmentOfficial"
+          },
+          {
+            "source": "Researcher",
+            "target": "Researcher"
+          },
+          {
+            "source": "Company",
+            "target": "Company"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "WORKS_FOR",
+        "description": "Employment relationship with an organization",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          },
+          {
+            "source": "Student",
+            "target": "University"
+          },
+          {
+            "source": "Professor",
+            "target": "University"
+          },
+          {
+            "source": "Researcher",
+            "target": "Company"
+          },
+          {
+            "source": "GovernmentOfficial",
+            "target": "GovernmentAgency"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "STUDIES_AT",
+        "description": "Enrollment relationship with an educational institution",
+        "source_targets": [
+          {
+            "source": "Student",
+            "target": "University"
+          },
+          {
+            "source": "Person",
+            "target": "University"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPRESENTS",
+        "description": "Official representation of an organization",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          },
+          {
+            "source": "Celebrity",
+            "target": "Company"
+          },
+          {
+            "source": "GovernmentOfficial",
+            "target": "GovernmentAgency"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPORTS_ON",
+        "description": "Media coverage of an event or topic",
+        "source_targets": [
+          {
+            "source": "MediaOutlet",
+            "target": "Person"
+          },
+          {
+            "source": "MediaOutlet",
+            "target": "Organization"
+          },
+          {
+            "source": "MediaOutlet",
+            "target": "University"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "Based on MiroFish's public opinion simulation examples (Wuhan University, Dream of the Red Chamber), 8 specific entity types were designed: Student, Professor, University, MediaOutlet, Celebrity, GovernmentOfficial, Researcher, Company. These cover key roles in academic, media, and organizational contexts. The last 2 are general types (Person, Organization) for unclassified entities. 8 relationship types were selected to model social media interactions (posting, commenting, sharing, following) and organizational relationships (working for, studying at, representing, reporting on).",
+  "graph_id": null,
+  "graph_build_task_id": null,
+  "simulation_requirement": "测试",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

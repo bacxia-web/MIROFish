@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "progress": 100,
+  "message": "报告生成完成",
+  "current_section": null,
+  "completed_sections": [
+    "事件爆发与公众信任崩塌",
+    "政府监管介入与国标制定加速",
+    "企业应对策略与行业洗牌",
+    "公众信任修复与长期影响"
+  ],
+  "updated_at": "2026-04-10T10:05:38.316698"
+}

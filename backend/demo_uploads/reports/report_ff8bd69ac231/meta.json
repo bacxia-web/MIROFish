@@ -1,0 +1,29 @@
+{
+  "report_id": "report_ff8bd69ac231",
+  "simulation_id": "sim_37d6845177a7",
+  "graph_id": "mirofish_e0757432699244d8",
+  "simulation_requirement": "继续",
+  "status": "failed",
+  "outline": {
+    "title": "未来预测报告",
+    "summary": "基于模拟预测的未来趋势与风险分析",
+    "sections": [
+      {
+        "title": "预测场景与核心发现",
+        "content": ""
+      },
+      {
+        "title": "人群行为预测分析",
+        "content": ""
+      },
+      {
+        "title": "趋势展望与风险提示",
+        "content": ""
+      }
+    ]
+  },
+  "markdown_content": "",
+  "created_at": "2026-04-08T23:16:35.929223",
+  "completed_at": "",
+  "error": "Error code: 403 - {'error': {'message': 'The free tier of the model has been exhausted. If you wish to continue access the model on a paid basis, please disable the \"use free tier only\" mode in the management console.', 'type': 'AllocationQuota.FreeTierOnly', 'param': None, 'code': 'AllocationQuota.FreeTierOnly'}, 'id': 'chatcmpl-4bcce4be-96a7-9712-a4b1-6ffa4db71d37', 'request_id': '4bcce4be-96a7-9712-a4b1-6ffa4db71d37'}"
+}

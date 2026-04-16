@@ -1,0 +1,154 @@
+{
+  "updated_at": "2026-04-09T11:25:54.804381+00:00",
+  "project_id": "proj_e9a4b03f23a6",
+  "graph": {
+    "by_variant": {
+      "raw": {
+        "graph_id": "mirofish_f47341095a174c3c",
+        "node_count": 54,
+        "edge_count": 37,
+        "entity_node_count": 54,
+        "isolated_node_ratio": 0.259259,
+        "avg_degree": 1.3704,
+        "multi_edge_pair_count": 0,
+        "alias_count_total": 0
+      },
+      "disamb": {
+        "graph_id": "mirofish_89fb8b0789ab4907",
+        "node_count": 40,
+        "edge_count": 33,
+        "entity_node_count": 40,
+        "isolated_node_ratio": 0.2,
+        "avg_degree": 1.65,
+        "multi_edge_pair_count": 2,
+        "alias_count_total": 0
+      }
+    },
+    "delta": {
+      "node_reduction_ratio": 0.259259,
+      "edge_reduction_ratio": 0.108108
+    }
+  },
+  "simulation": {
+    "by_variant": {
+      "raw": {
+        "agent_count": 54,
+        "duplicate_display_name_groups": 0,
+        "updated_at": "2026-04-09T11:15:56.536052+00:00"
+      },
+      "disamb": {
+        "agent_count": 40,
+        "duplicate_display_name_groups": 0,
+        "updated_at": "2026-04-09T11:14:46.716904+00:00",
+        "post_metrics_by_platform": {
+          "twitter": {
+            "post_total_count": 0,
+            "post_unique_count": 0,
+            "post_duplicate_count": 0,
+            "duplicate_post_groups": 0,
+            "max_repeat_count": 0,
+            "ignored_empty_posts": 2,
+            "updated_at": "2026-04-09T11:18:18.215231+00:00"
+          },
+          "reddit": {
+            "post_total_count": 0,
+            "post_unique_count": 0,
+            "post_duplicate_count": 0,
+            "duplicate_post_groups": 0,
+            "max_repeat_count": 0,
+            "ignored_empty_posts": 2,
+            "updated_at": "2026-04-09T11:18:20.221528+00:00"
+          }
+        }
+      }
+    },
+    "note": "每次准备仿真会按当前 graph_id 刷新对应列；双列对比需分别用 raw/disamb 各跑一次。"
+  },
+  "retrieval": {
+    "by_variant": {
+      "raw": {
+        "search_graph_calls": 137,
+        "search_graph_result_hits_sum": 3,
+        "search_graph_empty_calls": 135,
+        "search_graph_avg_result_count": 0.0219,
+        "search_graph_empty_rate": 0.9854
+      },
+      "disamb": {
+        "search_graph_calls": 102,
+        "search_graph_result_hits_sum": 0,
+        "search_graph_empty_calls": 102,
+        "search_graph_avg_result_count": 0.0,
+        "search_graph_empty_rate": 1.0
+      }
+    },
+    "note": "统计自最近一次聚合起至本次 refresh 之间的 search_graph 调用（按 graph_id 分桶）。"
+  },
+  "retrieval_ab_eval": {
+    "project_id": "proj_e9a4b03f23a6",
+    "raw_graph_id": "mirofish_f47341095a174c3c",
+    "disamb_graph_id": "mirofish_89fb8b0789ab4907",
+    "raw": {
+      "search_graph_calls": 137,
+      "empty_calls": 135,
+      "result_hits_sum": 3
+    },
+    "disamb": {
+      "search_graph_calls": 102,
+      "empty_calls": 102,
+      "result_hits_sum": 0
+    },
+    "delta_empty_calls": 33,
+    "updated_at": "2026-04-09T11:25:54.803037+00:00",
+    "workload_mode": "natural_traffic"
+  },
+  "token_usage": {
+    "by_step": {
+      "step1": {
+        "prompt_tokens": 25812,
+        "completion_tokens": 3794,
+        "total_tokens": 29606,
+        "calls": 2,
+        "models": {
+          "qwen3-max-preview": 2
+        },
+        "updated_at": "2026-04-09T11:01:35.540953+00:00"
+      },
+      "step2": {
+        "prompt_tokens": 35379,
+        "completion_tokens": 10970,
+        "total_tokens": 46349,
+        "calls": 11,
+        "models": {
+          "qwen3-max-preview": 11
+        },
+        "updated_at": "2026-04-09T11:18:58.789907+00:00"
+      },
+      "step3": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step4": {
+        "prompt_tokens": 241027,
+        "completion_tokens": 10883,
+        "total_tokens": 251910,
+        "calls": 58,
+        "models": {
+          "qwen3-max-preview": 58
+        },
+        "updated_at": "2026-04-09T11:25:54.661114+00:00"
+      },
+      "step5": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      }
+    }
+  }
+}

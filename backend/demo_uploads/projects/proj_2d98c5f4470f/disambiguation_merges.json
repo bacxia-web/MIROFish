@@ -1,0 +1,24 @@
+{
+  "graph_id_raw": "mirofish_272a8500795d47dc",
+  "graph_id_disamb": "mirofish_2ca888baa60448d7",
+  "generated_at": "2026-04-10T09:49:34.832400",
+  "summary": {
+    "merged_groups": 1,
+    "removed_nodes": 1,
+    "pair_decisions": 9
+  },
+  "merges": [
+    {
+      "canonical_name": "吴泽明",
+      "kept_uuid": "7e0411f1-dd18-4c95-9f37-1aa6c28d6f71",
+      "keep_name_before": "吴泽明",
+      "removed_uuids": [
+        "7534aceb-3bb9-417a-91d8-62649f9eba41"
+      ],
+      "removed_names": [
+        "范禹"
+      ],
+      "primary_label": "Person"
+    }
+  ]
+}

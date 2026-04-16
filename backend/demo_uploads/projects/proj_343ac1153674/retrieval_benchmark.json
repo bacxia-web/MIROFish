@@ -1,0 +1,179 @@
+{
+  "project_id": "proj_343ac1153674",
+  "graph_id_raw": "mirofish_50e8eda2ef624af2",
+  "graph_id_disamb": "mirofish_8bd136ea45f14b6a",
+  "query_count": 20,
+  "queries": [
+    "国务院食安办",
+    "市场监管总局",
+    "安徽省市场监管局",
+    "阜阳市市场监督管理局",
+    "央视3·15晚会",
+    "央视新闻",
+    "人民日报",
+    "中国消费协会",
+    "同程金融",
+    "宝马中国",
+    "抖音",
+    "世纪佳缘",
+    "珍爱网",
+    "云抖科技",
+    "湖南闽湘消防设备有限公司",
+    "广州金桂根消防设备有限公司",
+    "株洲市监局",
+    "深圳市市场监督管理局",
+    "北京日报",
+    "华尔街见闻"
+  ],
+  "details": [
+    {
+      "query": "国务院食安办",
+      "raw_hits": 1,
+      "disamb_hits": 8,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "市场监管总局",
+      "raw_hits": 1,
+      "disamb_hits": 10,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "安徽省市场监管局",
+      "raw_hits": 1,
+      "disamb_hits": 8,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "阜阳市市场监督管理局",
+      "raw_hits": 8,
+      "disamb_hits": 11,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "央视3·15晚会",
+      "raw_hits": 26,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "央视新闻",
+      "raw_hits": 1,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    },
+    {
+      "query": "人民日报",
+      "raw_hits": 1,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    },
+    {
+      "query": "中国消费协会",
+      "raw_hits": 4,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    },
+    {
+      "query": "同程金融",
+      "raw_hits": 8,
+      "disamb_hits": 10,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "宝马中国",
+      "raw_hits": 1,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    },
+    {
+      "query": "抖音",
+      "raw_hits": 2,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    },
+    {
+      "query": "世纪佳缘",
+      "raw_hits": 7,
+      "disamb_hits": 9,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "珍爱网",
+      "raw_hits": 7,
+      "disamb_hits": 8,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "云抖科技",
+      "raw_hits": 7,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    },
+    {
+      "query": "湖南闽湘消防设备有限公司",
+      "raw_hits": 20,
+      "disamb_hits": 17,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "广州金桂根消防设备有限公司",
+      "raw_hits": 6,
+      "disamb_hits": 6,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "株洲市监局",
+      "raw_hits": 2,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    },
+    {
+      "query": "深圳市市场监督管理局",
+      "raw_hits": 8,
+      "disamb_hits": 11,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "北京日报",
+      "raw_hits": 2,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    },
+    {
+      "query": "华尔街见闻",
+      "raw_hits": 2,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    }
+  ],
+  "summary": {
+    "raw_nonempty_rate": 1.0,
+    "disamb_nonempty_rate": 0.55,
+    "raw_avg_hits": 5.75,
+    "disamb_avg_hits": 5.0,
+    "raw_avg_hits_on_nonempty": 5.75,
+    "disamb_avg_hits_on_nonempty": 9.0909
+  },
+  "generated_at": "2026-04-10T07:43:42.627668+00:00"
+}

@@ -1,0 +1,348 @@
+{
+  "project_id": "proj_122e6d6e4450",
+  "name": "Unnamed Project",
+  "status": "graph_completed",
+  "created_at": "2026-04-08T16:53:54.617902",
+  "updated_at": "2026-04-08T17:02:04.025495",
+  "files": [
+    {
+      "filename": "前2回.pdf",
+      "size": 540493
+    }
+  ],
+  "total_text_length": 14257,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "Noble",
+        "description": "贵族或世家出身的人物",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "title",
+            "type": "text",
+            "description": "爵位或头衔"
+          }
+        ],
+        "examples": [
+          "贾宝玉",
+          "林黛玉"
+        ]
+      },
+      {
+        "name": "Official",
+        "description": "政府官员或士大夫阶层",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "position",
+            "type": "text",
+            "description": "担任的官职"
+          }
+        ],
+        "examples": [
+          "贾政",
+          "贾赦"
+        ]
+      },
+      {
+        "name": "Scholar",
+        "description": "文人学者或知识分子",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "field_of_study",
+            "type": "text",
+            "description": "研究领域或专长"
+          }
+        ],
+        "examples": [
+          "贾雨村",
+          "冷子兴"
+        ]
+      },
+      {
+        "name": "Merchant",
+        "description": "商人或经济活动参与者",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "business_type",
+            "type": "text",
+            "description": "从事的商业类型"
+          }
+        ],
+        "examples": [
+          "甄费",
+          "贾化"
+        ]
+      },
+      {
+        "name": "ReligiousFigure",
+        "description": "宗教人士或修行者",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "sect",
+            "type": "text",
+            "description": "所属宗教派别"
+          }
+        ],
+        "examples": [
+          "空空道人",
+          "神瑛侍者"
+        ]
+      },
+      {
+        "name": "Artist",
+        "description": "艺术家或文学创作者",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "artistic_field",
+            "type": "text",
+            "description": "艺术创作领域"
+          }
+        ],
+        "examples": [
+          "曹雪芹",
+          "孔梅溪"
+        ]
+      },
+      {
+        "name": "Peasant",
+        "description": "农民或普通百姓",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "居住地"
+          }
+        ],
+        "examples": [
+          "霍启",
+          "甄家丫鬟"
+        ]
+      },
+      {
+        "name": "MilitaryPerson",
+        "description": "军人或与军事相关的人物",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "rank",
+            "type": "text",
+            "description": "军衔或职位"
+          }
+        ],
+        "examples": [
+          "葫芦庙和尚",
+          "军牢快手"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "自然人个体的兜底类型",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "role",
+            "type": "text",
+            "description": "在故事中的角色描述"
+          }
+        ],
+        "examples": [
+          "英莲",
+          "娇杏"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "组织机构的兜底类型",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "组织名称"
+          },
+          {
+            "name": "purpose",
+            "type": "text",
+            "description": "组织的主要目的或功能"
+          }
+        ],
+        "examples": [
+          "智通寺",
+          "太虚幻境"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "WORKS_FOR",
+        "description": "某人工作于某个组织",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          },
+          {
+            "source": "Official",
+            "target": "Organization"
+          },
+          {
+            "source": "Scholar",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "FRIEND_OF",
+        "description": "两个人之间是朋友关系",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Noble",
+            "target": "Noble"
+          },
+          {
+            "source": "Scholar",
+            "target": "Scholar"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "MARRIED_TO",
+        "description": "婚姻关系",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Noble",
+            "target": "Noble"
+          },
+          {
+            "source": "Official",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "PARENT_OF",
+        "description": "父母与子女的关系",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Noble",
+            "target": "Noble"
+          },
+          {
+            "source": "Official",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "AFFILIATED_WITH",
+        "description": "某人隶属于某个组织",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          },
+          {
+            "source": "Official",
+            "target": "Organization"
+          },
+          {
+            "source": "ReligiousFigure",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "MENTIONS",
+        "description": "某人在社交媒体上提及另一人",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Noble",
+            "target": "Noble"
+          },
+          {
+            "source": "Scholar",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "文本内容主要围绕《红楼梦》中的人物和事件展开，涉及贵族、官员、文人、商人、宗教人士等各类社会角色。通过设计10个实体类型（8个具体+2个兜底）和6种关系类型，可以有效模拟这些角色在社交媒体上的互动和舆论传播路径。",
+  "graph_id": "mirofish_479d0ab836aa4157",
+  "graph_id_raw": "mirofish_d9e72f3db1e84bc0",
+  "graph_id_disamb": "mirofish_479d0ab836aa4157",
+  "graph_build_task_id": "0b6da2fe-c46b-40dc-aa6b-42e2bd42813f",
+  "quality_metrics": {
+    "updated_at": "2026-04-08T09:02:04.024961+00:00",
+    "node_count_disamb": 85,
+    "node_count_raw": 90
+  },
+  "simulation_requirement": "继续",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

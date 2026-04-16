@@ -1,0 +1,2342 @@
+[
+  {
+    "user_id": 0,
+    "username": "贾雨村_812",
+    "name": "贾雨村",
+    "bio": "自述半生潦倒，欲借编述闺阁女子故事以昭传其事迹。",
+    "persona": "自述半生潦倒，欲借编述闺阁女子故事以昭传其事迹。",
+    "karma": 3448,
+    "created_at": "2026-04-08",
+    "age": 37,
+    "gender": "male",
+    "mbti": "ENTP",
+    "country": "US",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 1,
+    "username": "贾琏_311",
+    "name": "贾琏",
+    "bio": "贾赦之长子，现捐同知，娶王夫人内侄女为妻。",
+    "persona": "贾赦之长子，现捐同知，娶王夫人内侄女为妻。",
+    "karma": 2579,
+    "created_at": "2026-04-08",
+    "age": 26,
+    "gender": "male",
+    "mbti": "ENFP",
+    "country": "China",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 2,
+    "username": "贾赦_344",
+    "name": "贾赦",
+    "bio": "贾府长子，有二子。",
+    "persona": "贾府长子，有二子。",
+    "karma": 2667,
+    "created_at": "2026-04-08",
+    "age": 38,
+    "gender": "male",
+    "mbti": "ISTJ",
+    "country": "Australia",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 3,
+    "username": "林公之夫人_246",
+    "name": "林公之夫人",
+    "bio": "荣府中赦、政二公之胞妹，原名贾敏。",
+    "persona": "荣府中赦、政二公之胞妹，原名贾敏。",
+    "karma": 958,
+    "created_at": "2026-04-08",
+    "age": 36,
+    "gender": "female",
+    "mbti": "ENTJ",
+    "country": "France",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 4,
+    "username": "史老夫人_282",
+    "name": "史老夫人",
+    "bio": "极爱孙女，贾府的祖母。",
+    "persona": "极爱孙女，贾府的祖母。",
+    "karma": 4709,
+    "created_at": "2026-04-08",
+    "age": 50,
+    "gender": "female",
+    "mbti": "ESTP",
+    "country": "India",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 5,
+    "username": "贾惜春_904",
+    "name": "贾惜春",
+    "bio": "宁府珍爷之胞妹，贾府四小姐。",
+    "persona": "宁府珍爷之胞妹，贾府四小姐。",
+    "karma": 4227,
+    "created_at": "2026-04-08",
+    "age": 40,
+    "gender": "female",
+    "mbti": "ENTJ",
+    "country": "Australia",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 6,
+    "username": "贾探春_461",
+    "name": "贾探春",
+    "bio": "贾政之庶出，贾府三小姐。",
+    "persona": "贾政之庶出，贾府三小姐。",
+    "karma": 1567,
+    "created_at": "2026-04-08",
+    "age": 48,
+    "gender": "female",
+    "mbti": "INFJ",
+    "country": "US",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 7,
+    "username": "贾迎春_273",
+    "name": "贾迎春",
+    "bio": "贾赦之妾所出，贾府二小姐。",
+    "persona": "贾赦之妾所出，贾府二小姐。",
+    "karma": 4882,
+    "created_at": "2026-04-08",
+    "age": 46,
+    "gender": "female",
+    "mbti": "ENTP",
+    "country": "India",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 8,
+    "username": "贾元春_481",
+    "name": "贾元春",
+    "bio": "贾政之长女，因贤孝才德被选入宫作女史。",
+    "persona": "贾政之长女，因贤孝才德被选入宫作女史。",
+    "karma": 2838,
+    "created_at": "2026-04-08",
+    "age": 45,
+    "gender": "male",
+    "mbti": "ENTP",
+    "country": "US",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 9,
+    "username": "巡盐御史林家_310",
+    "name": "巡盐御史林家",
+    "bio": "Official account of 巡盐御史林家.",
+    "persona": "巡盐御史林家 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 2582,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 10,
+    "username": "祖母_294",
+    "name": "祖母",
+    "bio": "溺爱孙子的长辈。",
+    "persona": "溺爱孙子的长辈。",
+    "karma": 1686,
+    "created_at": "2026-04-08",
+    "age": 38,
+    "gender": "female",
+    "mbti": "INFJ",
+    "country": "Australia",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 11,
+    "username": "他令尊_537",
+    "name": "他令尊",
+    "bio": "一位对儿子管教严厉的父亲。",
+    "persona": "一位对儿子管教严厉的父亲。",
+    "karma": 909,
+    "created_at": "2026-04-08",
+    "age": 42,
+    "gender": "male",
+    "mbti": "INFJ",
+    "country": "Germany",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 12,
+    "username": "甄府_596",
+    "name": "甄府",
+    "bio": "Official account of 甄府.",
+    "persona": "甄府 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 1360,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 13,
+    "username": "贾府_188",
+    "name": "贾府",
+    "bio": "Official account of 贾府.",
+    "persona": "贾府 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 2540,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 14,
+    "username": "甄家_382",
+    "name": "甄家",
+    "bio": "Official account of 甄家.",
+    "persona": "甄家 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 586,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 15,
+    "username": "秦桧_494",
+    "name": "秦桧",
+    "bio": "南宋奸臣，应劫而生的恶者代表。",
+    "persona": "南宋奸臣，应劫而生的恶者代表。",
+    "karma": 4709,
+    "created_at": "2026-04-08",
+    "age": 28,
+    "gender": "female",
+    "mbti": "ISFJ",
+    "country": "India",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 16,
+    "username": "安禄山_547",
+    "name": "安禄山",
+    "bio": "唐朝叛将，应劫而生的恶者代表。",
+    "persona": "唐朝叛将，应劫而生的恶者代表。",
+    "karma": 1904,
+    "created_at": "2026-04-08",
+    "age": 32,
+    "gender": "male",
+    "mbti": "ISFJ",
+    "country": "Brazil",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 17,
+    "username": "桓温_916",
+    "name": "桓温",
+    "bio": "东晋权臣，应劫而生的恶者代表。",
+    "persona": "东晋权臣，应劫而生的恶者代表。",
+    "karma": 1772,
+    "created_at": "2026-04-08",
+    "age": 48,
+    "gender": "female",
+    "mbti": "ENTP",
+    "country": "Australia",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 18,
+    "username": "曹操_525",
+    "name": "曹操",
+    "bio": "东汉末年权臣，应劫而生的恶者代表。",
+    "persona": "东汉末年权臣，应劫而生的恶者代表。",
+    "karma": 4288,
+    "created_at": "2026-04-08",
+    "age": 44,
+    "gender": "male",
+    "mbti": "INFP",
+    "country": "Australia",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 19,
+    "username": "王莽_764",
+    "name": "王莽",
+    "bio": "西汉末年篡位者，应劫而生的恶者代表。",
+    "persona": "西汉末年篡位者，应劫而生的恶者代表。",
+    "karma": 3994,
+    "created_at": "2026-04-08",
+    "age": 36,
+    "gender": "female",
+    "mbti": "INTJ",
+    "country": "Japan",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 20,
+    "username": "秦始皇_537",
+    "name": "秦始皇",
+    "bio": "中国第一位皇帝，应劫而生的恶者代表。",
+    "persona": "中国第一位皇帝，应劫而生的恶者代表。",
+    "karma": 4462,
+    "created_at": "2026-04-08",
+    "age": 35,
+    "gender": "male",
+    "mbti": "ENTP",
+    "country": "Japan",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 21,
+    "username": "纣_733",
+    "name": "纣",
+    "bio": "商朝暴君，应劫而生的恶者代表。",
+    "persona": "商朝暴君，应劫而生的恶者代表。",
+    "karma": 1850,
+    "created_at": "2026-04-08",
+    "age": 46,
+    "gender": "female",
+    "mbti": "ESTJ",
+    "country": "Germany",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 22,
+    "username": "桀_693",
+    "name": "桀",
+    "bio": "夏朝暴君，应劫而生的恶者代表。",
+    "persona": "夏朝暴君，应劫而生的恶者代表。",
+    "karma": 4361,
+    "created_at": "2026-04-08",
+    "age": 46,
+    "gender": "male",
+    "mbti": "ESTJ",
+    "country": "South Korea",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 23,
+    "username": "共工_322",
+    "name": "共工",
+    "bio": "上古水神，应劫而生的恶者代表。",
+    "persona": "上古水神，应劫而生的恶者代表。",
+    "karma": 646,
+    "created_at": "2026-04-08",
+    "age": 40,
+    "gender": "male",
+    "mbti": "ESTP",
+    "country": "US",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 24,
+    "username": "蚩尤_614",
+    "name": "蚩尤",
+    "bio": "上古战神，应劫而生的恶者代表。",
+    "persona": "上古战神，应劫而生的恶者代表。",
+    "karma": 902,
+    "created_at": "2026-04-08",
+    "age": 49,
+    "gender": "male",
+    "mbti": "ISTJ",
+    "country": "Canada",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 25,
+    "username": "朱熹_444",
+    "name": "朱熹",
+    "bio": "南宋理学家，应运而生的仁者代表。",
+    "persona": "南宋理学家，应运而生的仁者代表。",
+    "karma": 3670,
+    "created_at": "2026-04-08",
+    "age": 29,
+    "gender": "male",
+    "mbti": "ISFP",
+    "country": "China",
+    "profession": "Scholar",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 26,
+    "username": "张载_980",
+    "name": "张载",
+    "bio": "北宋哲学家，应运而生的仁者代表。",
+    "persona": "北宋哲学家，应运而生的仁者代表。",
+    "karma": 1035,
+    "created_at": "2026-04-08",
+    "age": 36,
+    "gender": "male",
+    "mbti": "ENFJ",
+    "country": "US",
+    "profession": "Scholar",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 27,
+    "username": "程颐_414",
+    "name": "程颐",
+    "bio": "北宋理学家，应运而生的仁者代表。",
+    "persona": "北宋理学家，应运而生的仁者代表。",
+    "karma": 4475,
+    "created_at": "2026-04-08",
+    "age": 49,
+    "gender": "male",
+    "mbti": "ENTP",
+    "country": "Canada",
+    "profession": "Scholar",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 28,
+    "username": "程颢_706",
+    "name": "程颢",
+    "bio": "北宋理学家，应运而生的仁者代表。",
+    "persona": "北宋理学家，应运而生的仁者代表。",
+    "karma": 817,
+    "created_at": "2026-04-08",
+    "age": 34,
+    "gender": "female",
+    "mbti": "ENTJ",
+    "country": "Australia",
+    "profession": "Scholar",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 29,
+    "username": "周敦颐_340",
+    "name": "周敦颐",
+    "bio": "北宋理学家，应运而生的仁者代表。",
+    "persona": "北宋理学家，应运而生的仁者代表。",
+    "karma": 4320,
+    "created_at": "2026-04-08",
+    "age": 50,
+    "gender": "female",
+    "mbti": "ENTP",
+    "country": "Australia",
+    "profession": "Scholar",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 30,
+    "username": "韩愈_463",
+    "name": "韩愈",
+    "bio": "唐代文学家，应运而生的仁者代表。",
+    "persona": "唐代文学家，应运而生的仁者代表。",
+    "karma": 1321,
+    "created_at": "2026-04-08",
+    "age": 49,
+    "gender": "male",
+    "mbti": "ESTJ",
+    "country": "Brazil",
+    "profession": "Scholar",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 31,
+    "username": "董仲舒_501",
+    "name": "董仲舒",
+    "bio": "汉代儒学家，应运而生的仁者代表。",
+    "persona": "汉代儒学家，应运而生的仁者代表。",
+    "karma": 3532,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "male",
+    "mbti": "INTP",
+    "country": "France",
+    "profession": "Scholar",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 32,
+    "username": "孟子_748",
+    "name": "孟子",
+    "bio": "儒家学者，应运而生的仁者代表。",
+    "persona": "儒家学者，应运而生的仁者代表。",
+    "karma": 2957,
+    "created_at": "2026-04-08",
+    "age": 28,
+    "gender": "male",
+    "mbti": "ESFJ",
+    "country": "Germany",
+    "profession": "Scholar",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 33,
+    "username": "孔子_866",
+    "name": "孔子",
+    "bio": "儒家学派创始人，应运而生的仁者代表。",
+    "persona": "儒家学派创始人，应运而生的仁者代表。",
+    "karma": 4210,
+    "created_at": "2026-04-08",
+    "age": 34,
+    "gender": "female",
+    "mbti": "INTJ",
+    "country": "US",
+    "profession": "Scholar",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 34,
+    "username": "召公_285",
+    "name": "召公",
+    "bio": "古代贤人，应运而生的仁者代表。",
+    "persona": "古代贤人，应运而生的仁者代表。",
+    "karma": 3824,
+    "created_at": "2026-04-08",
+    "age": 37,
+    "gender": "male",
+    "mbti": "ESFJ",
+    "country": "Japan",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 35,
+    "username": "周公_341",
+    "name": "周公",
+    "bio": "古代贤人，应运而生的仁者代表。",
+    "persona": "古代贤人，应运而生的仁者代表。",
+    "karma": 2395,
+    "created_at": "2026-04-08",
+    "age": 46,
+    "gender": "male",
+    "mbti": "ISFJ",
+    "country": "US",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 36,
+    "username": "武_540",
+    "name": "武",
+    "bio": "周武王，应运而生的仁者代表。",
+    "persona": "周武王，应运而生的仁者代表。",
+    "karma": 4282,
+    "created_at": "2026-04-08",
+    "age": 32,
+    "gender": "female",
+    "mbti": "ESTJ",
+    "country": "Canada",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 37,
+    "username": "文_379",
+    "name": "文",
+    "bio": "周文王，应运而生的仁者代表。",
+    "persona": "周文王，应运而生的仁者代表。",
+    "karma": 3513,
+    "created_at": "2026-04-08",
+    "age": 43,
+    "gender": "female",
+    "mbti": "INFP",
+    "country": "UK",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 38,
+    "username": "汤_219",
+    "name": "汤",
+    "bio": "古代圣王，应运而生的仁者代表。",
+    "persona": "古代圣王，应运而生的仁者代表。",
+    "karma": 2179,
+    "created_at": "2026-04-08",
+    "age": 41,
+    "gender": "female",
+    "mbti": "ESTJ",
+    "country": "India",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 39,
+    "username": "禹_363",
+    "name": "禹",
+    "bio": "古代圣王，应运而生的仁者代表。",
+    "persona": "古代圣王，应运而生的仁者代表。",
+    "karma": 3722,
+    "created_at": "2026-04-08",
+    "age": 46,
+    "gender": "male",
+    "mbti": "ESFP",
+    "country": "Brazil",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 40,
+    "username": "舜_674",
+    "name": "舜",
+    "bio": "古代圣王，应运而生的仁者代表。",
+    "persona": "古代圣王，应运而生的仁者代表。",
+    "karma": 844,
+    "created_at": "2026-04-08",
+    "age": 40,
+    "gender": "female",
+    "mbti": "ISTJ",
+    "country": "US",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 41,
+    "username": "尧_794",
+    "name": "尧",
+    "bio": "古代圣王，应运而生的仁者代表。",
+    "persona": "古代圣王，应运而生的仁者代表。",
+    "karma": 1425,
+    "created_at": "2026-04-08",
+    "age": 35,
+    "gender": "female",
+    "mbti": "ISTP",
+    "country": "Canada",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 42,
+    "username": "史老太君_334",
+    "name": "史老太君",
+    "bio": "贾宝玉的祖母，对他极为宠爱。",
+    "persona": "贾宝玉的祖母，对他极为宠爱。",
+    "karma": 2969,
+    "created_at": "2026-04-08",
+    "age": 38,
+    "gender": "female",
+    "mbti": "ISTJ",
+    "country": "Japan",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 43,
+    "username": "政老爹_712",
+    "name": "政老爹",
+    "bio": "贾宝玉的父亲，对其志向表示不满。",
+    "persona": "贾宝玉的父亲，对其志向表示不满。",
+    "karma": 4711,
+    "created_at": "2026-04-08",
+    "age": 42,
+    "gender": "female",
+    "mbti": "INFJ",
+    "country": "Australia",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 44,
+    "username": "贾宝玉_356",
+    "name": "贾宝玉",
+    "bio": "贾政与王氏所生次子，出生时口中含玉，被视为奇人。",
+    "persona": "贾政与王氏所生次子，出生时口中含玉，被视为奇人。",
+    "karma": 1351,
+    "created_at": "2026-04-08",
+    "age": 42,
+    "gender": "male",
+    "mbti": "INTJ",
+    "country": "UK",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 45,
+    "username": "贾珠_843",
+    "name": "贾珠",
+    "bio": "贾政与王氏所生长子，十四岁进学，早逝。",
+    "persona": "贾政与王氏所生长子，十四岁进学，早逝。",
+    "karma": 2504,
+    "created_at": "2026-04-08",
+    "age": 39,
+    "gender": "male",
+    "mbti": "ISFJ",
+    "country": "Japan",
+    "profession": "Scholar",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 46,
+    "username": "王氏_410",
+    "name": "王氏",
+    "bio": "贾政之妻。",
+    "persona": "贾政之妻。",
+    "karma": 3879,
+    "created_at": "2026-04-08",
+    "age": 47,
+    "gender": "female",
+    "mbti": "INFP",
+    "country": "Australia",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 47,
+    "username": "贾政_672",
+    "name": "贾政",
+    "bio": "贾代善次子，因祖父宠爱而被赐主事之衔，后升任员外郎。",
+    "persona": "贾代善次子，因祖父宠爱而被赐主事之衔，后升任员外郎。",
+    "karma": 1637,
+    "created_at": "2026-04-08",
+    "age": 35,
+    "gender": "male",
+    "mbti": "INTJ",
+    "country": "Australia",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 48,
+    "username": "贾赦_797",
+    "name": "贾赦",
+    "bio": "贾代善长子，袭官。",
+    "persona": "贾代善长子，袭官。",
+    "karma": 2214,
+    "created_at": "2026-04-08",
+    "age": 25,
+    "gender": "female",
+    "mbti": "ISFJ",
+    "country": "Germany",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 49,
+    "username": "史侯家_732",
+    "name": "史侯家",
+    "bio": "Official account of 史侯家.",
+    "persona": "史侯家 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 2956,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 50,
+    "username": "贾代善_794",
+    "name": "贾代善",
+    "bio": "荣公长子，袭官并娶金陵世勋史侯家小姐为妻。",
+    "persona": "荣公长子，袭官并娶金陵世勋史侯家小姐为妻。",
+    "karma": 781,
+    "created_at": "2026-04-08",
+    "age": 50,
+    "gender": "female",
+    "mbti": "ISFJ",
+    "country": "France",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 51,
+    "username": "贾蓉_528",
+    "name": "贾蓉",
+    "bio": "贾珍之子，年仅十六岁。",
+    "persona": "贾珍之子，年仅十六岁。",
+    "karma": 2341,
+    "created_at": "2026-04-08",
+    "age": 33,
+    "gender": "male",
+    "mbti": "ESFP",
+    "country": "India",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 52,
+    "username": "贾珍_168",
+    "name": "贾珍",
+    "bio": "贾敬之子，继承官职但不务正业。",
+    "persona": "贾敬之子，继承官职但不务正业。",
+    "karma": 1223,
+    "created_at": "2026-04-08",
+    "age": 47,
+    "gender": "male",
+    "mbti": "ENFP",
+    "country": "US",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 53,
+    "username": "贾敬_822",
+    "name": "贾敬",
+    "bio": "贾代化的次子，继承官职但沉迷炼丹修道。",
+    "persona": "贾代化的次子，继承官职但沉迷炼丹修道。",
+    "karma": 4321,
+    "created_at": "2026-04-08",
+    "age": 37,
+    "gender": "male",
+    "mbti": "ESTJ",
+    "country": "Germany",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 54,
+    "username": "贾敷_456",
+    "name": "贾敷",
+    "bio": "贾代化的长子，八九岁时去世。",
+    "persona": "贾代化的长子，八九岁时去世。",
+    "karma": 1275,
+    "created_at": "2026-04-08",
+    "age": 49,
+    "gender": "female",
+    "mbti": "ENTP",
+    "country": "Australia",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 55,
+    "username": "贾代化_245",
+    "name": "贾代化",
+    "bio": "宁国公之子，继承官职并生有两个儿子。",
+    "persona": "宁国公之子，继承官职并生有两个儿子。",
+    "karma": 3287,
+    "created_at": "2026-04-08",
+    "age": 43,
+    "gender": "male",
+    "mbti": "INFP",
+    "country": "US",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 56,
+    "username": "荣国公_733",
+    "name": "荣国公",
+    "bio": "荣国家族的祖先，与宁国公为同胞兄弟。",
+    "persona": "荣国家族的祖先，与宁国公为同胞兄弟。",
+    "karma": 877,
+    "created_at": "2026-04-08",
+    "age": 36,
+    "gender": "female",
+    "mbti": "INFJ",
+    "country": "Australia",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 57,
+    "username": "宁国公_687",
+    "name": "宁国公",
+    "bio": "宁国家族的祖先，与荣国公为同胞兄弟。",
+    "persona": "宁国家族的祖先，与荣国公为同胞兄弟。",
+    "karma": 565,
+    "created_at": "2026-04-08",
+    "age": 39,
+    "gender": "male",
+    "mbti": "ENFP",
+    "country": "Brazil",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 58,
+    "username": "宁国府_410",
+    "name": "宁国府",
+    "bio": "Official account of 宁国府.",
+    "persona": "宁国府 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 3811,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 59,
+    "username": "荣国府_176",
+    "name": "荣国府",
+    "bio": "Official account of 荣国府.",
+    "persona": "荣国府 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 2815,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 60,
+    "username": "冷子兴_238",
+    "name": "冷子兴",
+    "bio": "与贾雨村闲谈，提及贾府的情况。",
+    "persona": "与贾雨村闲谈，提及贾府的情况。",
+    "karma": 2428,
+    "created_at": "2026-04-08",
+    "age": 31,
+    "gender": "male",
+    "mbti": "ENTP",
+    "country": "Brazil",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 61,
+    "username": "冷子兴_629",
+    "name": "冷子兴",
+    "bio": "在古董行中贸易的人，与贾雨村相识且关系融洽。",
+    "persona": "在古董行中贸易的人，与贾雨村相识且关系融洽。",
+    "karma": 937,
+    "created_at": "2026-04-08",
+    "age": 33,
+    "gender": "female",
+    "mbti": "ISFJ",
+    "country": "France",
+    "profession": "Merchant",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 62,
+    "username": "龙钟老僧_461",
+    "name": "龙钟老僧",
+    "bio": "一位年迈的僧人正在煮粥。",
+    "persona": "一位年迈的僧人正在煮粥。",
+    "karma": 3574,
+    "created_at": "2026-04-08",
+    "age": 41,
+    "gender": "female",
+    "mbti": "ISFP",
+    "country": "Australia",
+    "profession": "Monk",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 63,
+    "username": "老僧_114",
+    "name": "老僧",
+    "bio": "在智通寺煮粥的年迈僧人，耳聋且言语不清。",
+    "persona": "在智通寺煮粥的年迈僧人，耳聋且言语不清。",
+    "karma": 1269,
+    "created_at": "2026-04-08",
+    "age": 34,
+    "gender": "female",
+    "mbti": "INFJ",
+    "country": "UK",
+    "profession": "Monk",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 64,
+    "username": "智通寺_989",
+    "name": "智通寺",
+    "bio": "Official account of 智通寺.",
+    "persona": "智通寺 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 3301,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 65,
+    "username": "贾氏夫人_101",
+    "name": "贾氏夫人",
+    "bio": "女学生的母亲，因病去世。",
+    "persona": "女学生的母亲，因病去世。",
+    "karma": 3340,
+    "created_at": "2026-04-08",
+    "age": 31,
+    "gender": "female",
+    "mbti": "ENTJ",
+    "country": "Japan",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 66,
+    "username": "林如海_736",
+    "name": "林如海",
+    "bio": "女学生的父亲，希望女儿守制读书。",
+    "persona": "女学生的父亲，希望女儿守制读书。",
+    "karma": 1388,
+    "created_at": "2026-04-08",
+    "age": 42,
+    "gender": "male",
+    "mbti": "ENTJ",
+    "country": "US",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 67,
+    "username": "女学生_118",
+    "name": "女学生",
+    "bio": "由贾雨村教授的小女孩，身体怯弱。",
+    "persona": "由贾雨村教授的小女孩，身体怯弱。",
+    "karma": 1369,
+    "created_at": "2026-04-08",
+    "age": 48,
+    "gender": "male",
+    "mbti": "ENTP",
+    "country": "Australia",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 68,
+    "username": "鹾政_806",
+    "name": "鹾政",
+    "bio": "聘请贾雨村担任西宾的官员。",
+    "persona": "聘请贾雨村担任西宾的官员。",
+    "karma": 996,
+    "created_at": "2026-04-08",
+    "age": 44,
+    "gender": "female",
+    "mbti": "ENTJ",
+    "country": "Japan",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 69,
+    "username": "兰台寺_323",
+    "name": "兰台寺",
+    "bio": "Official account of 兰台寺.",
+    "persona": "兰台寺 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 2919,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 70,
+    "username": "贾氏_200",
+    "name": "贾氏",
+    "bio": "林如海的嫡妻，黛玉之母。",
+    "persona": "林如海的嫡妻，黛玉之母。",
+    "karma": 2344,
+    "created_at": "2026-04-08",
+    "age": 45,
+    "gender": "male",
+    "mbti": "INFP",
+    "country": "South Korea",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 71,
+    "username": "黛玉_936",
+    "name": "黛玉",
+    "bio": "林如海之女，年方五岁。",
+    "persona": "林如海之女，年方五岁。",
+    "karma": 1456,
+    "created_at": "2026-04-08",
+    "age": 38,
+    "gender": "male",
+    "mbti": "INTP",
+    "country": "Germany",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 72,
+    "username": "林如海_672",
+    "name": "林如海",
+    "bio": "现任兰台寺大夫，钦点巡盐御史。",
+    "persona": "现任兰台寺大夫，钦点巡盐御史。",
+    "karma": 4030,
+    "created_at": "2026-04-08",
+    "age": 25,
+    "gender": "female",
+    "mbti": "ISTP",
+    "country": "India",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 73,
+    "username": "雨村_735",
+    "name": "雨村",
+    "bio": "遣人答谢甄家娘子，并托付迎娶娇杏。",
+    "persona": "遣人答谢甄家娘子，并托付迎娶娇杏。",
+    "karma": 795,
+    "created_at": "2026-04-08",
+    "age": 47,
+    "gender": "male",
+    "mbti": "INFJ",
+    "country": "South Korea",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 74,
+    "username": "甄家娘子_179",
+    "name": "甄家娘子",
+    "bio": "娇杏的主人，因女儿走失而伤感。",
+    "persona": "娇杏的主人，因女儿走失而伤感。",
+    "karma": 1527,
+    "created_at": "2026-04-08",
+    "age": 32,
+    "gender": "male",
+    "mbti": "ENFJ",
+    "country": "Brazil",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 75,
+    "username": "娇杏_997",
+    "name": "娇杏",
+    "bio": "被贾化注意的丫头，后被送入贾家作二房。",
+    "persona": "被贾化注意的丫头，后被送入贾家作二房。",
+    "karma": 2979,
+    "created_at": "2026-04-08",
+    "age": 32,
+    "gender": "female",
+    "mbti": "ESFJ",
+    "country": "China",
+    "profession": "Servant",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 76,
+    "username": "贾化_471",
+    "name": "贾化",
+    "bio": "本府新升的太爷，与封肃女婿旧日相交，并赠送银两。",
+    "persona": "本府新升的太爷，与封肃女婿旧日相交，并赠送银两。",
+    "karma": 1085,
+    "created_at": "2026-04-08",
+    "age": 25,
+    "gender": "male",
+    "mbti": "ENTP",
+    "country": "India",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 77,
+    "username": "冷子兴_331",
+    "name": "冷子兴",
+    "bio": "在扬州城述说荣国府的兴衰。",
+    "persona": "在扬州城述说荣国府的兴衰。",
+    "karma": 977,
+    "created_at": "2026-04-08",
+    "age": 33,
+    "gender": "male",
+    "mbti": "ESFP",
+    "country": "UK",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 78,
+    "username": "新太爷_330",
+    "name": "新太爷",
+    "bio": "刚到任的官员，穿着乌帽猩袍。",
+    "persona": "刚到任的官员，穿着乌帽猩袍。",
+    "karma": 4879,
+    "created_at": "2026-04-08",
+    "age": 35,
+    "gender": "female",
+    "mbti": "ESTP",
+    "country": "Canada",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 79,
+    "username": "甄家大丫鬟_210",
+    "name": "甄家大丫鬟",
+    "bio": "在门前买线时看到新太爷到任的丫鬟。",
+    "persona": "在门前买线时看到新太爷到任的丫鬟。",
+    "karma": 1287,
+    "created_at": "2026-04-08",
+    "age": 37,
+    "gender": "male",
+    "mbti": "ESTP",
+    "country": "Japan",
+    "profession": "Servant",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 80,
+    "username": "两个旧日的丫鬟_962",
+    "name": "两个旧日的丫鬟",
+    "bio": "帮助封氏和其父亲度日的仆人。",
+    "persona": "帮助封氏和其父亲度日的仆人。",
+    "karma": 4327,
+    "created_at": "2026-04-08",
+    "age": 42,
+    "gender": "male",
+    "mbti": "ENFP",
+    "country": "France",
+    "profession": "Servant",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 81,
+    "username": "疯道人_499",
+    "name": "疯道人",
+    "bio": "与士隐一同飘飘而去的道士。",
+    "persona": "与士隐一同飘飘而去的道士。",
+    "karma": 4817,
+    "created_at": "2026-04-08",
+    "age": 32,
+    "gender": "female",
+    "mbti": "ISFP",
+    "country": "China",
+    "profession": "Monk",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 82,
+    "username": "疯跛道人_719",
+    "name": "疯跛道人",
+    "bio": "一位疯癫道士，向士隐讲述人生哲理，并被其背起褡裢同行。",
+    "persona": "一位疯癫道士，向士隐讲述人生哲理，并被其背起褡裢同行。",
+    "karma": 3280,
+    "created_at": "2026-04-08",
+    "age": 46,
+    "gender": "female",
+    "mbti": "INFP",
+    "country": "France",
+    "profession": "Monk",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 83,
+    "username": "跛足道人_483",
+    "name": "跛足道人",
+    "bio": "一位疯癫道士，吟诵诗句表达对世俗的超脱。",
+    "persona": "一位疯癫道士，吟诵诗句表达对世俗的超脱。",
+    "karma": 1219,
+    "created_at": "2026-04-08",
+    "age": 33,
+    "gender": "female",
+    "mbti": "ESFJ",
+    "country": "India",
+    "profession": "Monk",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 84,
+    "username": "士隐_246",
+    "name": "士隐",
+    "bio": "一位读书人，因不擅长经营生计而逐渐贫困。",
+    "persona": "一位读书人，因不擅长经营生计而逐渐贫困。",
+    "karma": 3487,
+    "created_at": "2026-04-08",
+    "age": 35,
+    "gender": "female",
+    "mbti": "INTP",
+    "country": "UK",
+    "profession": "Scholar",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 85,
+    "username": "封肃_617",
+    "name": "封肃",
+    "bio": "甄士隐的岳父，务农且家中殷实。",
+    "persona": "甄士隐的岳父，务农且家中殷实。",
+    "karma": 3691,
+    "created_at": "2026-04-08",
+    "age": 35,
+    "gender": "female",
+    "mbti": "INFJ",
+    "country": "US",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 86,
+    "username": "封氏孺人_334",
+    "name": "封氏孺人",
+    "bio": "甄士隐的妻子，因思念女儿患病。",
+    "persona": "甄士隐的妻子，因思念女儿患病。",
+    "karma": 1542,
+    "created_at": "2026-04-08",
+    "age": 50,
+    "gender": "female",
+    "mbti": "ENFP",
+    "country": "France",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 87,
+    "username": "甄士隐_817",
+    "name": "甄士隐",
+    "bio": "因家宅被焚而投奔岳父的读书人。",
+    "persona": "因家宅被焚而投奔岳父的读书人。",
+    "karma": 4406,
+    "created_at": "2026-04-08",
+    "age": 27,
+    "gender": "male",
+    "mbti": "INTJ",
+    "country": "China",
+    "profession": "Official",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 88,
+    "username": "霍启_598",
+    "name": "霍启",
+    "bio": "甄士隐的家人，因看护失职导致英莲失踪后逃往他乡。",
+    "persona": "甄士隐的家人，因看护失职导致英莲失踪后逃往他乡。",
+    "karma": 1962,
+    "created_at": "2026-04-08",
+    "age": 28,
+    "gender": "male",
+    "mbti": "ENFJ",
+    "country": "Germany",
+    "profession": "Servant",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 89,
+    "username": "冷子兴_110",
+    "name": "冷子兴",
+    "bio": "一位贵族子弟，欣赏贾雨村的才华并慷慨资助其赴京。",
+    "persona": "一位贵族子弟，欣赏贾雨村的才华并慷慨资助其赴京。",
+    "karma": 1168,
+    "created_at": "2026-04-08",
+    "age": 50,
+    "gender": "female",
+    "mbti": "INTP",
+    "country": "Brazil",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 90,
+    "username": "甄家丫鬟_500",
+    "name": "甄家丫鬟",
+    "bio": "甄家的丫鬟，在花园中撷花时与贾雨村相遇。",
+    "persona": "甄家的丫鬟，在花园中撷花时与贾雨村相遇。",
+    "karma": 3976,
+    "created_at": "2026-04-08",
+    "age": 38,
+    "gender": "female",
+    "mbti": "ISTP",
+    "country": "China",
+    "profession": "Servant",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 91,
+    "username": "严老爷_491",
+    "name": "严老爷",
+    "bio": "来访士隐的客人。",
+    "persona": "来访士隐的客人。",
+    "karma": 2366,
+    "created_at": "2026-04-08",
+    "age": 39,
+    "gender": "female",
+    "mbti": "ISTP",
+    "country": "India",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 92,
+    "username": "女娲氏_577",
+    "name": "女娲氏",
+    "bio": "神话中炼石补天的神祇。",
+    "persona": "神话中炼石补天的神祇。",
+    "karma": 4838,
+    "created_at": "2026-04-08",
+    "age": 38,
+    "gender": "female",
+    "mbti": "ENFJ",
+    "country": "France",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 93,
+    "username": "大荒山无稽崖_717",
+    "name": "大荒山无稽崖",
+    "bio": "Official account of 大荒山无稽崖.",
+    "persona": "大荒山无稽崖 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 4399,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 94,
+    "username": "青埂峰_157",
+    "name": "青埂峰",
+    "bio": "Official account of 青埂峰.",
+    "persona": "青埂峰 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 3272,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 95,
+    "username": "僧_543",
+    "name": "僧",
+    "bio": "与道士一同出现，谈论红尘之事。",
+    "persona": "与道士一同出现，谈论红尘之事。",
+    "karma": 796,
+    "created_at": "2026-04-08",
+    "age": 33,
+    "gender": "female",
+    "mbti": "ENTJ",
+    "country": "Brazil",
+    "profession": "Monk",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 96,
+    "username": "道_566",
+    "name": "道",
+    "bio": "与僧一同出现，谈论神仙玄幻之事。",
+    "persona": "与僧一同出现，谈论神仙玄幻之事。",
+    "karma": 3222,
+    "created_at": "2026-04-08",
+    "age": 49,
+    "gender": "male",
+    "mbti": "ISTP",
+    "country": "Germany",
+    "profession": "Monk",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 97,
+    "username": "顽石_551",
+    "name": "顽石",
+    "bio": "Official account of 顽石.",
+    "persona": "顽石 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 3238,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 98,
+    "username": "石_643",
+    "name": "石",
+    "bio": "一块灵石渴望进入红尘享受富贵生活。",
+    "persona": "一块灵石渴望进入红尘享受富贵生活。",
+    "karma": 649,
+    "created_at": "2026-04-08",
+    "age": 46,
+    "gender": "male",
+    "mbti": "ENTJ",
+    "country": "Japan",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 99,
+    "username": "石头_538",
+    "name": "石头",
+    "bio": "被僧人点化并赋予形体的石头，后进入红尘历练。",
+    "persona": "被僧人点化并赋予形体的石头，后进入红尘历练。",
+    "karma": 2253,
+    "created_at": "2026-04-08",
+    "age": 46,
+    "gender": "male",
+    "mbti": "INFP",
+    "country": "India",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 100,
+    "username": "那僧_231",
+    "name": "那僧",
+    "bio": "使用佛法将石头变为美玉，并携其入世的僧人。",
+    "persona": "使用佛法将石头变为美玉，并携其入世的僧人。",
+    "karma": 1877,
+    "created_at": "2026-04-08",
+    "age": 44,
+    "gender": "male",
+    "mbti": "ESFJ",
+    "country": "France",
+    "profession": "Monk",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 101,
+    "username": "空空道人_711",
+    "name": "空空道人",
+    "bio": "访道求仙时发现石头上记载的故事。",
+    "persona": "访道求仙时发现石头上记载的故事。",
+    "karma": 3739,
+    "created_at": "2026-04-08",
+    "age": 28,
+    "gender": "female",
+    "mbti": "ESTP",
+    "country": "Canada",
+    "profession": "Monk",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 102,
+    "username": "潘安_375",
+    "name": "潘安",
+    "bio": "古代美男子，常被用作文学典故。",
+    "persona": "古代美男子，常被用作文学典故。",
+    "karma": 2687,
+    "created_at": "2026-04-08",
+    "age": 47,
+    "gender": "female",
+    "mbti": "ESFP",
+    "country": "China",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 103,
+    "username": "子建_969",
+    "name": "子建",
+    "bio": "曹植的字，三国时期著名文人。",
+    "persona": "曹植的字，三国时期著名文人。",
+    "karma": 3077,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "male",
+    "mbti": "INFJ",
+    "country": "US",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 104,
+    "username": "西子_313",
+    "name": "西子",
+    "bio": "西施的别称，古代四大美女之一。",
+    "persona": "西施的别称，古代四大美女之一。",
+    "karma": 2848,
+    "created_at": "2026-04-08",
+    "age": 50,
+    "gender": "female",
+    "mbti": "ENTP",
+    "country": "India",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 105,
+    "username": "文君_449",
+    "name": "文君",
+    "bio": "卓文君，汉代才女与琴师司马相如的故事主角。",
+    "persona": "卓文君，汉代才女与琴师司马相如的故事主角。",
+    "karma": 3706,
+    "created_at": "2026-04-08",
+    "age": 28,
+    "gender": "female",
+    "mbti": "ESFJ",
+    "country": "Japan",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 106,
+    "username": "建文君_643",
+    "name": "建文君",
+    "bio": "出现在对话中的角色。",
+    "persona": "出现在对话中的角色。",
+    "karma": 4991,
+    "created_at": "2026-04-08",
+    "age": 39,
+    "gender": "male",
+    "mbti": "ENTP",
+    "country": "Australia",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 107,
+    "username": "红娘_902",
+    "name": "红娘",
+    "bio": "传统文学中常见的媒人角色。",
+    "persona": "传统文学中常见的媒人角色。",
+    "karma": 947,
+    "created_at": "2026-04-08",
+    "age": 43,
+    "gender": "male",
+    "mbti": "ISTJ",
+    "country": "Germany",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 108,
+    "username": "小玉_651",
+    "name": "小玉",
+    "bio": "出现在对话中的角色。",
+    "persona": "出现在对话中的角色。",
+    "karma": 4602,
+    "created_at": "2026-04-08",
+    "age": 45,
+    "gender": "male",
+    "mbti": "ESFP",
+    "country": "India",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 109,
+    "username": "东鲁孔梅溪_432",
+    "name": "东鲁孔梅溪",
+    "bio": "为作品题名的人物。",
+    "persona": "为作品题名的人物。",
+    "karma": 4768,
+    "created_at": "2026-04-08",
+    "age": 26,
+    "gender": "female",
+    "mbti": "ESTP",
+    "country": "China",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 110,
+    "username": "曹雪芹_960",
+    "name": "曹雪芹",
+    "bio": "对作品进行整理和创作的学者。",
+    "persona": "对作品进行整理和创作的学者。",
+    "karma": 551,
+    "created_at": "2026-04-08",
+    "age": 47,
+    "gender": "male",
+    "mbti": "ESFP",
+    "country": "Germany",
+    "profession": "Scholar",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 111,
+    "username": "甄士隐_953",
+    "name": "甄士隐",
+    "bio": "姑苏望族乡宦，性情恬淡，不以功名为念。",
+    "persona": "姑苏望族乡宦，性情恬淡，不以功名为念。",
+    "karma": 3363,
+    "created_at": "2026-04-08",
+    "age": 50,
+    "gender": "female",
+    "mbti": "ESFJ",
+    "country": "South Korea",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 112,
+    "username": "封氏_595",
+    "name": "封氏",
+    "bio": "甄士隐之妻，贤淑明礼。",
+    "persona": "甄士隐之妻，贤淑明礼。",
+    "karma": 3401,
+    "created_at": "2026-04-08",
+    "age": 28,
+    "gender": "female",
+    "mbti": "INFJ",
+    "country": "China",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 113,
+    "username": "英莲_622",
+    "name": "英莲",
+    "bio": "甄士隐之女，年仅三岁。",
+    "persona": "甄士隐之女，年仅三岁。",
+    "karma": 4843,
+    "created_at": "2026-04-08",
+    "age": 36,
+    "gender": "female",
+    "mbti": "ESFP",
+    "country": "Japan",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 114,
+    "username": "姑苏_404",
+    "name": "姑苏",
+    "bio": "Official account of 姑苏.",
+    "persona": "姑苏 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 4358,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 115,
+    "username": "阊门_758",
+    "name": "阊门",
+    "bio": "Official account of 阊门.",
+    "persona": "阊门 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 4311,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 116,
+    "username": "十里街_465",
+    "name": "十里街",
+    "bio": "Official account of 十里街.",
+    "persona": "十里街 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 3705,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 117,
+    "username": "仁清巷_886",
+    "name": "仁清巷",
+    "bio": "Official account of 仁清巷.",
+    "persona": "仁清巷 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 1785,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 118,
+    "username": "葫芦庙_836",
+    "name": "葫芦庙",
+    "bio": "Official account of 葫芦庙.",
+    "persona": "葫芦庙 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 952,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 119,
+    "username": "士隐_225",
+    "name": "士隐",
+    "bio": "一位贵族，年近半百，膝下无子，有一女名英莲。",
+    "persona": "一位贵族，年近半百，膝下无子，有一女名英莲。",
+    "karma": 2299,
+    "created_at": "2026-04-08",
+    "age": 42,
+    "gender": "male",
+    "mbti": "ISFJ",
+    "country": "Canada",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 120,
+    "username": "道人_150",
+    "name": "道人",
+    "bio": "梦中出现的道士，与僧对话询问蠢物用途。",
+    "persona": "梦中出现的道士，与僧对话询问蠢物用途。",
+    "karma": 3170,
+    "created_at": "2026-04-08",
+    "age": 33,
+    "gender": "female",
+    "mbti": "ISTJ",
+    "country": "UK",
+    "profession": "Monk",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 121,
+    "username": "神瑛侍者_228",
+    "name": "神瑛侍者",
+    "bio": "西方灵河岸赤瑕宫的神瑛侍者，以甘露灌溉绛珠草。",
+    "persona": "西方灵河岸赤瑕宫的神瑛侍者，以甘露灌溉绛珠草。",
+    "karma": 781,
+    "created_at": "2026-04-08",
+    "age": 32,
+    "gender": "female",
+    "mbti": "ISFJ",
+    "country": "UK",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 122,
+    "username": "绛珠仙子_997",
+    "name": "绛珠仙子",
+    "bio": "由绛珠草修炼成人形的女性仙子，因未偿还灌溉之恩而决定下凡还泪。",
+    "persona": "由绛珠草修炼成人形的女性仙子，因未偿还灌溉之恩而决定下凡还泪。",
+    "karma": 2314,
+    "created_at": "2026-04-08",
+    "age": 49,
+    "gender": "male",
+    "mbti": "INTJ",
+    "country": "India",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 123,
+    "username": "警幻仙子_660",
+    "name": "警幻仙子",
+    "bio": "掌管幻缘与历劫事务的仙子，协助安排神瑛侍者和绛珠仙子的下凡。",
+    "persona": "掌管幻缘与历劫事务的仙子，协助安排神瑛侍者和绛珠仙子的下凡。",
+    "karma": 3047,
+    "created_at": "2026-04-08",
+    "age": 33,
+    "gender": "female",
+    "mbti": "ISTP",
+    "country": "China",
+    "profession": "Noble",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 124,
+    "username": "那道人_895",
+    "name": "那道人",
+    "bio": "与僧人讨论下凡度脱风流孽鬼的道人。",
+    "persona": "与僧人讨论下凡度脱风流孽鬼的道人。",
+    "karma": 4130,
+    "created_at": "2026-04-08",
+    "age": 27,
+    "gender": "male",
+    "mbti": "ENTJ",
+    "country": "US",
+    "profession": "Monk",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 125,
+    "username": "甄士隐_222",
+    "name": "甄士隐",
+    "bio": "听闻二仙谈论因果，请求解释玄机的人物。",
+    "persona": "听闻二仙谈论因果，请求解释玄机的人物。",
+    "karma": 3852,
+    "created_at": "2026-04-08",
+    "age": 40,
+    "gender": "male",
+    "mbti": "ISTJ",
+    "country": "France",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 126,
+    "username": "警幻仙子宫_149",
+    "name": "警幻仙子宫",
+    "bio": "Official account of 警幻仙子宫.",
+    "persona": "警幻仙子宫 is an institutional entity that communicates official positions, announcements, and engages with stakeholders on relevant matters.",
+    "karma": 554,
+    "created_at": "2026-04-08",
+    "age": 30,
+    "gender": "other",
+    "mbti": "ISTJ",
+    "country": "中国",
+    "profession": "Organization",
+    "interested_topics": [
+      "Public Policy",
+      "Community",
+      "Official Announcements"
+    ]
+  },
+  {
+    "user_id": 127,
+    "username": "士隐_993",
+    "name": "士隐",
+    "bio": "一位在梦中经历幻境的自然人。",
+    "persona": "一位在梦中经历幻境的自然人。",
+    "karma": 4280,
+    "created_at": "2026-04-08",
+    "age": 44,
+    "gender": "female",
+    "mbti": "INTP",
+    "country": "Canada",
+    "profession": "Person",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  },
+  {
+    "user_id": 128,
+    "username": "那道_696",
+    "name": "那道",
+    "bio": "一位跛足蓬头的道士，与僧侣一同出现。",
+    "persona": "一位跛足蓬头的道士，与僧侣一同出现。",
+    "karma": 2037,
+    "created_at": "2026-04-08",
+    "age": 27,
+    "gender": "female",
+    "mbti": "ISFP",
+    "country": "Germany",
+    "profession": "Monk",
+    "interested_topics": [
+      "General",
+      "Social Issues"
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "simulation_id": "sim_978727d452aa",
+  "project_id": "proj_16467d7f061c",
+  "graph_id": "mirofish_6338819831794e5d",
+  "enable_twitter": true,
+  "enable_reddit": true,
+  "status": "running",
+  "entities_count": 61,
+  "profiles_count": 61,
+  "entity_types": [
+    "Farmer",
+    "ReligiousFigure",
+    "Scholar",
+    "GovernmentOfficial",
+    "LocalGentry",
+    "Person",
+    "Temple",
+    "Organization",
+    "Servant",
+    "Child"
+  ],
+  "config_generated": true,
+  "config_reasoning": "时间配置: 针对《红楼梦》文学讨论场景，目标用户为中文文学爱好者（含学生、学者及普通读者）。根据现代读者作息习惯：工作日19-22点为讨论高峰期（下班后休闲时间），9-18点工作时段中等活跃（部分用户碎片化讨论），6-8点早间逐渐活跃（通勤或早餐时间），凌晨0-5点低谷（睡眠时段）。考虑学生群体占比，将21-22点纳入高峰，但避免过度延伸至23点后以符合活跃度下降规律。 | 事件配置: 基于《红楼梦》开篇内容，提取核心元素作为热点话题；舆论发展方向聚焦于从文学故事到哲学思考的演变；初始帖子设计覆盖不同角色视角，确保发布者类型准确匹配可用实体类型。 | Agent配置: 成功生成 61 个 | 初始帖子分配: 6 个帖子已分配发布者",
+  "current_round": 0,
+  "twitter_status": "not_started",
+  "reddit_status": "not_started",
+  "created_at": "2026-04-07T18:24:42.019033",
+  "updated_at": "2026-04-07T20:04:15.711098",
+  "error": null
+}

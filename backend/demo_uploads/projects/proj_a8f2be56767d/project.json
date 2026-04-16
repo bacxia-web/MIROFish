@@ -1,0 +1,429 @@
+{
+  "project_id": "proj_a8f2be56767d",
+  "name": "Unnamed Project",
+  "status": "ontology_generated",
+  "created_at": "2026-03-12T15:27:48.181644",
+  "updated_at": "2026-03-12T15:29:35.288971",
+  "files": [
+    {
+      "filename": "红楼梦5页.pdf",
+      "size": 710601
+    }
+  ],
+  "total_text_length": 14504,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "Author",
+        "description": "Content creators or writers who publish stories and information",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the author"
+          },
+          {
+            "name": "pen_name",
+            "type": "text",
+            "description": "Pseudonym or alias used"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Geographic location of residence"
+          }
+        ],
+        "examples": [
+          "Cao Xueqin",
+          "Kong Kong Dao Ren"
+        ]
+      },
+      {
+        "name": "Official",
+        "description": "Government officials holding administrative power and authority",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the official"
+          },
+          {
+            "name": "title",
+            "type": "text",
+            "description": "Official government rank or position"
+          },
+          {
+            "name": "jurisdiction",
+            "type": "text",
+            "description": "Area of administrative control"
+          }
+        ],
+        "examples": [
+          "Jia Yucun",
+          "Lin Ruhai"
+        ]
+      },
+      {
+        "name": "Aristocrat",
+        "description": "Nobility or gentry members with high social status and wealth",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the noble"
+          },
+          {
+            "name": "family_role",
+            "type": "text",
+            "description": "Role within the family hierarchy"
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "description": "Current social or financial status"
+          }
+        ],
+        "examples": [
+          "Jia Baoyu",
+          "Zhen Shiyin"
+        ]
+      },
+      {
+        "name": "Clergy",
+        "description": "Religious figures such as monks or daoists influencing beliefs",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Religious name or title"
+          },
+          {
+            "name": "sect",
+            "type": "text",
+            "description": "Religious sect or affiliation"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Temple or residence location"
+          }
+        ],
+        "examples": [
+          "Mang Mang Da Shi",
+          "Miao Miao Zhen Ren"
+        ]
+      },
+      {
+        "name": "Scholar",
+        "description": "Students or learners seeking knowledge and education",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the student"
+          },
+          {
+            "name": "subject",
+            "type": "text",
+            "description": "Main subject of study"
+          },
+          {
+            "name": "mentor",
+            "type": "text",
+            "description": "Name of the teacher or tutor"
+          }
+        ],
+        "examples": [
+          "Lin Daiyu",
+          "Jia Lan"
+        ]
+      },
+      {
+        "name": "Servant",
+        "description": "Domestic staff or employees serving households and individuals",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name or nickname"
+          },
+          {
+            "name": "role",
+            "type": "text",
+            "description": "Specific job role within household"
+          },
+          {
+            "name": "employer",
+            "type": "text",
+            "description": "Name of the master or household"
+          }
+        ],
+        "examples": [
+          "Jiao Xing",
+          "Huo Qi"
+        ]
+      },
+      {
+        "name": "Clan",
+        "description": "Specific family organizations or household units acting as entities",
+        "attributes": [
+          {
+            "name": "clan_name",
+            "type": "text",
+            "description": "Name of the family clan"
+          },
+          {
+            "name": "branch",
+            "type": "text",
+            "description": "Specific branch like Rongguo or Ningguo"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Primary residence location"
+          }
+        ],
+        "examples": [
+          "Rongguo House",
+          "Zhen Family"
+        ]
+      },
+      {
+        "name": "Merchant",
+        "description": "Business owners or traders engaging in commercial activities",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the merchant"
+          },
+          {
+            "name": "business_type",
+            "type": "text",
+            "description": "Type of goods or services traded"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Business location or shop"
+          }
+        ],
+        "examples": [
+          "Cold Zixing",
+          "Shop Owner"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "Generic individual fallback for any natural person not fitting specific types",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the person"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Current residence location"
+          },
+          {
+            "name": "description",
+            "type": "text",
+            "description": "Brief description of the individual"
+          }
+        ],
+        "examples": [
+          "Passerby",
+          "Neighbor"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "Generic organization fallback for any group not fitting specific types",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Official name of the organization"
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "description": "Type of organization"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Headquarters or main location"
+          }
+        ],
+        "examples": [
+          "Hulu Temple",
+          "Government Bureau"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "WORKS_FOR",
+        "description": "Indicates employment or service relationship",
+        "source_targets": [
+          {
+            "source": "Servant",
+            "target": "Clan"
+          },
+          {
+            "source": "Servant",
+            "target": "Aristocrat"
+          },
+          {
+            "source": "Official",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "BELONGS_TO",
+        "description": "Indicates membership or affiliation with a family or group",
+        "source_targets": [
+          {
+            "source": "Aristocrat",
+            "target": "Clan"
+          },
+          {
+            "source": "Person",
+            "target": "Clan"
+          },
+          {
+            "source": "Scholar",
+            "target": "Clan"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "TEACHES",
+        "description": "Indicates educational or mentoring relationship",
+        "source_targets": [
+          {
+            "source": "Official",
+            "target": "Scholar"
+          },
+          {
+            "source": "Author",
+            "target": "Scholar"
+          },
+          {
+            "source": "Person",
+            "target": "Scholar"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "MARRIED_TO",
+        "description": "Indicates marital relationship between individuals",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Aristocrat",
+            "target": "Aristocrat"
+          },
+          {
+            "source": "Official",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "ACQUAINTED_WITH",
+        "description": "Indicates social connection or friendship",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Merchant",
+            "target": "Official"
+          },
+          {
+            "source": "Aristocrat",
+            "target": "Aristocrat"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "PREACHES_TO",
+        "description": "Indicates religious influence or guidance",
+        "source_targets": [
+          {
+            "source": "Clergy",
+            "target": "Person"
+          },
+          {
+            "source": "Clergy",
+            "target": "Aristocrat"
+          },
+          {
+            "source": "Clergy",
+            "target": "Official"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "TRADES_WITH",
+        "description": "Indicates commercial transaction or business interaction",
+        "source_targets": [
+          {
+            "source": "Merchant",
+            "target": "Person"
+          },
+          {
+            "source": "Merchant",
+            "target": "Clan"
+          },
+          {
+            "source": "Merchant",
+            "target": "Aristocrat"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "RESPONDS_TO",
+        "description": "Indicates reaction or reply in social interaction",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Official",
+            "target": "Person"
+          },
+          {
+            "source": "Author",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "本文本选自《红楼梦》前几回，主要介绍了贾雨村、甄士隐、林黛玉及贾府等关键人物与家族背景。为构建社交媒体舆论模拟系统，本体设计将文本中的角色映射为可发声的实体账号。具体类型包括作者、官员、贵族、神职人员、学生、仆役、家族、商人，涵盖文本主要社会阶层；兜底类型 Person 和 Organization 确保未分类个体和组织的兼容性。关系类型设计兼顾社会结构（如隶属、婚姻）与模拟互动（如回应、交易），以支持舆论传播路径的仿真分析。",
+  "graph_id": null,
+  "graph_build_task_id": null,
+  "simulation_requirement": "试试",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

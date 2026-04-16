@@ -1,0 +1,246 @@
+{
+  "simulation_id": "sim_45ac1c25f773",
+  "project_id": "proj_eaa1e3c4db04",
+  "graph_id": "mirofish_53413c45a48c43f8",
+  "runner_status": "completed",
+  "current_round": 48,
+  "total_rounds": 48,
+  "simulated_hours": 0,
+  "total_simulation_hours": 48,
+  "progress_percent": 100.0,
+  "twitter_current_round": 48,
+  "reddit_current_round": 48,
+  "twitter_simulated_hours": 0,
+  "reddit_simulated_hours": 0,
+  "twitter_running": false,
+  "reddit_running": false,
+  "twitter_completed": true,
+  "reddit_completed": true,
+  "twitter_actions_count": 8,
+  "reddit_actions_count": 8,
+  "total_actions_count": 16,
+  "started_at": "2026-04-10T16:12:37.308926",
+  "updated_at": "2026-04-10T16:12:59.416053",
+  "completed_at": "2026-04-13T10:51:15.968205",
+  "error": "服务器关闭，模拟被终止",
+  "process_pid": 17318,
+  "recent_actions": [
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T16:12:58.246819",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "英伟达",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "Kimi这波操作很有意思，直接对标智谱和MiniMax的现金储备，暗示'不着急IPO'。但这真的能解决大模型创业公司的死结吗？算力成本是个无底洞，如果没有持续的外部输血，光靠现在的API收入增长4倍，够不够烧到下一个技术奇点？还是说，他们打算用这100亿现金硬扛几年，赌一个生态位的突围？",
+        "post_id": 4
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T16:12:58.246705",
+      "platform": "reddit",
+      "agent_id": 9,
+      "agent_name": "程曼祺",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "杨总说'找到自己的叙事'，这很清醒。当智谱和MiniMax都在为IPO前的财报焦虑时，月之暗面手握百亿现金，反而可以慢下来打磨Agent和复杂任务链路。但问题是，如果不再疯狂拉新，仅靠现有的B端和付费存量，能否支撑起后续K3模型的训练成本？这个'高质量增长'的故事，需要更多数据来验证。",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T16:12:58.246536",
+      "platform": "reddit",
+      "agent_id": 12,
+      "agent_name": "王慧文",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为投资者，我们看重的不是PPT上的用户数，而是真实的商业造血能力。月之暗面这次融资后，最关键的考验是如何在保持K3模型技术领先的同时，让B端API和会员订阅覆盖掉高昂的算力成本。张予彤提到的'专注大模型层、不做娱乐'是明智的生态位选择，但能否跑通高毛利模式才是生死线。",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T16:12:58.246334",
+      "platform": "reddit",
+      "agent_id": 8,
+      "agent_name": "晚点 LatePost",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "独家｜Kimi完成5亿美元C轮融资，投后估值43亿美元。杨植麟内部信透露账上现金超100亿元，不输IPO后的智谱与MiniMax。重点不再是烧钱换用户，而是K2 Thinking带动海外API收入翻4倍，以及OK Computer功能带来的付费转化。一级市场热情超预期，IDG领投，阿里腾讯超额认购。",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T16:12:52.586780",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "英伟达",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "Kimi这波操作很有意思，直接对标智谱和MiniMax的现金储备，暗示'不着急IPO'。但这真的能解决大模型创业公司的死结吗？算力成本是个无底洞，如果没有持续的外部输血，光靠现在的API收入增长4倍，够不够烧到下一个技术奇点？还是说，他们打算用这100亿现金硬扛几年，赌一个生态位的突围？",
+        "post_id": 4
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T16:12:52.586659",
+      "platform": "twitter",
+      "agent_id": 9,
+      "agent_name": "程曼祺",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "杨总说'找到自己的叙事'，这很清醒。当智谱和MiniMax都在为IPO前的财报焦虑时，月之暗面手握百亿现金，反而可以慢下来打磨Agent和复杂任务链路。但问题是，如果不再疯狂拉新，仅靠现有的B端和付费存量，能否支撑起后续K3模型的训练成本？这个'高质量增长'的故事，需要更多数据来验证。",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T16:12:52.586497",
+      "platform": "twitter",
+      "agent_id": 12,
+      "agent_name": "王慧文",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为投资者，我们看重的不是PPT上的用户数，而是真实的商业造血能力。月之暗面这次融资后，最关键的考验是如何在保持K3模型技术领先的同时，让B端API和会员订阅覆盖掉高昂的算力成本。张予彤提到的'专注大模型层、不做娱乐'是明智的生态位选择，但能否跑通高毛利模式才是生死线。",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T16:12:52.586266",
+      "platform": "twitter",
+      "agent_id": 8,
+      "agent_name": "晚点 LatePost",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "独家｜Kimi完成5亿美元C轮融资，投后估值43亿美元。杨植麟内部信透露账上现金超100亿元，不输IPO后的智谱与MiniMax。重点不再是烧钱换用户，而是K2 Thinking带动海外API收入翻4倍，以及OK Computer功能带来的付费转化。一级市场热情超预期，IDG领投，阿里腾讯超额认购。",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:46.009922",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "英伟达",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "Kimi这波操作很有意思，直接对标智谱和MiniMax的现金储备，暗示'不着急IPO'。但这真的能解决大模型创业公司的死结吗？算力成本是个无底洞，如果没有持续的外部输血，光靠现在的API收入增长4倍，够不够烧到下一个技术奇点？还是说，他们打算用这100亿现金硬扛几年，赌一个生态位的突围？"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:46.009771",
+      "platform": "reddit",
+      "agent_id": 9,
+      "agent_name": "程曼祺",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "杨总说'找到自己的叙事'，这很清醒。当智谱和MiniMax都在为IPO前的财报焦虑时，月之暗面手握百亿现金，反而可以慢下来打磨Agent和复杂任务链路。但问题是，如果不再疯狂拉新，仅靠现有的B端和付费存量，能否支撑起后续K3模型的训练成本？这个'高质量增长'的故事，需要更多数据来验证。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:46.009616",
+      "platform": "reddit",
+      "agent_id": 12,
+      "agent_name": "王慧文",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为投资者，我们看重的不是PPT上的用户数，而是真实的商业造血能力。月之暗面这次融资后，最关键的考验是如何在保持K3模型技术领先的同时，让B端API和会员订阅覆盖掉高昂的算力成本。张予彤提到的'专注大模型层、不做娱乐'是明智的生态位选择，但能否跑通高毛利模式才是生死线。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:46.009446",
+      "platform": "reddit",
+      "agent_id": 8,
+      "agent_name": "晚点 LatePost",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "独家｜Kimi完成5亿美元C轮融资，投后估值43亿美元。杨植麟内部信透露账上现金超100亿元，不输IPO后的智谱与MiniMax。重点不再是烧钱换用户，而是K2 Thinking带动海外API收入翻4倍，以及OK Computer功能带来的付费转化。一级市场热情超预期，IDG领投，阿里腾讯超额认购。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:45.929587",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "英伟达",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "Kimi这波操作很有意思，直接对标智谱和MiniMax的现金储备，暗示'不着急IPO'。但这真的能解决大模型创业公司的死结吗？算力成本是个无底洞，如果没有持续的外部输血，光靠现在的API收入增长4倍，够不够烧到下一个技术奇点？还是说，他们打算用这100亿现金硬扛几年，赌一个生态位的突围？"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:45.929429",
+      "platform": "twitter",
+      "agent_id": 9,
+      "agent_name": "程曼祺",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "杨总说'找到自己的叙事'，这很清醒。当智谱和MiniMax都在为IPO前的财报焦虑时，月之暗面手握百亿现金，反而可以慢下来打磨Agent和复杂任务链路。但问题是，如果不再疯狂拉新，仅靠现有的B端和付费存量，能否支撑起后续K3模型的训练成本？这个'高质量增长'的故事，需要更多数据来验证。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:45.929014",
+      "platform": "twitter",
+      "agent_id": 12,
+      "agent_name": "王慧文",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为投资者，我们看重的不是PPT上的用户数，而是真实的商业造血能力。月之暗面这次融资后，最关键的考验是如何在保持K3模型技术领先的同时，让B端API和会员订阅覆盖掉高昂的算力成本。张予彤提到的'专注大模型层、不做娱乐'是明智的生态位选择，但能否跑通高毛利模式才是生死线。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T16:12:45.928813",
+      "platform": "twitter",
+      "agent_id": 8,
+      "agent_name": "晚点 LatePost",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "独家｜Kimi完成5亿美元C轮融资，投后估值43亿美元。杨植麟内部信透露账上现金超100亿元，不输IPO后的智谱与MiniMax。重点不再是烧钱换用户，而是K2 Thinking带动海外API收入翻4倍，以及OK Computer功能带来的付费转化。一级市场热情超预期，IDG领投，阿里腾讯超额认购。"
+      },
+      "result": null,
+      "success": true
+    }
+  ],
+  "rounds_count": 0
+}

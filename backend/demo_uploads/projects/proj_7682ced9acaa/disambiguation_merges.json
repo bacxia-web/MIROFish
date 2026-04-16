@@ -1,0 +1,24 @@
+{
+  "graph_id_raw": "mirofish_ec8dd457ac1a49e3",
+  "graph_id_disamb": "mirofish_22e61e055a664ece",
+  "generated_at": "2026-04-10T16:00:39.416129",
+  "summary": {
+    "merged_groups": 1,
+    "removed_nodes": 1,
+    "pair_decisions": 23
+  },
+  "merges": [
+    {
+      "canonical_name": "字节跳动",
+      "kept_uuid": "165e01fc-5d83-4e32-81ac-6372219f2928",
+      "keep_name_before": "字节跳动",
+      "removed_uuids": [
+        "9c81684c-94ff-4040-b443-b95bece98a65"
+      ],
+      "removed_names": [
+        "字节"
+      ],
+      "primary_label": "TechCompany"
+    }
+  ]
+}

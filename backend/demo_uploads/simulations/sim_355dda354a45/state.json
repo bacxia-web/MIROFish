@@ -1,0 +1,28 @@
+{
+  "simulation_id": "sim_355dda354a45",
+  "project_id": "proj_7682ced9acaa",
+  "graph_id": "mirofish_ec8dd457ac1a49e3",
+  "enable_twitter": true,
+  "enable_reddit": true,
+  "status": "ready",
+  "entities_count": 48,
+  "profiles_count": 48,
+  "entity_types": [
+    "MediaOutlet",
+    "LogisticsFacility",
+    "TechCompany",
+    "Aiassistant",
+    "ConsumerGroup",
+    "Organization",
+    "Merchant",
+    "Executive"
+  ],
+  "config_generated": true,
+  "config_reasoning": "时间配置: 模拟场景聚焦于外卖与即时零售行业的补贴调整及舆论反应。1. 用户侧（消费者）：受补贴力度下降影响，午餐（12-13点）和晚餐（19-21点）是下单决策高峰，也是吐槽‘涨价/减量’最集中的时段，故设为双高峰。2. 商家与骑手侧：工作时段（10-18点）是处理订单、配送及在公开渠道（如社交媒体、行业群）抱怨规则变动、流量分配的核心时间；特别是午高峰后的复盘和晚高峰前的运力调度讨论。3. 媒体侧（晚点LatePost等）：通常在上午发布深度报道或下午跟进舆情，工作时段活跃度较高。4. 凌晨时段（0-5点）除夜间配送骑手外，公众讨论极少，设为低谷。总时长设为168小时（一周），以完整覆盖从政策传闻、实施到各方反馈重组的周期。 | 事件配置: 基于模拟需求，Q3补贴下降20%直接触达用户利益，故用户话题集中在‘涨价/减量’；骑手激励不变意味着运力成本未转嫁至骑手，但平台整体投入缩减可能导致流量分配更趋功利化（向高客单倾斜），从而引发商家对‘流量分配’和‘规则’的不满，以及骑手对‘恶性竞争’加剧的担忧。帖子设计分别对应消费者、商家、运力组织方及媒体视角，覆盖全链路舆论反应。 | Agent配置: 成功生成 48 个 | 初始帖子分配: 4 个帖子已分配发布者",
+  "current_round": 0,
+  "twitter_status": "not_started",
+  "reddit_status": "not_started",
+  "created_at": "2026-04-10T16:01:05.497329",
+  "updated_at": "2026-04-10T16:12:25.101150",
+  "error": null
+}

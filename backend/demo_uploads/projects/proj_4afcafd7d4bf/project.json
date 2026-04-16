@@ -1,0 +1,415 @@
+{
+  "project_id": "proj_4afcafd7d4bf",
+  "name": "Unnamed Project",
+  "status": "ontology_generated",
+  "created_at": "2026-03-12T15:18:50.684173",
+  "updated_at": "2026-03-12T15:20:48.432488",
+  "files": [
+    {
+      "filename": "红楼梦5页.pdf",
+      "size": 710601
+    }
+  ],
+  "total_text_length": 14504,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "GovernmentOfficial",
+        "description": "Government officials holding administrative or judicial power",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the official"
+          },
+          {
+            "name": "position",
+            "type": "text",
+            "description": "Current job title or rank"
+          },
+          {
+            "name": "jurisdiction",
+            "type": "text",
+            "description": "Area of administrative control"
+          }
+        ],
+        "examples": [
+          "Jia Yucun",
+          "Lin Ruhai"
+        ]
+      },
+      {
+        "name": "Educator",
+        "description": "Teachers, tutors, or scholars providing education",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the educator"
+          },
+          {
+            "name": "subject",
+            "type": "text",
+            "description": "Subject or field of teaching"
+          },
+          {
+            "name": "institution",
+            "type": "text",
+            "description": "Associated school or family"
+          }
+        ],
+        "examples": [
+          "Jia Yucun (Tutor)",
+          "Private Tutors"
+        ]
+      },
+      {
+        "name": "Student",
+        "description": "Individuals currently receiving education or training",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the student"
+          },
+          {
+            "name": "grade_level",
+            "type": "text",
+            "description": "Current education level or age group"
+          },
+          {
+            "name": "school",
+            "type": "text",
+            "description": "Name of the attending institution"
+          }
+        ],
+        "examples": [
+          "Lin Daiyu",
+          "Jia Baoyu"
+        ]
+      },
+      {
+        "name": "BusinessOwner",
+        "description": "Individuals owning or managing commercial enterprises",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the owner"
+          },
+          {
+            "name": "company_type",
+            "type": "text",
+            "description": "Type of business operated"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Business location or base"
+          }
+        ],
+        "examples": [
+          "Leng Zixing",
+          "Feng Su"
+        ]
+      },
+      {
+        "name": "ReligiousLeader",
+        "description": "Monks, daoists, or spiritual guides",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Religious name or title"
+          },
+          {
+            "name": "sect",
+            "type": "text",
+            "description": "Religious affiliation or sect"
+          },
+          {
+            "name": "temple_name",
+            "type": "text",
+            "description": "Associated temple or monastery"
+          }
+        ],
+        "examples": [
+          "Mang Mang Da Shi",
+          "Lame Daoist"
+        ]
+      },
+      {
+        "name": "PublicFigure",
+        "description": "Local elites, celebrities, or influential persons",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the figure"
+          },
+          {
+            "name": "influence_scope",
+            "type": "text",
+            "description": "Geographic or social reach"
+          },
+          {
+            "name": "title",
+            "type": "text",
+            "description": "Honorary or social title"
+          }
+        ],
+        "examples": [
+          "Zhen Shiyin",
+          "Local Gentry"
+        ]
+      },
+      {
+        "name": "Journalist",
+        "description": "Reporters, gossipers, or information spreaders",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the journalist"
+          },
+          {
+            "name": "media_outlet",
+            "type": "text",
+            "description": "Associated media platform"
+          },
+          {
+            "name": "beat",
+            "type": "text",
+            "description": "Topic or area of coverage"
+          }
+        ],
+        "examples": [
+          "Leng Zixing (Gossip)",
+          "Story Narrators"
+        ]
+      },
+      {
+        "name": "MedicalProfessional",
+        "description": "Doctors or healers providing medical services",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the professional"
+          },
+          {
+            "name": "specialty",
+            "type": "text",
+            "description": "Medical specialization"
+          },
+          {
+            "name": "hospital",
+            "type": "text",
+            "description": "Associated clinic or hospital"
+          }
+        ],
+        "examples": [
+          "Family Doctors",
+          "Traditional Healers"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "Generic individual not fitting specific roles",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the person"
+          },
+          {
+            "name": "occupation",
+            "type": "text",
+            "description": "Current job or role"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Current residence"
+          }
+        ],
+        "examples": [
+          "Servants",
+          "Passersby"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "Generic organization, family, or institution",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Name of the organization"
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "description": "Type of organization"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Headquarters or base location"
+          }
+        ],
+        "examples": [
+          "Jia Family",
+          "Temples"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "WORKS_FOR",
+        "description": "Individual employs or works for an organization",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          },
+          {
+            "source": "GovernmentOfficial",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "TEACHES",
+        "description": "Educator provides instruction to a student",
+        "source_targets": [
+          {
+            "source": "Educator",
+            "target": "Student"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPORTS_ON",
+        "description": "Journalist reports information about a subject",
+        "source_targets": [
+          {
+            "source": "Journalist",
+            "target": "Person"
+          },
+          {
+            "source": "Journalist",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "TREATS",
+        "description": "Medical professional provides care to a patient",
+        "source_targets": [
+          {
+            "source": "MedicalProfessional",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "DONATES_TO",
+        "description": "Individual provides financial support to an org",
+        "source_targets": [
+          {
+            "source": "PublicFigure",
+            "target": "Organization"
+          },
+          {
+            "source": "BusinessOwner",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "TRADES_WITH",
+        "description": "Business owners engage in commercial exchange",
+        "source_targets": [
+          {
+            "source": "BusinessOwner",
+            "target": "BusinessOwner"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "FOLLOWS",
+        "description": "Social media follow relationship between users",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Person",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COMMENTED_ON",
+        "description": "User comments on another user or organization",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Journalist",
+            "target": "PublicFigure"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "AFFILIATED_WITH",
+        "description": "Individual belongs to or is associated with an org",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          },
+          {
+            "source": "ReligiousLeader",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "RESPONDS_TO",
+        "description": "User replies or reacts to another user content",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "GovernmentOfficial",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "基于《红楼梦》前几回内容，提取了主要社会角色映射为社交媒体模拟实体。将贾雨村、林如海映射为政府官员，私塾先生映射为教育者，黛玉宝玉映射为学生，冷子兴映射为商人及信息传播者（记者），僧道映射为宗教领袖，甄士隐映射为公众人物。同时保留 Person 和 Organization 作为兜底类型，以覆盖文本中的仆从、家族组织等通用实体。关系设计涵盖了工作、教学、报道、医疗、捐赠、交易及社交互动（关注、评论、回应），以模拟舆论传播路径。",
+  "graph_id": null,
+  "graph_build_task_id": null,
+  "simulation_requirement": "试试",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

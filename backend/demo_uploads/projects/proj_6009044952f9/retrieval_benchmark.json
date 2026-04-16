@@ -1,0 +1,155 @@
+{
+  "project_id": "proj_6009044952f9",
+  "graph_id_raw": "mirofish_66bd2c874ba44d30",
+  "graph_id_disamb": "mirofish_6c1932b3a915493f",
+  "query_count": 17,
+  "queries": [
+    "晚点",
+    "MiniMax",
+    "智谱",
+    "杨植麟",
+    "王慧文",
+    "腾讯",
+    "阿里",
+    "IDG",
+    "Kimi",
+    "月之暗面",
+    "《晚点 LatePost》",
+    "大疆",
+    "汪滔",
+    "贺乾明",
+    "张予彤",
+    "K3 模型",
+    "K2 Thinking"
+  ],
+  "details": [
+    {
+      "query": "晚点",
+      "raw_hits": 5,
+      "disamb_hits": 5,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "MiniMax",
+      "raw_hits": 3,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "智谱",
+      "raw_hits": 4,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "杨植麟",
+      "raw_hits": 6,
+      "disamb_hits": 3,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "王慧文",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "腾讯",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "阿里",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "IDG",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "Kimi",
+      "raw_hits": 2,
+      "disamb_hits": 3,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "月之暗面",
+      "raw_hits": 20,
+      "disamb_hits": 19,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "《晚点 LatePost》",
+      "raw_hits": 5,
+      "disamb_hits": 5,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "大疆",
+      "raw_hits": 5,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    },
+    {
+      "query": "汪滔",
+      "raw_hits": 2,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    },
+    {
+      "query": "贺乾明",
+      "raw_hits": 3,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "张予彤",
+      "raw_hits": 3,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    },
+    {
+      "query": "K3 模型",
+      "raw_hits": 4,
+      "disamb_hits": 1,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "K2 Thinking",
+      "raw_hits": 2,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    }
+  ],
+  "summary": {
+    "raw_nonempty_rate": 1.0,
+    "disamb_nonempty_rate": 0.7647,
+    "raw_avg_hits": 4.2353,
+    "disamb_avg_hits": 2.9412,
+    "raw_avg_hits_on_nonempty": 4.2353,
+    "disamb_avg_hits_on_nonempty": 3.8462
+  },
+  "generated_at": "2026-04-10T07:44:50.896939+00:00"
+}

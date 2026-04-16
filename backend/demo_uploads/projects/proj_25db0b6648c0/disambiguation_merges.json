@@ -1,0 +1,108 @@
+{
+  "graph_id_raw": "mirofish_6c504b8a44ec4fdc",
+  "graph_id_disamb": "mirofish_95cd20a42c5d4f79",
+  "generated_at": "2026-04-09T16:51:24.956281",
+  "summary": {
+    "merged_groups": 8,
+    "removed_nodes": 8,
+    "pair_decisions": 31
+  },
+  "merges": [
+    {
+      "canonical_name": "防火玻璃",
+      "kept_uuid": "9aa6dd9f-6c48-4759-a48e-55b3cf7184e1",
+      "keep_name_before": "劣质防火玻璃",
+      "removed_uuids": [
+        "a16b9367-b1e2-4532-9239-bedf72cfaccd"
+      ],
+      "removed_names": [
+        "防火玻璃"
+      ],
+      "primary_label": "Organization"
+    },
+    {
+      "canonical_name": "AI诈骗事件",
+      "kept_uuid": "2cac5744-bf5b-4011-97fb-a35cd9806a8c",
+      "keep_name_before": "AI诈骗事件",
+      "removed_uuids": [
+        "554ae80a-4c67-4173-a2e3-3e12c524d9ae"
+      ],
+      "removed_names": [
+        "AI诈骗"
+      ],
+      "primary_label": "Organization"
+    },
+    {
+      "canonical_name": "wisers.com.cn",
+      "kept_uuid": "840573ca-21bc-4b8c-9b2d-03f1b57c51c5",
+      "keep_name_before": "www.wisers.com.cn",
+      "removed_uuids": [
+        "4fc0a4c5-0d50-4e60-9ba3-98148457fd02"
+      ],
+      "removed_names": [
+        "wisers.com.cn"
+      ],
+      "primary_label": "MediaOutlet"
+    },
+    {
+      "canonical_name": "天津保建节能玻璃有限公司",
+      "kept_uuid": "91f07392-813c-4e8c-bb46-6da0782f3792",
+      "keep_name_before": "慧科讯业（北京）网络科技有限公司",
+      "removed_uuids": [
+        "4b726715-ce17-4455-9e77-0f508001ccaf"
+      ],
+      "removed_names": [
+        "慧科讯业有限公司"
+      ],
+      "primary_label": "Company"
+    },
+    {
+      "canonical_name": "湖南省汝城县市场监督管理局",
+      "kept_uuid": "4acf98a2-fca6-42be-8736-4dcbf8b2d9fe",
+      "keep_name_before": "湖南省汝城县市场监督管理局",
+      "removed_uuids": [
+        "0d91d392-fabc-401c-aba3-3c4ad6d29c7f"
+      ],
+      "removed_names": [
+        "湖南汝城县市场监督管理局"
+      ],
+      "primary_label": "GovernmentAgency"
+    },
+    {
+      "canonical_name": "云抖科技",
+      "kept_uuid": "26b55631-ba84-4002-b765-e6f481f0a7e4",
+      "keep_name_before": "湖南云抖科技有限公司",
+      "removed_uuids": [
+        "2c94a175-5b25-4027-912b-f9ad1e50f575"
+      ],
+      "removed_names": [
+        "云抖科技"
+      ],
+      "primary_label": "Company"
+    },
+    {
+      "canonical_name": "Wehour",
+      "kept_uuid": "e0399398-1423-450b-a95f-8c091e4b444f",
+      "keep_name_before": "Wehour团队",
+      "removed_uuids": [
+        "48cbfced-c0c1-4ac1-8a4f-eae9e5870edb"
+      ],
+      "removed_names": [
+        "Wehour"
+      ],
+      "primary_label": "Organization"
+    },
+    {
+      "canonical_name": "慧科讯业有限公司",
+      "kept_uuid": "cf3edaa3-e4b5-4e5a-bd49-1ac02a05ddf2",
+      "keep_name_before": "天津保建节能玻璃有限公司",
+      "removed_uuids": [
+        "861c5cbe-4b75-4452-b716-64c132082c36"
+      ],
+      "removed_names": [
+        "天津保建节能玻璃公司"
+      ],
+      "primary_label": "Company"
+    }
+  ]
+}

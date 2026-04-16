@@ -1,0 +1,381 @@
+{
+  "project_id": "proj_6009044952f9",
+  "name": "Unnamed Project",
+  "status": "graph_completed",
+  "created_at": "2026-04-10T09:50:46.374617",
+  "updated_at": "2026-04-10T15:45:02.089723",
+  "files": [
+    {
+      "filename": "晚点_Kimi_5亿美元融资_id3348.pdf",
+      "size": 2394217
+    }
+  ],
+  "total_text_length": 1957,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "Company",
+        "description": "科技公司，可独立运营并发布产品与观点。",
+        "attributes": [
+          {
+            "name": "company_name",
+            "type": "text",
+            "description": "公司全称"
+          },
+          {
+            "name": "funding_stage",
+            "type": "text",
+            "description": "融资轮次，如C轮"
+          },
+          {
+            "name": "cash_reserve",
+            "type": "text",
+            "description": "现金储备规模"
+          }
+        ],
+        "examples": [
+          "月之暗面",
+          "智谱AI",
+          "MiniMax"
+        ]
+      },
+      {
+        "name": "Founder",
+        "description": "公司的创始人，通常具有影响力和发言权。",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "创始人姓名"
+          },
+          {
+            "name": "role_in_company",
+            "type": "text",
+            "description": "在公司担任的角色"
+          },
+          {
+            "name": "investment_background",
+            "type": "text",
+            "description": "投资背景或过往经历"
+          }
+        ],
+        "examples": [
+          "杨植麟",
+          "王慧文"
+        ]
+      },
+      {
+        "name": "Investor",
+        "description": "参与投资的机构或个人投资者。",
+        "attributes": [
+          {
+            "name": "investor_name",
+            "type": "text",
+            "description": "投资者名称"
+          },
+          {
+            "name": "investment_amount",
+            "type": "text",
+            "description": "投资金额"
+          },
+          {
+            "name": "investment_type",
+            "type": "text",
+            "description": "投资类型，如领投、跟投"
+          }
+        ],
+        "examples": [
+          "IDG资本",
+          "阿里集团",
+          "腾讯"
+        ]
+      },
+      {
+        "name": "MediaOutlet",
+        "description": "新闻媒体机构，负责报道和评论事件。",
+        "attributes": [
+          {
+            "name": "media_name",
+            "type": "text",
+            "description": "媒体名称"
+          },
+          {
+            "name": "coverage_topic",
+            "type": "text",
+            "description": "主要报道领域"
+          },
+          {
+            "name": "editorial_position",
+            "type": "text",
+            "description": "媒体立场或倾向"
+          }
+        ],
+        "examples": [
+          "晚点LatePost",
+          "36氪",
+          "虎嗅"
+        ]
+      },
+      {
+        "name": "Analyst",
+        "description": "行业分析师或研究机构成员，提供专业解读。",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "分析师姓名"
+          },
+          {
+            "name": "firm_affiliation",
+            "type": "text",
+            "description": "所属机构"
+          },
+          {
+            "name": "specialization",
+            "type": "text",
+            "description": "专业领域"
+          }
+        ],
+        "examples": [
+          "某知名科技分析师",
+          "AI行业研究员"
+        ]
+      },
+      {
+        "name": "TechExpert",
+        "description": "技术专家或学者，对AI领域有深度见解。",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "专家姓名"
+          },
+          {
+            "name": "institution",
+            "type": "text",
+            "description": "所属高校或研究机构"
+          },
+          {
+            "name": "research_focus",
+            "type": "text",
+            "description": "研究方向"
+          }
+        ],
+        "examples": [
+          "某高校AI教授",
+          "大模型算法专家"
+        ]
+      },
+      {
+        "name": "ContentCreator",
+        "description": "自媒体创作者，通过社交平台表达观点。",
+        "attributes": [
+          {
+            "name": "username",
+            "type": "text",
+            "description": "自媒体账号名"
+          },
+          {
+            "name": "platform",
+            "type": "text",
+            "description": "所在平台"
+          },
+          {
+            "name": "audience_segment",
+            "type": "text",
+            "description": "受众定位"
+          }
+        ],
+        "examples": [
+          "科技博主",
+          "AI观察家"
+        ]
+      },
+      {
+        "name": "GovernmentAgency",
+        "description": "政府监管部门，对科技行业进行政策引导或审查。",
+        "attributes": [
+          {
+            "name": "agency_name",
+            "type": "text",
+            "description": "机构名称"
+          },
+          {
+            "name": "regulatory_domain",
+            "type": "text",
+            "description": "监管领域"
+          },
+          {
+            "name": "policy_statement",
+            "type": "text",
+            "description": "相关政策声明"
+          }
+        ],
+        "examples": [
+          "国家网信办",
+          "工信部"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "任何自然人个体，不属于更具体类型的个人。",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "姓名"
+          },
+          {
+            "name": "occupation",
+            "type": "text",
+            "description": "职业"
+          },
+          {
+            "name": "social_media_handle",
+            "type": "text",
+            "description": "社交媒体账号"
+          }
+        ],
+        "examples": [
+          "普通网友",
+          "路人甲"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "任何组织机构，不属于更具体类型的组织。",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "组织名称"
+          },
+          {
+            "name": "type_of_org",
+            "type": "text",
+            "description": "组织类型"
+          },
+          {
+            "name": "mission_statement",
+            "type": "text",
+            "description": "使命或宗旨"
+          }
+        ],
+        "examples": [
+          "某小型创业团队",
+          "临时讨论小组"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "FINANCES_WITH",
+        "description": "公司与投资者之间的融资关系。",
+        "source_targets": [
+          {
+            "source": "Company",
+            "target": "Investor"
+          },
+          {
+            "source": "Investor",
+            "target": "Company"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "PUBLISHES_ARTICLE",
+        "description": "媒体发布文章或报道。",
+        "source_targets": [
+          {
+            "source": "MediaOutlet",
+            "target": "Article"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COMMENT_ON",
+        "description": "个人或组织对某个事件或观点进行评论。",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Topic"
+          },
+          {
+            "source": "ContentCreator",
+            "target": "Topic"
+          },
+          {
+            "source": "TechExpert",
+            "target": "Topic"
+          },
+          {
+            "source": "Analyst",
+            "target": "Topic"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPORTS_ON",
+        "description": "媒体或分析师报道特定主题。",
+        "source_targets": [
+          {
+            "source": "MediaOutlet",
+            "target": "Topic"
+          },
+          {
+            "source": "Analyst",
+            "target": "Topic"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "WORKS_FOR",
+        "description": "个人隶属于某个组织。",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "RESPONSE_TO",
+        "description": "某主体对另一主体的观点或行为做出回应。",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Company",
+            "target": "Person"
+          },
+          {
+            "source": "MediaOutlet",
+            "target": "Company"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "该文本围绕Kimi公司完成C轮融资及其战略调整展开，涉及多方主体如公司创始人、投资人、媒体、分析师、技术专家及自媒体等。设计的实体类型覆盖了企业、个人、组织、媒体等关键角色，关系类型则反映了舆论场中信息传播、观点互动和利益关联的核心链条。",
+  "graph_id": "mirofish_6c1932b3a915493f",
+  "graph_id_raw": "mirofish_66bd2c874ba44d30",
+  "graph_id_disamb": "mirofish_6c1932b3a915493f",
+  "graph_build_task_id": "2b8b0e13-c828-457f-8fe3-c06be98e3b3d",
+  "quality_metrics": {
+    "updated_at": "2026-04-10T07:45:02.088978+00:00",
+    "node_count_disamb": 11,
+    "node_count_raw": 18
+  },
+  "simulation_requirement": "若不新一轮融资的前提下，公司把重心从「拉新增长」切到付费留存与 B 端/API，中文互联网讨论会从「估值故事」转向哪些新框架（产品力、合规、算力成本、与巨头的生态位）？自媒体与投资人的话术会如何分化？",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

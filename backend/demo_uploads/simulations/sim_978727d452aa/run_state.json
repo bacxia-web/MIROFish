@@ -1,0 +1,184 @@
+{
+  "simulation_id": "sim_978727d452aa",
+  "runner_status": "completed",
+  "current_round": 2,
+  "total_rounds": 2,
+  "simulated_hours": 0,
+  "total_simulation_hours": 72,
+  "progress_percent": 100.0,
+  "twitter_current_round": 2,
+  "reddit_current_round": 2,
+  "twitter_simulated_hours": 0,
+  "reddit_simulated_hours": 0,
+  "twitter_running": false,
+  "reddit_running": false,
+  "twitter_completed": true,
+  "reddit_completed": true,
+  "twitter_actions_count": 6,
+  "reddit_actions_count": 6,
+  "total_actions_count": 12,
+  "started_at": "2026-04-07T20:04:15.701249",
+  "updated_at": "2026-04-07T20:04:25.743590",
+  "completed_at": "2026-04-07T20:04:25.744772",
+  "error": null,
+  "process_pid": 58359,
+  "recent_actions": [
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-07T20:04:25.449232",
+      "platform": "reddit",
+      "agent_id": 10,
+      "agent_name": "封肃",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "吾家虽务农，然亦闻甄家老爷近来不顺。其女英莲年幼，却有灾祸之兆。吾等街坊皆言：'好防佳节元宵后，便是烟消火灭时'。不知是何凶兆？"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-07T20:04:25.448905",
+      "platform": "reddit",
+      "agent_id": 1,
+      "agent_name": "军牢快手",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "听闻甄家老爷近日请贾雨村至家中，二人对月饮酒，谈笑风生。士隐老爷家境虽不甚富贵，却也是本地望族，其女英莲年方三岁，粉妆玉琢，甚是可爱。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-07T20:04:25.448589",
+      "platform": "reddit",
+      "agent_id": 3,
+      "agent_name": "甄家大丫鬟",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "那贾雨村虽身着敝巾旧服，然生得腰圆背厚，面阔口方，更兼剑眉星眼，直鼻权腮。吾虽为婢女，亦觉其非凡。先生每每言其必非久困之人，今观其才学，果然不凡。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-07T20:04:25.448271",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "贾雨村",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "玉在椟中求善价，钗于奁内待时飞。吾虽困顿于葫芦庙，然志向高远。今得甄老先生资助，即赴神京求取功名。他日若能高中，必不负此身所学。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-07T20:04:25.447896",
+      "platform": "reddit",
+      "agent_id": 8,
+      "agent_name": "封肃",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "昨夜梦中见一僧一道，言及'蠢物'，方知乃通灵宝玉。此物虽奇，然吾女英莲将有灾祸，'好防佳节元宵后，便是烟消火灭时'。吾心忧如焚，不知何去何从。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-07T20:04:25.447531",
+      "platform": "reddit",
+      "agent_id": 6,
+      "agent_name": "疯跛道人",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "吾等见此顽石自怨自叹，欲入红尘享荣华，实乃因缘际会。此石虽无材补天，却有灵性可通，恰逢我等路过，便携其入世历劫。世人皆知富贵荣华，却不知此乃虚妄，终归空幻。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-07T20:04:25.366172",
+      "platform": "twitter",
+      "agent_id": 10,
+      "agent_name": "封肃",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "吾家虽务农，然亦闻甄家老爷近来不顺。其女英莲年幼，却有灾祸之兆。吾等街坊皆言：'好防佳节元宵后，便是烟消火灭时'。不知是何凶兆？"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-07T20:04:25.365837",
+      "platform": "twitter",
+      "agent_id": 1,
+      "agent_name": "军牢快手",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "听闻甄家老爷近日请贾雨村至家中，二人对月饮酒，谈笑风生。士隐老爷家境虽不甚富贵，却也是本地望族，其女英莲年方三岁，粉妆玉琢，甚是可爱。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-07T20:04:25.365455",
+      "platform": "twitter",
+      "agent_id": 3,
+      "agent_name": "甄家大丫鬟",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "那贾雨村虽身着敝巾旧服，然生得腰圆背厚，面阔口方，更兼剑眉星眼，直鼻权腮。吾虽为婢女，亦觉其非凡。先生每每言其必非久困之人，今观其才学，果然不凡。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-07T20:04:25.365086",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "贾雨村",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "玉在椟中求善价，钗于奁内待时飞。吾虽困顿于葫芦庙，然志向高远。今得甄老先生资助，即赴神京求取功名。他日若能高中，必不负此身所学。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-07T20:04:25.363481",
+      "platform": "twitter",
+      "agent_id": 8,
+      "agent_name": "封肃",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "昨夜梦中见一僧一道，言及'蠢物'，方知乃通灵宝玉。此物虽奇，然吾女英莲将有灾祸，'好防佳节元宵后，便是烟消火灭时'。吾心忧如焚，不知何去何从。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-07T20:04:25.362986",
+      "platform": "twitter",
+      "agent_id": 6,
+      "agent_name": "疯跛道人",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "吾等见此顽石自怨自叹，欲入红尘享荣华，实乃因缘际会。此石虽无材补天，却有灵性可通，恰逢我等路过，便携其入世历劫。世人皆知富贵荣华，却不知此乃虚妄，终归空幻。"
+      },
+      "result": null,
+      "success": true
+    }
+  ],
+  "rounds_count": 0
+}

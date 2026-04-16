@@ -1,0 +1,27 @@
+{
+  "simulation_id": "sim_45ac1c25f773",
+  "project_id": "proj_eaa1e3c4db04",
+  "graph_id": "mirofish_53413c45a48c43f8",
+  "enable_twitter": true,
+  "enable_reddit": true,
+  "status": "stopped",
+  "entities_count": 18,
+  "profiles_count": 18,
+  "entity_types": [
+    "MediaOutlet",
+    "VentureCapitalist",
+    "TechCompany",
+    "Competitor",
+    "Journalist",
+    "Organization",
+    "Executive"
+  ],
+  "config_generated": true,
+  "config_reasoning": "时间配置: 该事件涉及融资新闻（晚点 LatePost 发布）、投资人动态及行业深度分析，目标群体主要为科技媒体从业者、VC/PE 投资人、大模型行业从业者及深度技术爱好者。此类人群作息规律：凌晨几乎无讨论；早间（7-9点）为通勤及早餐时快速浏览资讯；工作时间（10-18点）进行专业解读、内部研讨及数据核实，活跃度中等偏上；晚间（19-23点）是自媒体撰写深度长文、投资人复盘及行业社群激烈辩论的高峰期，且由于话题涉及'估值故事转向'与'合规/成本'等复杂框架，深夜（23点前）仍有较高讨论热度。模拟时长设为48小时以覆盖新闻发酵后的完整舆论周期。 | 事件配置: 基于模拟需求，构建了从'融资新闻'到'商业模式质疑'的舆论演变路径。初始帖子分别由媒体（发布事实）、投资人（关注回报与风险）、记者（深度分析战略取舍）和科技公司视角（代表行业竞争态势与成本压力）发出，涵盖了产品力、合规（隐含在专注边界中）、算力成本及生态位等核心议题，精准匹配了不同实体类型的发言风格。 | Agent配置: 成功生成 18 个 | 初始帖子分配: 4 个帖子已分配发布者",
+  "current_round": 0,
+  "twitter_status": "not_started",
+  "reddit_status": "not_started",
+  "created_at": "2026-04-10T15:58:49.667580",
+  "updated_at": "2026-04-13T10:51:15.040502",
+  "error": null
+}

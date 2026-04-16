@@ -1,0 +1,246 @@
+{
+  "simulation_id": "sim_57df3032cc64",
+  "project_id": "proj_343ac1153674",
+  "graph_id": "mirofish_8bd136ea45f14b6a",
+  "runner_status": "completed",
+  "current_round": 40,
+  "total_rounds": 40,
+  "simulated_hours": 0,
+  "total_simulation_hours": 168,
+  "progress_percent": 100.0,
+  "twitter_current_round": 40,
+  "reddit_current_round": 40,
+  "twitter_simulated_hours": 0,
+  "reddit_simulated_hours": 0,
+  "twitter_running": false,
+  "reddit_running": false,
+  "twitter_completed": true,
+  "reddit_completed": true,
+  "twitter_actions_count": 8,
+  "reddit_actions_count": 8,
+  "total_actions_count": 16,
+  "started_at": "2026-04-10T09:44:41.810441",
+  "updated_at": "2026-04-10T09:44:57.914536",
+  "completed_at": "2026-04-10T09:46:16.212680",
+  "error": null,
+  "process_pid": 17875,
+  "recent_actions": [
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T09:44:57.036392",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "慧科讯业Wisers",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "预制菜行业标准亟需规范：预制菜并不可怕，可怕的是不合标准、不卫生、不安全的预制菜。期待国家层面尽快出台相关标准。",
+        "post_id": 4
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T09:44:57.036230",
+      "platform": "reddit",
+      "agent_id": 4,
+      "agent_name": "公安部",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "阜阳市市场监督管理局已对涉事企业进行查封，成品、半成品及原料等现场封存，涉事企业法人代表已被公安机关传唤到位。",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T09:44:57.036060",
+      "platform": "reddit",
+      "agent_id": 3,
+      "agent_name": "国务院食安办",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "国务院食安办、公安部、农业农村部、市场监管总局联合部署开展“严厉打击肉类产品违法犯罪专项整治行动”，坚决斩断非法屠宰、加工、销售网络。",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T09:44:57.035856",
+      "platform": "reddit",
+      "agent_id": 23,
+      "agent_name": "中新经纬",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "【315晚会曝光】安徽阜阳部分企业用劣质槽头肉制作梅菜扣肉预制菜，引发消费者强烈不满！食品安全问题再次敲响警钟。",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T09:44:53.595491",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "慧科讯业Wisers",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "预制菜行业标准亟需规范：预制菜并不可怕，可怕的是不合标准、不卫生、不安全的预制菜。期待国家层面尽快出台相关标准。",
+        "post_id": 4
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T09:44:53.595172",
+      "platform": "twitter",
+      "agent_id": 4,
+      "agent_name": "公安部",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "阜阳市市场监督管理局已对涉事企业进行查封，成品、半成品及原料等现场封存，涉事企业法人代表已被公安机关传唤到位。",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T09:44:53.594424",
+      "platform": "twitter",
+      "agent_id": 3,
+      "agent_name": "国务院食安办",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "国务院食安办、公安部、农业农村部、市场监管总局联合部署开展“严厉打击肉类产品违法犯罪专项整治行动”，坚决斩断非法屠宰、加工、销售网络。",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T09:44:53.593696",
+      "platform": "twitter",
+      "agent_id": 23,
+      "agent_name": "中新经纬",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "【315晚会曝光】安徽阜阳部分企业用劣质槽头肉制作梅菜扣肉预制菜，引发消费者强烈不满！食品安全问题再次敲响警钟。",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:44:48.674126",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "慧科讯业Wisers",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "预制菜行业标准亟需规范：预制菜并不可怕，可怕的是不合标准、不卫生、不安全的预制菜。期待国家层面尽快出台相关标准。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:44:48.674010",
+      "platform": "reddit",
+      "agent_id": 4,
+      "agent_name": "公安部",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "阜阳市市场监督管理局已对涉事企业进行查封，成品、半成品及原料等现场封存，涉事企业法人代表已被公安机关传唤到位。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:44:48.673885",
+      "platform": "reddit",
+      "agent_id": 3,
+      "agent_name": "国务院食安办",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "国务院食安办、公安部、农业农村部、市场监管总局联合部署开展“严厉打击肉类产品违法犯罪专项整治行动”，坚决斩断非法屠宰、加工、销售网络。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:44:48.673745",
+      "platform": "reddit",
+      "agent_id": 23,
+      "agent_name": "中新经纬",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "【315晚会曝光】安徽阜阳部分企业用劣质槽头肉制作梅菜扣肉预制菜，引发消费者强烈不满！食品安全问题再次敲响警钟。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:44:48.592353",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "慧科讯业Wisers",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "预制菜行业标准亟需规范：预制菜并不可怕，可怕的是不合标准、不卫生、不安全的预制菜。期待国家层面尽快出台相关标准。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:44:48.592264",
+      "platform": "twitter",
+      "agent_id": 4,
+      "agent_name": "公安部",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "阜阳市市场监督管理局已对涉事企业进行查封，成品、半成品及原料等现场封存，涉事企业法人代表已被公安机关传唤到位。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:44:48.592173",
+      "platform": "twitter",
+      "agent_id": 3,
+      "agent_name": "国务院食安办",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "国务院食安办、公安部、农业农村部、市场监管总局联合部署开展“严厉打击肉类产品违法犯罪专项整治行动”，坚决斩断非法屠宰、加工、销售网络。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T09:44:48.592061",
+      "platform": "twitter",
+      "agent_id": 23,
+      "agent_name": "中新经纬",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "【315晚会曝光】安徽阜阳部分企业用劣质槽头肉制作梅菜扣肉预制菜，引发消费者强烈不满！食品安全问题再次敲响警钟。"
+      },
+      "result": null,
+      "success": true
+    }
+  ],
+  "rounds_count": 0
+}

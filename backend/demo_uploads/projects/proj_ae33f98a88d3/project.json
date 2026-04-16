@@ -1,0 +1,348 @@
+{
+  "project_id": "proj_ae33f98a88d3",
+  "name": "Unnamed Project",
+  "status": "graph_completed",
+  "created_at": "2026-04-08T17:44:25.113690",
+  "updated_at": "2026-04-08T18:01:28.803094",
+  "files": [
+    {
+      "filename": "前2回.pdf",
+      "size": 540493
+    }
+  ],
+  "total_text_length": 14257,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "Noble",
+        "description": "贵族或世家出身的人物",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "title",
+            "type": "text",
+            "description": "爵位或头衔"
+          }
+        ],
+        "examples": [
+          "贾宝玉",
+          "林黛玉"
+        ]
+      },
+      {
+        "name": "Official",
+        "description": "政府官员或士大夫阶层",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "position",
+            "type": "text",
+            "description": "担任的官职"
+          }
+        ],
+        "examples": [
+          "贾政",
+          "贾赦"
+        ]
+      },
+      {
+        "name": "Scholar",
+        "description": "文人学者或知识分子",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "field_of_study",
+            "type": "text",
+            "description": "研究领域或专长"
+          }
+        ],
+        "examples": [
+          "贾雨村",
+          "冷子兴"
+        ]
+      },
+      {
+        "name": "Merchant",
+        "description": "商人或经济活动参与者",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "business_type",
+            "type": "text",
+            "description": "从事的商业类型"
+          }
+        ],
+        "examples": [
+          "甄费",
+          "贾化"
+        ]
+      },
+      {
+        "name": "ReligiousFigure",
+        "description": "宗教人士或修行者",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "sect",
+            "type": "text",
+            "description": "所属宗教派别"
+          }
+        ],
+        "examples": [
+          "空空道人",
+          "神瑛侍者"
+        ]
+      },
+      {
+        "name": "Artist",
+        "description": "艺术家或文艺创作者",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "artistic_field",
+            "type": "text",
+            "description": "艺术领域或创作方向"
+          }
+        ],
+        "examples": [
+          "曹雪芹",
+          "孔梅溪"
+        ]
+      },
+      {
+        "name": "Servant",
+        "description": "家仆或服务人员",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "role",
+            "type": "text",
+            "description": "在家庭中的具体职责"
+          }
+        ],
+        "examples": [
+          "霍启",
+          "娇杏"
+        ]
+      },
+      {
+        "name": "FamilyMember",
+        "description": "家族成员或亲属关系",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "relationship",
+            "type": "text",
+            "description": "与家族其他成员的关系"
+          }
+        ],
+        "examples": [
+          "贾母",
+          "王夫人"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "任何自然人个体的兜底类型",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "居住地或主要活动区域"
+          }
+        ],
+        "examples": [
+          "路人甲",
+          "某位网友"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "任何组织机构的兜底类型",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "组织名称"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "组织所在地"
+          }
+        ],
+        "examples": [
+          "葫芦庙",
+          "智通寺"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "WORKS_FOR",
+        "description": "表示一个人为某个组织工作",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          },
+          {
+            "source": "Official",
+            "target": "Organization"
+          },
+          {
+            "source": "Scholar",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "FOLLOWS",
+        "description": "表示一个人关注或追随另一个人",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Person",
+            "target": "Noble"
+          },
+          {
+            "source": "Person",
+            "target": "Official"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COMMENT_ON",
+        "description": "表示一个人对另一个人或事件发表评论",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Person",
+            "target": "Event"
+          },
+          {
+            "source": "Scholar",
+            "target": "Event"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "RESPONDS_TO",
+        "description": "表示一个人对另一个人的言论作出回应",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Official",
+            "target": "Person"
+          },
+          {
+            "source": "Scholar",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "AFFILIATED_WITH",
+        "description": "表示一个人隶属于某个组织或团体",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          },
+          {
+            "source": "Noble",
+            "target": "Organization"
+          },
+          {
+            "source": "Official",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPRESENTS",
+        "description": "表示一个人代表某个组织或群体发声",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          },
+          {
+            "source": "Official",
+            "target": "Organization"
+          },
+          {
+            "source": "Scholar",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "文本内容涉及多个社会角色，包括贵族、官员、文人、商人、宗教人士、艺术家、家仆和家族成员。这些角色在社交互动中扮演重要角色，因此设计了10个实体类型以覆盖所有可能的发言主体，并确保每个实体类型都能在社交媒体上发声和互动。",
+  "graph_id": "mirofish_4ad54da1a8e3481d",
+  "graph_id_raw": "mirofish_c1567c009ff94449",
+  "graph_id_disamb": "mirofish_4ad54da1a8e3481d",
+  "graph_build_task_id": "bdff0aaf-9382-41a7-802b-e9649301c0e8",
+  "quality_metrics": {
+    "updated_at": "2026-04-08T10:01:28.802434+00:00",
+    "node_count_disamb": 68,
+    "node_count_raw": 93
+  },
+  "simulation_requirement": "继续",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

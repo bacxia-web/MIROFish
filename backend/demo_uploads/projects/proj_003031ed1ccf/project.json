@@ -1,0 +1,353 @@
+{
+  "project_id": "proj_003031ed1ccf",
+  "name": "Unnamed Project",
+  "status": "ontology_generated",
+  "created_at": "2026-03-12T15:23:49.795028",
+  "updated_at": "2026-03-12T15:25:07.703366",
+  "files": [
+    {
+      "filename": "红楼梦5页.pdf",
+      "size": 710601
+    }
+  ],
+  "total_text_length": 14504,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "GovernmentOfficial",
+        "description": "Government officials holding administrative power",
+        "attributes": [
+          {
+            "name": "position",
+            "type": "text",
+            "description": "Official title or rank"
+          },
+          {
+            "name": "jurisdiction",
+            "type": "text",
+            "description": "Area of administrative control"
+          }
+        ],
+        "examples": [
+          "Lin Ruhai",
+          "Jia Yucun"
+        ]
+      },
+      {
+        "name": "Scholar",
+        "description": "Intellectuals focusing on study and teaching",
+        "attributes": [
+          {
+            "name": "field_of_study",
+            "type": "text",
+            "description": "Academic focus area"
+          },
+          {
+            "name": "reputation",
+            "type": "text",
+            "description": "Public standing in scholarly circles"
+          }
+        ],
+        "examples": [
+          "Jia Yucun",
+          "Cold Zixing"
+        ]
+      },
+      {
+        "name": "LocalGentry",
+        "description": "Wealthy local elites without official posts",
+        "attributes": [
+          {
+            "name": "wealth_level",
+            "type": "text",
+            "description": "Economic status description"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Primary residence location"
+          }
+        ],
+        "examples": [
+          "Zhen Shiyin"
+        ]
+      },
+      {
+        "name": "AristocraticFamily",
+        "description": "Noble family organizations with significant influence",
+        "attributes": [
+          {
+            "name": "family_status",
+            "type": "text",
+            "description": "Nobility rank or standing"
+          },
+          {
+            "name": "head_title",
+            "type": "text",
+            "description": "Title of the family head"
+          }
+        ],
+        "examples": [
+          "Jia Family",
+          "Zhen Family"
+        ]
+      },
+      {
+        "name": "ReligiousLeader",
+        "description": "Monks, daoists, or spiritual figures",
+        "attributes": [
+          {
+            "name": "sect",
+            "type": "text",
+            "description": "Religious affiliation or sect"
+          },
+          {
+            "name": "temple_name",
+            "type": "text",
+            "description": "Associated temple or location"
+          }
+        ],
+        "examples": [
+          "Miao Yu",
+          "Zhen Shi Daoist"
+        ]
+      },
+      {
+        "name": "Student",
+        "description": "Young individuals currently undergoing education",
+        "attributes": [
+          {
+            "name": "age",
+            "type": "text",
+            "description": "Current age range"
+          },
+          {
+            "name": "school",
+            "type": "text",
+            "description": "Educational institution or home tutor"
+          }
+        ],
+        "examples": [
+          "Lin Daiyu",
+          "Jia Baoyu"
+        ]
+      },
+      {
+        "name": "HouseholdStaff",
+        "description": "Servants and maids working within households",
+        "attributes": [
+          {
+            "name": "role",
+            "type": "text",
+            "description": "Specific service role"
+          },
+          {
+            "name": "employer",
+            "type": "text",
+            "description": "Master or family served"
+          }
+        ],
+        "examples": [
+          "Jiao Xing",
+          "Huo Qi"
+        ]
+      },
+      {
+        "name": "Merchant",
+        "description": "Individuals engaged in trade and business",
+        "attributes": [
+          {
+            "name": "business_type",
+            "type": "text",
+            "description": "Type of commerce conducted"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Business operation location"
+          }
+        ],
+        "examples": [
+          "Cold Zixing"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "Generic individual not fitting specific categories",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Complete personal name"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Current residence location"
+          }
+        ],
+        "examples": [
+          "Passerby",
+          "Relative"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "Generic organization not fitting specific categories",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Official organization name"
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "description": "Type of organization"
+          }
+        ],
+        "examples": [
+          "Hulu Temple",
+          "Local Prefecture"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "WORKS_FOR",
+        "description": "Employment or service relationship",
+        "source_targets": [
+          {
+            "source": "HouseholdStaff",
+            "target": "AristocraticFamily"
+          },
+          {
+            "source": "HouseholdStaff",
+            "target": "LocalGentry"
+          },
+          {
+            "source": "GovernmentOfficial",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "TEACHES",
+        "description": "Educational mentorship relationship",
+        "source_targets": [
+          {
+            "source": "Scholar",
+            "target": "Student"
+          },
+          {
+            "source": "GovernmentOfficial",
+            "target": "Student"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "FRIENDS_WITH",
+        "description": "Social friendship or peer relationship",
+        "source_targets": [
+          {
+            "source": "Scholar",
+            "target": "Scholar"
+          },
+          {
+            "source": "LocalGentry",
+            "target": "Scholar"
+          },
+          {
+            "source": "Person",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "RELATED_BY_BLOOD",
+        "description": "Family kinship connection",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Student",
+            "target": "AristocraticFamily"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "MARRIED_TO",
+        "description": "Legal or formal marriage bond",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "GovernmentOfficial",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "AFFILIATED_WITH",
+        "description": "General organizational affiliation",
+        "source_targets": [
+          {
+            "source": "ReligiousLeader",
+            "target": "Organization"
+          },
+          {
+            "source": "Person",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COMMENTS_ON",
+        "description": "Social media commentary interaction",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Scholar",
+            "target": "GovernmentOfficial"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "SUPPORTS",
+        "description": "Public endorsement or backing",
+        "source_targets": [
+          {
+            "source": "LocalGentry",
+            "target": "GovernmentOfficial"
+          },
+          {
+            "source": "Merchant",
+            "target": "AristocraticFamily"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "基于《红楼梦》前几回内容，设计了适用于舆论模拟的实体 schema。文本中出现了官员（贾雨村、林如海）、乡绅（甄士隐）、家族（贾府）、宗教人物（僧道）、学生（黛玉、宝玉）等角色。 schema 包含 8 个具体类型（官员、学者、乡绅、家族、宗教、学生、仆役、商人）和 2 个兜底类型（Person、Organization）。关系类型涵盖了职场、师生、社交、亲属及社媒互动（评论、支持），能够模拟复杂的社会网络和信息传播路径。",
+  "graph_id": null,
+  "graph_build_task_id": null,
+  "simulation_requirement": "试试",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

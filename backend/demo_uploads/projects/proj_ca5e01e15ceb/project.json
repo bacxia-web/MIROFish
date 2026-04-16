@@ -1,0 +1,404 @@
+{
+  "project_id": "proj_ca5e01e15ceb",
+  "name": "Unnamed Project",
+  "status": "graph_completed",
+  "created_at": "2026-03-12T15:39:36.030315",
+  "updated_at": "2026-04-07T16:33:43.446781",
+  "files": [
+    {
+      "filename": "红楼梦5页.pdf",
+      "size": 710601
+    }
+  ],
+  "total_text_length": 14504,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "Author",
+        "description": "Content creators who write and publish stories or texts",
+        "attributes": [
+          {
+            "name": "pen_name",
+            "type": "text",
+            "description": "The pseudonym or literary name used"
+          },
+          {
+            "name": "work_title",
+            "type": "text",
+            "description": "Title of the major work authored"
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "description": "Current life status or condition"
+          }
+        ],
+        "examples": [
+          "Cao Xueqin",
+          "Kong Kong Dao Ren"
+        ]
+      },
+      {
+        "name": "GovernmentOfficial",
+        "description": "Individuals holding government positions or civil service roles",
+        "attributes": [
+          {
+            "name": "position_title",
+            "type": "text",
+            "description": "Official job title or rank"
+          },
+          {
+            "name": "jurisdiction",
+            "type": "text",
+            "description": "Geographic area of authority"
+          },
+          {
+            "name": "career_status",
+            "type": "text",
+            "description": "Current employment status like active or dismissed"
+          }
+        ],
+        "examples": [
+          "Jia Yucun",
+          "Lin Ruhai"
+        ]
+      },
+      {
+        "name": "Gentry",
+        "description": "Wealthy retired officials or local elites with land and status",
+        "attributes": [
+          {
+            "name": "wealth_level",
+            "type": "text",
+            "description": "Relative financial status"
+          },
+          {
+            "name": "residence",
+            "type": "text",
+            "description": "Primary location of living"
+          },
+          {
+            "name": "reputation",
+            "type": "text",
+            "description": "Public standing in the community"
+          }
+        ],
+        "examples": [
+          "Zhen Shiyin",
+          "Jia Zheng"
+        ]
+      },
+      {
+        "name": "ReligiousFigure",
+        "description": "Monks, Taoists, or spiritual leaders providing guidance",
+        "attributes": [
+          {
+            "name": "sect",
+            "type": "text",
+            "description": "Religious affiliation like Buddhist or Taoist"
+          },
+          {
+            "name": "temple_name",
+            "type": "text",
+            "description": "Associated temple or monastery"
+          },
+          {
+            "name": "title",
+            "type": "text",
+            "description": "Religious title or honorific"
+          }
+        ],
+        "examples": [
+          "Lai Tou Monk",
+          "Bo Zu Taoist"
+        ]
+      },
+      {
+        "name": "FamilyClan",
+        "description": "Extended family organizations acting as social units",
+        "attributes": [
+          {
+            "name": "clan_name",
+            "type": "text",
+            "description": "Surname or family identifier"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Primary estate or regional base"
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "description": "Current prosperity level of the clan"
+          }
+        ],
+        "examples": [
+          "Jia Family",
+          "Zhen Family"
+        ]
+      },
+      {
+        "name": "Servant",
+        "description": "Household staff, maids, or personal assistants",
+        "attributes": [
+          {
+            "name": "role_type",
+            "type": "text",
+            "description": "Specific job function like maid or butler"
+          },
+          {
+            "name": "master_reference",
+            "type": "text",
+            "description": "Name of the master or household served"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Primary workplace or residence"
+          }
+        ],
+        "examples": [
+          "Jiao Xing",
+          "Huo Qi"
+        ]
+      },
+      {
+        "name": "Merchant",
+        "description": "Individuals engaged in trade or business activities",
+        "attributes": [
+          {
+            "name": "business_type",
+            "type": "text",
+            "description": "Type of goods or services traded"
+          },
+          {
+            "name": "shop_name",
+            "type": "text",
+            "description": "Name of the business establishment"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Business operating location"
+          }
+        ],
+        "examples": [
+          "Cold Zi Xing"
+        ]
+      },
+      {
+        "name": "Student",
+        "description": "Young individuals currently undergoing education or tutoring",
+        "attributes": [
+          {
+            "name": "age_group",
+            "type": "text",
+            "description": "Approximate age range"
+          },
+          {
+            "name": "tutor_reference",
+            "type": "text",
+            "description": "Name of the private tutor or teacher"
+          },
+          {
+            "name": "education_type",
+            "type": "text",
+            "description": "Type of education received"
+          }
+        ],
+        "examples": [
+          "Lin Daiyu",
+          "Jia Baoyu"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "Fallback type for any natural person not fitting specific categories",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Complete legal or common name"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Current residence or location"
+          },
+          {
+            "name": "occupation",
+            "type": "text",
+            "description": "General job or role description"
+          }
+        ],
+        "examples": [
+          "Feng Su",
+          "Neighbors"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "Fallback type for any organization not fitting specific categories",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Official name of the organization"
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "description": "General classification of the organization"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Headquarters or main location"
+          }
+        ],
+        "examples": [
+          "Hulu Temple",
+          "Government Office"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "WORKS_FOR",
+        "description": "Indicates employment or service relationship",
+        "source_targets": [
+          {
+            "source": "Servant",
+            "target": "FamilyClan"
+          },
+          {
+            "source": "GovernmentOfficial",
+            "target": "Organization"
+          },
+          {
+            "source": "Merchant",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "BELONGS_TO",
+        "description": "Indicates membership or affiliation with a family or group",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "FamilyClan"
+          },
+          {
+            "source": "Gentry",
+            "target": "FamilyClan"
+          },
+          {
+            "source": "Student",
+            "target": "FamilyClan"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "TEACHES",
+        "description": "Indicates a tutoring or educational relationship",
+        "source_targets": [
+          {
+            "source": "Gentry",
+            "target": "Student"
+          },
+          {
+            "source": "GovernmentOfficial",
+            "target": "Student"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "MARRIED_TO",
+        "description": "Indicates a marital relationship between individuals",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Gentry",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "ADVISES",
+        "description": "Indicates spiritual or strategic guidance provided",
+        "source_targets": [
+          {
+            "source": "ReligiousFigure",
+            "target": "Gentry"
+          },
+          {
+            "source": "ReligiousFigure",
+            "target": "GovernmentOfficial"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "TRADES_WITH",
+        "description": "Indicates business or commercial interaction",
+        "source_targets": [
+          {
+            "source": "Merchant",
+            "target": "Gentry"
+          },
+          {
+            "source": "Merchant",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "FOLLOWS",
+        "description": "Social media style following relationship",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Person",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COMMENTED_ON",
+        "description": "Social media style interaction or public remark",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Person",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "文本选自《红楼梦》前几回，主要涉及作者曹雪芹、官员贾雨村、乡绅甄士隐、家族（贾府、甄府）、僧道人物及仆役学生等角色。设计本体时，将文学角色映射为社交媒体模拟中的可发声主体。具体类型涵盖内容创作者（Author）、官员（GovernmentOfficial）、乡绅（Gentry）、宗教人士（ReligiousFigure）、家族组织（FamilyClan）、仆役（Servant）、商人（Merchant）和学生（Student）。最后设置 Person 和 Organization 作为兜底类型，确保所有实体都能归类。关系类型设计了工作、归属、教学、婚姻、建议、交易及社交互动（关注、评论），以模拟舆论传播和人际网络。",
+  "graph_id": "mirofish_88bd972d600e4eae",
+  "graph_build_task_id": "a564885d-1b4e-4ef1-b0da-b12246fd4d4c",
+  "simulation_requirement": "试试",
+  "chunk_size": 1200,
+  "chunk_overlap": 100,
+  "error": null
+}

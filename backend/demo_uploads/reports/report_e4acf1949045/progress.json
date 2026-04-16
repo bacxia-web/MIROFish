@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "progress": 100,
+  "message": "报告生成完成",
+  "current_section": null,
+  "completed_sections": [
+    "未来社会结构的演变趋势",
+    "Agent行为模式与互动特征"
+  ],
+  "updated_at": "2026-04-07T19:52:47.953436"
+}

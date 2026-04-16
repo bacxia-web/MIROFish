@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "progress": -1,
+  "message": "报告生成失败: Error code: 403 - {'error': {'message': 'The free tier of the model has been exhausted. If you wish to continue access the model on a paid basis, please disable the \"use free tier only\" mode in the management console.', 'type': 'AllocationQuota.FreeTierOnly', 'param': None, 'code': 'AllocationQuota.FreeTierOnly'}, 'id': 'chatcmpl-35ad685a-a9fd-9715-b3a1-4e297887b4a2', 'request_id': '35ad685a-a9fd-9715-b3a1-4e297887b4a2'}",
+  "current_section": null,
+  "completed_sections": [
+    "社会分裂与冲突爆发",
+    "群体反应与权力动态"
+  ],
+  "updated_at": "2026-04-07T19:43:42.291080"
+}

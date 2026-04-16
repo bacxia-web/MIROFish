@@ -1,0 +1,44 @@
+FROM python:3.11-slim
+
+# 安装 Node.js 20
+RUN apt-get update \
+  && apt-get install -y curl \
+  && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+  && apt-get install -y nodejs \
+  && rm -rf /var/lib/apt/lists/*
+
+# 安装 uv
+COPY --from=ghcr.io/astral-sh/uv:0.9.26 /uv /uvx /bin/
+
+WORKDIR /app
+
+# ── Python 依赖（先复制 lock 文件利用缓存）──────────────────────────────────
+COPY backend/pyproject.toml backend/uv.lock ./backend/
+RUN cd backend && uv sync --frozen
+
+# ── Node 依赖 ────────────────────────────────────────────────────────────────
+COPY frontend/package.json frontend/package-lock.json ./frontend/
+RUN cd frontend && npm ci
+
+# ── 构建前端（base = /，因为部署在根域名）────────────────────────────────────
+COPY frontend/ ./frontend/
+COPY locales/ ./locales/
+RUN cd frontend && VITE_BASE_URL=/ npm run build
+
+# ── 后端源码 & 数据 ──────────────────────────────────────────────────────────
+COPY backend/ ./backend/
+COPY static/ ./static/
+
+# 把 demo_uploads 挂到 uploads 位置（历史项目 JSON 数据）
+RUN mkdir -p backend/uploads \
+  && cp -r backend/demo_uploads/. backend/uploads/
+
+ENV PYTHONUNBUFFERED=1
+ENV FLASK_HOST=0.0.0.0
+# UPLOAD_FOLDER 默认指向 backend/uploads，与本地开发一致
+# FRONTEND_DIST 让 Flask 知道静态文件在哪
+ENV FRONTEND_DIST=/app/frontend/dist
+
+EXPOSE 5001
+
+CMD ["backend/.venv/bin/python", "backend/run.py"]

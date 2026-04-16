@@ -1,0 +1,298 @@
+{
+  "simulation_id": "sim_7ff2559f079d",
+  "runner_status": "stopped",
+  "current_round": 10,
+  "total_rounds": 10,
+  "simulated_hours": 0,
+  "total_simulation_hours": 120,
+  "progress_percent": 100.0,
+  "twitter_current_round": 10,
+  "reddit_current_round": 10,
+  "twitter_simulated_hours": 0,
+  "reddit_simulated_hours": 0,
+  "twitter_running": false,
+  "reddit_running": false,
+  "twitter_completed": true,
+  "reddit_completed": true,
+  "twitter_actions_count": 10,
+  "reddit_actions_count": 10,
+  "total_actions_count": 20,
+  "started_at": "2026-04-09T14:53:50.719942",
+  "updated_at": "2026-04-09T14:54:16.873808",
+  "completed_at": "2026-04-09T16:00:04.401045",
+  "error": "服务器关闭，模拟被终止",
+  "process_pid": 30902,
+  "recent_actions": [
+    {
+      "round_num": 1,
+      "timestamp": "2026-04-09T14:54:15.547469",
+      "platform": "reddit",
+      "agent_id": 4,
+      "agent_name": "预制菜",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为预制菜行业从业者，我们必须承认这次事件对整个行业的冲击是巨大的。但这也是一个契机，促使我们更加重视产品质量和安全标准，期待国标的完善能帮助行业走出信任危机。",
+        "post_id": 5
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 1,
+      "timestamp": "2026-04-09T14:54:15.547240",
+      "platform": "reddit",
+      "agent_id": 3,
+      "agent_name": "媒体集团",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "梅菜扣肉里的'糟心肉'事件再次敲响食品安全警钟，消费者对预制菜的信任度降至冰点。预计未来3-6个月将是预制菜行业信任修复的关键期，需要强有力的国家标准来重塑消费者信心。",
+        "post_id": 4
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 1,
+      "timestamp": "2026-04-09T14:54:15.547127",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "慧科讯业Wisers",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "从今年的315曝光事件来看，'糟心肉'问题暴露了预制菜行业标准缺失的严重性。我们的分析显示，类似食品安全事件往往成为推动相关国标出台的关键催化剂。",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 1,
+      "timestamp": "2026-04-09T14:54:15.546999",
+      "platform": "reddit",
+      "agent_id": 2,
+      "agent_name": "政府部门",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "国务院食安办、公安部、农业农村部、市场监管总局联合开展严厉打击肉类产品违法犯罪专项整治行动，这表明政府对食品安全问题的重视程度。预计此次事件将极大推动预制菜国家标准的制定进程。",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 1,
+      "timestamp": "2026-04-09T14:54:15.546850",
+      "platform": "reddit",
+      "agent_id": 6,
+      "agent_name": "普通民众",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "刚刚看到315晚会曝光的梅菜扣肉问题，用槽头肉代替五花肉，这种劣质预制菜让我们消费者怎么放心？预制菜国标应该尽快出台了！",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 1,
+      "timestamp": "2026-04-09T14:54:08.102686",
+      "platform": "twitter",
+      "agent_id": 4,
+      "agent_name": "预制菜",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为预制菜行业从业者，我们必须承认这次事件对整个行业的冲击是巨大的。但这也是一个契机，促使我们更加重视产品质量和安全标准，期待国标的完善能帮助行业走出信任危机。",
+        "post_id": 5
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 1,
+      "timestamp": "2026-04-09T14:54:08.102332",
+      "platform": "twitter",
+      "agent_id": 3,
+      "agent_name": "媒体集团",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "梅菜扣肉里的'糟心肉'事件再次敲响食品安全警钟，消费者对预制菜的信任度降至冰点。预计未来3-6个月将是预制菜行业信任修复的关键期，需要强有力的国家标准来重塑消费者信心。",
+        "post_id": 4
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 1,
+      "timestamp": "2026-04-09T14:54:08.102187",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "慧科讯业Wisers",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "从今年的315曝光事件来看，'糟心肉'问题暴露了预制菜行业标准缺失的严重性。我们的分析显示，类似食品安全事件往往成为推动相关国标出台的关键催化剂。",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 1,
+      "timestamp": "2026-04-09T14:54:08.102000",
+      "platform": "twitter",
+      "agent_id": 2,
+      "agent_name": "政府部门",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "国务院食安办、公安部、农业农村部、市场监管总局联合开展严厉打击肉类产品违法犯罪专项整治行动，这表明政府对食品安全问题的重视程度。预计此次事件将极大推动预制菜国家标准的制定进程。",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 1,
+      "timestamp": "2026-04-09T14:54:08.101725",
+      "platform": "twitter",
+      "agent_id": 6,
+      "agent_name": "普通民众",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "刚刚看到315晚会曝光的梅菜扣肉问题，用槽头肉代替五花肉，这种劣质预制菜让我们消费者怎么放心？预制菜国标应该尽快出台了！",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T14:54:00.380192",
+      "platform": "reddit",
+      "agent_id": 4,
+      "agent_name": "预制菜",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为预制菜行业从业者，我们必须承认这次事件对整个行业的冲击是巨大的。但这也是一个契机，促使我们更加重视产品质量和安全标准，期待国标的完善能帮助行业走出信任危机。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T14:54:00.380108",
+      "platform": "reddit",
+      "agent_id": 3,
+      "agent_name": "媒体集团",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "梅菜扣肉里的'糟心肉'事件再次敲响食品安全警钟，消费者对预制菜的信任度降至冰点。预计未来3-6个月将是预制菜行业信任修复的关键期，需要强有力的国家标准来重塑消费者信心。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T14:54:00.380027",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "慧科讯业Wisers",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "从今年的315曝光事件来看，'糟心肉'问题暴露了预制菜行业标准缺失的严重性。我们的分析显示，类似食品安全事件往往成为推动相关国标出台的关键催化剂。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T14:54:00.379939",
+      "platform": "reddit",
+      "agent_id": 2,
+      "agent_name": "政府部门",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "国务院食安办、公安部、农业农村部、市场监管总局联合开展严厉打击肉类产品违法犯罪专项整治行动，这表明政府对食品安全问题的重视程度。预计此次事件将极大推动预制菜国家标准的制定进程。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T14:54:00.379846",
+      "platform": "reddit",
+      "agent_id": 6,
+      "agent_name": "普通民众",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "刚刚看到315晚会曝光的梅菜扣肉问题，用槽头肉代替五花肉，这种劣质预制菜让我们消费者怎么放心？预制菜国标应该尽快出台了！"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T14:54:00.321496",
+      "platform": "twitter",
+      "agent_id": 4,
+      "agent_name": "预制菜",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "作为预制菜行业从业者，我们必须承认这次事件对整个行业的冲击是巨大的。但这也是一个契机，促使我们更加重视产品质量和安全标准，期待国标的完善能帮助行业走出信任危机。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T14:54:00.321427",
+      "platform": "twitter",
+      "agent_id": 3,
+      "agent_name": "媒体集团",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "梅菜扣肉里的'糟心肉'事件再次敲响食品安全警钟，消费者对预制菜的信任度降至冰点。预计未来3-6个月将是预制菜行业信任修复的关键期，需要强有力的国家标准来重塑消费者信心。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T14:54:00.321355",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "慧科讯业Wisers",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "从今年的315曝光事件来看，'糟心肉'问题暴露了预制菜行业标准缺失的严重性。我们的分析显示，类似食品安全事件往往成为推动相关国标出台的关键催化剂。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T14:54:00.321281",
+      "platform": "twitter",
+      "agent_id": 2,
+      "agent_name": "政府部门",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "国务院食安办、公安部、农业农村部、市场监管总局联合开展严厉打击肉类产品违法犯罪专项整治行动，这表明政府对食品安全问题的重视程度。预计此次事件将极大推动预制菜国家标准的制定进程。"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T14:54:00.321194",
+      "platform": "twitter",
+      "agent_id": 6,
+      "agent_name": "普通民众",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "刚刚看到315晚会曝光的梅菜扣肉问题，用槽头肉代替五花肉，这种劣质预制菜让我们消费者怎么放心？预制菜国标应该尽快出台了！"
+      },
+      "result": null,
+      "success": true
+    }
+  ],
+  "rounds_count": 0
+}

@@ -1,0 +1,259 @@
+{
+  "project_id": "proj_7682ced9acaa",
+  "graph_id_raw": "mirofish_ec8dd457ac1a49e3",
+  "graph_id_disamb": "mirofish_22e61e055a664ece",
+  "query_count": 30,
+  "queries": [
+    "美团",
+    "蜂鸟运力线",
+    "晚点LatePost",
+    "吴泽明",
+    "消费者",
+    "盒马",
+    "天猫超市前置仓",
+    "淘宝闪购",
+    "京东",
+    "字节跳动",
+    "央视",
+    "马云",
+    "阿里",
+    "腾讯",
+    "优远",
+    "蜂跑",
+    "广州",
+    "深圳",
+    "成都",
+    "重庆",
+    "武汉",
+    "歪马送酒",
+    "京东酒世界",
+    "百雀羚",
+    "Only",
+    "迪卡侬",
+    "Babycare",
+    "天猫官方旗舰店",
+    "千问",
+    "火山引擎"
+  ],
+  "details": [
+    {
+      "query": "美团",
+      "raw_hits": 16,
+      "disamb_hits": 17,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "蜂鸟运力线",
+      "raw_hits": 8,
+      "disamb_hits": 3,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "晚点LatePost",
+      "raw_hits": 3,
+      "disamb_hits": 3,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "吴泽明",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "消费者",
+      "raw_hits": 2,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    },
+    {
+      "query": "盒马",
+      "raw_hits": 4,
+      "disamb_hits": 4,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "天猫超市前置仓",
+      "raw_hits": 2,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    },
+    {
+      "query": "淘宝闪购",
+      "raw_hits": 20,
+      "disamb_hits": 20,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "京东",
+      "raw_hits": 9,
+      "disamb_hits": 8,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "字节跳动",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "央视",
+      "raw_hits": 5,
+      "disamb_hits": 6,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "马云",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "阿里",
+      "raw_hits": 17,
+      "disamb_hits": 16,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "腾讯",
+      "raw_hits": 4,
+      "disamb_hits": 4,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "优远",
+      "raw_hits": 2,
+      "disamb_hits": 1,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "蜂跑",
+      "raw_hits": 2,
+      "disamb_hits": 1,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "广州",
+      "raw_hits": 2,
+      "disamb_hits": 3,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "深圳",
+      "raw_hits": 2,
+      "disamb_hits": 3,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "成都",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "重庆",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "武汉",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "歪马送酒",
+      "raw_hits": 3,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "京东酒世界",
+      "raw_hits": 3,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "百雀羚",
+      "raw_hits": 6,
+      "disamb_hits": 12,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "Only",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "迪卡侬",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "Babycare",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "天猫官方旗舰店",
+      "raw_hits": 1,
+      "disamb_hits": 5,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "千问",
+      "raw_hits": 17,
+      "disamb_hits": 15,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "火山引擎",
+      "raw_hits": 3,
+      "disamb_hits": 4,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    }
+  ],
+  "summary": {
+    "raw_nonempty_rate": 1.0,
+    "disamb_nonempty_rate": 0.9333,
+    "raw_avg_hits": 4.9667,
+    "disamb_avg_hits": 4.9,
+    "raw_avg_hits_on_nonempty": 4.9667,
+    "disamb_avg_hits_on_nonempty": 5.25
+  },
+  "generated_at": "2026-04-10T08:00:54.631042+00:00"
+}

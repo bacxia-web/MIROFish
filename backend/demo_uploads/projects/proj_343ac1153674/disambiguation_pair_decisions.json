@@ -1,0 +1,13 @@
+{
+  "graph_id_raw": "mirofish_50e8eda2ef624af2",
+  "graph_id_disamb": "mirofish_8bd136ea45f14b6a",
+  "generated_at": "2026-04-10T15:43:30.009176",
+  "summary": {
+    "pair_decisions": 0,
+    "merged_groups": 0,
+    "precision_merge_rate": null,
+    "final_merged_count": 0,
+    "bootstrap_from_merges": true
+  },
+  "pair_decision_details": []
+}

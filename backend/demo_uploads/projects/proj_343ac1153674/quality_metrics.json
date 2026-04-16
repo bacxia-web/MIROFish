@@ -1,0 +1,377 @@
+{
+  "updated_at": "2026-04-10T07:44:20.197688+00:00",
+  "project_id": "proj_343ac1153674",
+  "graph": {
+    "by_variant": {
+      "raw": {
+        "graph_id": "mirofish_50e8eda2ef624af2",
+        "node_count": 77,
+        "edge_count": 70,
+        "entity_node_count": 77,
+        "isolated_node_ratio": 0.25974,
+        "avg_degree": 1.8182,
+        "multi_edge_pair_count": 1,
+        "alias_count_total": 0
+      },
+      "disamb": {
+        "graph_id": "mirofish_8bd136ea45f14b6a",
+        "node_count": 24,
+        "edge_count": 121,
+        "entity_node_count": 24,
+        "isolated_node_ratio": 0.041667,
+        "avg_degree": 10.0833,
+        "multi_edge_pair_count": 26,
+        "alias_count_total": 0
+      }
+    },
+    "delta": {
+      "node_reduction_ratio": 0.688312,
+      "edge_reduction_ratio": -0.728571
+    }
+  },
+  "simulation": {
+    "by_variant": {
+      "raw": {},
+      "disamb": {}
+    },
+    "note": "每次准备仿真会按当前 graph_id 刷新对应列；双列对比需分别用 raw/disamb 各跑一次。",
+    "diversity_eval": {
+      "project_id": "proj_343ac1153674",
+      "graph_id_raw": "mirofish_50e8eda2ef624af2",
+      "graph_id_disamb": "mirofish_8bd136ea45f14b6a",
+      "raw": {
+        "simulation_id": "sim_715ddced1fff",
+        "profile_count": 154,
+        "pair_count": 11781,
+        "cosine_median": 0.4325,
+        "cosine_p90": 0.6291
+      },
+      "disamb": {
+        "simulation_id": "sim_57df3032cc64",
+        "profile_count": 48,
+        "pair_count": 1128,
+        "cosine_median": 0.4314,
+        "cosine_p90": 0.6616
+      },
+      "generated_at": "2026-04-10T07:44:20.051789+00:00"
+    }
+  },
+  "retrieval": {
+    "by_variant": {
+      "raw": {
+        "search_graph_calls": 20,
+        "search_graph_result_hits_sum": 115,
+        "search_graph_empty_calls": 0,
+        "search_graph_nonempty_calls": 20,
+        "search_graph_avg_result_count": 5.75,
+        "search_graph_avg_result_count_on_hit": 5.75,
+        "search_graph_empty_rate": 0.0,
+        "search_graph_empty_queries": [],
+        "search_graph_empty_queries_recorded": 0
+      },
+      "disamb": {
+        "search_graph_calls": 20,
+        "search_graph_result_hits_sum": 100,
+        "search_graph_empty_calls": 9,
+        "search_graph_nonempty_calls": 11,
+        "search_graph_avg_result_count": 5.0,
+        "search_graph_avg_result_count_on_hit": 9.0909,
+        "search_graph_empty_rate": 0.45,
+        "search_graph_empty_queries": [
+          {
+            "query": "央视新闻",
+            "at": "2026-04-10T07:43:35.759532+00:00"
+          },
+          {
+            "query": "人民日报",
+            "at": "2026-04-10T07:43:36.177704+00:00"
+          },
+          {
+            "query": "中国消费协会",
+            "at": "2026-04-10T07:43:36.622793+00:00"
+          },
+          {
+            "query": "宝马中国",
+            "at": "2026-04-10T07:43:37.850292+00:00"
+          },
+          {
+            "query": "抖音",
+            "at": "2026-04-10T07:43:38.549319+00:00"
+          },
+          {
+            "query": "云抖科技",
+            "at": "2026-04-10T07:43:39.857767+00:00"
+          },
+          {
+            "query": "株洲市监局",
+            "at": "2026-04-10T07:43:41.303322+00:00"
+          },
+          {
+            "query": "北京日报",
+            "at": "2026-04-10T07:43:42.288817+00:00"
+          },
+          {
+            "query": "华尔街见闻",
+            "at": "2026-04-10T07:43:42.627557+00:00"
+          }
+        ],
+        "search_graph_empty_queries_recorded": 9
+      }
+    },
+    "note": "统计自最近一次聚合起至本次 refresh 之间的 search_graph 调用（按 graph_id 分桶）。 空检索词见各 variant 下 search_graph_empty_queries（最终合并结果为 0 时的原始 query， 每条含 at 时间；历史跑次若未升级后端则无此字段）。"
+  },
+  "retrieval_ab_eval": {
+    "project_id": "proj_343ac1153674",
+    "raw_graph_id": "mirofish_50e8eda2ef624af2",
+    "disamb_graph_id": "mirofish_8bd136ea45f14b6a",
+    "raw": {
+      "search_graph_calls": 20,
+      "empty_calls": 0,
+      "result_hits_sum": 115
+    },
+    "disamb": {
+      "search_graph_calls": 20,
+      "empty_calls": 9,
+      "result_hits_sum": 100
+    },
+    "delta_empty_calls": -9,
+    "updated_at": "2026-04-10T07:44:20.196771+00:00",
+    "workload_mode": "natural_traffic"
+  },
+  "retrieval_benchmark": {
+    "project_id": "proj_343ac1153674",
+    "graph_id_raw": "mirofish_50e8eda2ef624af2",
+    "graph_id_disamb": "mirofish_8bd136ea45f14b6a",
+    "query_count": 20,
+    "queries": [
+      "国务院食安办",
+      "市场监管总局",
+      "安徽省市场监管局",
+      "阜阳市市场监督管理局",
+      "央视3·15晚会",
+      "央视新闻",
+      "人民日报",
+      "中国消费协会",
+      "同程金融",
+      "宝马中国",
+      "抖音",
+      "世纪佳缘",
+      "珍爱网",
+      "云抖科技",
+      "湖南闽湘消防设备有限公司",
+      "广州金桂根消防设备有限公司",
+      "株洲市监局",
+      "深圳市市场监督管理局",
+      "北京日报",
+      "华尔街见闻"
+    ],
+    "details": [
+      {
+        "query": "国务院食安办",
+        "raw_hits": 1,
+        "disamb_hits": 8,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "市场监管总局",
+        "raw_hits": 1,
+        "disamb_hits": 10,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "安徽省市场监管局",
+        "raw_hits": 1,
+        "disamb_hits": 8,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "阜阳市市场监督管理局",
+        "raw_hits": 8,
+        "disamb_hits": 11,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "央视3·15晚会",
+        "raw_hits": 26,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "央视新闻",
+        "raw_hits": 1,
+        "disamb_hits": 0,
+        "raw_empty": 0,
+        "disamb_empty": 1
+      },
+      {
+        "query": "人民日报",
+        "raw_hits": 1,
+        "disamb_hits": 0,
+        "raw_empty": 0,
+        "disamb_empty": 1
+      },
+      {
+        "query": "中国消费协会",
+        "raw_hits": 4,
+        "disamb_hits": 0,
+        "raw_empty": 0,
+        "disamb_empty": 1
+      },
+      {
+        "query": "同程金融",
+        "raw_hits": 8,
+        "disamb_hits": 10,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "宝马中国",
+        "raw_hits": 1,
+        "disamb_hits": 0,
+        "raw_empty": 0,
+        "disamb_empty": 1
+      },
+      {
+        "query": "抖音",
+        "raw_hits": 2,
+        "disamb_hits": 0,
+        "raw_empty": 0,
+        "disamb_empty": 1
+      },
+      {
+        "query": "世纪佳缘",
+        "raw_hits": 7,
+        "disamb_hits": 9,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "珍爱网",
+        "raw_hits": 7,
+        "disamb_hits": 8,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "云抖科技",
+        "raw_hits": 7,
+        "disamb_hits": 0,
+        "raw_empty": 0,
+        "disamb_empty": 1
+      },
+      {
+        "query": "湖南闽湘消防设备有限公司",
+        "raw_hits": 20,
+        "disamb_hits": 17,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "广州金桂根消防设备有限公司",
+        "raw_hits": 6,
+        "disamb_hits": 6,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "株洲市监局",
+        "raw_hits": 2,
+        "disamb_hits": 0,
+        "raw_empty": 0,
+        "disamb_empty": 1
+      },
+      {
+        "query": "深圳市市场监督管理局",
+        "raw_hits": 8,
+        "disamb_hits": 11,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "北京日报",
+        "raw_hits": 2,
+        "disamb_hits": 0,
+        "raw_empty": 0,
+        "disamb_empty": 1
+      },
+      {
+        "query": "华尔街见闻",
+        "raw_hits": 2,
+        "disamb_hits": 0,
+        "raw_empty": 0,
+        "disamb_empty": 1
+      }
+    ],
+    "summary": {
+      "raw_nonempty_rate": 1.0,
+      "disamb_nonempty_rate": 0.55,
+      "raw_avg_hits": 5.75,
+      "disamb_avg_hits": 5.0,
+      "raw_avg_hits_on_nonempty": 5.75,
+      "disamb_avg_hits_on_nonempty": 9.0909
+    },
+    "generated_at": "2026-04-10T07:43:42.627668+00:00"
+  },
+  "disambiguation_pair_decisions": {
+    "graph_id_raw": "mirofish_50e8eda2ef624af2",
+    "graph_id_disamb": "mirofish_8bd136ea45f14b6a",
+    "generated_at": "2026-04-10T15:43:30.009176",
+    "summary": {
+      "pair_decisions": 0,
+      "merged_groups": 0,
+      "precision_merge_rate": null,
+      "final_merged_count": 0,
+      "bootstrap_from_merges": true
+    },
+    "pair_decision_details": []
+  },
+  "token_usage": {
+    "by_step": {
+      "step1": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step2": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step3": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step4": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step5": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "updated_at": "2026-04-08T10:01:28.802434+00:00",
+  "project_id": "proj_ae33f98a88d3",
+  "graph": {
+    "by_variant": {
+      "raw": {
+        "graph_id": "mirofish_c1567c009ff94449",
+        "node_count": 93,
+        "edge_count": 70,
+        "entity_node_count": 93,
+        "isolated_node_ratio": 0.451613,
+        "avg_degree": 1.5054,
+        "multi_edge_pair_count": 9,
+        "alias_count_total": 0
+      },
+      "disamb": {
+        "graph_id": "mirofish_4ad54da1a8e3481d",
+        "node_count": 68,
+        "edge_count": 64,
+        "entity_node_count": 68,
+        "isolated_node_ratio": 0.323529,
+        "avg_degree": 1.8824,
+        "multi_edge_pair_count": 7,
+        "alias_count_total": 0
+      }
+    },
+    "delta": {
+      "node_reduction_ratio": 0.268817,
+      "edge_reduction_ratio": 0.085714
+    }
+  },
+  "simulation": {
+    "by_variant": {
+      "raw": {},
+      "disamb": {}
+    },
+    "note": "每次准备仿真会按当前 graph_id 刷新对应列；双列对比需分别用 raw/disamb 各跑一次。"
+  },
+  "retrieval": {
+    "by_variant": {
+      "raw": {
+        "search_graph_calls": 0,
+        "search_graph_avg_result_count": 0.0,
+        "search_graph_empty_rate": 0.0
+      },
+      "disamb": {
+        "search_graph_calls": 0,
+        "search_graph_avg_result_count": 0.0,
+        "search_graph_empty_rate": 0.0
+      }
+    },
+    "note": "统计自最近一次聚合起至本次 refresh 之间的 search_graph 调用（按 graph_id 分桶）。"
+  }
+}

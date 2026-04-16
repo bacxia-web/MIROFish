@@ -1,0 +1,26 @@
+{
+  "simulation_id": "sim_c12151aae6ec",
+  "project_id": "proj_2d98c5f4470f",
+  "graph_id": "mirofish_272a8500795d47dc",
+  "enable_twitter": true,
+  "enable_reddit": true,
+  "status": "ready",
+  "entities_count": 43,
+  "profiles_count": 43,
+  "entity_types": [
+    "Person",
+    "Platform",
+    "MediaOutlet",
+    "Organization",
+    "Merchant",
+    "Company"
+  ],
+  "config_generated": true,
+  "config_reasoning": "时间配置: 模拟场景聚焦于2026年第三季度补贴力度环比下降20%后的用户行为与平台反应，目标群体为一线及新一线城市年轻消费者、骑手、商家及媒体。考虑到用户群体以东八区为主，作息符合常规工作日节奏，晚间20-22点为活跃高峰。由于涉及补贴变化对用户侧的影响（涨价/减量 vs 配送时效）、骑手激励政策调整及商家抱怨框架重组，需维持较长时间的持续讨论，因此设定168小时模拟周期。用户行为集中于傍晚至夜间，骑手与商家群体可能在早晚高峰时段亦有反馈，故设置较高Agent活跃度区间。媒体与官方机构在工作时间保持关注与响应，因此在工作时段保持一定活跃度。 | 事件配置: 结合原始文档内容，淘宝闪购在2026年持续加大补贴投入，但若补贴力度环比下降20%，将直接影响用户感知与骑手积极性。用户侧舆论焦点自然转向‘涨价/减量’与‘配送时效’，而商家和骑手则可能从平台规则、流量分配和竞争环境角度提出诉求。因此初始帖子分别从媒体、组织、商家、个人及平台角度切入，以构建舆论初期方向。 | Agent配置: 成功生成 43 个 | 初始帖子分配: 5 个帖子已分配发布者",
+  "current_round": 0,
+  "twitter_status": "not_started",
+  "reddit_status": "not_started",
+  "created_at": "2026-04-10T09:50:04.271559",
+  "updated_at": "2026-04-10T09:52:15.423223",
+  "error": null
+}

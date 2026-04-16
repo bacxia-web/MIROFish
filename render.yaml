@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: mirofish
+    runtime: docker
+    dockerfilePath: ./Dockerfile.render
+    healthCheckPath: /health
+    envVars:
+      - key: GRAPH_BACKEND
+        value: zep
+      - key: ZEP_API_KEY
+        sync: false          # 在 Render Dashboard 手动填写
+      - key: LLM_API_KEY
+        value: "placeholder" # 查看历史数据不需要 LLM，占位防止启动校验失败
+      - key: DEBUG
+        value: "false"

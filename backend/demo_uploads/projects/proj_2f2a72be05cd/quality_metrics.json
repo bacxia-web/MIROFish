@@ -1,0 +1,120 @@
+{
+  "updated_at": "2026-04-09T08:21:20.289787+00:00",
+  "project_id": "proj_2f2a72be05cd",
+  "graph": {
+    "by_variant": {
+      "raw": {
+        "graph_id": "mirofish_c7f280e842304ae6",
+        "node_count": 120,
+        "edge_count": 96,
+        "entity_node_count": 120,
+        "isolated_node_ratio": 0.366667,
+        "avg_degree": 1.6,
+        "multi_edge_pair_count": 2,
+        "alias_count_total": 0
+      },
+      "disamb": {
+        "graph_id": "mirofish_41281db6e06645ce",
+        "node_count": 75,
+        "edge_count": 72,
+        "entity_node_count": 75,
+        "isolated_node_ratio": 0.28,
+        "avg_degree": 1.92,
+        "multi_edge_pair_count": 5,
+        "alias_count_total": 0
+      }
+    },
+    "delta": {
+      "node_reduction_ratio": 0.375,
+      "edge_reduction_ratio": 0.25
+    }
+  },
+  "simulation": {
+    "by_variant": {
+      "raw": {},
+      "disamb": {}
+    },
+    "note": "每次准备仿真会按当前 graph_id 刷新对应列；双列对比需分别用 raw/disamb 各跑一次。"
+  },
+  "retrieval": {
+    "by_variant": {
+      "raw": {
+        "search_graph_calls": 0,
+        "search_graph_result_hits_sum": 0,
+        "search_graph_empty_calls": 0,
+        "search_graph_avg_result_count": 0.0,
+        "search_graph_empty_rate": 0.0
+      },
+      "disamb": {
+        "search_graph_calls": 0,
+        "search_graph_result_hits_sum": 0,
+        "search_graph_empty_calls": 0,
+        "search_graph_avg_result_count": 0.0,
+        "search_graph_empty_rate": 0.0
+      }
+    },
+    "note": "统计自最近一次聚合起至本次 refresh 之间的 search_graph 调用（按 graph_id 分桶）。"
+  },
+  "retrieval_ab_eval": {
+    "project_id": "proj_2f2a72be05cd",
+    "raw_graph_id": "mirofish_c7f280e842304ae6",
+    "disamb_graph_id": "mirofish_41281db6e06645ce",
+    "raw": {
+      "search_graph_calls": 0,
+      "empty_calls": 0,
+      "result_hits_sum": 0
+    },
+    "disamb": {
+      "search_graph_calls": 0,
+      "empty_calls": 0,
+      "result_hits_sum": 0
+    },
+    "delta_empty_calls": 0,
+    "updated_at": "2026-04-09T08:21:20.288724+00:00",
+    "workload_mode": "natural_traffic"
+  },
+  "token_usage": {
+    "by_step": {
+      "step1": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step2": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step3": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step4": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step5": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      }
+    }
+  }
+}

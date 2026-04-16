@@ -1,0 +1,43 @@
+{
+  "project_id": "proj_2d98c5f4470f",
+  "graph_id_raw": "mirofish_272a8500795d47dc",
+  "graph_id_disamb": "mirofish_2ca888baa60448d7",
+  "query_count": 3,
+  "queries": [
+    "美团",
+    "淘宝闪购",
+    "蜂鸟运力线"
+  ],
+  "details": [
+    {
+      "query": "美团",
+      "raw_hits": 7,
+      "disamb_hits": 5,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "淘宝闪购",
+      "raw_hits": 20,
+      "disamb_hits": 10,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "蜂鸟运力线",
+      "raw_hits": 2,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    }
+  ],
+  "summary": {
+    "raw_nonempty_rate": 1.0,
+    "disamb_nonempty_rate": 0.6667,
+    "raw_avg_hits": 9.6667,
+    "disamb_avg_hits": 5.0,
+    "raw_avg_hits_on_nonempty": 9.6667,
+    "disamb_avg_hits_on_nonempty": 7.5
+  },
+  "generated_at": "2026-04-10T07:44:22.086336+00:00"
+}

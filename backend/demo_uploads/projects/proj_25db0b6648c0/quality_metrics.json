@@ -1,0 +1,150 @@
+{
+  "updated_at": "2026-04-09T09:08:31.616821+00:00",
+  "project_id": "proj_25db0b6648c0",
+  "graph": {
+    "by_variant": {
+      "raw": {
+        "graph_id": "mirofish_6c504b8a44ec4fdc",
+        "node_count": 162,
+        "edge_count": 185,
+        "entity_node_count": 162,
+        "isolated_node_ratio": 0.160494,
+        "avg_degree": 2.284,
+        "multi_edge_pair_count": 5,
+        "alias_count_total": 0
+      },
+      "disamb": {
+        "graph_id": "mirofish_95cd20a42c5d4f79",
+        "node_count": 128,
+        "edge_count": 230,
+        "entity_node_count": 128,
+        "isolated_node_ratio": 0.148438,
+        "avg_degree": 3.5938,
+        "multi_edge_pair_count": 23,
+        "alias_count_total": 0
+      }
+    },
+    "delta": {
+      "node_reduction_ratio": 0.209877,
+      "edge_reduction_ratio": -0.243243
+    }
+  },
+  "simulation": {
+    "by_variant": {
+      "raw": {
+        "agent_count": 162,
+        "duplicate_display_name_groups": 1,
+        "updated_at": "2026-04-09T09:00:50.914667+00:00"
+      },
+      "disamb": {
+        "agent_count": 128,
+        "duplicate_display_name_groups": 0,
+        "updated_at": "2026-04-09T09:00:04.199439+00:00",
+        "post_metrics_by_platform": {
+          "twitter": {
+            "post_total_count": 8,
+            "post_unique_count": 4,
+            "post_duplicate_count": 4,
+            "duplicate_post_groups": 4,
+            "max_repeat_count": 2,
+            "ignored_empty_posts": 0,
+            "updated_at": "2026-04-09T09:08:03.233965+00:00"
+          },
+          "reddit": {
+            "post_total_count": 8,
+            "post_unique_count": 4,
+            "post_duplicate_count": 4,
+            "duplicate_post_groups": 4,
+            "max_repeat_count": 2,
+            "ignored_empty_posts": 0,
+            "updated_at": "2026-04-09T09:08:21.443961+00:00"
+          }
+        }
+      }
+    },
+    "note": "每次准备仿真会按当前 graph_id 刷新对应列；双列对比需分别用 raw/disamb 各跑一次。"
+  },
+  "retrieval": {
+    "by_variant": {
+      "raw": {
+        "search_graph_calls": 324,
+        "search_graph_result_hits_sum": 2,
+        "search_graph_empty_calls": 322,
+        "search_graph_avg_result_count": 0.0062,
+        "search_graph_empty_rate": 0.9938
+      },
+      "disamb": {
+        "search_graph_calls": 256,
+        "search_graph_result_hits_sum": 0,
+        "search_graph_empty_calls": 256,
+        "search_graph_avg_result_count": 0.0,
+        "search_graph_empty_rate": 1.0
+      }
+    },
+    "note": "统计自最近一次聚合起至本次 refresh 之间的 search_graph 调用（按 graph_id 分桶）。"
+  },
+  "retrieval_ab_eval": {
+    "project_id": "proj_25db0b6648c0",
+    "raw_graph_id": "mirofish_6c504b8a44ec4fdc",
+    "disamb_graph_id": "mirofish_95cd20a42c5d4f79",
+    "raw": {
+      "search_graph_calls": 324,
+      "empty_calls": 322,
+      "result_hits_sum": 2
+    },
+    "disamb": {
+      "search_graph_calls": 256,
+      "empty_calls": 256,
+      "result_hits_sum": 0
+    },
+    "delta_empty_calls": 66,
+    "updated_at": "2026-04-09T09:08:31.615894+00:00",
+    "workload_mode": "natural_traffic"
+  },
+  "token_usage": {
+    "by_step": {
+      "step1": {
+        "prompt_tokens": 25812,
+        "completion_tokens": 4162,
+        "total_tokens": 29974,
+        "calls": 2,
+        "models": {
+          "qwen3-vl-flash-2025-10-15": 2
+        },
+        "updated_at": "2026-04-09T08:35:23.935370+00:00"
+      },
+      "step2": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step3": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step4": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step5": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      }
+    }
+  }
+}

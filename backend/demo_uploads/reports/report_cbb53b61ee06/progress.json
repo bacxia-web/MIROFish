@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "progress": -1,
+  "message": "报告生成失败: Error code: 403 - {'error': {'message': 'The free tier of the model has been exhausted. If you wish to continue access the model on a paid basis, please disable the \"use free tier only\" mode in the management console.', 'type': 'AllocationQuota.FreeTierOnly', 'param': None, 'code': 'AllocationQuota.FreeTierOnly'}, 'id': 'chatcmpl-50f6c879-2302-9614-8a10-b929e21c1f83', 'request_id': '50f6c879-2302-9614-8a10-b929e21c1f83'}",
+  "current_section": null,
+  "completed_sections": [
+    "社会分裂的加剧与权力真空",
+    "关键群体的反应与行动"
+  ],
+  "updated_at": "2026-04-07T19:43:27.711951"
+}

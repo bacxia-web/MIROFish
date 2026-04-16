@@ -1,0 +1,27 @@
+{
+  "simulation_id": "sim_b844ee1e24c6",
+  "project_id": "proj_6009044952f9",
+  "graph_id": "mirofish_66bd2c874ba44d30",
+  "enable_twitter": true,
+  "enable_reddit": true,
+  "status": "ready",
+  "entities_count": 18,
+  "profiles_count": 18,
+  "entity_types": [
+    "Product",
+    "Investor",
+    "Person",
+    "MediaOutlet",
+    "ContentCreator",
+    "Founder",
+    "Company"
+  ],
+  "config_generated": true,
+  "config_reasoning": "时间配置: 本次模拟围绕月之暗面完成5亿美元融资及战略转型事件展开，目标用户群体包括科技媒体、投资人、自媒体创作者及行业观察者。考虑到事件涉及资本、产品力、合规、算力成本等多维度讨论，需覆盖全球主要时区活跃人群。因此设定为一周模拟周期，高峰时段集中在晚间19-22点（中国用户活跃期），同时保留早间和工作时间的中等活跃度。媒体和投资人全天关注度高，自媒体创作者则在晚间集中发声，故设置较高的Agent激活上限以反映真实讨论热度。 | 事件配置: 根据提供的材料，事件核心围绕月之暗面完成C轮融资并宣布战略转型展开。舆论焦点将从资本驱动的估值故事转向实际的产品力、商业模型、合规压力和生态位问题。因此，初始帖子分别由媒体、自媒体、公司高层、投资人和公司自身发出，以体现多方视角。 | Agent配置: 成功生成 18 个 | 初始帖子分配: 5 个帖子已分配发布者",
+  "current_round": 0,
+  "twitter_status": "not_started",
+  "reddit_status": "not_started",
+  "created_at": "2026-04-10T09:52:25.250800",
+  "updated_at": "2026-04-10T09:53:27.600061",
+  "error": null
+}

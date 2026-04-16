@@ -1,0 +1,67 @@
+{
+  "graph_id_raw": "mirofish_1201c53579844b44",
+  "graph_id_disamb": "mirofish_53413c45a48c43f8",
+  "generated_at": "2026-04-10T15:57:26.040772",
+  "summary": {
+    "pair_decisions": 3,
+    "merged_groups": 0,
+    "precision_merge_rate": 0.0,
+    "final_merged_count": 0
+  },
+  "pair_decision_details": [
+    {
+      "pair_index": 0,
+      "entity_a": {
+        "uuid": "df396e2f-a801-4b8b-b301-790320c5e6f9",
+        "name": "MiniMax",
+        "label": "Competitor"
+      },
+      "entity_b": {
+        "uuid": "3120cecc-eb78-4591-84b2-e64a9c02c2de",
+        "name": "智谱",
+        "label": "Competitor"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 0,
+      "entity_a": {
+        "uuid": "2264fe13-ce9a-4923-8ce3-3c0cdaf179e6",
+        "name": "程曼祺",
+        "label": "Journalist"
+      },
+      "entity_b": {
+        "uuid": "e3233c53-5136-4821-99be-f20cd377039e",
+        "name": "贺乾明",
+        "label": "Journalist"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 0,
+      "entity_a": {
+        "uuid": "4ed8d89d-baf1-4d78-98ab-1335b1c568a3",
+        "name": "腾讯",
+        "label": "VentureCapitalist"
+      },
+      "entity_b": {
+        "uuid": "adeeec69-cdcf-472e-b57e-c5b797936137",
+        "name": "阿里",
+        "label": "VentureCapitalist"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    }
+  ]
+}

@@ -1,0 +1,639 @@
+{
+  "updated_at": "2026-04-10T08:32:15.937324+00:00",
+  "project_id": "proj_eaa1e3c4db04",
+  "graph": {
+    "by_variant": {
+      "raw": {
+        "graph_id": "mirofish_1201c53579844b44",
+        "node_count": 23,
+        "edge_count": 20,
+        "entity_node_count": 23,
+        "isolated_node_ratio": 0.347826,
+        "avg_degree": 1.7391,
+        "multi_edge_pair_count": 3,
+        "alias_count_total": 0
+      },
+      "disamb": {
+        "graph_id": "mirofish_53413c45a48c43f8",
+        "node_count": 18,
+        "edge_count": 20,
+        "entity_node_count": 18,
+        "isolated_node_ratio": 0.166667,
+        "avg_degree": 2.2222,
+        "multi_edge_pair_count": 4,
+        "alias_count_total": 0
+      }
+    },
+    "delta": {
+      "node_reduction_ratio": 0.217391,
+      "edge_reduction_ratio": 0.0
+    }
+  },
+  "simulation": {
+    "by_variant": {
+      "raw": {
+        "agent_count": 23,
+        "duplicate_display_name_groups": 2,
+        "updated_at": "2026-04-10T07:59:56.442672+00:00"
+      },
+      "disamb": {
+        "agent_count": 18,
+        "duplicate_display_name_groups": 0,
+        "updated_at": "2026-04-10T07:59:44.328072+00:00",
+        "post_metrics_by_platform": {
+          "twitter": {
+            "post_total_count": 8,
+            "post_unique_count": 4,
+            "post_duplicate_count": 4,
+            "duplicate_post_groups": 4,
+            "max_repeat_count": 2,
+            "ignored_empty_posts": 0,
+            "updated_at": "2026-04-10T08:12:53.397107+00:00"
+          },
+          "reddit": {
+            "post_total_count": 8,
+            "post_unique_count": 4,
+            "post_duplicate_count": 4,
+            "duplicate_post_groups": 4,
+            "max_repeat_count": 2,
+            "ignored_empty_posts": 0,
+            "updated_at": "2026-04-10T08:12:59.416058+00:00"
+          }
+        }
+      }
+    },
+    "note": "每次准备仿真会按当前 graph_id 刷新对应列；双列对比需分别用 raw/disamb 各跑一次。",
+    "diversity_eval": {
+      "project_id": "proj_eaa1e3c4db04",
+      "graph_id_raw": "mirofish_1201c53579844b44",
+      "graph_id_disamb": "mirofish_53413c45a48c43f8",
+      "raw": {
+        "simulation_id": null,
+        "profile_count": 0,
+        "pair_count": 0,
+        "cosine_median": null,
+        "cosine_p90": null
+      },
+      "disamb": {
+        "simulation_id": null,
+        "profile_count": 0,
+        "pair_count": 0,
+        "cosine_median": null,
+        "cosine_p90": null
+      },
+      "generated_at": "2026-04-10T07:57:36.595745+00:00"
+    }
+  },
+  "retrieval": {
+    "by_variant": {
+      "raw": {
+        "search_graph_calls": 89,
+        "search_graph_result_hits_sum": 167,
+        "search_graph_empty_calls": 34,
+        "search_graph_nonempty_calls": 55,
+        "search_graph_avg_result_count": 1.8764,
+        "search_graph_avg_result_count_on_hit": 3.0364,
+        "search_graph_empty_rate": 0.382,
+        "search_graph_empty_queries": [
+          {
+            "query": "关于字节的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:58:51.399723+00:00"
+          },
+          {
+            "query": "关于汪滔的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:58:52.653639+00:00"
+          },
+          {
+            "query": "关于大疆的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:58:53.234999+00:00"
+          },
+          {
+            "query": "关于字节的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:58:53.240077+00:00"
+          },
+          {
+            "query": "关于宇树的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:58:53.510189+00:00"
+          },
+          {
+            "query": "关于汪滔的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:58:53.917983+00:00"
+          },
+          {
+            "query": "关于大疆的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:58:54.097877+00:00"
+          },
+          {
+            "query": "关于宇树的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:58:54.242026+00:00"
+          },
+          {
+            "query": "关于北京晚达科技有限公司的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:59:05.395176+00:00"
+          },
+          {
+            "query": "关于北京晚达科技有限公司的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:59:06.089207+00:00"
+          },
+          {
+            "query": "关于智谱的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:59:17.723535+00:00"
+          },
+          {
+            "query": "关于智谱的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:59:18.567280+00:00"
+          },
+          {
+            "query": "关于智谱的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:59:21.539125+00:00"
+          },
+          {
+            "query": "关于智谱的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:59:22.567612+00:00"
+          },
+          {
+            "query": "关于腾讯的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:59:34.982290+00:00"
+          },
+          {
+            "query": "关于腾讯的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:59:35.732473+00:00"
+          },
+          {
+            "query": "关于阿里的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:59:36.252362+00:00"
+          },
+          {
+            "query": "关于阿里的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:59:37.147676+00:00"
+          },
+          {
+            "query": "关于月之暗面的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:59:47.316166+00:00"
+          },
+          {
+            "query": "关于月之暗面的所有信息、活动、事件、关系和背景",
+            "at": "2026-04-10T07:59:48.183644+00:00"
+          },
+          {
+            "query": "在缺乏新融资的模拟情境下，中文互联网大模型领域的自媒体与投资人如何重新定义‘成功’指标，从关注用户增长数据转向具体讨论单位经济模型（UE）的盈亏平衡点？",
+            "at": "2026-04-10T08:29:14.557130+00:00"
+          },
+          {
+            "query": "当资金链紧张时，行业讨论中关于‘算力成本核算’的具体话术发生了哪些变化，是否出现了针对推理成本优化或私有化部署性价比的特定批判性分析？",
+            "at": "2026-04-10T08:29:15.236983+00:00"
+          },
+          {
+            "query": "面对巨头生态位挤压，无融资支持的初创大模型公司在中文互联网的讨论中，是如何构建‘合规护城河’作为新的估值支撑逻辑的？",
+            "at": "2026-04-10T08:29:17.421749+00:00"
+          },
+          {
+            "query": "融资断档背景下，市场对于大模型产品力的评价标准是否从‘参数规模’和‘通用能力’转向了‘垂直场景落地能力’和‘实际商业闭环’的验证？",
+            "at": "2026-04-10T08:29:18.789887+00:00"
+          },
+          {
+            "query": "融资断档后中文互联网大模型赛道叙事框架的转变，从估值故事到单位经济模型UE验证，算力成本核算，以及B端付费留存的话术变化",
+            "at": "2026-04-10T08:29:19.697154+00:00"
+          },
+          {
+            "query": "在模拟场景中，当公司宣布融资断档时，投资人针对高增长但亏损项目的具体止损言论和会议决策记录是什么？",
+            "at": "2026-04-10T08:29:57.174727+00:00"
+          },
+          {
+            "query": "面对资金链断裂风险，投资人如何重新定义投资标准，从关注用户增长数据转向要求具体的单位经济模型（UE）验证指标？",
+            "at": "2026-04-10T08:29:58.018728+00:00"
+          },
+          {
+            "query": "在缺乏新资金注入的情况下，投资人推动被投企业探索的具体退出路径（如并购、资产出售或清算）有哪些实际案例或谈判行为？",
+            "at": "2026-04-10T08:29:59.128578+00:00"
+          },
+          {
+            "query": "在中文互联网舆论场中，投资人关于“估值故事”失效的公开话术发生了怎样的分化，如何体现对合规性与算力成本等新框架的强调？",
+            "at": "2026-04-10T08:30:00.862559+00:00"
+          },
+          {
+            "query": "融资断档下投资人策略分化：止损逻辑、退出路径、对UE验证的苛求、停止注资的具体表现",
+            "at": "2026-04-10T08:30:01.454607+00:00"
+          },
+          {
+            "query": "投资人 止损 创业者 生态位 话术",
+            "at": "2026-04-10T08:30:19.301120+00:00"
+          },
+          {
+            "query": "‘伪B端’泡沫破裂的早期信号有哪些？例如客户流失、合同违约、收入不及预期等指标如何体现？",
+            "at": "2026-04-10T08:31:05.984170+00:00"
+          },
+          {
+            "query": "当‘伪B端’模式开始暴露问题时，中文互联网舆论（尤其是自媒体）如何重构叙事框架？是否从估值故事转向产品力、合规性或成本效率等新维度？",
+            "at": "2026-04-10T08:31:06.843825+00:00"
+          },
+          {
+            "query": "投资人群体在面对B端转型失败案例时，其评估话术和尽调重点发生了哪些具体变化？是否更强调生态位合理性、算力成本控制或商业化闭环能力？",
+            "at": "2026-04-10T08:31:07.703663+00:00"
+          }
+        ],
+        "search_graph_empty_queries_recorded": 34
+      },
+      "disamb": {
+        "search_graph_calls": 80,
+        "search_graph_result_hits_sum": 228,
+        "search_graph_empty_calls": 16,
+        "search_graph_nonempty_calls": 64,
+        "search_graph_avg_result_count": 2.85,
+        "search_graph_avg_result_count_on_hit": 3.5625,
+        "search_graph_empty_rate": 0.2,
+        "search_graph_empty_queries": [
+          {
+            "query": "字节",
+            "at": "2026-04-10T07:57:32.932934+00:00"
+          },
+          {
+            "query": "K3",
+            "at": "2026-04-10T07:57:34.751570+00:00"
+          },
+          {
+            "query": "在融资断档的舆论背景下，中文互联网自媒体关于大模型企业的讨论焦点如何从‘估值故事’具体转向‘现金流健康度’与'UE（单位经济模型）验证’？",
+            "at": "2026-04-10T08:29:15.791759+00:00"
+          },
+          {
+            "query": "针对‘与巨头生态位’这一新框架，中文互联网上的关键意见领袖（KOL）是如何重新定义大模型企业的生存空间与竞争策略的？",
+            "at": "2026-04-10T08:29:17.768728+00:00"
+          },
+          {
+            "query": "在缺乏新一轮融资预期的模拟场景中，哪些具体的行业事件或数据披露直接触发了舆论叙事从‘增长预期’向‘产品力落地’的断裂式转变？",
+            "at": "2026-04-10T08:29:19.204006+00:00"
+          },
+          {
+            "query": "对比融资顺畅期，当前中文互联网上投资人与自媒体在评价大模型企业时，对于‘技术壁垒’与‘商业闭环’的权重分配发生了怎样的显著变化？",
+            "at": "2026-04-10T08:29:20.123148+00:00"
+          },
+          {
+            "query": "融资断档背景下，中文互联网对大模型企业叙事的转变：从估值故事到现金流、UE验证、合规与算力成本的讨论变化",
+            "at": "2026-04-10T08:29:20.856265+00:00"
+          },
+          {
+            "query": "随着战略重心转移，中文互联网自媒体对大模型企业的讨论话术如何从‘增长叙事’分化为对‘合规风险’与‘算力成本’的质疑？",
+            "at": "2026-04-10T08:30:00.299692+00:00"
+          },
+          {
+            "query": "在巨头阴影下，独立大模型企业采取了哪些具体的生存策略（如私有化部署、特定行业深耕）来构建差异化生态位？",
+            "at": "2026-04-10T08:30:01.310738+00:00"
+          },
+          {
+            "query": "投资人对大模型企业的评估框架发生了怎样的变化，具体体现在哪些新的尽职调查维度（如单位经济模型、数据合规性）上？",
+            "at": "2026-04-10T08:30:02.160332+00:00"
+          },
+          {
+            "query": "独立大模型企业与科技巨头的生态位博弈 竞争加剧 合作破裂 巨头阴影下的生存策略",
+            "at": "2026-04-10T08:30:02.924286+00:00"
+          },
+          {
+            "query": "大模型企业 数据合规成本 UE模型影响",
+            "at": "2026-04-10T08:30:22.357331+00:00"
+          },
+          {
+            "query": "在无新一轮融资背景下，哪些曾被资本热捧的大模型C端应用场景因缺乏真实用户付费意愿而暴露为伪需求？",
+            "at": "2026-04-10T08:31:07.077797+00:00"
+          },
+          {
+            "query": "C端产品在停止烧钱补贴后，用户付费留存率下降的具体数据表现与典型产品案例有哪些？",
+            "at": "2026-04-10T08:31:08.084039+00:00"
+          },
+          {
+            "query": "自媒体在讨论大模型落地困境时，如何从‘技术颠覆’叙事转向聚焦产品力不足、合规风险或算力成本不可持续等新框架？",
+            "at": "2026-04-10T08:31:09.472383+00:00"
+          },
+          {
+            "query": "投资人在融资断档环境下，如何调整话术以区分‘故事型项目’与‘现金流验证型项目’，并在生态位竞争中重新评估与巨头的依存关系？",
+            "at": "2026-04-10T08:31:10.135091+00:00"
+          }
+        ],
+        "search_graph_empty_queries_recorded": 16
+      }
+    },
+    "note": "统计自最近一次聚合起至本次 refresh 之间的 search_graph 调用（按 graph_id 分桶）。 空检索词见各 variant 下 search_graph_empty_queries（最终合并结果为 0 时的原始 query， 每条含 at 时间；历史跑次若未升级后端则无此字段）。"
+  },
+  "retrieval_ab_eval": {
+    "project_id": "proj_eaa1e3c4db04",
+    "raw_graph_id": "mirofish_1201c53579844b44",
+    "disamb_graph_id": "mirofish_53413c45a48c43f8",
+    "raw": {
+      "search_graph_calls": 89,
+      "empty_calls": 34,
+      "result_hits_sum": 167
+    },
+    "disamb": {
+      "search_graph_calls": 80,
+      "empty_calls": 16,
+      "result_hits_sum": 228
+    },
+    "delta_empty_calls": 18,
+    "updated_at": "2026-04-10T08:32:15.935413+00:00",
+    "workload_mode": "natural_traffic"
+  },
+  "retrieval_benchmark": {
+    "project_id": "proj_eaa1e3c4db04",
+    "graph_id_raw": "mirofish_1201c53579844b44",
+    "graph_id_disamb": "mirofish_53413c45a48c43f8",
+    "query_count": 21,
+    "queries": [
+      "月之暗面",
+      "MiniMax",
+      "智谱",
+      "杨植麟",
+      "张予彤",
+      "王慧文",
+      "晚点 LatePost",
+      "贺乾明",
+      "程曼祺",
+      "腾讯",
+      "阿里",
+      "字节",
+      "IDG",
+      "英伟达",
+      "Kimi",
+      "K2 Thinking",
+      "K3",
+      "大疆",
+      "宇树",
+      "汪滔",
+      "北京晚达科技有限公司"
+    ],
+    "details": [
+      {
+        "query": "月之暗面",
+        "raw_hits": 20,
+        "disamb_hits": 19,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "MiniMax",
+        "raw_hits": 4,
+        "disamb_hits": 4,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "智谱",
+        "raw_hits": 4,
+        "disamb_hits": 4,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "杨植麟",
+        "raw_hits": 5,
+        "disamb_hits": 3,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "张予彤",
+        "raw_hits": 2,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "王慧文",
+        "raw_hits": 2,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "晚点 LatePost",
+        "raw_hits": 9,
+        "disamb_hits": 9,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "贺乾明",
+        "raw_hits": 5,
+        "disamb_hits": 3,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "程曼祺",
+        "raw_hits": 2,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "腾讯",
+        "raw_hits": 2,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "阿里",
+        "raw_hits": 2,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "字节",
+        "raw_hits": 1,
+        "disamb_hits": 0,
+        "raw_empty": 0,
+        "disamb_empty": 1
+      },
+      {
+        "query": "IDG",
+        "raw_hits": 2,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "英伟达",
+        "raw_hits": 1,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "Kimi",
+        "raw_hits": 2,
+        "disamb_hits": 3,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "K2 Thinking",
+        "raw_hits": 1,
+        "disamb_hits": 1,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "K3",
+        "raw_hits": 2,
+        "disamb_hits": 0,
+        "raw_empty": 0,
+        "disamb_empty": 1
+      },
+      {
+        "query": "大疆",
+        "raw_hits": 4,
+        "disamb_hits": 3,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "宇树",
+        "raw_hits": 1,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "汪滔",
+        "raw_hits": 4,
+        "disamb_hits": 3,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "北京晚达科技有限公司",
+        "raw_hits": 10,
+        "disamb_hits": 4,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      }
+    ],
+    "summary": {
+      "raw_nonempty_rate": 1.0,
+      "disamb_nonempty_rate": 0.9048,
+      "raw_avg_hits": 4.0476,
+      "disamb_avg_hits": 3.4286,
+      "raw_avg_hits_on_nonempty": 4.0476,
+      "disamb_avg_hits_on_nonempty": 3.7895
+    },
+    "generated_at": "2026-04-10T07:57:36.582151+00:00"
+  },
+  "disambiguation_pair_decisions": {
+    "graph_id_raw": "mirofish_1201c53579844b44",
+    "graph_id_disamb": "mirofish_53413c45a48c43f8",
+    "generated_at": "2026-04-10T15:57:26.040772",
+    "summary": {
+      "pair_decisions": 3,
+      "merged_groups": 0,
+      "precision_merge_rate": 0.0,
+      "final_merged_count": 0
+    },
+    "pair_decision_details": [
+      {
+        "pair_index": 0,
+        "entity_a": {
+          "uuid": "df396e2f-a801-4b8b-b301-790320c5e6f9",
+          "name": "MiniMax",
+          "label": "Competitor"
+        },
+        "entity_b": {
+          "uuid": "3120cecc-eb78-4591-84b2-e64a9c02c2de",
+          "name": "智谱",
+          "label": "Competitor"
+        },
+        "same_entity": false,
+        "confidence": 1.0,
+        "canonical_name": "",
+        "final_merged": false,
+        "reject_reason": "same_entity_false"
+      },
+      {
+        "pair_index": 0,
+        "entity_a": {
+          "uuid": "2264fe13-ce9a-4923-8ce3-3c0cdaf179e6",
+          "name": "程曼祺",
+          "label": "Journalist"
+        },
+        "entity_b": {
+          "uuid": "e3233c53-5136-4821-99be-f20cd377039e",
+          "name": "贺乾明",
+          "label": "Journalist"
+        },
+        "same_entity": false,
+        "confidence": 1.0,
+        "canonical_name": "",
+        "final_merged": false,
+        "reject_reason": "same_entity_false"
+      },
+      {
+        "pair_index": 0,
+        "entity_a": {
+          "uuid": "4ed8d89d-baf1-4d78-98ab-1335b1c568a3",
+          "name": "腾讯",
+          "label": "VentureCapitalist"
+        },
+        "entity_b": {
+          "uuid": "adeeec69-cdcf-472e-b57e-c5b797936137",
+          "name": "阿里",
+          "label": "VentureCapitalist"
+        },
+        "same_entity": false,
+        "confidence": 1.0,
+        "canonical_name": "",
+        "final_merged": false,
+        "reject_reason": "same_entity_false"
+      }
+    ]
+  },
+  "token_usage": {
+    "by_step": {
+      "step1": {
+        "prompt_tokens": 5800,
+        "completion_tokens": 5432,
+        "total_tokens": 11232,
+        "calls": 2,
+        "models": {
+          "qwen3.5-122b-a10b": 2
+        },
+        "updated_at": "2026-04-10T07:56:02.215640+00:00"
+      },
+      "step2": {
+        "prompt_tokens": 14182,
+        "completion_tokens": 8313,
+        "total_tokens": 22495,
+        "calls": 8,
+        "models": {
+          "qwen3.5-122b-a10b": 8
+        },
+        "updated_at": "2026-04-10T08:00:37.731711+00:00"
+      },
+      "step3": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step4": {
+        "prompt_tokens": 203273,
+        "completion_tokens": 14912,
+        "total_tokens": 218185,
+        "calls": 52,
+        "models": {
+          "qwen3.5-122b-a10b": 31,
+          "qwen3-max-2026-01-23": 21
+        },
+        "updated_at": "2026-04-10T08:32:15.826306+00:00"
+      },
+      "step5": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      }
+    }
+  }
+}

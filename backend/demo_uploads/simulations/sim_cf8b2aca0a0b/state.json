@@ -1,0 +1,25 @@
+{
+  "simulation_id": "sim_cf8b2aca0a0b",
+  "project_id": "proj_6009044952f9",
+  "graph_id": "mirofish_6c1932b3a915493f",
+  "enable_twitter": true,
+  "enable_reddit": true,
+  "status": "stopped",
+  "entities_count": 11,
+  "profiles_count": 11,
+  "entity_types": [
+    "Investor",
+    "Person",
+    "MediaOutlet",
+    "Founder",
+    "Company"
+  ],
+  "config_generated": true,
+  "config_reasoning": "时间配置: 该事件涉及AI行业融资、商业化路径转变等专业话题，目标用户包括科技从业者、投资人、自媒体及行业观察者。考虑到东八区用户作息，晚间19-22点为社交媒体活跃高峰，适合讨论深度内容；同时，媒体和投资人可能在工作时间（9-18点）进行快速反应和传播。因此将高峰时段设为晚间，低谷时段为凌晨，早间和工作时间保持中等活跃度。 | 事件配置: 根据原始文档内容，结合模拟需求，舆论焦点将从早期的融资和估值转向对公司产品力、商业化模式、合规风险及行业竞争格局的讨论。初始帖子分别由媒体、创始人、个人观察者、投资人和公司自身发布，体现多方视角，符合舆情扩散逻辑。 | Agent配置: 成功生成 11 个 | 初始帖子分配: 5 个帖子已分配发布者",
+  "current_round": 0,
+  "twitter_status": "not_started",
+  "reddit_status": "not_started",
+  "created_at": "2026-04-10T09:52:25.250772",
+  "updated_at": "2026-04-10T10:21:46.288370",
+  "error": null
+}

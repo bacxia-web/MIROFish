@@ -1,0 +1,333 @@
+{
+  "project_id": "proj_e9a4b03f23a6",
+  "name": "Unnamed Project",
+  "status": "graph_completed",
+  "created_at": "2026-04-09T18:59:39.051151",
+  "updated_at": "2026-04-09T19:25:54.805705",
+  "files": [
+    {
+      "filename": "创新研报｜2024年315全媒体舆情分析与品牌洞察报告_Wisers_2024.pdf",
+      "size": 5994625
+    }
+  ],
+  "total_text_length": 17529,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "GovernmentAgency",
+        "description": "Government departments responsible for regulation and enforcement.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Official full name of the government agency."
+          },
+          {
+            "name": "jurisdiction",
+            "type": "text",
+            "description": "Geographic or functional area of authority."
+          }
+        ],
+        "examples": [
+          "安徽省市场监管局",
+          "深圳市市场监督管理局"
+        ]
+      },
+      {
+        "name": "MediaOutlet",
+        "description": "News organizations that report and shape public opinion.",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Name of the media organization."
+          },
+          {
+            "name": "platform_type",
+            "type": "text",
+            "description": "Type of media platform (e.g., newspaper, TV, social media)."
+          }
+        ],
+        "examples": [
+          "北京日报",
+          "央视新闻"
+        ]
+      },
+      {
+        "name": "Company",
+        "description": "Commercial enterprises involved in production, sales, or services.",
+        "attributes": [
+          {
+            "name": "company_name",
+            "type": "text",
+            "description": "Registered name of the company."
+          },
+          {
+            "name": "industry",
+            "type": "text",
+            "description": "Industry sector the company operates in."
+          }
+        ],
+        "examples": [
+          "同程金融",
+          "宝马中国"
+        ]
+      },
+      {
+        "name": "ConsumerAdvocate",
+        "description": "Individuals or groups actively voicing consumer rights concerns.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Name or alias of the advocate."
+          },
+          {
+            "name": "advocacy_focus",
+            "type": "text",
+            "description": "Primary area of consumer advocacy (e.g., food safety, finance)."
+          }
+        ],
+        "examples": [
+          "王海",
+          "维权车主代表"
+        ]
+      },
+      {
+        "name": "SocialMediaInfluencer",
+        "description": "Individuals with significant online followings who influence public discourse.",
+        "attributes": [
+          {
+            "name": "handle",
+            "type": "text",
+            "description": "Social media username or handle."
+          },
+          {
+            "name": "follower_count",
+            "type": "text",
+            "description": "Approximate number of followers."
+          }
+        ],
+        "examples": [
+          "小杨哥",
+          "东方甄选官方账号"
+        ]
+      },
+      {
+        "name": "IndustryAssociation",
+        "description": "Formal associations representing specific industry sectors.",
+        "attributes": [
+          {
+            "name": "association_name",
+            "type": "text",
+            "description": "Official name of the industry association."
+          },
+          {
+            "name": "sector",
+            "type": "text",
+            "description": "Industry sector represented."
+          }
+        ],
+        "examples": [
+          "中国餐饮协会",
+          "中国消防协会"
+        ]
+      },
+      {
+        "name": "LegalExpert",
+        "description": "Professionals providing legal commentary or analysis on exposed cases.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Name of the legal expert."
+          },
+          {
+            "name": "specialization",
+            "type": "text",
+            "description": "Area of legal expertise (e.g., consumer law, advertising law)."
+          }
+        ],
+        "examples": [
+          "药监局工作人员大舅",
+          "法律博主普法君"
+        ]
+      },
+      {
+        "name": "PlatformOperator",
+        "description": "Operators of digital platforms where content or commerce occurs.",
+        "attributes": [
+          {
+            "name": "platform_name",
+            "type": "text",
+            "description": "Name of the operated platform."
+          },
+          {
+            "name": "business_model",
+            "type": "text",
+            "description": "Primary business model (e.g., e-commerce, social media)."
+          }
+        ],
+        "examples": [
+          "抖音运营团队",
+          "淘宝平台管理方"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "Generic type for any individual not fitting more specific categories.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name or known alias of the person."
+          }
+        ],
+        "examples": [
+          "普通网友甲",
+          "路人消费者乙"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "Generic type for any organization not fitting more specific categories.",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Name of the organization."
+          }
+        ],
+        "examples": [
+          "某地方商会",
+          "临时维权小组"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "REGULATES",
+        "description": "Agency imposes rules or oversight on entity.",
+        "source_targets": [
+          {
+            "source": "GovernmentAgency",
+            "target": "Company"
+          },
+          {
+            "source": "GovernmentAgency",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPORTS_ON",
+        "description": "Media outlet publishes coverage about an entity or event.",
+        "source_targets": [
+          {
+            "source": "MediaOutlet",
+            "target": "Company"
+          },
+          {
+            "source": "MediaOutlet",
+            "target": "GovernmentAgency"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COMMENTS_ON",
+        "description": "Entity publicly expresses opinion about another entity or issue.",
+        "source_targets": [
+          {
+            "source": "ConsumerAdvocate",
+            "target": "Company"
+          },
+          {
+            "source": "SocialMediaInfluencer",
+            "target": "MediaOutlet"
+          },
+          {
+            "source": "Person",
+            "target": "Event"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "AFFILIATED_WITH",
+        "description": "Entity has formal or informal association with another.",
+        "source_targets": [
+          {
+            "source": "LegalExpert",
+            "target": "Organization"
+          },
+          {
+            "source": "SocialMediaInfluencer",
+            "target": "PlatformOperator"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "RESPONDS_TO",
+        "description": "Entity issues official or public response to criticism or event.",
+        "source_targets": [
+          {
+            "source": "Company",
+            "target": "MediaOutlet"
+          },
+          {
+            "source": "GovernmentAgency",
+            "target": "ConsumerAdvocate"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COLLABORATES_WITH",
+        "description": "Entities work together formally or informally.",
+        "source_targets": [
+          {
+            "source": "IndustryAssociation",
+            "target": "GovernmentAgency"
+          },
+          {
+            "source": "PlatformOperator",
+            "target": "Company"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "OPPOSES",
+        "description": "Entity publicly opposes or criticizes another entity’s actions.",
+        "source_targets": [
+          {
+            "source": "ConsumerAdvocate",
+            "target": "Company"
+          },
+          {
+            "source": "Person",
+            "target": "Policy"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "文本聚焦‘糟心肉’等315曝光事件引发的舆论反应，涉及政府监管、媒体报道、企业回应、消费者声讨、平台下架等多方互动。实体设计需覆盖可发声主体：监管机构、媒体、涉事企业、意见领袖、法律人士、行业协会、平台方及普通网民。关系类型需体现监管、报道、评论、回应、合作与反对等社媒互动模式，以支持舆论传播路径模拟。",
+  "graph_id": "mirofish_89fb8b0789ab4907",
+  "graph_id_raw": "mirofish_f47341095a174c3c",
+  "graph_id_disamb": "mirofish_89fb8b0789ab4907",
+  "graph_build_task_id": "d7a61c33-a112-42d9-9bda-b035ff99f3d5",
+  "quality_metrics": {
+    "updated_at": "2026-04-09T11:25:54.804381+00:00",
+    "node_count_disamb": 40,
+    "node_count_raw": 54
+  },
+  "simulation_requirement": "5预测“糟心肉”事件对预制菜国标出台的推动力：推演在平行世界中，当“梅菜扣肉”涉及淋巴肉曝光后，公众对“预制菜”标签的集体排斥感及信任修复周期。",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

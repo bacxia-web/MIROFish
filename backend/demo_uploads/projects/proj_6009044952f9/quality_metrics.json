@@ -1,0 +1,333 @@
+{
+  "updated_at": "2026-04-10T07:45:02.088978+00:00",
+  "project_id": "proj_6009044952f9",
+  "graph": {
+    "by_variant": {
+      "raw": {
+        "graph_id": "mirofish_66bd2c874ba44d30",
+        "node_count": 18,
+        "edge_count": 21,
+        "entity_node_count": 18,
+        "isolated_node_ratio": 0.111111,
+        "avg_degree": 2.3333,
+        "multi_edge_pair_count": 1,
+        "alias_count_total": 0
+      },
+      "disamb": {
+        "graph_id": "mirofish_6c1932b3a915493f",
+        "node_count": 11,
+        "edge_count": 13,
+        "entity_node_count": 11,
+        "isolated_node_ratio": 0.0,
+        "avg_degree": 2.3636,
+        "multi_edge_pair_count": 1,
+        "alias_count_total": 0
+      }
+    },
+    "delta": {
+      "node_reduction_ratio": 0.388889,
+      "edge_reduction_ratio": 0.380952
+    }
+  },
+  "simulation": {
+    "by_variant": {
+      "raw": {},
+      "disamb": {}
+    },
+    "note": "每次准备仿真会按当前 graph_id 刷新对应列；双列对比需分别用 raw/disamb 各跑一次。",
+    "diversity_eval": {
+      "project_id": "proj_6009044952f9",
+      "graph_id_raw": "mirofish_66bd2c874ba44d30",
+      "graph_id_disamb": "mirofish_6c1932b3a915493f",
+      "raw": {
+        "simulation_id": "sim_b844ee1e24c6",
+        "profile_count": 36,
+        "pair_count": 630,
+        "cosine_median": 0.4545,
+        "cosine_p90": 0.6764
+      },
+      "disamb": {
+        "simulation_id": "sim_cf8b2aca0a0b",
+        "profile_count": 22,
+        "pair_count": 231,
+        "cosine_median": 0.4703,
+        "cosine_p90": 0.6925
+      },
+      "generated_at": "2026-04-10T07:45:01.989746+00:00"
+    }
+  },
+  "retrieval": {
+    "by_variant": {
+      "raw": {
+        "search_graph_calls": 17,
+        "search_graph_result_hits_sum": 72,
+        "search_graph_empty_calls": 0,
+        "search_graph_nonempty_calls": 17,
+        "search_graph_avg_result_count": 4.2353,
+        "search_graph_avg_result_count_on_hit": 4.2353,
+        "search_graph_empty_rate": 0.0,
+        "search_graph_empty_queries": [],
+        "search_graph_empty_queries_recorded": 0
+      },
+      "disamb": {
+        "search_graph_calls": 17,
+        "search_graph_result_hits_sum": 50,
+        "search_graph_empty_calls": 4,
+        "search_graph_nonempty_calls": 13,
+        "search_graph_avg_result_count": 2.9412,
+        "search_graph_avg_result_count_on_hit": 3.8462,
+        "search_graph_empty_rate": 0.2353,
+        "search_graph_empty_queries": [
+          {
+            "query": "大疆",
+            "at": "2026-04-10T07:44:48.517955+00:00"
+          },
+          {
+            "query": "汪滔",
+            "at": "2026-04-10T07:44:49.068545+00:00"
+          },
+          {
+            "query": "张予彤",
+            "at": "2026-04-10T07:44:49.758750+00:00"
+          },
+          {
+            "query": "K2 Thinking",
+            "at": "2026-04-10T07:44:50.896839+00:00"
+          }
+        ],
+        "search_graph_empty_queries_recorded": 4
+      }
+    },
+    "note": "统计自最近一次聚合起至本次 refresh 之间的 search_graph 调用（按 graph_id 分桶）。 空检索词见各 variant 下 search_graph_empty_queries（最终合并结果为 0 时的原始 query， 每条含 at 时间；历史跑次若未升级后端则无此字段）。"
+  },
+  "retrieval_ab_eval": {
+    "project_id": "proj_6009044952f9",
+    "raw_graph_id": "mirofish_66bd2c874ba44d30",
+    "disamb_graph_id": "mirofish_6c1932b3a915493f",
+    "raw": {
+      "search_graph_calls": 17,
+      "empty_calls": 0,
+      "result_hits_sum": 72
+    },
+    "disamb": {
+      "search_graph_calls": 17,
+      "empty_calls": 4,
+      "result_hits_sum": 50
+    },
+    "delta_empty_calls": -4,
+    "updated_at": "2026-04-10T07:45:02.088308+00:00",
+    "workload_mode": "natural_traffic"
+  },
+  "retrieval_benchmark": {
+    "project_id": "proj_6009044952f9",
+    "graph_id_raw": "mirofish_66bd2c874ba44d30",
+    "graph_id_disamb": "mirofish_6c1932b3a915493f",
+    "query_count": 17,
+    "queries": [
+      "晚点",
+      "MiniMax",
+      "智谱",
+      "杨植麟",
+      "王慧文",
+      "腾讯",
+      "阿里",
+      "IDG",
+      "Kimi",
+      "月之暗面",
+      "《晚点 LatePost》",
+      "大疆",
+      "汪滔",
+      "贺乾明",
+      "张予彤",
+      "K3 模型",
+      "K2 Thinking"
+    ],
+    "details": [
+      {
+        "query": "晚点",
+        "raw_hits": 5,
+        "disamb_hits": 5,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "MiniMax",
+        "raw_hits": 3,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "智谱",
+        "raw_hits": 4,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "杨植麟",
+        "raw_hits": 6,
+        "disamb_hits": 3,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "王慧文",
+        "raw_hits": 2,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "腾讯",
+        "raw_hits": 2,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "阿里",
+        "raw_hits": 2,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "IDG",
+        "raw_hits": 2,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "Kimi",
+        "raw_hits": 2,
+        "disamb_hits": 3,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "月之暗面",
+        "raw_hits": 20,
+        "disamb_hits": 19,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "《晚点 LatePost》",
+        "raw_hits": 5,
+        "disamb_hits": 5,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "大疆",
+        "raw_hits": 5,
+        "disamb_hits": 0,
+        "raw_empty": 0,
+        "disamb_empty": 1
+      },
+      {
+        "query": "汪滔",
+        "raw_hits": 2,
+        "disamb_hits": 0,
+        "raw_empty": 0,
+        "disamb_empty": 1
+      },
+      {
+        "query": "贺乾明",
+        "raw_hits": 3,
+        "disamb_hits": 2,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "张予彤",
+        "raw_hits": 3,
+        "disamb_hits": 0,
+        "raw_empty": 0,
+        "disamb_empty": 1
+      },
+      {
+        "query": "K3 模型",
+        "raw_hits": 4,
+        "disamb_hits": 1,
+        "raw_empty": 0,
+        "disamb_empty": 0
+      },
+      {
+        "query": "K2 Thinking",
+        "raw_hits": 2,
+        "disamb_hits": 0,
+        "raw_empty": 0,
+        "disamb_empty": 1
+      }
+    ],
+    "summary": {
+      "raw_nonempty_rate": 1.0,
+      "disamb_nonempty_rate": 0.7647,
+      "raw_avg_hits": 4.2353,
+      "disamb_avg_hits": 2.9412,
+      "raw_avg_hits_on_nonempty": 4.2353,
+      "disamb_avg_hits_on_nonempty": 3.8462
+    },
+    "generated_at": "2026-04-10T07:44:50.896939+00:00"
+  },
+  "disambiguation_pair_decisions": {
+    "graph_id_raw": "mirofish_66bd2c874ba44d30",
+    "graph_id_disamb": "mirofish_6c1932b3a915493f",
+    "generated_at": "2026-04-10T15:44:42.944548",
+    "summary": {
+      "pair_decisions": 0,
+      "merged_groups": 0,
+      "precision_merge_rate": null,
+      "final_merged_count": 0,
+      "bootstrap_from_merges": true
+    },
+    "pair_decision_details": []
+  },
+  "token_usage": {
+    "by_step": {
+      "step1": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step2": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step3": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step4": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      },
+      "step5": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "calls": 0,
+        "models": {},
+        "updated_at": null
+      }
+    }
+  }
+}

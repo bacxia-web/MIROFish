@@ -1,0 +1,28 @@
+{
+  "simulation_id": "sim_254cec110712",
+  "project_id": "proj_25db0b6648c0",
+  "graph_id": "mirofish_6c504b8a44ec4fdc",
+  "enable_twitter": true,
+  "enable_reddit": true,
+  "status": "ready",
+  "entities_count": 162,
+  "profiles_count": 162,
+  "entity_types": [
+    "Organization",
+    "Person",
+    "GovernmentOfficial",
+    "MediaOutlet",
+    "ConsumerAdvocate",
+    "Journalist",
+    "RegulatoryAgency",
+    "Event"
+  ],
+  "config_generated": true,
+  "config_reasoning": "时间配置: 该模拟聚焦‘糟心肉’事件对预制菜国标出台的推动力，核心参与群体为普通消费者、媒体、监管机构与行业企业。基于315晚会舆情传播规律（如抖音高峰时段在晚间）、公众舆论发酵周期（事件曝光后24-72小时达到峰值），配置晚间19-22点为高活跃期以模拟社交媒体热议；工作日9-18点维持中等活跃度，覆盖媒体发布、企业回应与监管动作；早间6-8点对应用户起床后刷社交平台习惯，激活初步讨论；凌晨0-5点为低谷，因多数用户未进入活跃状态。总模拟时长168小时（7天）可完整覆盖事件从爆发→发酵→政策响应→信任修复的全周期，符合食品安全舆情典型生命周期。 | 事件配置: 根据模拟需求，事件配置需聚焦‘糟心肉’事件对预制菜国标出台的推动力，因此热点关键词围绕食品安全与预制菜标签展开。舆论方向从个体曝光走向制度反思，初始帖子分配依据实体类型：消费者权益倡导者（ConsumerAdvocate）发起抗议，监管机构（RegulatoryAgency）发布权威响应，媒体（MediaOutlet）提供数据支撑，普通公众（Person）表达情绪与诉求，形成多维度舆论场。所有poster_type均严格匹配可用实体类型。 | Agent配置: 成功生成 162 个 | 初始帖子分配: 5 个帖子已分配发布者",
+  "current_round": 0,
+  "twitter_status": "not_started",
+  "reddit_status": "not_started",
+  "created_at": "2026-04-09T16:54:21.043769",
+  "updated_at": "2026-04-09T17:09:39.908994",
+  "error": null
+}

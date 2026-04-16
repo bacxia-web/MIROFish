@@ -1,0 +1,427 @@
+{
+  "graph_id_raw": "mirofish_ec8dd457ac1a49e3",
+  "graph_id_disamb": "mirofish_22e61e055a664ece",
+  "generated_at": "2026-04-10T16:00:39.416656",
+  "summary": {
+    "pair_decisions": 23,
+    "merged_groups": 1,
+    "precision_merge_rate": 0.0435,
+    "final_merged_count": 1
+  },
+  "pair_decision_details": [
+    {
+      "pair_index": 0,
+      "entity_a": {
+        "uuid": "159764d0-7222-45c6-8071-f689b77c8fa1",
+        "name": "河南卫视",
+        "label": "MediaOutlet"
+      },
+      "entity_b": {
+        "uuid": "842f1cf7-ebb2-41c7-a7b6-996e89cd0b66",
+        "name": "东方卫视",
+        "label": "MediaOutlet"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 1,
+      "entity_a": {
+        "uuid": "159764d0-7222-45c6-8071-f689b77c8fa1",
+        "name": "河南卫视",
+        "label": "MediaOutlet"
+      },
+      "entity_b": {
+        "uuid": "d2493446-d323-4867-ba4c-f8a5a3ddcec1",
+        "name": "浙江卫视",
+        "label": "MediaOutlet"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 2,
+      "entity_a": {
+        "uuid": "159764d0-7222-45c6-8071-f689b77c8fa1",
+        "name": "河南卫视",
+        "label": "MediaOutlet"
+      },
+      "entity_b": {
+        "uuid": "9dd5a4e3-007b-4230-9be5-0b3b594c3532",
+        "name": "江苏卫视",
+        "label": "MediaOutlet"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 3,
+      "entity_a": {
+        "uuid": "842f1cf7-ebb2-41c7-a7b6-996e89cd0b66",
+        "name": "东方卫视",
+        "label": "MediaOutlet"
+      },
+      "entity_b": {
+        "uuid": "d2493446-d323-4867-ba4c-f8a5a3ddcec1",
+        "name": "浙江卫视",
+        "label": "MediaOutlet"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 4,
+      "entity_a": {
+        "uuid": "842f1cf7-ebb2-41c7-a7b6-996e89cd0b66",
+        "name": "东方卫视",
+        "label": "MediaOutlet"
+      },
+      "entity_b": {
+        "uuid": "9dd5a4e3-007b-4230-9be5-0b3b594c3532",
+        "name": "江苏卫视",
+        "label": "MediaOutlet"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 5,
+      "entity_a": {
+        "uuid": "d2493446-d323-4867-ba4c-f8a5a3ddcec1",
+        "name": "浙江卫视",
+        "label": "MediaOutlet"
+      },
+      "entity_b": {
+        "uuid": "9dd5a4e3-007b-4230-9be5-0b3b594c3532",
+        "name": "江苏卫视",
+        "label": "MediaOutlet"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 0,
+      "entity_a": {
+        "uuid": "f8e82308-1cb9-41c7-98d0-e1d72a238ac1",
+        "name": "广州",
+        "label": "Organization"
+      },
+      "entity_b": {
+        "uuid": "0c06ef9a-1f57-48a3-b52e-51629d0677fe",
+        "name": "深圳",
+        "label": "Organization"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 1,
+      "entity_a": {
+        "uuid": "90c499af-914d-4d8f-b7b4-9d754d97e1f7",
+        "name": "成都",
+        "label": "Organization"
+      },
+      "entity_b": {
+        "uuid": "445c3c8d-59e4-4b1f-abef-5827fb72b0cc",
+        "name": "重庆",
+        "label": "Organization"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 2,
+      "entity_a": {
+        "uuid": "e6881cab-8e7a-450d-bfc4-6726290829d5",
+        "name": "上海",
+        "label": "Organization"
+      },
+      "entity_b": {
+        "uuid": "763b845f-6897-4ce1-8a35-b1bc5ec03484",
+        "name": "杭州",
+        "label": "Organization"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 3,
+      "entity_a": {
+        "uuid": "e6881cab-8e7a-450d-bfc4-6726290829d5",
+        "name": "上海",
+        "label": "Organization"
+      },
+      "entity_b": {
+        "uuid": "df1c76ca-8951-4c3e-beb9-bdafe34af604",
+        "name": "南京",
+        "label": "Organization"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 4,
+      "entity_a": {
+        "uuid": "e6881cab-8e7a-450d-bfc4-6726290829d5",
+        "name": "上海",
+        "label": "Organization"
+      },
+      "entity_b": {
+        "uuid": "0623b3d3-87d5-4723-8be6-9e5e068689bb",
+        "name": "苏州",
+        "label": "Organization"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 5,
+      "entity_a": {
+        "uuid": "763b845f-6897-4ce1-8a35-b1bc5ec03484",
+        "name": "杭州",
+        "label": "Organization"
+      },
+      "entity_b": {
+        "uuid": "df1c76ca-8951-4c3e-beb9-bdafe34af604",
+        "name": "南京",
+        "label": "Organization"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 6,
+      "entity_a": {
+        "uuid": "763b845f-6897-4ce1-8a35-b1bc5ec03484",
+        "name": "杭州",
+        "label": "Organization"
+      },
+      "entity_b": {
+        "uuid": "0623b3d3-87d5-4723-8be6-9e5e068689bb",
+        "name": "苏州",
+        "label": "Organization"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 7,
+      "entity_a": {
+        "uuid": "df1c76ca-8951-4c3e-beb9-bdafe34af604",
+        "name": "南京",
+        "label": "Organization"
+      },
+      "entity_b": {
+        "uuid": "0623b3d3-87d5-4723-8be6-9e5e068689bb",
+        "name": "苏州",
+        "label": "Organization"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 0,
+      "entity_a": {
+        "uuid": "9c81684c-94ff-4040-b443-b95bece98a65",
+        "name": "字节",
+        "label": "TechCompany"
+      },
+      "entity_b": {
+        "uuid": "165e01fc-5d83-4e32-81ac-6372219f2928",
+        "name": "字节跳动",
+        "label": "TechCompany"
+      },
+      "same_entity": true,
+      "confidence": 0.98,
+      "canonical_name": "字节跳动",
+      "final_merged": true,
+      "reject_reason": ""
+    },
+    {
+      "pair_index": 0,
+      "entity_a": {
+        "uuid": "f3157470-6bfc-4bc8-acb3-01e7569bd6b4",
+        "name": "歪马送酒",
+        "label": "BusinessUnit"
+      },
+      "entity_b": {
+        "uuid": "3697ad89-c07b-481a-a7bf-ac6ef85be198",
+        "name": "京东酒世界",
+        "label": "BusinessUnit"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 0,
+      "entity_a": {
+        "uuid": "fa0a4963-9d77-4777-9462-8a23aec15bb7",
+        "name": "豆包",
+        "label": "Aiassistant"
+      },
+      "entity_b": {
+        "uuid": "f186dfc8-f299-4855-afe5-20b4580ae080",
+        "name": "元宝",
+        "label": "Aiassistant"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 0,
+      "entity_a": {
+        "uuid": "9c2e7513-1c8d-416a-bd73-5b4e9cf127ae",
+        "name": "百雀羚",
+        "label": "Merchant"
+      },
+      "entity_b": {
+        "uuid": "905d004f-d424-484d-9f3b-b0ed867a14e3",
+        "name": "Only",
+        "label": "Merchant"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 1,
+      "entity_a": {
+        "uuid": "9c2e7513-1c8d-416a-bd73-5b4e9cf127ae",
+        "name": "百雀羚",
+        "label": "Merchant"
+      },
+      "entity_b": {
+        "uuid": "52e7653a-ca2f-4e53-8cd5-62aebc308f3a",
+        "name": "迪卡侬",
+        "label": "Merchant"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 2,
+      "entity_a": {
+        "uuid": "9c2e7513-1c8d-416a-bd73-5b4e9cf127ae",
+        "name": "百雀羚",
+        "label": "Merchant"
+      },
+      "entity_b": {
+        "uuid": "d86289dc-2c60-41d1-b864-238946ce86e9",
+        "name": "Babycare",
+        "label": "Merchant"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 3,
+      "entity_a": {
+        "uuid": "905d004f-d424-484d-9f3b-b0ed867a14e3",
+        "name": "Only",
+        "label": "Merchant"
+      },
+      "entity_b": {
+        "uuid": "52e7653a-ca2f-4e53-8cd5-62aebc308f3a",
+        "name": "迪卡侬",
+        "label": "Merchant"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 4,
+      "entity_a": {
+        "uuid": "905d004f-d424-484d-9f3b-b0ed867a14e3",
+        "name": "Only",
+        "label": "Merchant"
+      },
+      "entity_b": {
+        "uuid": "d86289dc-2c60-41d1-b864-238946ce86e9",
+        "name": "Babycare",
+        "label": "Merchant"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    },
+    {
+      "pair_index": 5,
+      "entity_a": {
+        "uuid": "52e7653a-ca2f-4e53-8cd5-62aebc308f3a",
+        "name": "迪卡侬",
+        "label": "Merchant"
+      },
+      "entity_b": {
+        "uuid": "d86289dc-2c60-41d1-b864-238946ce86e9",
+        "name": "Babycare",
+        "label": "Merchant"
+      },
+      "same_entity": false,
+      "confidence": 1.0,
+      "canonical_name": "",
+      "final_merged": false,
+      "reject_reason": "same_entity_false"
+    }
+  ]
+}

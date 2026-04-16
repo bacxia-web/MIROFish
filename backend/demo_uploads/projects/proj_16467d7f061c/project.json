@@ -1,0 +1,348 @@
+{
+  "project_id": "proj_16467d7f061c",
+  "name": "Unnamed Project",
+  "status": "graph_completed",
+  "created_at": "2026-04-07T17:44:26.368619",
+  "updated_at": "2026-04-07T18:22:14.609783",
+  "files": [
+    {
+      "filename": "红楼梦5页.pdf",
+      "size": 589320
+    }
+  ],
+  "total_text_length": 8114,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "LocalGentry",
+        "description": "Local gentry or scholar-official in ancient China, often with social status and influence",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the person"
+          },
+          {
+            "name": "title",
+            "type": "text",
+            "description": "Official title or social status"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Geographical location of residence"
+          }
+        ],
+        "examples": [
+          "Zhen Shiyin"
+        ]
+      },
+      {
+        "name": "Scholar",
+        "description": "A person pursuing academic or official career through examinations",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the person"
+          },
+          {
+            "name": "academic_background",
+            "type": "text",
+            "description": "Academic or educational background"
+          },
+          {
+            "name": "current_status",
+            "type": "text",
+            "description": "Current career status or goal"
+          }
+        ],
+        "examples": [
+          "Jia Yucun"
+        ]
+      },
+      {
+        "name": "Child",
+        "description": "A young person under the age of 18, often with family connections",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the child"
+          },
+          {
+            "name": "age",
+            "type": "text",
+            "description": "Current age of the child"
+          },
+          {
+            "name": "relation",
+            "type": "text",
+            "description": "Family relationship to parents"
+          }
+        ],
+        "examples": [
+          "Zhen Yiling"
+        ]
+      },
+      {
+        "name": "Farmer",
+        "description": "A person engaged in agricultural work, often with land ownership",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the person"
+          },
+          {
+            "name": "occupation",
+            "type": "text",
+            "description": "Primary occupation details"
+          },
+          {
+            "name": "land_ownership",
+            "type": "text",
+            "description": "Description of land or property owned"
+          }
+        ],
+        "examples": [
+          "Feng Su"
+        ]
+      },
+      {
+        "name": "Servant",
+        "description": "A person working as a domestic servant or employee in a household",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the servant"
+          },
+          {
+            "name": "role",
+            "type": "text",
+            "description": "Specific role or position within the household"
+          },
+          {
+            "name": "employer",
+            "type": "text",
+            "description": "Name of the employer or household"
+          }
+        ],
+        "examples": [
+          "Zhen's maid"
+        ]
+      },
+      {
+        "name": "ReligiousFigure",
+        "description": "A person engaged in religious or spiritual practices, such as monks or Taoists",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name or religious title"
+          },
+          {
+            "name": "religion",
+            "type": "text",
+            "description": "Religious affiliation (e.g., Buddhism, Taoism)"
+          },
+          {
+            "name": "title",
+            "type": "text",
+            "description": "Religious title or rank"
+          }
+        ],
+        "examples": [
+          "Buddhist monk",
+          "Taoist priest"
+        ]
+      },
+      {
+        "name": "GovernmentOfficial",
+        "description": "A person holding a government position with administrative authority",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the official"
+          },
+          {
+            "name": "position",
+            "type": "text",
+            "description": "Official position title"
+          },
+          {
+            "name": "jurisdiction",
+            "type": "text",
+            "description": "Area or scope of administrative responsibility"
+          }
+        ],
+        "examples": [
+          "New magistrate"
+        ]
+      },
+      {
+        "name": "Temple",
+        "description": "A religious institution or place of worship, often with community influence",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Name of the temple"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Geographical location of the temple"
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "description": "Type of religious institution (e.g., Buddhist, Taoist)"
+          }
+        ],
+        "examples": [
+          "Hulutemple"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "Any individual who is not covered by more specific person types",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the person"
+          },
+          {
+            "name": "role",
+            "type": "text",
+            "description": "General role or description"
+          }
+        ],
+        "examples": [
+          "Common netizen",
+          "Passerby"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "Any group or institution that is not covered by more specific organization types",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Name of the organization"
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "description": "General type of organization"
+          }
+        ],
+        "examples": [
+          "Small group",
+          "Temporary organization"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "COMMENTS_ON",
+        "description": "One entity comments on another entity's content or actions",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "RESPONDS_TO",
+        "description": "One entity responds to another entity's comment or post",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "SUPPORTS",
+        "description": "One entity expresses support for another entity's position or actions",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "OPPOSES",
+        "description": "One entity expresses opposition to another entity's position or actions",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COLLABORATES_WITH",
+        "description": "Two entities work together on a common goal or project",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "WORKS_FOR",
+        "description": "A person is employed by or affiliated with an organization",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "FOLLOWS",
+        "description": "One entity follows another entity on social media for updates",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "SHARED",
+        "description": "One entity shares content from another entity on social media",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "The text describes key characters from the opening of 'Dream of the Red Chamber', including local gentry, scholars, children, farmers, servants, religious figures, government officials, and temples. These entities represent real-world social media actors that can interact through comments, responses, support, opposition, collaboration, employment, following, and sharing.",
+  "graph_id": "mirofish_6338819831794e5d",
+  "graph_build_task_id": "907b0c2f-04f0-45ab-9c7a-b4330726d553",
+  "simulation_requirement": "继续",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

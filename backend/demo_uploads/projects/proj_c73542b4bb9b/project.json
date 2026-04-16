@@ -1,0 +1,328 @@
+{
+  "project_id": "proj_c73542b4bb9b",
+  "name": "Unnamed Project",
+  "status": "graph_completed",
+  "created_at": "2026-04-08T14:20:07.496163",
+  "updated_at": "2026-04-08T14:36:37.356517",
+  "files": [
+    {
+      "filename": "前2回.pdf",
+      "size": 540493
+    }
+  ],
+  "total_text_length": 14257,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "Student",
+        "description": "A student who can participate in social media discussions.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "The full name of the student."
+          },
+          {
+            "name": "school",
+            "type": "text",
+            "description": "The school the student is attending."
+          }
+        ],
+        "examples": [
+          "甄英莲",
+          "贾宝玉"
+        ]
+      },
+      {
+        "name": "Professor",
+        "description": "An academic or teacher involved in educational institutions.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "The full name of the professor."
+          },
+          {
+            "name": "university",
+            "type": "text",
+            "description": "The university where the professor teaches."
+          }
+        ],
+        "examples": [
+          "林如海",
+          "贾政"
+        ]
+      },
+      {
+        "name": "Journalist",
+        "description": "A professional journalist or reporter covering news and events.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "The full name of the journalist."
+          },
+          {
+            "name": "media_outlet",
+            "type": "text",
+            "description": "The media organization the journalist works for."
+          }
+        ],
+        "examples": [
+          "冷子兴",
+          "空空道人"
+        ]
+      },
+      {
+        "name": "Celebrity",
+        "description": "A well-known public figure with a significant online presence.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "The full name of the celebrity."
+          },
+          {
+            "name": "fame_reason",
+            "type": "text",
+            "description": "The reason for the celebrity's fame."
+          }
+        ],
+        "examples": [
+          "贾雨村",
+          "甄士隐"
+        ]
+      },
+      {
+        "name": "Executive",
+        "description": "A high-ranking business executive or company leader.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "The full name of the executive."
+          },
+          {
+            "name": "company",
+            "type": "text",
+            "description": "The company the executive leads."
+          }
+        ],
+        "examples": [
+          "贾化",
+          "林如海"
+        ]
+      },
+      {
+        "name": "Official",
+        "description": "A government official or public servant.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "The full name of the official."
+          },
+          {
+            "name": "position",
+            "type": "text",
+            "description": "The position held by the official."
+          }
+        ],
+        "examples": [
+          "贾雨村",
+          "甄士隐"
+        ]
+      },
+      {
+        "name": "Lawyer",
+        "description": "A legal professional providing legal advice or representation.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "The full name of the lawyer."
+          },
+          {
+            "name": "firm",
+            "type": "text",
+            "description": "The law firm the lawyer belongs to."
+          }
+        ],
+        "examples": [
+          "贾雨村",
+          "甄士隐"
+        ]
+      },
+      {
+        "name": "Doctor",
+        "description": "A medical professional providing healthcare services.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "The full name of the doctor."
+          },
+          {
+            "name": "hospital",
+            "type": "text",
+            "description": "The hospital where the doctor practices."
+          }
+        ],
+        "examples": [
+          "贾雨村",
+          "甄士隐"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "A general entity representing any individual not covered by specific types.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "The full name of the person."
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "The location where the person resides."
+          }
+        ],
+        "examples": [
+          "霍启",
+          "封肃"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "A general entity representing any organization not covered by specific types.",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "The name of the organization."
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "The location of the organization."
+          }
+        ],
+        "examples": [
+          "葫芦庙",
+          "智通寺"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "WORKS_FOR",
+        "description": "Indicates an employment relationship between a person and an organization.",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          },
+          {
+            "source": "Executive",
+            "target": "Company"
+          },
+          {
+            "source": "Journalist",
+            "target": "MediaOutlet"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "STUDIES_AT",
+        "description": "Indicates a student-educational institution relationship.",
+        "source_targets": [
+          {
+            "source": "Student",
+            "target": "University"
+          },
+          {
+            "source": "Student",
+            "target": "School"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "AFFILIATED_WITH",
+        "description": "Indicates an affiliation between a person and an organization.",
+        "source_targets": [
+          {
+            "source": "Professor",
+            "target": "University"
+          },
+          {
+            "source": "Doctor",
+            "target": "Hospital"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPRESENTS",
+        "description": "Indicates that a person represents an organization or group.",
+        "source_targets": [
+          {
+            "source": "Official",
+            "target": "GovernmentAgency"
+          },
+          {
+            "source": "Executive",
+            "target": "Company"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPORTS_ON",
+        "description": "Indicates that a journalist reports on a particular subject or event.",
+        "source_targets": [
+          {
+            "source": "Journalist",
+            "target": "Event"
+          },
+          {
+            "source": "Journalist",
+            "target": "Person"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COMMENTS_ON",
+        "description": "Indicates that a person comments on another person or event.",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Person",
+            "target": "Event"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "The text provides a detailed narrative involving various characters, including students, professors, journalists, celebrities, executives, officials, lawyers, and doctors. These individuals are part of different organizations such as universities, companies, government agencies, and hospitals. The relationships among these entities include employment, education, affiliation, representation, reporting, and commenting. Based on this analysis, 10 entity types were defined, with the last two being generic Person and Organization types to cover all other cases.",
+  "graph_id": "mirofish_f45b933e5cee472e",
+  "graph_id_raw": "mirofish_d145bffff0f24878",
+  "graph_id_disamb": "mirofish_f45b933e5cee472e",
+  "graph_build_task_id": "02155147-c477-4935-98af-6808f58a5610",
+  "quality_metrics": {
+    "updated_at": "2026-04-08T06:36:37.355312+00:00",
+    "node_count_disamb": 62,
+    "node_count_raw": 65
+  },
+  "simulation_requirement": "如果英莲没丢会怎么样",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

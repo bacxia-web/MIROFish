@@ -1,0 +1,29 @@
+{
+  "simulation_id": "sim_4cd911283b21",
+  "project_id": "proj_eaa1e3c4db04",
+  "graph_id": "mirofish_1201c53579844b44",
+  "enable_twitter": true,
+  "enable_reddit": true,
+  "status": "ready",
+  "entities_count": 23,
+  "profiles_count": 23,
+  "entity_types": [
+    "TechStartup",
+    "CorporateStrategist",
+    "MediaOutlet",
+    "TechJournalist",
+    "VentureCapitalist",
+    "IndividualInvestor",
+    "TechExecutive",
+    "Organization",
+    "CompetitorCompany"
+  ],
+  "config_generated": true,
+  "config_reasoning": "时间配置: 模拟场景聚焦于月之暗面C轮融资及战略转型（从拉新转向B端/API与付费留存）。目标群体包含投资人、科技媒体记者、行业分析师及开发者。1. 高峰时段(19-22点)：对应晚间深度阅读与复盘时间，适合讨论复杂的商业模式转变、合规性及算力成本等深度话题，此时自媒体长文发布和投资人圈层交流最活跃。2. 工作时段(9-18点)：保持中等活跃度，主要用于快讯转发、官方内部信解读及行业即时反应。3. 考虑到事件涉及“估值故事”转向“产品力/生态位”的理性探讨，而非纯情绪宣泄，深夜(23点后)活跃度会自然回落，但高于普通娱乐热点，因此off_peak仅设为凌晨。4. 模拟时长48小时足以覆盖新闻发酵、观点分化及初步共识形成的全过程。 | 事件配置: 基于模拟需求，构建了从融资新闻到深度战略分析的舆论链条。初始帖子覆盖了媒体（报道事实）、记者（分析战略）、个人投资者（表达信心）、风险投资人（提出质疑）和企业高管（阐述愿景）五种视角，精准对应了文档中的关键实体（如杨植麟、张予彤、IDG、王慧文等），并紧扣‘从拉新转留存/B端’这一核心矛盾，探讨产品力、合规与算力成本等新框架。 | Agent配置: 成功生成 23 个 | 初始帖子分配: 5 个帖子已分配发布者",
+  "current_round": 0,
+  "twitter_status": "not_started",
+  "reddit_status": "not_started",
+  "created_at": "2026-04-10T15:58:49.667724",
+  "updated_at": "2026-04-10T16:00:37.738010",
+  "error": null
+}

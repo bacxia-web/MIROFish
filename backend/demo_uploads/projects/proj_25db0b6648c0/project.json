@@ -1,0 +1,360 @@
+{
+  "project_id": "proj_25db0b6648c0",
+  "name": "Unnamed Project",
+  "status": "graph_completed",
+  "created_at": "2026-04-09T16:34:23.542937",
+  "updated_at": "2026-04-09T17:08:31.617475",
+  "files": [
+    {
+      "filename": "创新研报｜2024年315全媒体舆情分析与品牌洞察报告_Wisers_2024.pdf",
+      "size": 5994625
+    }
+  ],
+  "total_text_length": 17529,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "Student",
+        "description": "在校学生，可能参与社交媒体讨论或受影响于预制菜事件",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "学生的全名"
+          },
+          {
+            "name": "school_name",
+            "type": "text",
+            "description": "所在学校名称"
+          }
+        ],
+        "examples": [
+          "张明",
+          "李小雨",
+          "某高校大学生"
+        ]
+      },
+      {
+        "name": "Professor",
+        "description": "高校或研究机构学者，可能就食品安全发表专业意见",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "教授全名"
+          },
+          {
+            "name": "university_name",
+            "type": "text",
+            "description": "所属大学或研究机构"
+          }
+        ],
+        "examples": [
+          "王教授",
+          "陈博士",
+          "食品科学专家"
+        ]
+      },
+      {
+        "name": "Journalist",
+        "description": "媒体记者或自媒体人，负责报道315晚会及后续舆情",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "记者全名"
+          },
+          {
+            "name": "media_outlet",
+            "type": "text",
+            "description": "所属媒体机构"
+          }
+        ],
+        "examples": [
+          "央视记者",
+          "新京报编辑",
+          "微博大V"
+        ]
+      },
+      {
+        "name": "Ceo",
+        "description": "企业高管，尤其涉及被曝光企业如听花酒、婚恋平台等",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "CEO全名"
+          },
+          {
+            "name": "company_name",
+            "type": "text",
+            "description": "所任职公司名称"
+          }
+        ],
+        "examples": [
+          "青海春天CEO",
+          "世纪佳缘负责人",
+          "同程金融总监"
+        ]
+      },
+      {
+        "name": "GovernmentOfficial",
+        "description": "政府官员或监管人员，负责对事件进行调查和处罚",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "官员全名"
+          },
+          {
+            "name": "agency_name",
+            "type": "text",
+            "description": "所属政府部门"
+          }
+        ],
+        "examples": [
+          "阜阳市监局局长",
+          "深圳市监局专员",
+          "公安部联络官"
+        ]
+      },
+      {
+        "name": "MediaOutlet",
+        "description": "新闻媒体机构，包括电视台、网站、APP等传播平台",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "媒体机构全称"
+          },
+          {
+            "name": "platform_type",
+            "type": "text",
+            "description": "媒体类型（如短视频/传统媒体）"
+          }
+        ],
+        "examples": [
+          "央视财经频道",
+          "北京日报",
+          "抖音官方账号"
+        ]
+      },
+      {
+        "name": "ConsumerAdvocate",
+        "description": "消费者权益保护者或公众人物，如王海，推动舆论发酵",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "倡导者全名"
+          },
+          {
+            "name": "role_description",
+            "type": "text",
+            "description": "角色说明（如打假博主、维权代表）"
+          }
+        ],
+        "examples": [
+          "王海",
+          "小杨哥",
+          "东方甄选代言人"
+        ]
+      },
+      {
+        "name": "RegulatoryAgency",
+        "description": "专门监管机构，如市场监管总局、消防总队等，负责制定标准与执法",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "监管机构全称"
+          },
+          {
+            "name": "jurisdiction_area",
+            "type": "text",
+            "description": "管辖区域或领域"
+          }
+        ],
+        "examples": [
+          "国家市场监管总局",
+          "天津市消防总队",
+          "公安部网络安全部"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "所有未归入上述具体类型的自然人个体，如普通网友、路人、消费者",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "个人全名（可为空）"
+          },
+          {
+            "name": "user_handle",
+            "type": "text",
+            "description": "社交媒体用户名或昵称"
+          }
+        ],
+        "examples": [
+          "网友A",
+          "匿名用户",
+          "梅菜扣肉受害者家属"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "所有未归入上述具体类型的组织机构，如小型企业、临时团体、非营利组织等",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "组织机构全称"
+          },
+          {
+            "name": "industry_sector",
+            "type": "text",
+            "description": "所属行业领域"
+          }
+        ],
+        "examples": [
+          "某冻品市场商户",
+          "本地消费者协会",
+          "网络水军工作室"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "WORKS_FOR",
+        "description": "某人受雇于某组织，体现雇佣关系",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          },
+          {
+            "source": "Ceo",
+            "target": "Company"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "STUDIES_AT",
+        "description": "某学生就读于某高校，体现教育关系",
+        "source_targets": [
+          {
+            "source": "Student",
+            "target": "University"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPORTS_ON",
+        "description": "媒体机构报道某事件或主体，体现信息传播链",
+        "source_targets": [
+          {
+            "source": "MediaOutlet",
+            "target": "Event"
+          },
+          {
+            "source": "Journalist",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "RESPONDS_TO",
+        "description": "某主体对另一主体的声明或行动做出回应",
+        "source_targets": [
+          {
+            "source": "Organization",
+            "target": "ConsumerAdvocate"
+          },
+          {
+            "source": "GovernmentOfficial",
+            "target": "MediaOutlet"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REGULATES",
+        "description": "监管机构对特定行业或企业实施监管",
+        "source_targets": [
+          {
+            "source": "RegulatoryAgency",
+            "target": "Organization"
+          },
+          {
+            "source": "RegulatoryAgency",
+            "target": "IndustrySector"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COMMENTS_ON",
+        "description": "个人或媒体在社交平台上评论某事件或主体",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Event"
+          },
+          {
+            "source": "MediaOutlet",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "AFFILIATED_WITH",
+        "description": "某实体与另一实体存在隶属或合作关系",
+        "source_targets": [
+          {
+            "source": "Organization",
+            "target": "Organization"
+          },
+          {
+            "source": "Person",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COLLABORATES_WITH",
+        "description": "两个实体共同参与某项目或活动，如联合调查",
+        "source_targets": [
+          {
+            "source": "MediaOutlet",
+            "target": "RegulatoryAgency"
+          },
+          {
+            "source": "Organization",
+            "target": "ConsumerAdvocate"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "本报告基于2024年315晚会舆情数据，识别出围绕‘糟心肉’事件的关键发声主体，涵盖个人、企业、媒体、政府及社会组织。设计的10类实体类型覆盖从消费者到监管者的完整舆论生态，支持构建社交媒体模拟系统以推演预制菜国标出台的推动力与信任修复周期。关系类型聚焦互动路径，确保模拟真实反映社媒传播与舆论响应机制。",
+  "graph_id": "mirofish_95cd20a42c5d4f79",
+  "graph_id_raw": "mirofish_6c504b8a44ec4fdc",
+  "graph_id_disamb": "mirofish_95cd20a42c5d4f79",
+  "graph_build_task_id": "e39c0ffc-bf58-44ff-8a40-c25084ad810c",
+  "quality_metrics": {
+    "updated_at": "2026-04-09T09:08:31.616821+00:00",
+    "node_count_disamb": 128,
+    "node_count_raw": 162
+  },
+  "simulation_requirement": "预测“糟心肉”事件对预制菜国标出台的推动力：推演在平行世界中，当“梅菜扣肉”涉及淋巴肉曝光后，公众对“预制菜”标签的集体排斥感及信任修复周期。",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

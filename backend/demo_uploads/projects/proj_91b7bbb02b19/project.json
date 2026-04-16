@@ -1,0 +1,17 @@
+{
+  "project_id": "proj_91b7bbb02b19",
+  "name": "Unnamed Project",
+  "status": "created",
+  "created_at": "2026-03-12T14:54:24.502887",
+  "updated_at": "2026-03-12T14:54:24.503616",
+  "files": [],
+  "total_text_length": 0,
+  "ontology": null,
+  "analysis_summary": null,
+  "graph_id": null,
+  "graph_build_task_id": null,
+  "simulation_requirement": null,
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

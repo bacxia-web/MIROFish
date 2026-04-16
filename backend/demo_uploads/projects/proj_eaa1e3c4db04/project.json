@@ -1,0 +1,474 @@
+{
+  "project_id": "proj_eaa1e3c4db04",
+  "name": "Unnamed Project",
+  "status": "graph_completed",
+  "created_at": "2026-04-10T15:55:01.584877",
+  "updated_at": "2026-04-10T16:32:15.939054",
+  "files": [
+    {
+      "filename": "晚点_Kimi_5亿美元融资_id3348.pdf",
+      "size": 2394217
+    }
+  ],
+  "total_text_length": 1957,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "TechStartup",
+        "description": "Technology startups focusing on AI and large models, like Moonshot AI.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "The official full name of the startup."
+          },
+          {
+            "name": "valuation_usd",
+            "type": "text",
+            "description": "Current post-money valuation in USD."
+          },
+          {
+            "name": "cash_reserve_cny",
+            "type": "text",
+            "description": "Total cash reserves in RMB."
+          }
+        ],
+        "examples": [
+          "Moonshot AI",
+          "Zhipu AI",
+          "MiniMax"
+        ]
+      },
+      {
+        "name": "VentureCapitalist",
+        "description": "Investment firms or funds participating in financing rounds.",
+        "attributes": [
+          {
+            "name": "firm_name",
+            "type": "text",
+            "description": "Name of the VC firm."
+          },
+          {
+            "name": "investment_stage",
+            "type": "text",
+            "description": "Stage of investment (e.g., Series C)."
+          },
+          {
+            "name": "lead_investor",
+            "type": "boolean",
+            "description": "Whether this entity is the lead investor."
+          }
+        ],
+        "examples": [
+          "IDG Capital",
+          "Sequoia China"
+        ]
+      },
+      {
+        "name": "CorporateStrategist",
+        "description": "Strategic investors from major tech giants or corporations.",
+        "attributes": [
+          {
+            "name": "company_name",
+            "type": "text",
+            "description": "Name of the strategic corporate investor."
+          },
+          {
+            "name": "investment_type",
+            "type": "text",
+            "description": "Type of participation (e.g., over-subscription)."
+          },
+          {
+            "name": "strategic_interest",
+            "type": "text",
+            "description": "Area of strategic interest (e.g., API ecosystem)."
+          }
+        ],
+        "examples": [
+          "Alibaba Group",
+          "Tencent Holdings"
+        ]
+      },
+      {
+        "name": "IndividualInvestor",
+        "description": "High-net-worth individuals investing in startups.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the individual investor."
+          },
+          {
+            "name": "total_invested_usd",
+            "type": "text",
+            "description": "Cumulative amount invested in USD."
+          },
+          {
+            "name": "background_role",
+            "type": "text",
+            "description": "Previous role or background (e.g., former executive)."
+          }
+        ],
+        "examples": [
+          "Wang Huiwen"
+        ]
+      },
+      {
+        "name": "TechExecutive",
+        "description": "C-level executives and founders of technology companies.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the executive."
+          },
+          {
+            "name": "current_position",
+            "type": "text",
+            "description": "Current job title (e.g., CEO, President)."
+          },
+          {
+            "name": "company_affiliation",
+            "type": "text",
+            "description": "Name of the company they lead."
+          }
+        ],
+        "examples": [
+          "Yang Zhilin",
+          "Zhang Yutong"
+        ]
+      },
+      {
+        "name": "TechJournalist",
+        "description": "Reporters and editors covering technology and business news.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the journalist."
+          },
+          {
+            "name": "media_outlet",
+            "type": "text",
+            "description": "Name of the media organization they work for."
+          },
+          {
+            "name": "beat_focus",
+            "type": "text",
+            "description": "Specific areas of coverage (e.g., AI, Cloud)."
+          }
+        ],
+        "examples": [
+          "He Qianming",
+          "Cheng Manqi"
+        ]
+      },
+      {
+        "name": "MediaOutlet",
+        "description": "News organizations and platforms publishing reports.",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Official name of the media outlet."
+          },
+          {
+            "name": "content_type",
+            "type": "text",
+            "description": "Type of content produced (e.g., Exclusive Report)."
+          },
+          {
+            "name": "headquarters_location",
+            "type": "text",
+            "description": "Location of the headquarters."
+          }
+        ],
+        "examples": [
+          "LatePost",
+          "Beijing Wanda Technology"
+        ]
+      },
+      {
+        "name": "CompetitorCompany",
+        "description": "Rival companies in the same industry sector.",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Name of the competing company."
+          },
+          {
+            "name": "ipo_status",
+            "type": "text",
+            "description": "Current IPO status or plans."
+          },
+          {
+            "name": "market_position",
+            "type": "text",
+            "description": "Relative market position or strategy."
+          }
+        ],
+        "examples": [
+          "Zhipu AI",
+          "MiniMax"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "Generic individual not fitting specific roles like execs or journalists.",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "Full name of the person."
+          },
+          {
+            "name": "role_description",
+            "type": "text",
+            "description": "Brief description of their role or identity."
+          },
+          {
+            "name": "public_visibility",
+            "type": "text",
+            "description": "Level of public visibility (e.g., anonymous source)."
+          }
+        ],
+        "examples": [
+          "Anonymous insider",
+          "General user"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "Generic organization not fitting specific types like startups or media.",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "Official name of the organization."
+          },
+          {
+            "name": "org_type",
+            "type": "text",
+            "description": "General type of organization."
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "Primary location of operation."
+          }
+        ],
+        "examples": [
+          "Regulatory body",
+          "Industry association"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "LEADS_ROUND",
+        "description": "An investor leads a financing round for a startup.",
+        "source_targets": [
+          {
+            "source": "VentureCapitalist",
+            "target": "TechStartup"
+          },
+          {
+            "source": "CorporateStrategist",
+            "target": "TechStartup"
+          }
+        ],
+        "attributes": [
+          {
+            "name": "round_amount_usd",
+            "type": "text",
+            "description": "Amount of the financing round."
+          },
+          {
+            "name": "round_series",
+            "type": "text",
+            "description": "Series of the funding round."
+          }
+        ]
+      },
+      {
+        "name": "WORKS_FOR",
+        "description": "An executive or journalist works for an organization.",
+        "source_targets": [
+          {
+            "source": "TechExecutive",
+            "target": "TechStartup"
+          },
+          {
+            "source": "TechExecutive",
+            "target": "CompetitorCompany"
+          },
+          {
+            "source": "TechJournalist",
+            "target": "MediaOutlet"
+          }
+        ],
+        "attributes": [
+          {
+            "name": "start_date",
+            "type": "text",
+            "description": "Date when the employment started."
+          },
+          {
+            "name": "employment_status",
+            "type": "text",
+            "description": "Current status (e.g., active, former)."
+          }
+        ]
+      },
+      {
+        "name": "REPORTS_ON",
+        "description": "A journalist or media outlet reports on a company or event.",
+        "source_targets": [
+          {
+            "source": "TechJournalist",
+            "target": "TechStartup"
+          },
+          {
+            "source": "MediaOutlet",
+            "target": "TechStartup"
+          },
+          {
+            "source": "MediaOutlet",
+            "target": "TechExecutive"
+          }
+        ],
+        "attributes": [
+          {
+            "name": "publication_date",
+            "type": "text",
+            "description": "Date of publication."
+          },
+          {
+            "name": "article_title",
+            "type": "text",
+            "description": "Title of the report."
+          }
+        ]
+      },
+      {
+        "name": "INVESTED_IN",
+        "description": "An individual or entity has invested money in a startup.",
+        "source_targets": [
+          {
+            "source": "IndividualInvestor",
+            "target": "TechStartup"
+          },
+          {
+            "source": "CorporateStrategist",
+            "target": "TechStartup"
+          }
+        ],
+        "attributes": [
+          {
+            "name": "cumulative_amount_usd",
+            "type": "text",
+            "description": "Total amount invested by this entity."
+          },
+          {
+            "name": "participation_type",
+            "type": "text",
+            "description": "Type of participation (e.g., over-subscription)."
+          }
+        ]
+      },
+      {
+        "name": "COMPETES_WITH",
+        "description": "Two companies compete in the same market sector.",
+        "source_targets": [
+          {
+            "source": "TechStartup",
+            "target": "CompetitorCompany"
+          },
+          {
+            "source": "CompetitorCompany",
+            "target": "TechStartup"
+          }
+        ],
+        "attributes": [
+          {
+            "name": "competition_area",
+            "type": "text",
+            "description": "Specific area of competition (e.g., Agent features)."
+          },
+          {
+            "name": "market_segment",
+            "type": "text",
+            "description": "Target market segment."
+          }
+        ]
+      },
+      {
+        "name": "ANNOUNCES_STRATEGY",
+        "description": "An executive announces a new business strategy or plan.",
+        "source_targets": [
+          {
+            "source": "TechExecutive",
+            "target": "TechStartup"
+          }
+        ],
+        "attributes": [
+          {
+            "name": "announcement_channel",
+            "type": "text",
+            "description": "Channel used for announcement (e.g., internal letter)."
+          },
+          {
+            "name": "strategy_focus",
+            "type": "text",
+            "description": "Key focus of the strategy (e.g., profitability)."
+          }
+        ]
+      },
+      {
+        "name": "PARTICIPATES_IN_DISCUSSION",
+        "description": "Any entity participates in public or private discussions about the topic.",
+        "source_targets": [
+          {
+            "source": "TechExecutive",
+            "target": "TechStartup"
+          },
+          {
+            "source": "VentureCapitalist",
+            "target": "TechStartup"
+          },
+          {
+            "source": "TechJournalist",
+            "target": "TechStartup"
+          }
+        ],
+        "attributes": [
+          {
+            "name": "discussion_topic",
+            "type": "text",
+            "description": "Topic of discussion (e.g., valuation, compliance)."
+          },
+          {
+            "name": "sentiment_tone",
+            "type": "text",
+            "description": "Tone of the discussion (e.g., optimistic, critical)."
+          }
+        ]
+      }
+    ]
+  },
+  "analysis_summary": "文本主要围绕月之暗面（Kimi）完成5亿美元C轮融资展开，涉及融资方（IDG、阿里、腾讯、王慧文）、被投企业（月之暗面）、竞争对手（智谱、MiniMax）、高管（杨植麟、张予彤）以及报道媒体（晚点LatePost）。舆论模拟需关注资本叙事从估值转向商业化（付费留存、API收入）、技术路线（Agent、算力成本）及生态位竞争。实体设计覆盖了投资方、创业公司、高管、记者及竞品，关系类型涵盖投资、任职、报道、竞争及战略发布，能够完整还原舆论场中的多方互动与观点分化。",
+  "graph_id": "mirofish_53413c45a48c43f8",
+  "graph_id_raw": "mirofish_1201c53579844b44",
+  "graph_id_disamb": "mirofish_53413c45a48c43f8",
+  "graph_build_task_id": "ba0c7744-867c-4a5f-bd20-b3cb19db1702",
+  "quality_metrics": {
+    "updated_at": "2026-04-10T08:32:15.937324+00:00",
+    "node_count_disamb": 18,
+    "node_count_raw": 23
+  },
+  "simulation_requirement": "若不新一轮融资的前提下，公司把重心从「拉新增长」切到付费留存与 B 端/API，中文互联网讨论会从「估值故事」转向哪些新框架（产品力、合规、算力成本、与巨头的生态位）？自媒体与投资人的话术会如何分化？",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

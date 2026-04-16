@@ -1,0 +1,28 @@
+{
+  "simulation_id": "sim_578578e933db",
+  "project_id": "proj_2f2a72be05cd",
+  "graph_id": "mirofish_c7f280e842304ae6",
+  "enable_twitter": true,
+  "enable_reddit": true,
+  "status": "ready",
+  "entities_count": 120,
+  "profiles_count": 120,
+  "entity_types": [
+    "RegulatoryAgency",
+    "Organization",
+    "Consumer",
+    "SocialInfluencer",
+    "Person",
+    "EcommercePlatform",
+    "MediaOutlet",
+    "FoodManufacturer"
+  ],
+  "config_generated": true,
+  "config_reasoning": "时间配置: 针对'糟心肉'事件对预制菜国标推动的模拟，考虑到食品安全事件具有持续发酵特性，设置5天模拟周期。由于涉及消费者、监管部门、媒体、电商平台等多方参与，晚间18-22点为社交媒体讨论高峰期，凌晨0-5点为低谷期。工作时间监管机构和媒体活跃，但公众讨论相对较少，因此设定中等活跃度。食品安全话题关注度高，参与主体多样，故设置较高的agent激活范围。 | 事件配置: 基于315晚会曝光的梅菜扣肉槽头肉事件，公众对预制菜安全性产生严重质疑，形成了强烈的舆论压力。通过不同类型发布者的发声，构建了从消费者担忧、监管回应、媒体监督、意见领袖引导到行业反思的完整舆论链条，推动预制菜国标出台成为社会共识。 | Agent配置: 成功生成 120 个 | 初始帖子分配: 5 个帖子已分配发布者",
+  "current_round": 0,
+  "twitter_status": "not_started",
+  "reddit_status": "not_started",
+  "created_at": "2026-04-09T13:44:36.314456",
+  "updated_at": "2026-04-09T13:53:48.537508",
+  "error": null
+}

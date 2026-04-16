@@ -1,0 +1,17 @@
+{
+  "command_id": "aff48e4b-0e91-4de0-bc98-4809c4cb2c84",
+  "status": "completed",
+  "result": {
+    "interviews_count": 1,
+    "results": {
+      "twitter_0": {
+        "agent_id": 0,
+        "response": "贾雨村古典文学研究中心官方账号，专注于《红楼梦》等中国古典文学的研究与普及。",
+        "timestamp": 1,
+        "platform": "twitter"
+      }
+    }
+  },
+  "error": null,
+  "timestamp": "2026-04-07T20:04:41.941959"
+}

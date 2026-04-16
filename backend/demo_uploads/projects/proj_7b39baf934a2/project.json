@@ -1,0 +1,380 @@
+{
+  "project_id": "proj_7b39baf934a2",
+  "name": "Unnamed Project",
+  "status": "graph_completed",
+  "created_at": "2026-04-08T18:07:31.277519",
+  "updated_at": "2026-04-08T19:56:28.101399",
+  "files": [
+    {
+      "filename": "前2回.pdf",
+      "size": 540493
+    }
+  ],
+  "total_text_length": 14257,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "Noble",
+        "description": "贵族或世家子弟",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "title",
+            "type": "text",
+            "description": "爵位或头衔"
+          }
+        ],
+        "examples": [
+          "贾宝玉",
+          "林黛玉"
+        ]
+      },
+      {
+        "name": "Official",
+        "description": "政府官员或士大夫",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "position",
+            "type": "text",
+            "description": "担任的官职"
+          }
+        ],
+        "examples": [
+          "贾雨村",
+          "冷子兴"
+        ]
+      },
+      {
+        "name": "Scholar",
+        "description": "文人学者或举人进士",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "academic_title",
+            "type": "text",
+            "description": "学术头衔或科举功名"
+          }
+        ],
+        "examples": [
+          "甄士隐",
+          "贾雨村"
+        ]
+      },
+      {
+        "name": "Merchant",
+        "description": "商人或富商",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "business_type",
+            "type": "text",
+            "description": "从事的商业类型"
+          }
+        ],
+        "examples": [
+          "冷子兴",
+          "贾化"
+        ]
+      },
+      {
+        "name": "Monk",
+        "description": "僧侣或道士",
+        "attributes": [
+          {
+            "name": "monastic_name",
+            "type": "text",
+            "description": "法号或道号"
+          },
+          {
+            "name": "sect",
+            "type": "text",
+            "description": "所属宗教派别"
+          }
+        ],
+        "examples": [
+          "空空道人",
+          "癞头和尚"
+        ]
+      },
+      {
+        "name": "Servant",
+        "description": "仆人或丫鬟",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "master",
+            "type": "text",
+            "description": "所服务的主人"
+          }
+        ],
+        "examples": [
+          "娇杏",
+          "霍启"
+        ]
+      },
+      {
+        "name": "Peasant",
+        "description": "农民或普通百姓",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "village",
+            "type": "text",
+            "description": "居住的村庄"
+          }
+        ],
+        "examples": [
+          "甄费",
+          "封肃"
+        ]
+      },
+      {
+        "name": "Artist",
+        "description": "艺术家或文人墨客",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "artistic_field",
+            "type": "text",
+            "description": "艺术领域或专长"
+          }
+        ],
+        "examples": [
+          "曹雪芹",
+          "孔梅溪"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "自然人个体兜底类型",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "当前所在位置"
+          }
+        ],
+        "examples": [
+          "路人甲",
+          "某网友"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "组织机构兜底类型",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "组织名称"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "组织所在地"
+          }
+        ],
+        "examples": [
+          "葫芦庙",
+          "智通寺"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "WORKS_FOR",
+        "description": "工作于某个组织",
+        "source_targets": [
+          {
+            "source": "Official",
+            "target": "GovernmentAgency"
+          },
+          {
+            "source": "Scholar",
+            "target": "University"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "STUDIES_AT",
+        "description": "就读于某个学府",
+        "source_targets": [
+          {
+            "source": "Student",
+            "target": "University"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "AFFILIATED_WITH",
+        "description": "隶属于某个组织",
+        "source_targets": [
+          {
+            "source": "Servant",
+            "target": "NobleHousehold"
+          },
+          {
+            "source": "Monk",
+            "target": "Temple"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPRESENTS",
+        "description": "代表某个群体发声",
+        "source_targets": [
+          {
+            "source": "Scholar",
+            "target": "Community"
+          },
+          {
+            "source": "Official",
+            "target": "Region"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REGULATES",
+        "description": "监管某个领域或组织",
+        "source_targets": [
+          {
+            "source": "GovernmentAgency",
+            "target": "Business"
+          },
+          {
+            "source": "Official",
+            "target": "LocalArea"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPORTS_ON",
+        "description": "报道某个事件或人物",
+        "source_targets": [
+          {
+            "source": "MediaOutlet",
+            "target": "Event"
+          },
+          {
+            "source": "Scholar",
+            "target": "SocialIssue"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COMMENTS_ON",
+        "description": "对某个话题发表评论",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Topic"
+          },
+          {
+            "source": "Official",
+            "target": "PublicEvent"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "RESPONDS_TO",
+        "description": "回应某个言论或事件",
+        "source_targets": [
+          {
+            "source": "Official",
+            "target": "Comment"
+          },
+          {
+            "source": "Scholar",
+            "target": "Controversy"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "SUPPORTS",
+        "description": "支持某个观点或立场",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Idea"
+          },
+          {
+            "source": "Organization",
+            "target": "Policy"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "OPPOSES",
+        "description": "反对某个观点或立场",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Idea"
+          },
+          {
+            "source": "Organization",
+            "target": "Policy"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "文本内容主要围绕《红楼梦》开篇部分展开，涉及多个社会阶层的人物和他们的互动。设计了10个实体类型，包括贵族、官员、文人、商人、僧侣、仆人、农民、艺术家等具体角色，以及Person和Organization两个兜底类型。关系类型涵盖了社交网络中的典型互动，如工作、学习、隶属、代表、监管、报道、评论、回应、支持和反对等。这些实体和关系能够有效模拟社交媒体上的舆论传播和互动模式。",
+  "graph_id": "mirofish_3e3a0d98e29e41e6",
+  "graph_id_raw": "mirofish_e0757432699244d8",
+  "graph_id_disamb": "mirofish_3e3a0d98e29e41e6",
+  "graph_build_task_id": "85e59b6e-f126-484a-82bb-d05cc623a2b8",
+  "quality_metrics": {
+    "updated_at": "2026-04-08T11:56:28.099664+00:00",
+    "node_count_disamb": 81,
+    "node_count_raw": 129
+  },
+  "simulation_requirement": "继续",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

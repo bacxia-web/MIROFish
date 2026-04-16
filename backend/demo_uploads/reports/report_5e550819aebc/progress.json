@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "progress": 100,
+  "message": "报告生成完成",
+  "current_section": null,
+  "completed_sections": [
+    "叙事断裂与重构：从「烧钱换规模」到「API 造血能力」的硬着陆",
+    "话语阵营分化：投资人的「合规焦虑」与自媒体的「生态位围剿」",
+    "未来趋势预警：B 端深水区与「算力成本」成为生死线"
+  ],
+  "updated_at": "2026-04-10T10:07:41.633897"
+}

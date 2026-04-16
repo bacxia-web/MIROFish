@@ -1,0 +1,317 @@
+{
+  "project_id": "proj_4d46b963ff7e",
+  "name": "Unnamed Project",
+  "status": "failed",
+  "created_at": "2026-04-08T11:54:34.314074",
+  "updated_at": "2026-04-08T11:55:35.793919",
+  "files": [
+    {
+      "filename": "前2回.pdf",
+      "size": 540493
+    }
+  ],
+  "total_text_length": 14257,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "Noble",
+        "description": "贵族/世家子弟",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "title",
+            "type": "text",
+            "description": "爵位或头衔"
+          }
+        ],
+        "examples": [
+          "贾宝玉",
+          "林黛玉"
+        ]
+      },
+      {
+        "name": "Official",
+        "description": "政府官员",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "position",
+            "type": "text",
+            "description": "官职名称"
+          }
+        ],
+        "examples": [
+          "贾雨村",
+          "冷子兴"
+        ]
+      },
+      {
+        "name": "Scholar",
+        "description": "文人学者",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "literary_achievement",
+            "type": "text",
+            "description": "文学成就或作品"
+          }
+        ],
+        "examples": [
+          "甄士隐",
+          "贾雨村"
+        ]
+      },
+      {
+        "name": "Merchant",
+        "description": "商人",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "business_type",
+            "type": "text",
+            "description": "从事的商业类型"
+          }
+        ],
+        "examples": [
+          "冷子兴",
+          "霍启"
+        ]
+      },
+      {
+        "name": "ReligiousFigure",
+        "description": "宗教人士",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "religion",
+            "type": "text",
+            "description": "所属宗教派别"
+          }
+        ],
+        "examples": [
+          "跛足道人",
+          "癞头和尚"
+        ]
+      },
+      {
+        "name": "Servant",
+        "description": "仆人/家丁",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "role",
+            "type": "text",
+            "description": "在家庭中的具体职责"
+          }
+        ],
+        "examples": [
+          "娇杏",
+          "霍启"
+        ]
+      },
+      {
+        "name": "Artist",
+        "description": "艺术家/文人墨客",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "artistic_skill",
+            "type": "text",
+            "description": "擅长的艺术形式"
+          }
+        ],
+        "examples": [
+          "甄士隐",
+          "贾雨村"
+        ]
+      },
+      {
+        "name": "MilitaryPerson",
+        "description": "军人/武将",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "rank",
+            "type": "text",
+            "description": "军衔或职位"
+          }
+        ],
+        "examples": [
+          "贾代化",
+          "贾珍"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "自然人个体（兜底类型）",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "人物的全名"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "居住地或活动区域"
+          }
+        ],
+        "examples": [
+          "英莲",
+          "封肃"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "组织机构（兜底类型）",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "组织的正式名称"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "组织所在地"
+          }
+        ],
+        "examples": [
+          "葫芦庙",
+          "智通寺"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "WORKS_FOR",
+        "description": "某人任职于某个组织",
+        "source_targets": [
+          {
+            "source": "Official",
+            "target": "GovernmentAgency"
+          },
+          {
+            "source": "Merchant",
+            "target": "Organization"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "FRIEND_OF",
+        "description": "两个人之间是朋友关系",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Scholar",
+            "target": "Scholar"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "FAMILY_MEMBER_OF",
+        "description": "家庭成员关系",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Noble",
+            "target": "Noble"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "EMPLOYED_BY",
+        "description": "被雇佣关系",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          },
+          {
+            "source": "Teacher",
+            "target": "School"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "AFFILIATED_WITH",
+        "description": "隶属于某个组织",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          },
+          {
+            "source": "Scholar",
+            "target": "University"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "INTERACTS_WITH",
+        "description": "社交互动关系",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Person"
+          },
+          {
+            "source": "Official",
+            "target": "Scholar"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "文本内容主要描述了《红楼梦》开篇部分，涉及多个社会阶层的人物和他们的互动。设计了10个实体类型，包括8个具体类型（贵族、官员、文人、商人、宗教人士、仆人、艺术家、军人）和2个兜底类型（Person, Organization）。关系类型涵盖了工作、友谊、家庭、雇佣、隶属和社交互动等核心社交关系。",
+  "graph_id": null,
+  "graph_build_task_id": "55f520bc-d912-4278-91ae-909d2f1d5595",
+  "simulation_requirement": "续写",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": "Couldn't connect to localhost:7687 (resolved to ()):\nFailed to establish connection to ResolvedIPv6Address(('::1', 7687, 0, 0)) (reason [Errno 61] Connection refused)\nFailed to establish connection to ResolvedIPv4Address(('127.0.0.1', 7687)) (reason [Errno 61] Connection refused)"
+}

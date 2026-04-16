@@ -1,0 +1,84 @@
+{
+  "simulation_id": "sim_ad24b9305109",
+  "project_id": "proj_e9a4b03f23a6",
+  "graph_id": "mirofish_89fb8b0789ab4907",
+  "runner_status": "stopped",
+  "current_round": 40,
+  "total_rounds": 40,
+  "simulated_hours": 0,
+  "total_simulation_hours": 120,
+  "progress_percent": 100.0,
+  "twitter_current_round": 40,
+  "reddit_current_round": 40,
+  "twitter_simulated_hours": 0,
+  "reddit_simulated_hours": 0,
+  "twitter_running": false,
+  "reddit_running": false,
+  "twitter_completed": true,
+  "reddit_completed": true,
+  "twitter_actions_count": 2,
+  "reddit_actions_count": 2,
+  "total_actions_count": 4,
+  "started_at": "2026-04-09T19:18:04.140446",
+  "updated_at": "2026-04-09T19:18:20.221492",
+  "completed_at": "2026-04-09T21:09:18.187488",
+  "error": "服务器关闭，模拟被终止",
+  "process_pid": 32353,
+  "recent_actions": [
+    {
+      "round_num": 8,
+      "timestamp": "2026-04-09T19:18:19.679694",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "创亿消防器材有限公司",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 8,
+      "timestamp": "2026-04-09T19:18:16.913721",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "创亿消防器材有限公司",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T19:18:12.505352",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "创亿消防器材有限公司",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": ""
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-09T19:18:12.440923",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "创亿消防器材有限公司",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": ""
+      },
+      "result": null,
+      "success": true
+    }
+  ],
+  "rounds_count": 0
+}

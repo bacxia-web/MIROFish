@@ -1,0 +1,300 @@
+{
+  "simulation_id": "sim_cf8b2aca0a0b",
+  "project_id": "proj_6009044952f9",
+  "graph_id": "mirofish_6c1932b3a915493f",
+  "runner_status": "stopped",
+  "current_round": 40,
+  "total_rounds": 40,
+  "simulated_hours": 0,
+  "total_simulation_hours": 72,
+  "progress_percent": 100.0,
+  "twitter_current_round": 40,
+  "reddit_current_round": 40,
+  "twitter_simulated_hours": 0,
+  "reddit_simulated_hours": 0,
+  "twitter_running": false,
+  "reddit_running": false,
+  "twitter_completed": true,
+  "reddit_completed": true,
+  "twitter_actions_count": 10,
+  "reddit_actions_count": 10,
+  "total_actions_count": 20,
+  "started_at": "2026-04-10T10:02:01.398820",
+  "updated_at": "2026-04-10T10:02:17.509474",
+  "completed_at": "2026-04-10T10:21:46.286732",
+  "error": "服务器关闭，模拟被终止",
+  "process_pid": 32240,
+  "recent_actions": [
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T10:02:17.462241",
+      "platform": "reddit",
+      "agent_id": 1,
+      "agent_name": "MiniMax",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "从智能助手到企业级生产力工具，月之暗面正在构建自己的生态位。但如何避免被大厂挤压？这是其未来必须面对的问题。#生态位 #AI竞争",
+        "post_id": 5
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T10:02:17.462116",
+      "platform": "reddit",
+      "agent_id": 4,
+      "agent_name": "王慧文",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "在不进行新一轮融资的前提下，月之暗面能否靠现有现金流实现可持续盈利？投资者应更关注其商业化路径而非单纯的估值故事。#投资视角 #合规",
+        "post_id": 4
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T10:02:17.461950",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "贺乾明",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "随着月之暗面将重心转向B端和API服务，我们需重新审视其产品力和算力成本控制能力。这是否会成为其区别于智谱、MiniMax的关键？#AI产业 #算力成本",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T10:02:17.461794",
+      "platform": "reddit",
+      "agent_id": 8,
+      "agent_name": "杨植麟",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "杨植麟在内部信中表示，公司将不再以用户数量为目标，而是聚焦Agent能力与生产力工具，追求更高商业价值。这是否意味着从‘拉新增长’向‘付费留存’的战略转变？#月之暗面 #战略转型",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 10,
+      "timestamp": "2026-04-10T10:02:17.461585",
+      "platform": "reddit",
+      "agent_id": 3,
+      "agent_name": "《晚点 LatePost》",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "月之暗面完成5亿美元C轮融资，投后估值达43亿美元。IDG领投，腾讯、阿里、王慧文等老股东超额认购。公司账上拥有超百亿元人民币现金储备。#AI #融资 #月之暗面",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T10:02:13.950325",
+      "platform": "twitter",
+      "agent_id": 1,
+      "agent_name": "MiniMax",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "从智能助手到企业级生产力工具，月之暗面正在构建自己的生态位。但如何避免被大厂挤压？这是其未来必须面对的问题。#生态位 #AI竞争",
+        "post_id": 5
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T10:02:13.950003",
+      "platform": "twitter",
+      "agent_id": 4,
+      "agent_name": "王慧文",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "在不进行新一轮融资的前提下，月之暗面能否靠现有现金流实现可持续盈利？投资者应更关注其商业化路径而非单纯的估值故事。#投资视角 #合规",
+        "post_id": 4
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T10:02:13.949695",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "贺乾明",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "随着月之暗面将重心转向B端和API服务，我们需重新审视其产品力和算力成本控制能力。这是否会成为其区别于智谱、MiniMax的关键？#AI产业 #算力成本",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T10:02:13.948127",
+      "platform": "twitter",
+      "agent_id": 8,
+      "agent_name": "杨植麟",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "杨植麟在内部信中表示，公司将不再以用户数量为目标，而是聚焦Agent能力与生产力工具，追求更高商业价值。这是否意味着从‘拉新增长’向‘付费留存’的战略转变？#月之暗面 #战略转型",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-04-10T10:02:13.946959",
+      "platform": "twitter",
+      "agent_id": 3,
+      "agent_name": "《晚点 LatePost》",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "月之暗面完成5亿美元C轮融资，投后估值达43亿美元。IDG领投，腾讯、阿里、王慧文等老股东超额认购。公司账上拥有超百亿元人民币现金储备。#AI #融资 #月之暗面",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T10:02:08.985923",
+      "platform": "reddit",
+      "agent_id": 1,
+      "agent_name": "MiniMax",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "从智能助手到企业级生产力工具，月之暗面正在构建自己的生态位。但如何避免被大厂挤压？这是其未来必须面对的问题。#生态位 #AI竞争"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T10:02:08.985765",
+      "platform": "reddit",
+      "agent_id": 4,
+      "agent_name": "王慧文",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "在不进行新一轮融资的前提下，月之暗面能否靠现有现金流实现可持续盈利？投资者应更关注其商业化路径而非单纯的估值故事。#投资视角 #合规"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T10:02:08.985443",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "贺乾明",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "随着月之暗面将重心转向B端和API服务，我们需重新审视其产品力和算力成本控制能力。这是否会成为其区别于智谱、MiniMax的关键？#AI产业 #算力成本"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T10:02:08.985166",
+      "platform": "reddit",
+      "agent_id": 8,
+      "agent_name": "杨植麟",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "杨植麟在内部信中表示，公司将不再以用户数量为目标，而是聚焦Agent能力与生产力工具，追求更高商业价值。这是否意味着从‘拉新增长’向‘付费留存’的战略转变？#月之暗面 #战略转型"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T10:02:08.984556",
+      "platform": "reddit",
+      "agent_id": 3,
+      "agent_name": "《晚点 LatePost》",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "月之暗面完成5亿美元C轮融资，投后估值达43亿美元。IDG领投，腾讯、阿里、王慧文等老股东超额认购。公司账上拥有超百亿元人民币现金储备。#AI #融资 #月之暗面"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T10:02:08.892416",
+      "platform": "twitter",
+      "agent_id": 1,
+      "agent_name": "MiniMax",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "从智能助手到企业级生产力工具，月之暗面正在构建自己的生态位。但如何避免被大厂挤压？这是其未来必须面对的问题。#生态位 #AI竞争"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T10:02:08.892313",
+      "platform": "twitter",
+      "agent_id": 4,
+      "agent_name": "王慧文",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "在不进行新一轮融资的前提下，月之暗面能否靠现有现金流实现可持续盈利？投资者应更关注其商业化路径而非单纯的估值故事。#投资视角 #合规"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T10:02:08.892190",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "贺乾明",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "随着月之暗面将重心转向B端和API服务，我们需重新审视其产品力和算力成本控制能力。这是否会成为其区别于智谱、MiniMax的关键？#AI产业 #算力成本"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T10:02:08.892085",
+      "platform": "twitter",
+      "agent_id": 8,
+      "agent_name": "杨植麟",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "杨植麟在内部信中表示，公司将不再以用户数量为目标，而是聚焦Agent能力与生产力工具，追求更高商业价值。这是否意味着从‘拉新增长’向‘付费留存’的战略转变？#月之暗面 #战略转型"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-04-10T10:02:08.891965",
+      "platform": "twitter",
+      "agent_id": 3,
+      "agent_name": "《晚点 LatePost》",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "月之暗面完成5亿美元C轮融资，投后估值达43亿美元。IDG领投，腾讯、阿里、王慧文等老股东超额认购。公司账上拥有超百亿元人民币现金储备。#AI #融资 #月之暗面"
+      },
+      "result": null,
+      "success": true
+    }
+  ],
+  "rounds_count": 0
+}

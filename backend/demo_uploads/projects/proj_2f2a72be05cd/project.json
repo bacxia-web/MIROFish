@@ -1,0 +1,384 @@
+{
+  "project_id": "proj_2f2a72be05cd",
+  "name": "Unnamed Project",
+  "status": "graph_completed",
+  "created_at": "2026-04-09T13:30:42.877243",
+  "updated_at": "2026-04-09T16:21:20.290242",
+  "files": [
+    {
+      "filename": "创新研报｜2024年315全媒体舆情分析与品牌洞察报告_Wisers_2024.pdf",
+      "size": 5994625
+    }
+  ],
+  "total_text_length": 17529,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "FoodManufacturer",
+        "description": "食品生产企业，特别是预制菜制造商",
+        "attributes": [
+          {
+            "name": "company_name",
+            "type": "text",
+            "description": "公司名称"
+          },
+          {
+            "name": "product_type",
+            "type": "text",
+            "description": "主要产品类型"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "企业所在地"
+          }
+        ],
+        "examples": [
+          "安徽阜阳梅菜扣肉生产商",
+          "槽头肉加工企业"
+        ]
+      },
+      {
+        "name": "Consumer",
+        "description": "消费者个体，参与食品安全话题讨论",
+        "attributes": [
+          {
+            "name": "age_group",
+            "type": "text",
+            "description": "年龄段"
+          },
+          {
+            "name": "consumption_habit",
+            "type": "text",
+            "description": "消费习惯"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "居住地区"
+          }
+        ],
+        "examples": [
+          "预制菜消费者",
+          "梅菜扣肉购买者"
+        ]
+      },
+      {
+        "name": "MediaOutlet",
+        "description": "媒体机构，报道食品安全事件",
+        "attributes": [
+          {
+            "name": "outlet_name",
+            "type": "text",
+            "description": "媒体机构名称"
+          },
+          {
+            "name": "media_type",
+            "type": "text",
+            "description": "媒体类型"
+          },
+          {
+            "name": "circulation",
+            "type": "text",
+            "description": "发行量或影响力"
+          }
+        ],
+        "examples": [
+          "北京日报",
+          "央视315晚会"
+        ]
+      },
+      {
+        "name": "RegulatoryAgency",
+        "description": "政府监管部门，负责食品安全监管",
+        "attributes": [
+          {
+            "name": "agency_name",
+            "type": "text",
+            "description": "机构名称"
+          },
+          {
+            "name": "jurisdiction",
+            "type": "text",
+            "description": "管辖范围"
+          },
+          {
+            "name": "function",
+            "type": "text",
+            "description": "主要职能"
+          }
+        ],
+        "examples": [
+          "市场监管总局",
+          "阜阳市市场监督管理局"
+        ]
+      },
+      {
+        "name": "EcommercePlatform",
+        "description": "电商平台，销售预制菜产品",
+        "attributes": [
+          {
+            "name": "platform_name",
+            "type": "text",
+            "description": "平台名称"
+          },
+          {
+            "name": "market_share",
+            "type": "text",
+            "description": "市场份额"
+          },
+          {
+            "name": "product_category",
+            "type": "text",
+            "description": "主营商品类别"
+          }
+        ],
+        "examples": [
+          "淘宝",
+          "京东",
+          "抖音电商"
+        ]
+      },
+      {
+        "name": "IndustryExpert",
+        "description": "食品安全或预制菜行业专家",
+        "attributes": [
+          {
+            "name": "expert_name",
+            "type": "text",
+            "description": "专家姓名"
+          },
+          {
+            "name": "specialization",
+            "type": "text",
+            "description": "专业领域"
+          },
+          {
+            "name": "affiliation",
+            "type": "text",
+            "description": "所属机构"
+          }
+        ],
+        "examples": [
+          "食品安全专家",
+          "预制菜标准制定专家"
+        ]
+      },
+      {
+        "name": "SocialInfluencer",
+        "description": "社交媒体意见领袖，影响舆论走向",
+        "attributes": [
+          {
+            "name": "influencer_name",
+            "type": "text",
+            "description": "网红姓名"
+          },
+          {
+            "name": "follower_count",
+            "type": "text",
+            "description": "粉丝数量"
+          },
+          {
+            "name": "content_focus",
+            "type": "text",
+            "description": "内容专注领域"
+          }
+        ],
+        "examples": [
+          "王海",
+          "美食博主"
+        ]
+      },
+      {
+        "name": "FoodSafetyInspector",
+        "description": "食品安全检查员，执行监管检查",
+        "attributes": [
+          {
+            "name": "inspector_name",
+            "type": "text",
+            "description": "检查员姓名"
+          },
+          {
+            "name": "certification_level",
+            "type": "text",
+            "description": "认证级别"
+          },
+          {
+            "name": "inspection_area",
+            "type": "text",
+            "description": "检查区域"
+          }
+        ],
+        "examples": [
+          "市场监管执法人员",
+          "食品安全检查员"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "任何自然人个体的兜底类型，当一个人不属于其他更具体的人物类型时，归入此类",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "完整姓名"
+          },
+          {
+            "name": "occupation",
+            "type": "text",
+            "description": "职业"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "居住地"
+          }
+        ],
+        "examples": [
+          "普通网友",
+          "路人甲"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "任何组织机构的兜底类型，当一个组织不属于其他更具体的组织类型时，归入此类",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "组织名称"
+          },
+          {
+            "name": "org_type",
+            "type": "text",
+            "description": "组织类型"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "所在地区"
+          }
+        ],
+        "examples": [
+          "消费者协会",
+          "行业协会"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "EXPOSES",
+        "description": "媒体曝光食品安全事件",
+        "source_targets": [
+          {
+            "source": "MediaOutlet",
+            "target": "FoodManufacturer"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REGULATES",
+        "description": "监管部门对企业进行监管",
+        "source_targets": [
+          {
+            "source": "RegulatoryAgency",
+            "target": "FoodManufacturer"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "PURCHASES_FROM",
+        "description": "消费者从制造商购买产品",
+        "source_targets": [
+          {
+            "source": "Consumer",
+            "target": "FoodManufacturer"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "SELLS_ON",
+        "description": "制造商在电商平台销售产品",
+        "source_targets": [
+          {
+            "source": "FoodManufacturer",
+            "target": "EcommercePlatform"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COMMENTS_ON",
+        "description": "消费者对食品安全事件发表评论",
+        "source_targets": [
+          {
+            "source": "Consumer",
+            "target": "FoodManufacturer"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPORTS_ON",
+        "description": "媒体对监管部门行动进行报道",
+        "source_targets": [
+          {
+            "source": "MediaOutlet",
+            "target": "RegulatoryAgency"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "INFLUENCES_OPINION",
+        "description": "意见领袖影响公众舆论",
+        "source_targets": [
+          {
+            "source": "SocialInfluencer",
+            "target": "Consumer"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "INSPECTS",
+        "description": "检查员对企业进行检查",
+        "source_targets": [
+          {
+            "source": "FoodSafetyInspector",
+            "target": "FoodManufacturer"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "CONSULTS",
+        "description": "监管部门咨询专家意见",
+        "source_targets": [
+          {
+            "source": "RegulatoryAgency",
+            "target": "IndustryExpert"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "文本分析显示，'糟心肉'事件涉及预制菜行业的食品安全问题，主要参与者包括食品制造商(特别是梅菜扣肉生产商)、消费者、媒体机构、监管部门、电商平台、行业专家、意见领袖和检查员。舆论传播路径从媒体曝光开始，引发消费者关注和监管部门行动，同时意见领袖和专家观点影响公众认知。该事件推动了预制菜国家标准制定的讨论，体现了食品安全事件对行业规范的促进作用。",
+  "graph_id": "mirofish_41281db6e06645ce",
+  "graph_id_raw": "mirofish_c7f280e842304ae6",
+  "graph_id_disamb": "mirofish_41281db6e06645ce",
+  "graph_build_task_id": "8de2074d-5ec7-453d-8f79-c5662b431862",
+  "quality_metrics": {
+    "updated_at": "2026-04-09T08:21:20.289787+00:00",
+    "node_count_disamb": 75,
+    "node_count_raw": 120
+  },
+  "simulation_requirement": "预测“糟心肉”事件对预制菜国标出台的推动力：推演在平行世界中，当“梅菜扣肉”涉及淋巴肉曝光后，公众对“预制菜”标签的集体排斥感及信任修复周期。",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

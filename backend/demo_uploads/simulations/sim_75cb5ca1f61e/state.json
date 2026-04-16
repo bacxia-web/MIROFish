@@ -1,0 +1,25 @@
+{
+  "simulation_id": "sim_75cb5ca1f61e",
+  "project_id": "proj_e9a4b03f23a6",
+  "graph_id": "mirofish_f47341095a174c3c",
+  "enable_twitter": true,
+  "enable_reddit": true,
+  "status": "ready",
+  "entities_count": 54,
+  "profiles_count": 54,
+  "entity_types": [
+    "MediaOutlet",
+    "PlatformOperator",
+    "GovernmentAgency",
+    "Company",
+    "ConsumerAdvocate"
+  ],
+  "config_generated": true,
+  "config_reasoning": "时间配置: ‘糟心肉’事件涉及食品安全与公众信任危机，主要参与群体为普通消费者、媒体和监管机构。消费者活跃高峰在晚间19-22点，工作时段有中等讨论量，凌晨几乎无活动。事件发酵周期较长，需模拟5天（120小时）以观察舆论演变、官方响应及信任修复趋势。监管机构仅在工作时间响应，媒体全天但集中在早晚发布内容。因此配置符合东八区作息，并保留弹性应对突发舆情升温。 | 事件配置:  | Agent配置: 成功生成 54 个 | 初始帖子分配: 1 个帖子已分配发布者",
+  "current_round": 0,
+  "twitter_status": "not_started",
+  "reddit_status": "not_started",
+  "created_at": "2026-04-09T19:10:48.660588",
+  "updated_at": "2026-04-09T19:18:58.805200",
+  "error": null
+}

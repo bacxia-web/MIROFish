@@ -38,7 +38,8 @@ def main():
     
     # 获取运行配置
     host = os.environ.get('FLASK_HOST', '0.0.0.0')
-    port = int(os.environ.get('FLASK_PORT', 5001))
+    # Render 等平台通过 PORT 注入端口，优先使用
+    port = int(os.environ.get('PORT') or os.environ.get('FLASK_PORT', 5001))
     debug = Config.DEBUG
     
     # 启动服务

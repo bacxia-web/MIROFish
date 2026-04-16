@@ -1,0 +1,348 @@
+{
+  "project_id": "proj_7682ced9acaa",
+  "name": "Unnamed Project",
+  "status": "graph_completed",
+  "created_at": "2026-04-10T15:55:50.683317",
+  "updated_at": "2026-04-10T16:33:20.533294",
+  "files": [
+    {
+      "filename": "晚点_阿里淘宝闪购_id3416.pdf",
+      "size": 1336420
+    }
+  ],
+  "total_text_length": 4319,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "TechCompany",
+        "description": "大型科技互联网企业及其核心业务部门",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "公司全称"
+          },
+          {
+            "name": "business_focus",
+            "type": "text",
+            "description": "主要业务领域"
+          }
+        ],
+        "examples": [
+          "阿里巴巴集团",
+          "美团",
+          "京东",
+          "字节跳动",
+          "腾讯"
+        ]
+      },
+      {
+        "name": "Executive",
+        "description": "企业高管、创始人或核心管理层成员",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "个人全名"
+          },
+          {
+            "name": "position",
+            "type": "text",
+            "description": "职位或花名"
+          }
+        ],
+        "examples": [
+          "马云",
+          "吴泽明",
+          "范禹"
+        ]
+      },
+      {
+        "name": "DeliveryWorker",
+        "description": "外卖骑手、配送员等一线履约人员",
+        "attributes": [
+          {
+            "name": "worker_type",
+            "type": "text",
+            "description": "运力类型（如专送、优选）"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "主要服务区域"
+          }
+        ],
+        "examples": [
+          "蜂鸟专送骑手",
+          "美团优选骑手"
+        ]
+      },
+      {
+        "name": "Merchant",
+        "description": "在平台上经营的品牌商家、餐厅或零售店",
+        "attributes": [
+          {
+            "name": "brand_name",
+            "type": "text",
+            "description": "品牌或店铺名称"
+          },
+          {
+            "name": "category",
+            "type": "text",
+            "description": "经营品类"
+          }
+        ],
+        "examples": [
+          "百雀羚旗舰店",
+          "盒马鲜生",
+          "Only官方旗舰店"
+        ]
+      },
+      {
+        "name": "MediaOutlet",
+        "description": "新闻报道机构、自媒体或行业媒体",
+        "attributes": [
+          {
+            "name": "media_name",
+            "type": "text",
+            "description": "媒体机构名称"
+          },
+          {
+            "name": "reporter",
+            "type": "text",
+            "description": "报道记者姓名"
+          }
+        ],
+        "examples": [
+          "晚点LatePost",
+          "央视"
+        ]
+      },
+      {
+        "name": "Aiassistant",
+        "description": "人工智能助手应用或数字交互入口",
+        "attributes": [
+          {
+            "name": "app_name",
+            "type": "text",
+            "description": "应用名称"
+          },
+          {
+            "name": "parent_company",
+            "type": "text",
+            "description": "所属母公司"
+          }
+        ],
+        "examples": [
+          "千问",
+          "豆包",
+          "元宝"
+        ]
+      },
+      {
+        "name": "LogisticsFacility",
+        "description": "物流仓储设施、前置仓或配送站点",
+        "attributes": [
+          {
+            "name": "facility_type",
+            "type": "text",
+            "description": "设施类型（如前置仓、大仓）"
+          },
+          {
+            "name": "coverage_area",
+            "type": "text",
+            "description": "覆盖城市或区域"
+          }
+        ],
+        "examples": [
+          "天猫超市前置仓",
+          "闪电仓",
+          "盒马前置仓"
+        ]
+      },
+      {
+        "name": "ConsumerGroup",
+        "description": "特定用户群体或消费者代表",
+        "attributes": [
+          {
+            "name": "group_trait",
+            "type": "text",
+            "description": "群体特征描述"
+          },
+          {
+            "name": "concern_topic",
+            "type": "text",
+            "description": "关注话题"
+          }
+        ],
+        "examples": [
+          "春节返乡用户",
+          "高客单价订单用户",
+          "南方地区用户"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "未归入具体类别的普通自然人个体",
+        "attributes": [
+          {
+            "name": "role_description",
+            "type": "text",
+            "description": "角色描述"
+          },
+          {
+            "name": "identity",
+            "type": "text",
+            "description": "身份标识"
+          }
+        ],
+        "examples": [
+          "某位网友",
+          "路人甲",
+          "普通消费者"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "未归入具体类别的普通组织机构",
+        "attributes": [
+          {
+            "name": "org_type",
+            "type": "text",
+            "description": "组织类型描述"
+          },
+          {
+            "name": "function",
+            "type": "text",
+            "description": "主要功能"
+          }
+        ],
+        "examples": [
+          "行业协会",
+          "临时项目组",
+          "地方商会"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "EMPLOYED_BY",
+        "description": "员工受雇于某公司或组织",
+        "source_targets": [
+          {
+            "source": "Executive",
+            "target": "TechCompany"
+          },
+          {
+            "source": "DeliveryWorker",
+            "target": "TechCompany"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "OPERATES_ON",
+        "description": "商家在特定平台进行经营活动",
+        "source_targets": [
+          {
+            "source": "Merchant",
+            "target": "TechCompany"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPORTS_ON",
+        "description": "媒体报道特定事件或主体",
+        "source_targets": [
+          {
+            "source": "MediaOutlet",
+            "target": "TechCompany"
+          },
+          {
+            "source": "MediaOutlet",
+            "target": "Executive"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COMPETES_WITH",
+        "description": "实体之间存在市场竞争关系",
+        "source_targets": [
+          {
+            "source": "TechCompany",
+            "target": "TechCompany"
+          },
+          {
+            "source": "Aiassistant",
+            "target": "Aiassistant"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "SERVES_IN",
+        "description": "物流设施服务于特定区域或业务",
+        "source_targets": [
+          {
+            "source": "LogisticsFacility",
+            "target": "TechCompany"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "INTERACTS_WITH",
+        "description": "用户群体与平台或产品进行互动",
+        "source_targets": [
+          {
+            "source": "ConsumerGroup",
+            "target": "Aiassistant"
+          },
+          {
+            "source": "ConsumerGroup",
+            "target": "TechCompany"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "MANAGES",
+        "description": "高管管理特定业务或团队",
+        "source_targets": [
+          {
+            "source": "Executive",
+            "target": "TechCompany"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "DELIVERS_FOR",
+        "description": "骑手为特定平台提供配送服务",
+        "source_targets": [
+          {
+            "source": "DeliveryWorker",
+            "target": "TechCompany"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "本文档主要描述了阿里巴巴旗下淘宝闪购与美团、京东等在即时零售和外卖领域的激烈竞争。涉及的关键实体包括科技巨头（阿里、美团）、高管（马云、吴泽明）、一线骑手、品牌商家、物流基础设施（前置仓）、AI助手（千问）以及媒体（晚点）。舆论模拟需关注各方在补贴策略、运力争夺、技术投入及用户体验上的博弈，特别是骑手激励变化对配送时效的影响，以及商家和用户在不同平台规则下的反应。",
+  "graph_id": "mirofish_22e61e055a664ece",
+  "graph_id_raw": "mirofish_ec8dd457ac1a49e3",
+  "graph_id_disamb": "mirofish_22e61e055a664ece",
+  "graph_build_task_id": "a429d794-10f5-4d7d-9d76-2ec576ec1101",
+  "quality_metrics": {
+    "updated_at": "2026-04-10T08:33:20.531965+00:00",
+    "node_count_disamb": 43,
+    "node_count_raw": 48
+  },
+  "simulation_requirement": "若第三季度补贴力度环比下降 20% 但骑手激励不变，用户侧话题会更集中在「涨价/减量」还是「配送时效」？商家与骑手在公开渠道的抱怨框架会如何重组（平台规则、流量分配、恶性竞争）？",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

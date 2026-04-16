@@ -1,0 +1,20 @@
+{
+  "project_id": "proj_eaa1e3c4db04",
+  "graph_id_raw": "mirofish_1201c53579844b44",
+  "graph_id_disamb": "mirofish_53413c45a48c43f8",
+  "raw": {
+    "simulation_id": null,
+    "profile_count": 0,
+    "pair_count": 0,
+    "cosine_median": null,
+    "cosine_p90": null
+  },
+  "disamb": {
+    "simulation_id": null,
+    "profile_count": 0,
+    "pair_count": 0,
+    "cosine_median": null,
+    "cosine_p90": null
+  },
+  "generated_at": "2026-04-10T07:57:36.595745+00:00"
+}

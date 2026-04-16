@@ -1,0 +1,298 @@
+{
+  "simulation_id": "sim_eac0862d5bc1",
+  "runner_status": "completed",
+  "current_round": 72,
+  "total_rounds": 72,
+  "simulated_hours": 0,
+  "total_simulation_hours": 72,
+  "progress_percent": 100.0,
+  "twitter_current_round": 72,
+  "reddit_current_round": 72,
+  "twitter_simulated_hours": 0,
+  "reddit_simulated_hours": 0,
+  "twitter_running": false,
+  "reddit_running": false,
+  "twitter_completed": true,
+  "reddit_completed": true,
+  "twitter_actions_count": 10,
+  "reddit_actions_count": 10,
+  "total_actions_count": 20,
+  "started_at": "2026-03-14T19:29:45.935197",
+  "updated_at": "2026-03-14T19:53:29.432364",
+  "completed_at": "2026-03-14T19:58:02.470699",
+  "error": null,
+  "process_pid": 66148,
+  "recent_actions": [
+    {
+      "round_num": 9,
+      "timestamp": "2026-03-14T19:53:29.385319",
+      "platform": "reddit",
+      "agent_id": 4,
+      "agent_name": "妙蛙",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "妙蛙Lora生成实测：成本降低80%的工业级解决方案，对比传统流程全记录",
+        "post_id": 5
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-03-14T19:53:29.385215",
+      "platform": "reddit",
+      "agent_id": 7,
+      "agent_name": "Cloud Host",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "Hugging Face最新Demos汇总：5分钟上手PixArt Sigma模型的完整操作指南",
+        "post_id": 4
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-03-14T19:53:29.385085",
+      "platform": "reddit",
+      "agent_id": 3,
+      "agent_name": "王小川",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "艾博观点：为什么好AI PM比好算法工程师更稀缺？附神策数据用户画像实战技巧",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-03-14T19:53:29.384825",
+      "platform": "reddit",
+      "agent_id": 1,
+      "agent_name": "CRI",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "关键之外分享：我们All in AI 7个月后的产品迭代经验，附儿童绘图产品嘟嘟波开发实录",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-03-14T19:53:29.384599",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "42章经",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "【42章经】深度解析：AI产品经理如何构建核心能力体系？附王小川PMF方法论与百川实战案例",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-03-14T19:53:26.802205",
+      "platform": "twitter",
+      "agent_id": 4,
+      "agent_name": "妙蛙",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "妙蛙Lora生成实测：成本降低80%的工业级解决方案，对比传统流程全记录",
+        "post_id": 5
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-03-14T19:53:26.801947",
+      "platform": "twitter",
+      "agent_id": 7,
+      "agent_name": "Cloud Host",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "Hugging Face最新Demos汇总：5分钟上手PixArt Sigma模型的完整操作指南",
+        "post_id": 4
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-03-14T19:53:26.801656",
+      "platform": "twitter",
+      "agent_id": 3,
+      "agent_name": "王小川",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "艾博观点：为什么好AI PM比好算法工程师更稀缺？附神策数据用户画像实战技巧",
+        "post_id": 3
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-03-14T19:53:26.801239",
+      "platform": "twitter",
+      "agent_id": 1,
+      "agent_name": "CRI",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "关键之外分享：我们All in AI 7个月后的产品迭代经验，附儿童绘图产品嘟嘟波开发实录",
+        "post_id": 2
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 9,
+      "timestamp": "2026-03-14T19:53:26.800060",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "42章经",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "【42章经】深度解析：AI产品经理如何构建核心能力体系？附王小川PMF方法论与百川实战案例",
+        "post_id": 1
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-03-14T19:53:17.225725",
+      "platform": "reddit",
+      "agent_id": 4,
+      "agent_name": "妙蛙",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "妙蛙Lora生成实测：成本降低80%的工业级解决方案，对比传统流程全记录"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-03-14T19:53:17.225612",
+      "platform": "reddit",
+      "agent_id": 7,
+      "agent_name": "Cloud Host",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "Hugging Face最新Demos汇总：5分钟上手PixArt Sigma模型的完整操作指南"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-03-14T19:53:17.225496",
+      "platform": "reddit",
+      "agent_id": 3,
+      "agent_name": "王小川",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "艾博观点：为什么好AI PM比好算法工程师更稀缺？附神策数据用户画像实战技巧"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-03-14T19:53:17.225371",
+      "platform": "reddit",
+      "agent_id": 1,
+      "agent_name": "CRI",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "关键之外分享：我们All in AI 7个月后的产品迭代经验，附儿童绘图产品嘟嘟波开发实录"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-03-14T19:53:17.225249",
+      "platform": "reddit",
+      "agent_id": 0,
+      "agent_name": "42章经",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "【42章经】深度解析：AI产品经理如何构建核心能力体系？附王小川PMF方法论与百川实战案例"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-03-14T19:53:17.165395",
+      "platform": "twitter",
+      "agent_id": 4,
+      "agent_name": "妙蛙",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "妙蛙Lora生成实测：成本降低80%的工业级解决方案，对比传统流程全记录"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-03-14T19:53:17.165254",
+      "platform": "twitter",
+      "agent_id": 7,
+      "agent_name": "Cloud Host",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "Hugging Face最新Demos汇总：5分钟上手PixArt Sigma模型的完整操作指南"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-03-14T19:53:17.165076",
+      "platform": "twitter",
+      "agent_id": 3,
+      "agent_name": "王小川",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "艾博观点：为什么好AI PM比好算法工程师更稀缺？附神策数据用户画像实战技巧"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-03-14T19:53:17.164861",
+      "platform": "twitter",
+      "agent_id": 1,
+      "agent_name": "CRI",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "关键之外分享：我们All in AI 7个月后的产品迭代经验，附儿童绘图产品嘟嘟波开发实录"
+      },
+      "result": null,
+      "success": true
+    },
+    {
+      "round_num": 0,
+      "timestamp": "2026-03-14T19:53:17.163313",
+      "platform": "twitter",
+      "agent_id": 0,
+      "agent_name": "42章经",
+      "action_type": "CREATE_POST",
+      "action_args": {
+        "content": "【42章经】深度解析：AI产品经理如何构建核心能力体系？附王小川PMF方法论与百川实战案例"
+      },
+      "result": null,
+      "success": true
+    }
+  ],
+  "rounds_count": 0
+}

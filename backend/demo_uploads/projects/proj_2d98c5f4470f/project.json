@@ -1,0 +1,324 @@
+{
+  "project_id": "proj_2d98c5f4470f",
+  "name": "Unnamed Project",
+  "status": "graph_completed",
+  "created_at": "2026-04-10T09:47:09.000853",
+  "updated_at": "2026-04-10T15:44:42.942909",
+  "files": [
+    {
+      "filename": "晚点_阿里淘宝闪购_id3416.pdf",
+      "size": 1336420
+    }
+  ],
+  "total_text_length": 4319,
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "Platform",
+        "description": "社交媒体或电商平台主体，如淘宝闪购、美团等。",
+        "attributes": [
+          {
+            "name": "platform_name",
+            "type": "text",
+            "description": "平台的正式名称"
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "description": "平台类型，如电商、外卖、AI助手等"
+          }
+        ],
+        "examples": [
+          "淘宝闪购",
+          "美团"
+        ]
+      },
+      {
+        "name": "Company",
+        "description": "企业组织，如阿里巴巴、字节跳动等。",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "公司全称"
+          },
+          {
+            "name": "industry",
+            "type": "text",
+            "description": "所属行业"
+          }
+        ],
+        "examples": [
+          "阿里巴巴",
+          "字节跳动"
+        ]
+      },
+      {
+        "name": "Rider",
+        "description": "外卖骑手，负责配送订单。",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "骑手姓名"
+          },
+          {
+            "name": "region",
+            "type": "text",
+            "description": "所在地区"
+          }
+        ],
+        "examples": [
+          "张三",
+          "李四"
+        ]
+      },
+      {
+        "name": "Merchant",
+        "description": "商家，提供商品或服务。",
+        "attributes": [
+          {
+            "name": "business_name",
+            "type": "text",
+            "description": "商家名称"
+          },
+          {
+            "name": "category",
+            "type": "text",
+            "description": "主营类别"
+          }
+        ],
+        "examples": [
+          "百雀羚旗舰店",
+          "盒马鲜生"
+        ]
+      },
+      {
+        "name": "User",
+        "description": "普通消费者，使用平台服务。",
+        "attributes": [
+          {
+            "name": "user_id",
+            "type": "text",
+            "description": "用户唯一标识符"
+          },
+          {
+            "name": "location",
+            "type": "text",
+            "description": "用户所在地理位置"
+          }
+        ],
+        "examples": [
+          "用户A",
+          "用户B"
+        ]
+      },
+      {
+        "name": "GovernmentAgency",
+        "description": "政府监管部门，如商务部、市场监管局等。",
+        "attributes": [
+          {
+            "name": "agency_name",
+            "type": "text",
+            "description": "机构名称"
+          },
+          {
+            "name": "jurisdiction",
+            "type": "text",
+            "description": "管辖范围"
+          }
+        ],
+        "examples": [
+          "国家市场监督管理总局",
+          "北京市商务局"
+        ]
+      },
+      {
+        "name": "MediaOutlet",
+        "description": "媒体机构，报道相关事件。",
+        "attributes": [
+          {
+            "name": "media_name",
+            "type": "text",
+            "description": "媒体名称"
+          },
+          {
+            "name": "coverage_area",
+            "type": "text",
+            "description": "覆盖地域"
+          }
+        ],
+        "examples": [
+          "晚点LatePost",
+          "央视新闻"
+        ]
+      },
+      {
+        "name": "AcademicInstitution",
+        "description": "高校或研究机构，参与政策或学术讨论。",
+        "attributes": [
+          {
+            "name": "institution_name",
+            "type": "text",
+            "description": "机构名称"
+          },
+          {
+            "name": "field_of_study",
+            "type": "text",
+            "description": "研究领域"
+          }
+        ],
+        "examples": [
+          "清华大学经济管理学院",
+          "中国社科院数字经济研究中心"
+        ]
+      },
+      {
+        "name": "Person",
+        "description": "任何自然人个体，不属于其他具体类型时归入此。",
+        "attributes": [
+          {
+            "name": "full_name",
+            "type": "text",
+            "description": "个人姓名"
+          },
+          {
+            "name": "role",
+            "type": "text",
+            "description": "职业或身份"
+          }
+        ],
+        "examples": [
+          "马云",
+          "某位网友"
+        ]
+      },
+      {
+        "name": "Organization",
+        "description": "任何组织机构，不属于其他具体类型时归入此。",
+        "attributes": [
+          {
+            "name": "org_name",
+            "type": "text",
+            "description": "组织名称"
+          },
+          {
+            "name": "type",
+            "type": "text",
+            "description": "组织性质"
+          }
+        ],
+        "examples": [
+          "某行业协会",
+          "某维权组织"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "WORKS_FOR",
+        "description": "个人在某个组织中工作。",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Organization"
+          },
+          {
+            "source": "Rider",
+            "target": "Company"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REPORTS_ON",
+        "description": "媒体机构报道某个事件或平台。",
+        "source_targets": [
+          {
+            "source": "MediaOutlet",
+            "target": "Platform"
+          },
+          {
+            "source": "MediaOutlet",
+            "target": "Company"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "COMMENTS_ON",
+        "description": "个人或组织对某个话题发表评论。",
+        "source_targets": [
+          {
+            "source": "Person",
+            "target": "Platform"
+          },
+          {
+            "source": "Merchant",
+            "target": "Platform"
+          },
+          {
+            "source": "Rider",
+            "target": "Platform"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "RESPONDS_TO",
+        "description": "平台或组织回应其他主体的言论或行为。",
+        "source_targets": [
+          {
+            "source": "Platform",
+            "target": "User"
+          },
+          {
+            "source": "Company",
+            "target": "MediaOutlet"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "AFFILIATED_WITH",
+        "description": "组织与另一个组织存在隶属或合作关系。",
+        "source_targets": [
+          {
+            "source": "Company",
+            "target": "Platform"
+          },
+          {
+            "source": "AcademicInstitution",
+            "target": "Company"
+          }
+        ],
+        "attributes": []
+      },
+      {
+        "name": "REGULATES",
+        "description": "政府机构对平台进行监管。",
+        "source_targets": [
+          {
+            "source": "GovernmentAgency",
+            "target": "Platform"
+          }
+        ],
+        "attributes": []
+      }
+    ]
+  },
+  "analysis_summary": "该文本围绕淘宝闪购在2026年的战略投入展开，涉及平台、公司、骑手、商家、用户、政府、媒体及学术机构等多个主体。设计的实体类型涵盖了这些关键角色，关系类型反映了它们之间的互动逻辑，如媒体报道、用户评论、平台回应、监管等，适用于模拟社交媒体舆论环境下的多方反应与传播路径。",
+  "graph_id": "mirofish_2ca888baa60448d7",
+  "graph_id_raw": "mirofish_272a8500795d47dc",
+  "graph_id_disamb": "mirofish_2ca888baa60448d7",
+  "graph_build_task_id": "ae802a14-db16-4c89-9006-3a5cfcc54999",
+  "quality_metrics": {
+    "updated_at": "2026-04-10T07:44:42.942167+00:00",
+    "node_count_disamb": 22,
+    "node_count_raw": 43
+  },
+  "simulation_requirement": "若2026年第三季度补贴力度环比下降 20% 但骑手激励不变，用户侧话题会更集中在『涨价/减量』还是『配送时效』？商家与骑手在公开渠道的抱怨框架会如何重组（平台规则、流量分配、恶性竞争）？",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "error": null
+}

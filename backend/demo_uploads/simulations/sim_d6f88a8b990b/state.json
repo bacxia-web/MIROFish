@@ -1,0 +1,28 @@
+{
+  "simulation_id": "sim_d6f88a8b990b",
+  "project_id": "proj_7682ced9acaa",
+  "graph_id": "mirofish_22e61e055a664ece",
+  "enable_twitter": true,
+  "enable_reddit": true,
+  "status": "stopped",
+  "entities_count": 43,
+  "profiles_count": 43,
+  "entity_types": [
+    "MediaOutlet",
+    "TechCompany",
+    "Aiassistant",
+    "LogisticsNetwork",
+    "Organization",
+    "Merchant",
+    "Executive",
+    "BusinessUnit"
+  ],
+  "config_generated": true,
+  "config_reasoning": "时间配置: 模拟场景聚焦于‘补贴下降、骑手激励不变’引发的多方博弈。1. 用户侧：午餐（12-13点）和晚餐（19-22点）是外卖刚需高峰，此时用户对‘涨价/减量’感知最敏锐，投诉与讨论最集中，故设为双高峰。2. 商家与骑手：工作时段（10-18点）是接单、配送及处理订单纠纷的核心时间，抱怨框架重组（如流量分配不满、规则调整）多在此时发生；晚间高峰则是骑手下班后在社交媒体复盘吐槽的集中期。3. 媒体与观察员：晚点LatePost等深度报道及官方回应通常在工作日白天发布，但突发舆情可能延续至晚间。凌晨保持极低活跃以符合真实作息，但保留少量夜间活跃Agent模拟深夜骑手或极端情绪用户。总时长设为168小时（一周），以覆盖完整的周中工作日与周末波动，观察话题发酵周期。 | 事件配置: 基于模拟需求，当补贴下降而骑手激励不变时，平台成本压力会首先传导至用户端（价格上涨或优惠减少），因此用户话题必然集中在「涨价/减量」。对于商家和骑手，由于收入预期（激励）未随补贴同步调整，且面临更高的履约要求，他们的不满将从表面的价格问题转向对平台底层逻辑（流量分配、规则制定）的批判，认为平台在制造「恶性竞争」环境。生成的帖子分别模拟了用户、商家、骑手及媒体的视角，覆盖了上述舆论走向。 | Agent配置: 成功生成 43 个 | 初始帖子分配: 4 个帖子已分配发布者",
+  "current_round": 0,
+  "twitter_status": "not_started",
+  "reddit_status": "not_started",
+  "created_at": "2026-04-10T16:01:05.497194",
+  "updated_at": "2026-04-13T10:51:19.422871",
+  "error": null
+}

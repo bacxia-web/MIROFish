@@ -1,0 +1,29 @@
+{
+  "simulation_id": "sim_eac0862d5bc1",
+  "project_id": "proj_04ee634b2f69",
+  "graph_id": "mirofish_07620d11720b49b2",
+  "enable_twitter": true,
+  "enable_reddit": true,
+  "status": "running",
+  "entities_count": 51,
+  "profiles_count": 51,
+  "entity_types": [
+    "AIStartup",
+    "TechResearcher",
+    "TechPlatform",
+    "Person",
+    "CompanyExecutive",
+    "Organization",
+    "CompetitorOrg",
+    "MediaOutlet",
+    "ProductManager"
+  ],
+  "config_generated": true,
+  "config_reasoning": "时间配置: 针对AI产品经理学习主题，结合播客内容消费习惯：晚间19-22点为专业人群集中讨论时段（活跃度系数1.5），凌晨0-5点符合中国作息低谷期。早间6-8点覆盖通勤场景，工作时段保持中等活跃支持持续学习。总时长72小时可观察工作日与周末差异，Agent激活数反映专业社群参与度波动。 | 事件配置: 基于实体信息提取AI学习相关关键词，按媒体、企业、专家、平台等角色设计初始内容，确保poster_type严格匹配可用类型。舆论方向聚焦实操性，通过案例拆解和工具推荐形成学习闭环。 | Agent配置: 成功生成 51 个 | 初始帖子分配: 5 个帖子已分配发布者",
+  "current_round": 0,
+  "twitter_status": "not_started",
+  "reddit_status": "not_started",
+  "created_at": "2026-03-13T17:01:15.257447",
+  "updated_at": "2026-03-15T01:20:26.806278",
+  "error": null
+}

@@ -1,0 +1,17 @@
+{
+  "command_id": "7ee750de-d79f-4e8d-9c0d-71cc1b752100",
+  "status": "completed",
+  "result": {
+    "interviews_count": 1,
+    "results": {
+      "twitter_0": {
+        "agent_id": 0,
+        "response": "你好！这里是贾雨村古典文学研究中心官方账号，专注于《红楼梦》等中国古典文学的研究与普及。我们致力于弘扬中华优秀传统文化精髓，提供深度学术分析、历史解读和文化讨论。如果您对《红楼梦》或其他古典文学作品有任何兴趣或疑问，欢迎关注我们，获取最新研究成果和文化动态，参与学术交流。",
+        "timestamp": 2,
+        "platform": "twitter"
+      }
+    }
+  },
+  "error": null,
+  "timestamp": "2026-04-07T20:05:32.619170"
+}

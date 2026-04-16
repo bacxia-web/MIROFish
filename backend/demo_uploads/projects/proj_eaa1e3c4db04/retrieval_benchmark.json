@@ -1,0 +1,187 @@
+{
+  "project_id": "proj_eaa1e3c4db04",
+  "graph_id_raw": "mirofish_1201c53579844b44",
+  "graph_id_disamb": "mirofish_53413c45a48c43f8",
+  "query_count": 21,
+  "queries": [
+    "月之暗面",
+    "MiniMax",
+    "智谱",
+    "杨植麟",
+    "张予彤",
+    "王慧文",
+    "晚点 LatePost",
+    "贺乾明",
+    "程曼祺",
+    "腾讯",
+    "阿里",
+    "字节",
+    "IDG",
+    "英伟达",
+    "Kimi",
+    "K2 Thinking",
+    "K3",
+    "大疆",
+    "宇树",
+    "汪滔",
+    "北京晚达科技有限公司"
+  ],
+  "details": [
+    {
+      "query": "月之暗面",
+      "raw_hits": 20,
+      "disamb_hits": 19,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "MiniMax",
+      "raw_hits": 4,
+      "disamb_hits": 4,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "智谱",
+      "raw_hits": 4,
+      "disamb_hits": 4,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "杨植麟",
+      "raw_hits": 5,
+      "disamb_hits": 3,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "张予彤",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "王慧文",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "晚点 LatePost",
+      "raw_hits": 9,
+      "disamb_hits": 9,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "贺乾明",
+      "raw_hits": 5,
+      "disamb_hits": 3,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "程曼祺",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "腾讯",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "阿里",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "字节",
+      "raw_hits": 1,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    },
+    {
+      "query": "IDG",
+      "raw_hits": 2,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "英伟达",
+      "raw_hits": 1,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "Kimi",
+      "raw_hits": 2,
+      "disamb_hits": 3,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "K2 Thinking",
+      "raw_hits": 1,
+      "disamb_hits": 1,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "K3",
+      "raw_hits": 2,
+      "disamb_hits": 0,
+      "raw_empty": 0,
+      "disamb_empty": 1
+    },
+    {
+      "query": "大疆",
+      "raw_hits": 4,
+      "disamb_hits": 3,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "宇树",
+      "raw_hits": 1,
+      "disamb_hits": 2,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "汪滔",
+      "raw_hits": 4,
+      "disamb_hits": 3,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    },
+    {
+      "query": "北京晚达科技有限公司",
+      "raw_hits": 10,
+      "disamb_hits": 4,
+      "raw_empty": 0,
+      "disamb_empty": 0
+    }
+  ],
+  "summary": {
+    "raw_nonempty_rate": 1.0,
+    "disamb_nonempty_rate": 0.9048,
+    "raw_avg_hits": 4.0476,
+    "disamb_avg_hits": 3.4286,
+    "raw_avg_hits_on_nonempty": 4.0476,
+    "disamb_avg_hits_on_nonempty": 3.7895
+  },
+  "generated_at": "2026-04-10T07:57:36.582151+00:00"
+}

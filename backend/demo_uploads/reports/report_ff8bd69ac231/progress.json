@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "progress": -1,
+  "message": "报告生成失败: Error code: 403 - {'error': {'message': 'The free tier of the model has been exhausted. If you wish to continue access the model on a paid basis, please disable the \"use free tier only\" mode in the management console.', 'type': 'AllocationQuota.FreeTierOnly', 'param': None, 'code': 'AllocationQuota.FreeTierOnly'}, 'id': 'chatcmpl-4bcce4be-96a7-9712-a4b1-6ffa4db71d37', 'request_id': '4bcce4be-96a7-9712-a4b1-6ffa4db71d37'}",
+  "current_section": null,
+  "completed_sections": [],
+  "updated_at": "2026-04-08T23:16:36.463288"
+}
