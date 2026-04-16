@@ -55,7 +55,27 @@ class Config:
     # LLM配置（统一使用OpenAI格式）
     LLM_API_KEY = os.environ.get('LLM_API_KEY')
     LLM_BASE_URL = os.environ.get('LLM_BASE_URL', 'https://api.openai.com/v1')
-    LLM_MODEL_NAME = os.environ.get('LLM_MODEL_NAME', 'gpt-4o-mini')
+    # 依次尝试；遇到额度/限流等可切换错误时自动换下一个模型（见 llm_client.chat_completions_with_model_fallback）
+    _LLM_MODEL_FALLBACK_DEFAULT = (
+        'qwen3-32b,qwen3-coder-plus,qwen3-vl-flash-2025-10-15,qwen3-max-preview,qwen3-coder-flash'
+    )
+    _llm_chain_raw = os.environ.get('LLM_MODEL_FALLBACK_CHAIN', '').strip()
+    if _llm_chain_raw:
+        LLM_MODEL_CHAIN = [m.strip() for m in _llm_chain_raw.split(',') if m.strip()]
+    else:
+        LLM_MODEL_CHAIN = [
+            m.strip() for m in _LLM_MODEL_FALLBACK_DEFAULT.split(',') if m.strip()
+        ]
+        # 未配置 FALLBACK_CHAIN 时，允许 LLM_MODEL_NAME 插到队首（兼容旧 .env）
+        # 注意：类体里的 list 推导式对同级局部变量可见性与普通块不同，此处用显式循环
+        _primary = os.environ.get('LLM_MODEL_NAME', '').strip()
+        if _primary:
+            _rest = []
+            for _m in LLM_MODEL_CHAIN:
+                if _m != _primary:
+                    _rest.append(_m)
+            LLM_MODEL_CHAIN = [_primary] + _rest
+    LLM_MODEL_NAME = LLM_MODEL_CHAIN[0] if LLM_MODEL_CHAIN else 'gpt-4o-mini'
     
     # 图谱后端：zep = Zep Cloud/自托管 API（zep-cloud）；local = Neo4j + Qdrant（方案 B）
     GRAPH_BACKEND = os.environ.get('GRAPH_BACKEND', 'zep').strip().lower()
@@ -111,11 +131,20 @@ class Config:
     
     @classmethod
     def validate(cls):
-        """验证必要配置（仅校验 LLM；ZEP 为可选，未配置时图谱构建接口会返回提示）"""
-        errors = []
+        """验证必要配置。
+        LLM_API_KEY 仅在图谱构建/模拟/报告生成时才真正需要；
+        只读历史数据（浏览项目、查看图谱、阅读报告）完全不依赖 LLM，
+        因此启动时不强制退出，仅记录警告。
+        """
         if not cls.LLM_API_KEY:
-            errors.append("LLM_API_KEY 未配置")
-        return errors
+            import warnings
+            warnings.warn(
+                "LLM_API_KEY 未配置，图谱构建/模拟/报告生成功能不可用，"
+                "历史数据浏览不受影响。",
+                RuntimeWarning,
+                stacklevel=2,
+            )
+        return []  # 不阻断启动
     
     @classmethod
     def validate_local_graph(cls) -> list:
