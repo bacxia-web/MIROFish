@@ -16,7 +16,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 
 from openai import OpenAI
-from zep_cloud.client import Zep
+from ..utils.zep_client import create_zep_client
 
 from ..config import Config
 from ..utils.logger import get_logger
@@ -205,7 +205,7 @@ class OasisProfileGenerator:
         
         if self.zep_api_key:
             try:
-                self.zep_client = Zep(api_key=self.zep_api_key)
+                self.zep_client = create_zep_client(api_key=self.zep_api_key)
             except Exception as e:
                 logger.warning(f"Zep客户端初始化失败: {e}")
     
@@ -298,9 +298,6 @@ class OasisProfileGenerator:
         """
         import concurrent.futures
         
-        if not self.zep_client:
-            return {"facts": [], "node_summaries": [], "context": ""}
-        
         entity_name = entity.name
         
         results = {
@@ -315,6 +312,44 @@ class OasisProfileGenerator:
             return results
         
         comprehensive_query = t('progress.zepSearchQuery', name=entity_name)
+
+        if Config.is_local_graph():
+            from .zep_tools import ZepToolsService
+            try:
+                tools = ZepToolsService()
+                se = tools.search_graph(
+                    self.graph_id, comprehensive_query, limit=30, scope="edges"
+                )
+                sn = tools.search_graph(
+                    self.graph_id, comprehensive_query, limit=20, scope="nodes"
+                )
+                results["facts"] = list(dict.fromkeys(se.facts))
+                summaries = []
+                for nd in sn.nodes:
+                    s = (nd.get("summary") or "").strip()
+                    if s:
+                        summaries.append(s)
+                    nm = (nd.get("name") or "").strip()
+                    if nm and nm != entity_name:
+                        summaries.append(f"相关实体: {nm}")
+                results["node_summaries"] = list(dict.fromkeys(summaries))[:25]
+                parts = []
+                if results["facts"]:
+                    parts.append(
+                        "事实信息:\n" + "\n".join(f"- {f}" for f in results["facts"][:20])
+                    )
+                if results["node_summaries"]:
+                    parts.append(
+                        "相关实体:\n"
+                        + "\n".join(f"- {s}" for s in results["node_summaries"][:10])
+                    )
+                results["context"] = "\n\n".join(parts)
+            except Exception as e:
+                logger.warning(f"本地图谱检索失败 ({entity_name}): {e}")
+            return results
+        
+        if not self.zep_client:
+            return {"facts": [], "node_summaries": [], "context": ""}
         
         def search_edges():
             """搜索边（事实/关系）- 带重试机制"""

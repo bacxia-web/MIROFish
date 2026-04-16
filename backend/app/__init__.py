@@ -39,8 +39,17 @@ def create_app(config_class=Config):
         logger.info("MiroFish Backend 启动中...")
         logger.info("=" * 50)
     
-    # 启用CORS
-    CORS(app, resources={r"/api/*": {"origins": "*"}})
+    # 启用CORS（含 OPTIONS 预检，避免前端跨域请求 404）
+    CORS(
+        app,
+        resources={r"/api/*": {
+            "origins": "*",
+            "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+            "allow_headers": ["Content-Type", "Authorization", "Accept"],
+            "expose_headers": ["Content-Type"],
+        }},
+        supports_credentials=False,
+    )
     
     # 注册模拟进程清理函数（确保服务器关闭时终止所有模拟进程）
     from .services.simulation_runner import SimulationRunner
@@ -67,7 +76,12 @@ def create_app(config_class=Config):
     app.register_blueprint(graph_bp, url_prefix='/api/graph')
     app.register_blueprint(simulation_bp, url_prefix='/api/simulation')
     app.register_blueprint(report_bp, url_prefix='/api/report')
-    
+
+    # 显式响应 CORS 预检 OPTIONS，避免浏览器跨域时收到 404
+    @app.route('/api/<path:subpath>', methods=['OPTIONS'])
+    def cors_preflight(subpath):
+        return '', 204
+
     # 健康检查
     @app.route('/health')
     def health():

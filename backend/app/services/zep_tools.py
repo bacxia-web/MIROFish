@@ -13,7 +13,7 @@ import json
 from typing import Dict, Any, List, Optional
 from dataclasses import dataclass, field
 
-from zep_cloud.client import Zep
+from ..utils.zep_client import create_zep_client
 
 from ..config import Config
 from ..utils.logger import get_logger
@@ -424,10 +424,27 @@ class ZepToolsService:
     
     def __init__(self, api_key: Optional[str] = None, llm_client: Optional[LLMClient] = None):
         self.api_key = api_key or Config.ZEP_API_KEY
-        if not self.api_key:
-            raise ValueError("ZEP_API_KEY 未配置")
-        
-        self.client = Zep(api_key=self.api_key)
+        self.client = None
+        self._neo = None
+        self._qd = None
+        self._embedder = None
+        if Config.is_local_graph():
+            from .local_graph.neo4j_store import Neo4jGraphStore
+            from .local_graph.qdrant_index import QdrantChunkIndex
+            from .local_graph.embedding import EmbeddingService
+            self._neo = Neo4jGraphStore()
+            self._qd = QdrantChunkIndex()
+            try:
+                self._embedder = EmbeddingService()
+            except Exception as _e:
+                logger.warning(f"EmbeddingService 未就绪，将主要使用关键词检索: {_e}")
+                self._embedder = None
+            logger.info("ZepToolsService 初始化完成（本地 Neo4j+Qdrant）")
+        else:
+            if not self.api_key:
+                raise ValueError("ZEP_API_KEY 未配置")
+            self.client = create_zep_client(api_key=self.api_key)
+            logger.info("ZepToolsService 初始化完成")
         # LLM客户端用于InsightForge生成子问题
         self._llm_client = llm_client
         logger.info(t("console.zepToolsInitialized"))
@@ -484,6 +501,9 @@ class ZepToolsService:
             SearchResult: 搜索结果
         """
         logger.info(t("console.graphSearch", graphId=graph_id, query=query[:50]))
+        
+        if self._neo:
+            return self._search_graph_local(graph_id, query, limit, scope)
         
         # 尝试使用Zep Cloud Search API
         try:
@@ -639,12 +659,45 @@ class ZepToolsService:
         except Exception as e:
             logger.error(t("console.localSearchFailed", error=str(e)))
         
+            return SearchResult(
+                facts=facts,
+                edges=edges_result,
+                nodes=nodes_result,
+                query=query,
+                total_count=len(facts)
+            )
+    
+    def _search_graph_local(
+        self,
+        graph_id: str,
+        query: str,
+        limit: int = 10,
+        scope: str = "edges",
+    ) -> SearchResult:
+        """向量检索 Qdrant + 关键词兜底（与 _local_search 合并）。"""
+        facts: List[str] = []
+        if self._embedder and self._qd:
+            try:
+                v = self._embedder.embed_one(query)
+                for hit in self._qd.search(graph_id, v, limit=max(limit, 10)):
+                    t = (hit.get("text") or "").strip()
+                    if t:
+                        facts.append(t)
+            except Exception as e:
+                logger.warning(f"本地向量检索失败: {e}")
+        kw = self._local_search(graph_id, query, limit, scope)
+        merged_facts: List[str] = []
+        seen = set()
+        for f in facts + kw.facts:
+            if f and f not in seen:
+                seen.add(f)
+                merged_facts.append(f)
         return SearchResult(
-            facts=facts,
-            edges=edges_result,
-            nodes=nodes_result,
+            facts=merged_facts[: max(limit * 3, 30)],
+            edges=kw.edges,
+            nodes=kw.nodes,
             query=query,
-            total_count=len(facts)
+            total_count=len(merged_facts),
         )
     
     def get_all_nodes(self, graph_id: str) -> List[NodeInfo]:
@@ -658,6 +711,21 @@ class ZepToolsService:
             节点列表
         """
         logger.info(t("console.fetchingAllNodes", graphId=graph_id))
+
+        if self._neo:
+            result = []
+            for n in self._neo.list_nodes_raw(graph_id):
+                result.append(
+                    NodeInfo(
+                        uuid=n.uuid_,
+                        name=n.name or "",
+                        labels=n.labels or [],
+                        summary=n.summary or "",
+                        attributes=n.attributes or {},
+                    )
+                )
+            logger.info(f"获取到 {len(result)} 个节点")
+            return result
 
         nodes = fetch_all_nodes(self.client, graph_id)
 
@@ -687,6 +755,28 @@ class ZepToolsService:
             边列表（包含created_at, valid_at, invalid_at, expired_at）
         """
         logger.info(t("console.fetchingAllEdges", graphId=graph_id))
+
+        if self._neo:
+            names = {n.uuid_: n.name or "" for n in self._neo.list_nodes_raw(graph_id)}
+            result = []
+            for edge in self._neo.list_edges_raw(graph_id):
+                ei = EdgeInfo(
+                    uuid=edge.uuid_,
+                    name=edge.name or "",
+                    fact=edge.fact or "",
+                    source_node_uuid=edge.source_node_uuid or "",
+                    target_node_uuid=edge.target_node_uuid or "",
+                    source_node_name=names.get(edge.source_node_uuid),
+                    target_node_name=names.get(edge.target_node_uuid),
+                )
+                if include_temporal:
+                    ei.created_at = edge.created_at
+                    ei.valid_at = edge.valid_at
+                    ei.invalid_at = edge.invalid_at
+                    ei.expired_at = edge.expired_at
+                result.append(ei)
+            logger.info(f"获取到 {len(result)} 条边")
+            return result
 
         edges = fetch_all_edges(self.client, graph_id)
 
@@ -726,6 +816,17 @@ class ZepToolsService:
         logger.info(t("console.fetchingNodeDetail", uuid=node_uuid[:8]))
         
         try:
+            if self._neo:
+                n = self._neo.get_node_raw(node_uuid)
+                if not n:
+                    return None
+                return NodeInfo(
+                    uuid=n.uuid_,
+                    name=n.name or "",
+                    labels=n.labels or [],
+                    summary=n.summary or "",
+                    attributes=n.attributes or {},
+                )
             node = self._call_with_retry(
                 func=lambda: self.client.graph.node.get(uuid_=node_uuid),
                 operation_name=t("console.fetchNodeDetailOp", uuid=node_uuid[:8])

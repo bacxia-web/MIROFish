@@ -210,17 +210,17 @@ const handleNewProject = async () => {
     formData.append('simulation_requirement', pending.simulationRequirement)
     
     const res = await generateOntology(formData)
-    if (res.success) {
+    if (res.success && res.data) {
       clearPendingUpload()
       currentProjectId.value = res.data.project_id
-      projectData.value = res.data
-      
+      projectData.value = { ...res.data, status: 'ontology_generated' }
+
       router.replace({ name: 'Process', params: { projectId: res.data.project_id } })
       ontologyProgress.value = null
       addLog(`Ontology generated successfully for project ${res.data.project_id}`)
       await startBuildGraph()
     } else {
-      error.value = res.error || 'Ontology generation failed'
+      error.value = res.error || `Ontology generation failed: status=${res?.status || 'unknown'}`
       addLog(`Error generating ontology: ${error.value}`)
     }
   } catch (err) {

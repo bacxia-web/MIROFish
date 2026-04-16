@@ -4,10 +4,13 @@ Zep实体读取与过滤服务
 """
 
 import time
-from typing import Dict, Any, List, Optional, Set, Callable, TypeVar
+from typing import Dict, Any, List, Optional, Set, Callable, TypeVar, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .local_graph.neo4j_store import Neo4jGraphStore
 from dataclasses import dataclass, field
 
-from zep_cloud.client import Zep
+from ..utils.zep_client import create_zep_client
 
 from ..config import Config
 from ..utils.logger import get_logger
@@ -80,10 +83,15 @@ class ZepEntityReader:
     
     def __init__(self, api_key: Optional[str] = None):
         self.api_key = api_key or Config.ZEP_API_KEY
-        if not self.api_key:
-            raise ValueError("ZEP_API_KEY 未配置")
-        
-        self.client = Zep(api_key=self.api_key)
+        self.client = None
+        self._neo: Optional['Neo4jGraphStore'] = None
+        if Config.is_local_graph():
+            from .local_graph.neo4j_store import Neo4jGraphStore
+            self._neo = Neo4jGraphStore()
+        else:
+            if not self.api_key:
+                raise ValueError("ZEP_API_KEY 未配置")
+            self.client = create_zep_client(api_key=self.api_key)
     
     def _call_with_retry(
         self, 
@@ -136,6 +144,19 @@ class ZepEntityReader:
         """
         logger.info(f"获取图谱 {graph_id} 的所有节点...")
 
+        if self._neo:
+            nodes_data = []
+            for n in self._neo.list_nodes_raw(graph_id):
+                nodes_data.append({
+                    'uuid': n.uuid_,
+                    'name': n.name or '',
+                    'labels': n.labels or [],
+                    'summary': n.summary or '',
+                    'attributes': n.attributes or {},
+                })
+            logger.info(f"共获取 {len(nodes_data)} 个节点")
+            return nodes_data
+
         nodes = fetch_all_nodes(self.client, graph_id)
 
         nodes_data = []
@@ -162,6 +183,20 @@ class ZepEntityReader:
             边列表
         """
         logger.info(f"获取图谱 {graph_id} 的所有边...")
+
+        if self._neo:
+            edges_data = []
+            for edge in self._neo.list_edges_raw(graph_id):
+                edges_data.append({
+                    'uuid': edge.uuid_,
+                    'name': edge.name or '',
+                    'fact': edge.fact or '',
+                    'source_node_uuid': edge.source_node_uuid,
+                    'target_node_uuid': edge.target_node_uuid,
+                    'attributes': edge.attributes or {},
+                })
+            logger.info(f"共获取 {len(edges_data)} 条边")
+            return edges_data
 
         edges = fetch_all_edges(self.client, graph_id)
 
@@ -190,6 +225,18 @@ class ZepEntityReader:
             边列表
         """
         try:
+            if self._neo:
+                edges_data = []
+                for edge in self._neo.edges_incident_to(node_uuid):
+                    edges_data.append({
+                        'uuid': edge.uuid_,
+                        'name': edge.name or '',
+                        'fact': edge.fact or '',
+                        'source_node_uuid': edge.source_node_uuid,
+                        'target_node_uuid': edge.target_node_uuid,
+                        'attributes': edge.attributes or {},
+                    })
+                return edges_data
             # 使用重试机制调用Zep API
             edges = self._call_with_retry(
                 func=lambda: self.client.graph.node.get_entity_edges(node_uuid=node_uuid),

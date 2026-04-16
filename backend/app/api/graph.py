@@ -248,6 +248,7 @@ def generate_ontology():
         })
         
     except Exception as e:
+        logger.exception("生成本体失败: %s", e)
         return jsonify({
             "success": False,
             "error": str(e),
@@ -285,8 +286,10 @@ def build_graph():
         
         # 检查配置
         errors = []
-        if not Config.ZEP_API_KEY:
-            errors.append(t('api.zepApiKeyMissing'))
+        if Config.is_local_graph():
+            errors.extend(Config.validate_local_graph())
+        elif not Config.ZEP_API_KEY:
+            errors.append("ZEP_API_KEY未配置（或将 GRAPH_BACKEND=local）")
         if errors:
             logger.error(f"配置错误: {errors}")
             return jsonify({
@@ -387,7 +390,7 @@ def build_graph():
                 )
                 
                 # 创建图谱构建服务
-                builder = GraphBuilderService(api_key=Config.ZEP_API_KEY)
+                builder = GraphBuilderService()
                 
                 # 分块
                 task_manager.update_task(
@@ -438,10 +441,11 @@ def build_graph():
                 )
                 
                 episode_uuids = builder.add_text_batches(
-                    graph_id, 
+                    graph_id,
                     chunks,
                     batch_size=3,
-                    progress_callback=add_progress_callback
+                    progress_callback=add_progress_callback,
+                    ontology=ontology,
                 )
                 
                 # 等待Zep处理完成（查询每个episode的processed状态）
@@ -572,13 +576,17 @@ def get_graph_data(graph_id: str):
     获取图谱数据（节点和边）
     """
     try:
-        if not Config.ZEP_API_KEY:
+        if Config.is_local_graph():
+            le = Config.validate_local_graph()
+            if le:
+                return jsonify({"success": False, "error": "; ".join(le)}), 500
+        elif not Config.ZEP_API_KEY:
             return jsonify({
                 "success": False,
                 "error": t('api.zepApiKeyMissing')
             }), 500
         
-        builder = GraphBuilderService(api_key=Config.ZEP_API_KEY)
+        builder = GraphBuilderService()
         graph_data = builder.get_graph_data(graph_id)
         
         return jsonify({
@@ -600,13 +608,17 @@ def delete_graph(graph_id: str):
     删除Zep图谱
     """
     try:
-        if not Config.ZEP_API_KEY:
+        if Config.is_local_graph():
+            le = Config.validate_local_graph()
+            if le:
+                return jsonify({"success": False, "error": "; ".join(le)}), 500
+        elif not Config.ZEP_API_KEY:
             return jsonify({
                 "success": False,
                 "error": t('api.zepApiKeyMissing')
             }), 500
         
-        builder = GraphBuilderService(api_key=Config.ZEP_API_KEY)
+        builder = GraphBuilderService()
         builder.delete_graph(graph_id)
         
         return jsonify({

@@ -20,6 +20,21 @@ from ..models.project import ProjectManager
 logger = get_logger('mirofish.api.simulation')
 
 
+def _graph_backend_error_response():
+    """Zep Cloud 与本地图谱共用的配置检查。"""
+    if Config.is_local_graph():
+        errs = Config.validate_local_graph()
+        if errs:
+            return jsonify({"success": False, "error": "; ".join(errs)}), 500
+        return None
+    if not Config.ZEP_API_KEY:
+        return jsonify({
+            "success": False,
+            "error": "ZEP_API_KEY未配置"
+        }), 500
+    return None
+
+
 # Interview prompt 优化前缀
 # 添加此前缀可以避免Agent调用工具，直接用文本回复
 INTERVIEW_PROMPT_PREFIX = "结合你的人设、所有的过往记忆与行动，不调用任何工具直接用文本回复我："
@@ -57,11 +72,9 @@ def get_graph_entities(graph_id: str):
         enrich: 是否获取相关边信息（默认true）
     """
     try:
-        if not Config.ZEP_API_KEY:
-            return jsonify({
-                "success": False,
-                "error": t('api.zepApiKeyMissing')
-            }), 500
+        bad = _graph_backend_error_response()
+        if bad:
+            return bad
         
         entity_types_str = request.args.get('entity_types', '')
         entity_types = [t.strip() for t in entity_types_str.split(',') if t.strip()] if entity_types_str else None
@@ -94,11 +107,9 @@ def get_graph_entities(graph_id: str):
 def get_entity_detail(graph_id: str, entity_uuid: str):
     """获取单个实体的详细信息"""
     try:
-        if not Config.ZEP_API_KEY:
-            return jsonify({
-                "success": False,
-                "error": t('api.zepApiKeyMissing')
-            }), 500
+        bad = _graph_backend_error_response()
+        if bad:
+            return bad
         
         reader = ZepEntityReader()
         entity = reader.get_entity_with_context(graph_id, entity_uuid)
@@ -127,11 +138,9 @@ def get_entity_detail(graph_id: str, entity_uuid: str):
 def get_entities_by_type(graph_id: str, entity_type: str):
     """获取指定类型的所有实体"""
     try:
-        if not Config.ZEP_API_KEY:
-            return jsonify({
-                "success": False,
-                "error": t('api.zepApiKeyMissing')
-            }), 500
+        bad = _graph_backend_error_response()
+        if bad:
+            return bad
         
         enrich = request.args.get('enrich', 'true').lower() == 'true'
         

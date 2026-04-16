@@ -16,11 +16,11 @@
 [![Docker](https://img.shields.io/badge/Docker-Build-2496ED?style=flat-square&logo=docker&logoColor=white)](https://hub.docker.com/)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/666ghj/MiroFish)
 
-[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=flat-square&logo=discord&logoColor=white)](http://discord.gg/ePf5aPaHnA)
+[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.com/channels/1469200078932545606/1469201282077163739)
 [![X](https://img.shields.io/badge/X-Follow-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/mirofish_ai)
 [![Instagram](https://img.shields.io/badge/Instagram-Follow-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/mirofish_ai/)
 
-[English](./README.md) | [中文文档](./README-ZH.md)
+[English](./README-EN.md) | [中文文档](./README.md)
 
 </div>
 
@@ -127,11 +127,11 @@ LLM_MODEL_NAME=qwen-plus
 ZEP_API_KEY=your_zep_api_key
 ```
 
-**Optional: Self-hosted Zep**
+**Self-hosted Zep (optional)**
 
-Implementation notes and discussion are in [Issue #56](https://github.com/666ghj/MiroFish/issues/56). This project uses the official `zep-cloud` SDK. Add **`ZEP_API_URL`** in `.env` and point it to your self-hosted Zep base URL (**do not** append `/api/v2`; see `.env.example`). If you use [OpenZep](https://github.com/N1nEmAn/openzep)'s `install_mirofish.sh`, the generated **`ZEP_BASE_URL`** is also aligned to `ZEP_API_URL` at startup.
+See the community thread [Issue #56](https://github.com/666ghj/MiroFish/issues/56). This project uses the official `zep-cloud` SDK: set **`ZEP_API_URL`** in `.env` to your instance origin (**without** `/api/v2`; see `.env.example`). If you run [OpenZep](https://github.com/N1nEmAn/openzep) `install_mirofish.sh`, **`ZEP_BASE_URL`** is normalized to `ZEP_API_URL` on startup. For Zep Community Edition, see [Zep CE Quick Start](https://help.getzep.com/ce/quickstart).
 
-> **Docker tip**: if Zep runs on the host while MiroFish runs in a container, set `ZEP_API_URL` to `http://host.docker.internal:8000` (or your actual port). On Linux, add `extra_hosts` in `docker-compose.yml` (see the inline example comments).
+> **Docker**: If Zep runs on the host and MiroFish runs in a container, use `ZEP_API_URL=http://host.docker.internal:8000` (adjust the port) and uncomment `extra_hosts` in `docker-compose.yml` on Linux.
 
 #### 2. Install Dependencies
 

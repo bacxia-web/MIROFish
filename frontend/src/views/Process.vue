@@ -589,13 +589,13 @@ const handleNewProject = async () => {
     // 调用本体生成 API
     const response = await generateOntology(formDataObj)
     
-    if (response.success) {
+    if (response.success && response.data) {
       // 清除待上传数据
       clearPendingUpload()
       
-      // 更新项目ID和数据
+      // 更新项目ID和数据（与 getProject 结构一致，补上 status）
       currentProjectId.value = response.data.project_id
-      projectData.value = response.data
+      projectData.value = { ...response.data, status: 'ontology_generated' }
       
       // 更新URL（不刷新页面）
       router.replace({

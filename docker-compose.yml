@@ -6,6 +6,10 @@ services:
     container_name: mirofish
     env_file:
       - .env
+    # Zep 自托管在宿主机、MiroFish 在容器内时：在 .env 设 ZEP_API_URL=http://host.docker.internal:8000
+    # 并取消下一行注释（Linux 需要 extra_hosts 才能解析 host.docker.internal）
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
     ports:
       - "3000:3000"
       - "5001:5001"

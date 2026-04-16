@@ -1,5 +1,8 @@
 <template>
-  <router-view />
+  <div id="app-root">
+    <router-view />
+  
+  </div>
 </template>
 
 <script setup>
@@ -43,5 +46,19 @@
 /* 全局按钮样式 */
 button {
   font-family: inherit;
+}
+
+/* 右下角悬浮红色小球 */
+.floating-ball {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #ff3b30;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  cursor: pointer;
 }
 </style>

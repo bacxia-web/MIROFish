@@ -12,7 +12,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from queue import Queue, Empty
 
-from zep_cloud.client import Zep
+from ..utils.zep_client import create_zep_client
 
 from ..config import Config
 from ..utils.logger import get_logger
@@ -239,11 +239,24 @@ class ZepGraphMemoryUpdater:
         """
         self.graph_id = graph_id
         self.api_key = api_key or Config.ZEP_API_KEY
-        
-        if not self.api_key:
-            raise ValueError("ZEP_API_KEY未配置")
-        
-        self.client = Zep(api_key=self.api_key)
+        self.client = None
+        self._neo = None
+        self._qd = None
+        self._embedder = None
+        if Config.is_local_graph():
+            from .local_graph.neo4j_store import Neo4jGraphStore
+            from .local_graph.qdrant_index import QdrantChunkIndex
+            from .local_graph.embedding import EmbeddingService
+            self._neo = Neo4jGraphStore()
+            self._qd = QdrantChunkIndex()
+            try:
+                self._embedder = EmbeddingService()
+            except Exception:
+                self._embedder = None
+        else:
+            if not self.api_key:
+                raise ValueError("ZEP_API_KEY未配置")
+            self.client = create_zep_client(api_key=self.api_key)
         
         # 活动队列
         self._activity_queue: Queue = Queue()
@@ -411,6 +424,19 @@ class ZepGraphMemoryUpdater:
         # 带重试的发送
         for attempt in range(self.MAX_RETRIES):
             try:
+                if self._neo:
+                    cid = self._neo.add_chunk(self.graph_id, combined_text)
+                    if self._embedder and self._qd:
+                        try:
+                            vec = self._embedder.embed_one(combined_text)
+                            self._qd.upsert_chunk(self.graph_id, cid, combined_text, vec)
+                        except Exception as _qe:
+                            logger.debug(f"活动记忆向量写入跳过: {_qe}")
+                    self._total_sent += 1
+                    self._total_items_sent += len(activities)
+                    display_name = self._get_platform_display_name(platform)
+                    logger.info(f"成功批量写入 {len(activities)} 条{display_name}活动到本地图谱 {self.graph_id}")
+                    return
                 self.client.graph.add(
                     graph_id=self.graph_id,
                     type="text",
