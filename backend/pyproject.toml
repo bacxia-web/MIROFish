@@ -10,7 +10,8 @@ dependencies = [
     "openai",
     "PyMuPDF",
     "charset-normalizer",
-    "chardet"
+    "chardet",
+    "python-dotenv"
 ]
 
 [tool.hatch.build.targets.wheel]
