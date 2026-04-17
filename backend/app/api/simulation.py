@@ -16,7 +16,6 @@ from ..services.simulation_runner import SimulationRunner, RunnerStatus
 from ..utils.logger import get_logger
 from ..utils.locale import t, get_locale, set_locale
 from ..models.project import ProjectManager
-from ..utils.token_usage_service import usage_context
 
 logger = get_logger('mirofish.api.simulation')
 
@@ -2286,29 +2285,14 @@ def interview_agent():
         
         # 优化prompt，添加前缀避免Agent调用工具
         optimized_prompt = optimize_interview_prompt(prompt)
-        
-        project_id = ""
-        try:
-            st = SimulationManager().get_simulation(simulation_id)
-            project_id = str(getattr(st, 'project_id', '') or '')
-        except Exception:
-            project_id = ""
 
-        with usage_context(project_id, 3):
-            result = SimulationRunner.interview_agent(
-                simulation_id=simulation_id,
-                agent_id=agent_id,
-                prompt=optimized_prompt,
-                platform=platform,
-                timeout=timeout
-            )
-        try:
-            if project_id:
-                from ..services.quality_metrics_service import refresh_project_quality_metrics
-
-                refresh_project_quality_metrics(project_id)
-        except Exception as qe:
-            logger.debug(f"Interview后刷新质量指标失败: {qe}")
+        result = SimulationRunner.interview_agent(
+            simulation_id=simulation_id,
+            agent_id=agent_id,
+            prompt=optimized_prompt,
+            platform=platform,
+            timeout=timeout
+        )
 
         return jsonify({
             "success": result.get("success", False),
@@ -2441,26 +2425,12 @@ def interview_agents_batch():
             optimized_interview['prompt'] = optimize_interview_prompt(interview.get('prompt', ''))
             optimized_interviews.append(optimized_interview)
 
-        project_id = ""
-        try:
-            st = SimulationManager().get_simulation(simulation_id)
-            project_id = str(getattr(st, 'project_id', '') or '')
-        except Exception:
-            project_id = ""
-        with usage_context(project_id, 3):
-            result = SimulationRunner.interview_agents_batch(
-                simulation_id=simulation_id,
-                interviews=optimized_interviews,
-                platform=platform,
-                timeout=timeout
-            )
-        try:
-            if project_id:
-                from ..services.quality_metrics_service import refresh_project_quality_metrics
-
-                refresh_project_quality_metrics(project_id)
-        except Exception as qe:
-            logger.debug(f"批量Interview后刷新质量指标失败: {qe}")
+        result = SimulationRunner.interview_agents_batch(
+            simulation_id=simulation_id,
+            interviews=optimized_interviews,
+            platform=platform,
+            timeout=timeout
+        )
 
         return jsonify({
             "success": result.get("success", False),
