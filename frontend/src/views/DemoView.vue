@@ -5,7 +5,10 @@
       <div class="nav-brand">MIROFISH</div>
       <div class="nav-right">
         <span class="nav-badge">Entity Disambiguation Showcase</span>
-        <a href="https://github.com/666ghj/MiroFish" target="_blank" class="nav-github">
+        <a href="https://mirofish-production-7f8c.up.railway.app/" target="_blank" class="nav-live">
+          Live Demo ↗
+        </a>
+        <a href="https://github.com/bacxia-web/MIROFish" target="_blank" class="nav-github">
           GitHub ↗
         </a>
       </div>
@@ -206,9 +209,14 @@
     <footer class="demo-footer">
       <div class="footer-brand">MIROFISH</div>
       <div class="footer-sub">Multi-Agent Swarm Intelligence Simulation Engine</div>
-      <a href="https://github.com/666ghj/MiroFish" target="_blank" class="footer-link">
-        View Source on GitHub ↗
-      </a>
+      <div class="footer-links">
+        <a href="https://mirofish-production-7f8c.up.railway.app/" target="_blank" class="footer-link footer-link-primary">
+          🚀 进入项目主页 →
+        </a>
+        <a href="https://github.com/bacxia-web/MIROFish" target="_blank" class="footer-link">
+          View Source on GitHub ↗
+        </a>
+      </div>
     </footer>
   </div>
 </template>
@@ -317,6 +325,14 @@ function taskMetrics(task) {
   color: #64748b;
   letter-spacing: 0.05em;
 }
+.nav-live {
+  font-size: 13px;
+  color: #14b8a6;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+.nav-live:hover { color: #0d9488; }
 .nav-github {
   font-size: 13px;
   color: #94a3b8;
@@ -687,6 +703,12 @@ function taskMetrics(task) {
   color: #475569;
   margin-bottom: 16px;
 }
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
 .footer-link {
   font-size: 14px;
   color: #94a3b8;
@@ -694,6 +716,12 @@ function taskMetrics(task) {
   transition: color 0.2s;
 }
 .footer-link:hover { color: #14b8a6; }
+.footer-link-primary {
+  color: #14b8a6;
+  font-weight: 600;
+  font-size: 16px;
+}
+.footer-link-primary:hover { color: #0d9488; }
 
 /* ── Responsive ── */
 @media (max-width: 640px) {

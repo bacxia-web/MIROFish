@@ -1,11 +1,11 @@
 <template>
   <div 
     class="history-database"
-    :class="{ 'no-projects': projects.length === 0 && !loading }"
+    :class="{ 'no-projects': visibleProjects.length === 0 && !loading }"
     ref="historyContainer"
   >
     <!-- 背景装饰：技术网格线（只在有项目时显示） -->
-    <div v-if="projects.length > 0 || loading" class="tech-grid-bg">
+    <div v-if="visibleProjects.length > 0 || loading" class="tech-grid-bg">
       <div class="grid-pattern"></div>
       <div class="gradient-overlay"></div>
     </div>
@@ -15,12 +15,20 @@
       <div class="section-line"></div>
       <span class="section-title">{{ $t('history.title') }}</span>
       <div class="section-line"></div>
+      <button
+        type="button"
+        class="layout-toggle"
+        :title="isExpanded ? $t('history.stackLayout') : $t('history.gridLayout')"
+        @click.stop="isExpanded = !isExpanded"
+      >
+        {{ isExpanded ? '▤' : '▥' }}
+      </button>
     </div>
 
-    <!-- 卡片容器（只在有项目时显示） -->
-    <div v-if="projects.length > 0" class="cards-container" :class="{ expanded: isExpanded }" :style="containerStyle">
+    <!-- 卡片容器（只在有可见项目时显示） -->
+    <div v-if="visibleProjects.length > 0" class="cards-container" :class="{ expanded: isExpanded }" :style="containerStyle">
       <div 
-        v-for="(project, index) in projects" 
+        v-for="(project, index) in visibleProjects" 
         :key="project.simulation_id"
         class="project-card"
         :class="{ expanded: isExpanded, hovering: hoveringCard === index }"
@@ -29,6 +37,20 @@
         @mouseleave="hoveringCard = null"
         @click="navigateToProject(project)"
       >
+        <button
+          type="button"
+          class="card-hide-btn"
+          :title="$t('history.hideFromList')"
+          :aria-label="$t('history.hideFromList')"
+          @click.stop="hideFromList(project)"
+        >
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <polyline points="3 6 5 6 21 6" />
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+            <line x1="10" y1="11" x2="10" y2="17" />
+            <line x1="14" y1="11" x2="14" y2="17" />
+          </svg>
+        </button>
         <!-- 卡片头部：simulation_id 和 功能可用状态 -->
         <div class="card-header">
           <span class="card-id">{{ formatSimulationId(project.simulation_id) }}</span>
@@ -191,7 +213,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, onActivated, watch, nextTick } from 'vue'
+import { ref, computed, onMounted, onActivated, watch, nextTick } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { getSimulationHistory } from '../api/simulation'
@@ -203,14 +225,52 @@ const { t } = useI18n()
 // 状态
 const projects = ref([])
 const loading = ref(true)
-const isExpanded = ref(false)
+// 默认展开为网格，避免首页只能看到扇形堆叠
+const isExpanded = ref(true)
 const hoveringCard = ref(null)
 const historyContainer = ref(null)
 const selectedProject = ref(null)  // 当前选中的项目（用于弹窗）
-let observer = null
-let isAnimating = false  // 动画锁，防止闪烁
-let expandDebounceTimer = null  // 防抖定时器
-let pendingState = null  // 记录待执行的目标状态
+
+/** 仅在首页隐藏展示，不调删除接口；存在 localStorage */
+const HIDDEN_IDS_KEY = 'mirofish_history_hidden_simulation_ids'
+const hiddenSimulationIds = ref([])
+
+const loadHiddenIds = () => {
+  try {
+    const raw = localStorage.getItem(HIDDEN_IDS_KEY)
+    if (!raw) {
+      hiddenSimulationIds.value = []
+      return
+    }
+    const arr = JSON.parse(raw)
+    hiddenSimulationIds.value = Array.isArray(arr) ? arr.filter(Boolean) : []
+  } catch {
+    hiddenSimulationIds.value = []
+  }
+}
+
+const saveHiddenIds = () => {
+  try {
+    localStorage.setItem(HIDDEN_IDS_KEY, JSON.stringify(hiddenSimulationIds.value))
+  } catch (e) {
+    console.warn('保存隐藏列表失败:', e)
+  }
+}
+
+const visibleProjects = computed(() => {
+  const hid = new Set(hiddenSimulationIds.value)
+  return (projects.value || []).filter((p) => p.simulation_id && !hid.has(p.simulation_id))
+})
+
+const hideFromList = (project) => {
+  const id = project?.simulation_id
+  if (!id || hiddenSimulationIds.value.includes(id)) return
+  hiddenSimulationIds.value = [...hiddenSimulationIds.value, id]
+  saveHiddenIds()
+  if (selectedProject.value?.simulation_id === id) {
+    closeModal()
+  }
+}
 
 // 卡片布局配置 - 调整为更宽的比例
 const CARDS_PER_ROW = 4
@@ -226,7 +286,7 @@ const containerStyle = computed(() => {
   }
   
   // 展开态：根据卡片数量动态计算高度
-  const total = projects.value.length
+  const total = visibleProjects.value.length
   if (total === 0) {
     return { minHeight: '280px' }
   }
@@ -240,7 +300,7 @@ const containerStyle = computed(() => {
 
 // 获取卡片样式
 const getCardStyle = (index) => {
-  const total = projects.value.length
+  const total = visibleProjects.value.length
   
   if (isExpanded.value) {
     // 展开态：网格布局
@@ -452,87 +512,6 @@ const loadHistory = async () => {
   }
 }
 
-// 初始化 IntersectionObserver
-const initObserver = () => {
-  if (observer) {
-    observer.disconnect()
-  }
-  
-  observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const shouldExpand = entry.isIntersecting
-        
-        // 更新待执行的目标状态（无论是否在动画中都要记录最新的目标状态）
-        pendingState = shouldExpand
-        
-        // 清除之前的防抖定时器（新的滚动意图会覆盖旧的）
-        if (expandDebounceTimer) {
-          clearTimeout(expandDebounceTimer)
-          expandDebounceTimer = null
-        }
-        
-        // 如果正在动画中，只记录状态，等动画结束后处理
-        if (isAnimating) return
-        
-        // 如果目标状态与当前状态相同，不需要处理
-        if (shouldExpand === isExpanded.value) {
-          pendingState = null
-          return
-        }
-        
-        // 使用防抖延迟状态切换，防止快速闪烁
-        // 展开时延迟较短(50ms)，收起时延迟较长(200ms)以增加稳定性
-        const delay = shouldExpand ? 50 : 200
-        
-        expandDebounceTimer = setTimeout(() => {
-          // 检查是否正在动画
-          if (isAnimating) return
-          
-          // 检查待执行状态是否仍需要执行（可能已被后续滚动覆盖）
-          if (pendingState === null || pendingState === isExpanded.value) return
-          
-          // 设置动画锁
-          isAnimating = true
-          isExpanded.value = pendingState
-          pendingState = null
-          
-          // 动画完成后解除锁定，并检查是否有待处理的状态变化
-          setTimeout(() => {
-            isAnimating = false
-            
-            // 动画结束后，检查是否有新的待执行状态
-            if (pendingState !== null && pendingState !== isExpanded.value) {
-              // 延迟一小段时间再执行，避免太快切换
-              expandDebounceTimer = setTimeout(() => {
-                if (pendingState !== null && pendingState !== isExpanded.value) {
-                  isAnimating = true
-                  isExpanded.value = pendingState
-                  pendingState = null
-                  setTimeout(() => {
-                    isAnimating = false
-                  }, 750)
-                }
-              }, 100)
-            }
-          }, 750)
-        }, delay)
-      })
-    },
-    {
-      // 使用多个阈值，使检测更平滑
-      threshold: [0.4, 0.6, 0.8],
-      // 调整 rootMargin，视口底部向上收缩，需要滚动更多才触发展开
-      rootMargin: '0px 0px -150px 0px'
-    }
-  )
-  
-  // 开始观察
-  if (historyContainer.value) {
-    observer.observe(historyContainer.value)
-  }
-}
-
 // 监听路由变化，当返回首页时重新加载数据
 watch(() => route.path, (newPath) => {
   if (newPath === '/') {
@@ -541,33 +520,17 @@ watch(() => route.path, (newPath) => {
 })
 
 onMounted(async () => {
-  // 确保 DOM 渲染完成后再加载数据
+  loadHiddenIds()
   await nextTick()
   await loadHistory()
-  
-  // 等待 DOM 渲染后初始化观察器
-  setTimeout(() => {
-    initObserver()
-  }, 100)
 })
 
 // 如果使用 keep-alive，在组件激活时重新加载数据
 onActivated(() => {
+  loadHiddenIds()
   loadHistory()
 })
 
-onUnmounted(() => {
-  // 清理 Intersection Observer
-  if (observer) {
-    observer.disconnect()
-    observer = null
-  }
-  // 清理防抖定时器
-  if (expandDebounceTimer) {
-    clearTimeout(expandDebounceTimer)
-    expandDebounceTimer = null
-  }
-})
 </script>
 
 <style scoped>
@@ -653,6 +616,29 @@ onUnmounted(() => {
   text-transform: uppercase;
 }
 
+.layout-toggle {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 32px;
+  border: 1px solid #E5E7EB;
+  background: #FFFFFF;
+  border-radius: 6px;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #6B7280;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.layout-toggle:hover {
+  border-color: #111827;
+  color: #111827;
+  background: #F9FAFB;
+}
+
 /* 卡片容器 */
 .cards-container {
   position: relative;
@@ -675,6 +661,37 @@ onUnmounted(() => {
   cursor: pointer;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 700ms cubic-bezier(0.23, 1, 0.32, 1), opacity 700ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-hide-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #9CA3AF;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-hide-btn:hover {
+  color: #EF4444;
+  background: #FEF2F2;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.15);
+}
+
+.card-hide-btn:focus-visible {
+  outline: 2px solid #93C5FD;
+  outline-offset: 1px;
 }
 
 .project-card:hover {
