@@ -2,8 +2,10 @@ import axios from 'axios'
 import i18n from '../i18n'
 
 // 创建axios实例
+// 注意: 显式区分 undefined（开发缺省）与空串（生产使用同源相对路径）
+const _envBase = import.meta.env.VITE_API_BASE_URL
 const service = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001',
+  baseURL: _envBase === undefined ? 'http://localhost:5001' : _envBase,
   timeout: 300000, // 5分钟超时（本体生成可能需要较长时间）
   headers: {
     'Content-Type': 'application/json'
