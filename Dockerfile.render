@@ -12,9 +12,10 @@ COPY --from=ghcr.io/astral-sh/uv:0.9.26 /uv /uvx /bin/
 
 WORKDIR /app
 
-# ── Python 依赖（先复制 lock 文件利用缓存）──────────────────────────────────
-COPY backend/pyproject.toml backend/uv.lock ./backend/
-RUN cd backend && uv sync --frozen
+# ── Python 依赖（用 requirements.txt 保证完整依赖，包括 zep-cloud 等）────────
+COPY backend/requirements.txt ./backend/
+RUN python -m venv backend/.venv \
+  && backend/.venv/bin/pip install --no-cache-dir -r backend/requirements.txt
 
 # ── Node 依赖 ────────────────────────────────────────────────────────────────
 COPY frontend/package.json frontend/package-lock.json ./frontend/
