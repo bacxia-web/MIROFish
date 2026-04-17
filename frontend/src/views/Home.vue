@@ -514,33 +514,35 @@ const workflowSteps = [
 .solution-strip {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 16px 20px;
-  border: 1px solid var(--black);
-  background: var(--black);
-  margin-bottom: 48px;
+  gap: 20px;
+  padding: 18px 24px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--orange);
+  background: #141414;
+  margin-bottom: 64px;
   flex-wrap: wrap;
 }
 .solution-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  color: #888;
-  letter-spacing: 1px;
+  color: var(--orange);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   white-space: nowrap;
   flex-shrink: 0;
 }
 .solution-flow {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 .solution-step {
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  color: #ccc;
+  color: #d0d0d0;
   white-space: nowrap;
 }
 .solution-step.highlight {
@@ -548,8 +550,8 @@ const workflowSteps = [
   font-weight: 700;
 }
 .solution-arrow {
-  color: #555;
-  font-size: 0.9rem;
+  color: #888;
+  font-size: 1rem;
 }
 
 .showcase-section-header {
