@@ -304,6 +304,11 @@
     "toggleMaximize": "Maximize/Restore",
     "closeHint": "Close hint"
   },
+  "tryDemo": {
+    "ctaButton": "▶ Try Live Demo",
+    "title": "Start a new simulation",
+    "notice": "This is a public demo environment. Anything you submit will appear in the History panel and may be seen by other visitors. If you just want to evaluate the project, browse the completed simulations below."
+  },
   "showcase": {
     "statTasks": "Eval Tasks",
     "statDecisions": "LLM Pair Decisions",

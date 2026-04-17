@@ -304,6 +304,11 @@
     "toggleMaximize": "最大化/还原",
     "closeHint": "关闭提示"
   },
+  "tryDemo": {
+    "ctaButton": "▶ 体验完整 Demo",
+    "title": "启动一次新的推演",
+    "notice": "这是公开演示环境，你提交的内容会出现在「推演记录」里被其他访客看到。如只想了解项目，请直接查看下方已完成的项目。"
+  },
   "showcase": {
     "statTasks": "评测任务",
     "statDecisions": "LLM 判定对数",
