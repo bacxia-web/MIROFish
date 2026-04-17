@@ -16,6 +16,7 @@ from ..services.simulation_runner import SimulationRunner, RunnerStatus
 from ..utils.logger import get_logger
 from ..utils.locale import t, get_locale, set_locale
 from ..models.project import ProjectManager
+from ..utils.token_usage_service import usage_context
 
 logger = get_logger('mirofish.api.simulation')
 
@@ -882,6 +883,46 @@ def _get_report_id_for_simulation(simulation_id: str) -> str:
         return None
 
 
+def _build_sim_report_index() -> dict:
+    """
+    一次性扫描 reports 目录，返回 {simulation_id: 最新 report_id} 索引。
+
+    用于批量富化 simulation 列表时避免 N×M 的扫描（每个 sim 都扫一遍 reports）。
+
+    Returns:
+        dict: simulation_id -> report_id（同一 sim 多个 report 时取 created_at 最新的）
+    """
+    import json
+
+    reports_dir = os.path.join(os.path.dirname(__file__), '../../uploads/reports')
+    if not os.path.exists(reports_dir):
+        return {}
+
+    # 临时存 (report_id, created_at) 元组，用于在重复 sim_id 时择新
+    temp = {}
+    try:
+        for folder in os.listdir(reports_dir):
+            meta_path = os.path.join(reports_dir, folder, "meta.json")
+            if not os.path.isfile(meta_path):
+                continue
+            try:
+                with open(meta_path, 'r', encoding='utf-8') as f:
+                    m = json.load(f)
+                sid = m.get("simulation_id")
+                if not sid:
+                    continue
+                created = m.get("created_at", "")
+                if sid not in temp or created > temp[sid][1]:
+                    temp[sid] = (m.get("report_id"), created)
+            except Exception:
+                continue
+    except Exception as e:
+        logger.warning(f"构建 sim->report 索引失败: {e}")
+        return {}
+
+    return {sid: pair[0] for sid, pair in temp.items()}
+
+
 @simulation_bp.route('/history', methods=['GET'])
 def get_simulation_history():
     """
@@ -922,7 +963,10 @@ def get_simulation_history():
         
         manager = SimulationManager()
         simulations = manager.list_simulations()[:limit]
-        
+
+        # 一次性构建 sim_id -> report_id 索引，避免循环里 N×M 扫描 reports 目录
+        sim_to_report = _build_sim_report_index()
+
         # 增强模拟数据，只从 Simulation 文件读取
         enriched_simulations = []
         for sim in simulations:
@@ -966,8 +1010,8 @@ def get_simulation_history():
             else:
                 sim_dict["files"] = []
             
-            # 获取关联的 report_id（查找该 simulation 最新的 report）
-            sim_dict["report_id"] = _get_report_id_for_simulation(sim.simulation_id)
+            # 获取关联的 report_id（用预构建索引 O(1) 查表，避免每个 sim 重复扫描 reports）
+            sim_dict["report_id"] = sim_to_report.get(sim.simulation_id)
             
             # 添加版本号
             sim_dict["version"] = "v1.0.2"
@@ -2243,13 +2287,28 @@ def interview_agent():
         # 优化prompt，添加前缀避免Agent调用工具
         optimized_prompt = optimize_interview_prompt(prompt)
         
-        result = SimulationRunner.interview_agent(
-            simulation_id=simulation_id,
-            agent_id=agent_id,
-            prompt=optimized_prompt,
-            platform=platform,
-            timeout=timeout
-        )
+        project_id = ""
+        try:
+            st = SimulationManager().get_simulation(simulation_id)
+            project_id = str(getattr(st, 'project_id', '') or '')
+        except Exception:
+            project_id = ""
+
+        with usage_context(project_id, 3):
+            result = SimulationRunner.interview_agent(
+                simulation_id=simulation_id,
+                agent_id=agent_id,
+                prompt=optimized_prompt,
+                platform=platform,
+                timeout=timeout
+            )
+        try:
+            if project_id:
+                from ..services.quality_metrics_service import refresh_project_quality_metrics
+
+                refresh_project_quality_metrics(project_id)
+        except Exception as qe:
+            logger.debug(f"Interview后刷新质量指标失败: {qe}")
 
         return jsonify({
             "success": result.get("success", False),
@@ -2382,12 +2441,26 @@ def interview_agents_batch():
             optimized_interview['prompt'] = optimize_interview_prompt(interview.get('prompt', ''))
             optimized_interviews.append(optimized_interview)
 
-        result = SimulationRunner.interview_agents_batch(
-            simulation_id=simulation_id,
-            interviews=optimized_interviews,
-            platform=platform,
-            timeout=timeout
-        )
+        project_id = ""
+        try:
+            st = SimulationManager().get_simulation(simulation_id)
+            project_id = str(getattr(st, 'project_id', '') or '')
+        except Exception:
+            project_id = ""
+        with usage_context(project_id, 3):
+            result = SimulationRunner.interview_agents_batch(
+                simulation_id=simulation_id,
+                interviews=optimized_interviews,
+                platform=platform,
+                timeout=timeout
+            )
+        try:
+            if project_id:
+                from ..services.quality_metrics_service import refresh_project_quality_metrics
+
+                refresh_project_quality_metrics(project_id)
+        except Exception as qe:
+            logger.debug(f"批量Interview后刷新质量指标失败: {qe}")
 
         return jsonify({
             "success": result.get("success", False),
@@ -2485,12 +2558,26 @@ def interview_all_agents():
         # 优化prompt，添加前缀避免Agent调用工具
         optimized_prompt = optimize_interview_prompt(prompt)
 
-        result = SimulationRunner.interview_all_agents(
-            simulation_id=simulation_id,
-            prompt=optimized_prompt,
-            platform=platform,
-            timeout=timeout
-        )
+        project_id = ""
+        try:
+            st = SimulationManager().get_simulation(simulation_id)
+            project_id = str(getattr(st, 'project_id', '') or '')
+        except Exception:
+            project_id = ""
+        with usage_context(project_id, 3):
+            result = SimulationRunner.interview_all_agents(
+                simulation_id=simulation_id,
+                prompt=optimized_prompt,
+                platform=platform,
+                timeout=timeout
+            )
+        try:
+            if project_id:
+                from ..services.quality_metrics_service import refresh_project_quality_metrics
+
+                refresh_project_quality_metrics(project_id)
+        except Exception as qe:
+            logger.debug(f"全局Interview后刷新质量指标失败: {qe}")
 
         return jsonify({
             "success": result.get("success", False),
