@@ -69,7 +69,12 @@
     "promptPlaceholder": "// 用自然语言输入模拟或预测需求（例.武大若发布撤销肖某处分的公告，会引发什么舆情走向）",
     "engineBadge": "引擎: MiroFish-V1.0",
     "startEngine": "启动引擎",
-    "initializing": "初始化中..."
+    "initializing": "初始化中...",
+    "showcaseSectionTitle": "实体消歧成果",
+    "showcaseSectionDesc": "GraphRAG 双管线对比：消歧前后节点 / 边 / 孤立率的真实变化",
+    "viewFullShowcase": "查看完整成果页 →",
+    "navShowcase": "实体消歧",
+    "navHistory": "推演记录"
   },
   "main": {
     "layoutGraph": "图谱",

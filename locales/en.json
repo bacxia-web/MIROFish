@@ -69,7 +69,12 @@
     "promptPlaceholder": "// Describe your simulation or prediction requirement in natural language",
     "engineBadge": "Engine: MiroFish-V1.0",
     "startEngine": "Start Engine",
-    "initializing": "Initializing..."
+    "initializing": "Initializing...",
+    "showcaseSectionTitle": "Entity Disambiguation Results",
+    "showcaseSectionDesc": "GraphRAG dual-pipeline comparison: real before/after deltas in nodes / edges / isolated ratio",
+    "viewFullShowcase": "View full showcase →",
+    "navShowcase": "Showcase",
+    "navHistory": "History"
   },
   "main": {
     "layoutGraph": "Graph",
