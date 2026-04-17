@@ -2,9 +2,11 @@
   <div class="demo-page">
     <!-- Navbar -->
     <nav class="demo-nav">
-      <div class="nav-brand">MIROFISH</div>
-      <div class="nav-right">
+      <div class="nav-left">
+        <div class="nav-brand">MIROFISH</div>
         <span class="nav-badge">Entity Disambiguation Showcase</span>
+      </div>
+      <div class="nav-right">
         <a href="https://mirofish-production-7f8c.up.railway.app/" target="_blank" class="nav-live">
           Live Demo ↗
         </a>
@@ -309,21 +311,26 @@ function taskMetrics(task) {
   backdrop-filter: blur(12px);
   z-index: 100;
 }
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 .nav-brand {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.15em;
   color: #14b8a6;
 }
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
 .nav-badge {
   font-size: 12px;
   color: #64748b;
   letter-spacing: 0.05em;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 .nav-live {
   font-size: 13px;
