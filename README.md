@@ -4,7 +4,7 @@
 
 **Fork with Neo4j + Qdrant backend & LLM-based Entity Disambiguation**
 
-[![Live Demo](https://img.shields.io/badge/Demo-Entity%20Disambiguation-6366f1?style=flat-square)](https://bacxia-web.github.io/MIROFish/demo)
+[![Live Demo](https://img.shields.io/badge/Demo-Entity%20Disambiguation-6366f1?style=flat-square)](https://bacxia-web.github.io/MIROFish/showcase)
 [![Upstream](https://img.shields.io/badge/Upstream-666ghj%2FMiroFish-DAA520?style=flat-square&logo=github)](https://github.com/666ghj/MiroFish)
 [![GitHub Stars](https://img.shields.io/github/stars/666ghj/MiroFish?style=flat-square&color=DAA520&label=upstream%20stars)](https://github.com/666ghj/MiroFish/stargazers)
 
@@ -45,7 +45,7 @@ The upstream project relies on [Zep Cloud](https://app.getzep.com/) for graph me
 
 Knowledge graphs built from long documents accumulate duplicate nodes — the same real-world entity referenced under slightly different names (e.g. "范禹 (Fan Yu)" vs. "范禹·学生会主席"). This fork adds a dedicated disambiguation pipeline that uses an LLM to identify and merge these duplicates, significantly improving graph quality for downstream simulation and retrieval.
 
-👉 **[View the interactive disambiguation showcase →](https://bacxia-web.github.io/MIROFish/demo)**
+👉 **[View the interactive disambiguation showcase →](https://bacxia-web.github.io/MIROFish/showcase)**
 
 ---
 
@@ -77,7 +77,7 @@ Graph connectivity improved dramatically after disambiguation:
 | Project 2 | 2.42 | **4.09** | 4.7% → **0%** |
 | Project 3 | 2.33 | **3.82** | 11.1% → **0%** |
 
-Interactive before/after comparisons with full LLM decision logs are available at the [demo page](https://bacxia-web.github.io/MIROFish/demo).
+Interactive before/after comparisons with full LLM decision logs are available at the [demo page](https://bacxia-web.github.io/MIROFish/showcase).
 
 ---
 

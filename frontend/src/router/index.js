@@ -14,8 +14,8 @@ const routes = [
     component: Home
   },
   {
-    path: '/demo',
-    name: 'Demo',
+    path: '/showcase',
+    name: 'Showcase',
     component: DemoView
   },
   {
