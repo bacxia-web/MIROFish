@@ -24,7 +24,7 @@ RUN cd frontend && npm ci
 # ── 构建前端（base = /，因为部署在根域名）────────────────────────────────────
 COPY frontend/ ./frontend/
 COPY locales/ ./locales/
-RUN cd frontend && VITE_BASE_URL=/ npm run build
+RUN cd frontend && VITE_BASE_URL=/ VITE_API_BASE_URL= npm run build
 
 # ── 后端源码 & 数据 ──────────────────────────────────────────────────────────
 COPY backend/ ./backend/
