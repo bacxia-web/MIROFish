@@ -74,13 +74,32 @@
     "showcaseSectionDesc": "GraphRAG dual-pipeline comparison: real before/after deltas in nodes / edges / isolated ratio",
     "viewFullShowcase": "View full showcase →",
     "navShowcase": "Showcase",
-    "navHistory": "History"
+    "navHistory": "History",
+    "problemSectionTitle": "Core Engineering Challenge",
+    "problem01Title": "Entity Ambiguity Corrupts the Graph",
+    "problem01Desc": "Duplicate names in raw text cause GraphRAG to produce isolated nodes and false connections",
+    "problem02Title": "Agent Role Distortion",
+    "problem02Desc": "Ambiguous entities split Agent memory, making simulations inaccurate and predictions unreliable",
+    "problem03Title": "Rule-Based Methods Fail",
+    "problem03Desc": "String matching can't handle semantic ambiguity—each candidate pair needs LLM judgment",
+    "solutionLabel": "Solution",
+    "solutionStep1": "Generate Candidate Pairs",
+    "solutionStep2": "LLM Pairwise Judgment",
+    "solutionStep3": "Merge Duplicate Entities",
+    "solutionStep4": "Clean Knowledge Graph",
+    "resultsTitle": "Disambiguation Results"
   },
   "main": {
     "layoutGraph": "Graph",
     "layoutSplit": "Split",
     "layoutWorkbench": "Workbench",
-    "stepNames": ["Graph Build", "Env Setup", "Run Simulation", "Report Generation", "Deep Interaction"]
+    "stepNames": [
+      "Graph Build",
+      "Env Setup",
+      "Run Simulation",
+      "Report Generation",
+      "Deep Interaction"
+    ]
   },
   "step1": {
     "ontologyGeneration": "Ontology Generation",

@@ -68,6 +68,46 @@
 
       <!-- 实体消歧成果（内嵌精简版）-->
       <section id="showcase-section" class="showcase-section">
+        <!-- 挑战标题 -->
+        <div class="challenge-header">
+          <h2 class="challenge-h2">{{ $t('home.problemSectionTitle') }}</h2>
+          <div class="challenge-rule"></div>
+        </div>
+
+        <!-- 三个痛点卡片 -->
+        <div class="problem-cards">
+          <div class="problem-card">
+            <div class="problem-num">01</div>
+            <div class="problem-title">{{ $t('home.problem01Title') }}</div>
+            <div class="problem-desc">{{ $t('home.problem01Desc') }}</div>
+          </div>
+          <div class="problem-card">
+            <div class="problem-num">02</div>
+            <div class="problem-title">{{ $t('home.problem02Title') }}</div>
+            <div class="problem-desc">{{ $t('home.problem02Desc') }}</div>
+          </div>
+          <div class="problem-card">
+            <div class="problem-num">03</div>
+            <div class="problem-title">{{ $t('home.problem03Title') }}</div>
+            <div class="problem-desc">{{ $t('home.problem03Desc') }}</div>
+          </div>
+        </div>
+
+        <!-- 解决方案流程条 -->
+        <div class="solution-strip">
+          <span class="solution-label">{{ $t('home.solutionLabel') }}</span>
+          <div class="solution-flow">
+            <span class="solution-step">{{ $t('home.solutionStep1') }}</span>
+            <span class="solution-arrow">→</span>
+            <span class="solution-step">{{ $t('home.solutionStep2') }}</span>
+            <span class="solution-arrow">→</span>
+            <span class="solution-step">{{ $t('home.solutionStep3') }}</span>
+            <span class="solution-arrow">→</span>
+            <span class="solution-step highlight">{{ $t('home.solutionStep4') }}</span>
+          </div>
+        </div>
+
+        <!-- 成果标题 -->
         <div class="showcase-section-header">
           <div>
             <h2 class="showcase-h2">{{ $t('home.showcaseSectionTitle') }}</h2>
@@ -114,9 +154,10 @@ const workflowSteps = [
   --black: #000000;
   --white: #FFFFFF;
   --orange: #FF4500;
-  --gray-light: #F5F5F5;
-  --gray-text: #666666;
-  --border: #E5E5E5;
+  --gray-light: #141414;
+  --gray-text: #888888;
+  --border: #2a2a2a;
+  --text-primary: #f0f0f0;
   --font-mono: 'JetBrains Mono', monospace;
   --font-sans: 'Space Grotesk', 'Noto Sans SC', system-ui, sans-serif;
   --font-cn: 'Noto Sans SC', system-ui, sans-serif;
@@ -124,9 +165,9 @@ const workflowSteps = [
 
 .home-container {
   min-height: 100vh;
-  background: var(--white);
+  background: #0a0a0a;
   font-family: var(--font-sans);
-  color: var(--black);
+  color: var(--text-primary);
 }
 
 /* 顶部导航 */
@@ -240,11 +281,11 @@ const workflowSteps = [
   font-weight: 500;
   margin: 0 0 35px 0;
   letter-spacing: -2px;
-  color: var(--black);
+  color: var(--text-primary);
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #000000 0%, #444444 100%);
+  background: linear-gradient(90deg, #ffffff 0%, #aaaaaa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -264,22 +305,22 @@ const workflowSteps = [
   margin-bottom: 1.2rem;
 }
 
-.highlight-bold { color: var(--black); font-weight: 700; }
+.highlight-bold { color: #fff; font-weight: 700; }
 .highlight-orange { color: var(--orange); font-weight: 700; font-family: var(--font-mono); }
 .highlight-code {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   padding: 2px 6px;
   border-radius: 2px;
   font-family: var(--font-mono);
   font-size: 0.9em;
-  color: var(--black);
+  color: #e0e0e0;
   font-weight: 600;
 }
 
 .slogan-text {
   font-size: 1.2rem;
   font-weight: 520;
-  color: var(--black);
+  color: var(--text-primary);
   letter-spacing: 1px;
   border-left: 3px solid var(--orange);
   padding-left: 15px;
@@ -303,9 +344,9 @@ const workflowSteps = [
   align-items: center;
   gap: 10px;
   padding: 16px 36px;
-  background: var(--black);
+  background: var(--orange);
   color: var(--white);
-  border: 1px solid var(--black);
+  border: 1px solid var(--orange);
   font-family: var(--font-mono);
   font-size: 1rem;
   font-weight: 700;
@@ -315,8 +356,9 @@ const workflowSteps = [
   animation: pulse-border 2s infinite;
 }
 .try-demo-cta:hover {
-  background: var(--orange);
+  background: transparent;
   border-color: var(--orange);
+  color: var(--orange);
   transform: translateY(-2px);
 }
 .try-demo-cta:active { transform: translateY(0); }
@@ -383,13 +425,13 @@ const workflowSteps = [
   gap: 8px;
   padding: 8px 14px;
   border: 1px solid var(--border);
-  background: #fafafa;
+  background: #141414;
   font-family: var(--font-mono);
   transition: all 0.2s;
 }
 .strip-step:hover {
   border-color: var(--orange);
-  background: #fff;
+  background: #1e1e1e;
 }
 .strip-num {
   font-weight: 700;
@@ -398,7 +440,7 @@ const workflowSteps = [
 }
 .strip-title {
   font-size: 0.9rem;
-  color: var(--black);
+  color: var(--text-primary);
   font-weight: 600;
 }
 .strip-arrow {
@@ -410,6 +452,104 @@ const workflowSteps = [
 /* Showcase section */
 .showcase-section {
   margin-bottom: 70px;
+}
+
+/* 挑战标题 */
+.challenge-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.challenge-h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+.challenge-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* 三痛点卡片 */
+.problem-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.problem-card {
+  border: 1px solid var(--border);
+  padding: 22px 20px;
+  background: var(--gray-light);
+}
+.problem-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--orange);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.problem-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.problem-desc {
+  font-size: 0.85rem;
+  color: var(--gray-text);
+  line-height: 1.6;
+}
+
+/* 解决方案流程条 */
+.solution-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 1px solid var(--black);
+  background: var(--black);
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+.solution-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #888;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.solution-flow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.solution-step {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #ccc;
+  white-space: nowrap;
+}
+.solution-step.highlight {
+  color: var(--orange);
+  font-weight: 700;
+}
+.solution-arrow {
+  color: #555;
+  font-size: 0.9rem;
 }
 
 .showcase-section-header {
@@ -426,6 +566,7 @@ const workflowSteps = [
   font-weight: 600;
   margin: 0 0 6px;
   letter-spacing: -0.5px;
+  color: var(--text-primary);
 }
 
 .showcase-sub {
@@ -462,6 +603,8 @@ const workflowSteps = [
   .strip-step { padding: 6px 10px; }
   .strip-arrow { display: none; }
   .showcase-section-header { flex-direction: column; align-items: flex-start; }
+  .problem-cards { grid-template-columns: 1fr; }
+  .solution-strip { flex-direction: column; align-items: flex-start; gap: 10px; }
 }
 </style>
 

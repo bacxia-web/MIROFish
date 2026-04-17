@@ -74,13 +74,32 @@
     "showcaseSectionDesc": "GraphRAG 双管线对比：消歧前后节点 / 边 / 孤立率的真实变化",
     "viewFullShowcase": "查看完整成果页 →",
     "navShowcase": "实体消歧",
-    "navHistory": "推演记录"
+    "navHistory": "推演记录",
+    "problemSectionTitle": "核心工程挑战",
+    "problem01Title": "实体重名污染图谱",
+    "problem01Desc": "原始文本中人名、机构名混淆，GraphRAG 构建出大量孤立节点与错误关联",
+    "problem02Title": "Agent 角色失真",
+    "problem02Desc": "重名实体使多个 Agent 持有碎片化记忆，模拟行为失真、预测结论不可信",
+    "problem03Title": "规则方法失效",
+    "problem03Desc": "字符串匹配无法处理语义相近的歧义，需要 LLM 逐对语义判定",
+    "solutionLabel": "解决方案",
+    "solutionStep1": "候选对生成",
+    "solutionStep2": "LLM 逐对判定",
+    "solutionStep3": "合并重名实体",
+    "solutionStep4": "净化图谱质量",
+    "resultsTitle": "消歧成果数据"
   },
   "main": {
     "layoutGraph": "图谱",
     "layoutSplit": "双栏",
     "layoutWorkbench": "工作台",
-    "stepNames": ["图谱构建", "环境搭建", "开始模拟", "报告生成", "深度互动"]
+    "stepNames": [
+      "图谱构建",
+      "环境搭建",
+      "开始模拟",
+      "报告生成",
+      "深度互动"
+    ]
   },
   "step1": {
     "ontologyGeneration": "本体生成",
