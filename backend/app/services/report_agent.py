@@ -2016,6 +2016,93 @@ class ReportManager:
         return result["logs"]
     
     @classmethod
+    @classmethod
+    def _synthesize_agent_log(cls, report_id: str) -> list:
+        """
+        当 agent_log.jsonl 不存在（如 demo 数据）时，
+        从 meta.json 合成前端所需的最小日志事件序列，
+        让 Step4Report 组件能正常展示已完成的报告内容。
+        """
+        meta_path = cls._get_report_path(report_id)
+        if not os.path.exists(meta_path):
+            return []
+        try:
+            with open(meta_path, 'r', encoding='utf-8') as f:
+                meta = json.load(f)
+        except Exception:
+            return []
+
+        if meta.get('status') != 'completed':
+            return []
+
+        outline_data = meta.get('outline') or {}
+        sections = outline_data.get('sections', [])
+        created_at = meta.get('created_at', '')
+        completed_at = meta.get('completed_at', created_at)
+
+        logs = []
+
+        # report_start
+        logs.append({
+            "timestamp": created_at,
+            "elapsed_seconds": 0,
+            "report_id": report_id,
+            "action": "report_start",
+            "stage": "starting",
+            "section_title": None,
+            "section_index": None,
+            "details": {"simulation_requirement": meta.get('simulation_requirement', '')},
+        })
+
+        # planning_complete — 把整个 outline 传回，前端凭此渲染标题/摘要/章节列表
+        logs.append({
+            "timestamp": created_at,
+            "elapsed_seconds": 1,
+            "report_id": report_id,
+            "action": "planning_complete",
+            "stage": "planning",
+            "section_title": None,
+            "section_index": None,
+            "details": {
+                "outline": {
+                    "title": outline_data.get('title', ''),
+                    "summary": outline_data.get('summary', ''),
+                    "sections": [
+                        {"title": s.get('title', ''), "summary": s.get('content', '')[:100]}
+                        for s in sections
+                    ],
+                }
+            },
+        })
+
+        # section_complete — 每个章节一条，content 取自 outline.sections[i].content
+        for idx, section in enumerate(sections):
+            logs.append({
+                "timestamp": completed_at,
+                "elapsed_seconds": 2 + idx,
+                "report_id": report_id,
+                "action": "section_complete",
+                "stage": "generating",
+                "section_title": section.get('title', ''),
+                "section_index": idx + 1,
+                "details": {"content": section.get('content', '')},
+            })
+
+        # report_complete
+        logs.append({
+            "timestamp": completed_at,
+            "elapsed_seconds": 2 + len(sections),
+            "report_id": report_id,
+            "action": "report_complete",
+            "stage": "completed",
+            "section_title": None,
+            "section_index": None,
+            "details": {"total_sections": len(sections)},
+        })
+
+        return logs
+
+    @classmethod
     def get_agent_log(cls, report_id: str, from_line: int = 0) -> Dict[str, Any]:
         """
         获取 Agent 日志内容
@@ -2033,8 +2120,18 @@ class ReportManager:
             }
         """
         log_path = cls._get_agent_log_path(report_id)
-        
+
         if not os.path.exists(log_path):
+            # Fallback：从 meta.json 合成最小日志，让前端能正确展示已完成报告
+            synthetic = cls._synthesize_agent_log(report_id)
+            if synthetic:
+                total = len(synthetic)
+                return {
+                    "logs": synthetic[from_line:],
+                    "total_lines": total,
+                    "from_line": from_line,
+                    "has_more": False,
+                }
             return {
                 "logs": [],
                 "total_lines": 0,
