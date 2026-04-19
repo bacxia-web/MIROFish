@@ -233,7 +233,10 @@ const workflowSteps = [
 /* 顶部导航 */
 .navbar {
   height: 60px;
-  background: var(--black);
+  background: rgba(4, 8, 16, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid #1a2a3e;
   color: var(--white);
   display: flex;
   justify-content: space-between;
@@ -241,7 +244,7 @@ const workflowSteps = [
   padding: 0 40px;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1100;
 }
 
 .nav-brand {
@@ -261,7 +264,7 @@ const workflowSteps = [
   color: var(--white);
   text-decoration: none;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   font-weight: 500;
   opacity: 0.85;
   transition: all 0.15s;
@@ -478,7 +481,7 @@ const workflowSteps = [
 }
 
 .engine-status {
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   color: #10B981;
   font-weight: 600;
   letter-spacing: 1px;
@@ -506,7 +509,7 @@ const workflowSteps = [
 }
 
 .ba-label {
-  font-size: 0.6rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: #555;
   letter-spacing: 2px;
@@ -539,7 +542,7 @@ const workflowSteps = [
 }
 
 .ba-unit {
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   color: #555;
   letter-spacing: 0.5px;
 }
@@ -559,7 +562,7 @@ const workflowSteps = [
 }
 
 .ba-process {
-  font-size: 0.55rem;
+  font-size: 0.78rem;
   color: #555;
   letter-spacing: 0.5px;
   white-space: nowrap;
@@ -578,7 +581,7 @@ const workflowSteps = [
 }
 
 .prog-label {
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   color: #666;
   letter-spacing: 0.5px;
 }
@@ -650,7 +653,7 @@ const workflowSteps = [
 }
 
 .agent-id {
-  font-size: 0.5rem;
+  font-size: 0.78rem;
   color: #444;
   letter-spacing: 0.3px;
   white-space: nowrap;
@@ -707,7 +710,7 @@ const workflowSteps = [
 .strip-num {
   font-weight: 700;
   color: var(--accent);
-  font-size: 0.85rem;
+  font-size: 0.92rem;
 }
 .strip-title {
   font-size: 0.9rem;
@@ -776,7 +779,7 @@ const workflowSteps = [
   line-height: 1.4;
 }
 .problem-desc {
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   color: var(--gray-text);
   line-height: 1.6;
 }
@@ -811,7 +814,7 @@ const workflowSteps = [
 }
 .solution-step {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   font-weight: 500;
   color: #d0d0d0;
   white-space: nowrap;

@@ -66,23 +66,24 @@ onUnmounted(() => {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Light theme (default - for white header backgrounds) */
+/* Dark theme */
 .switcher-trigger {
   background: transparent;
-  color: #333;
-  border: 1px solid #CCC;
+  color: #c8d5e8;
+  border: 1px solid #1a2a3e;
   padding: 4px 12px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 6px;
-  transition: border-color 0.2s, opacity 0.2s;
+  transition: border-color 0.2s, color 0.2s;
 }
 
 .switcher-trigger:hover {
-  border-color: #999;
+  border-color: #3B82F6;
+  color: #e2e8f0;
 }
 
 .caret {
@@ -94,30 +95,31 @@ onUnmounted(() => {
   top: 100%;
   right: 0;
   margin-top: 4px;
-  background: #FFFFFF;
-  border: 1px solid #DDD;
+  background: #0e1724;
+  border: 1px solid #1a2a3e;
   list-style: none;
   padding: 4px 0;
   min-width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 .switcher-option {
-  padding: 6px 12px;
-  font-size: 0.8rem;
-  color: #333;
+  padding: 7px 14px;
+  font-size: 0.82rem;
+  color: #94a3b8;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.15s;
+  transition: background 0.15s, color 0.15s;
 }
 
 .switcher-option:hover {
-  background: #F0F0F0;
+  background: #14202f;
+  color: #e2e8f0;
 }
 
 .switcher-option.active {
-  color: var(--orange, #FF4500);
+  color: #3B82F6;
 }
 
 

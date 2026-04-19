@@ -597,7 +597,7 @@ onActivated(() => {
   gap: 24px;
   margin-bottom: 24px;
   font-family: 'JetBrains Mono', 'SF Mono', monospace;
-  padding: 0 40px;
+  padding: 0;
 }
 
 .section-line {
@@ -608,7 +608,7 @@ onActivated(() => {
 }
 
 .section-title {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #555;
   letter-spacing: 3px;
@@ -644,7 +644,7 @@ onActivated(() => {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 0 40px;
+  padding: 0;
   transition: min-height 700ms cubic-bezier(0.23, 1, 0.32, 1);
   /* min-height 由 JS 动态计算，根据卡片数量自适应 */
 }
@@ -711,7 +711,7 @@ onActivated(() => {
   padding-bottom: 12px;
   border-bottom: 1px solid #222;
   font-family: 'JetBrains Mono', 'SF Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.82rem;
 }
 
 .card-id {
@@ -728,7 +728,7 @@ onActivated(() => {
 }
 
 .status-icon {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   transition: all 0.2s ease;
   cursor: default;
 }
@@ -754,11 +754,11 @@ onActivated(() => {
   gap: 6px;
   letter-spacing: 0.5px;
   font-weight: 600;
-  font-size: 0.65rem;
+  font-size: 0.9rem;
 }
 
 .status-dot {
-  font-size: 0.5rem;
+  font-size: 0.875rem;
 }
 
 /* 进度状态颜色 */
@@ -794,7 +794,7 @@ onActivated(() => {
   justify-content: center;
   padding: 3px 6px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
+  font-size: 0.875rem;
   color: #555;
   background: rgba(255, 255, 255, 0.04);
   border-radius: 2px;
@@ -847,7 +847,7 @@ onActivated(() => {
 
 .file-name {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.9rem;
   color: #777;
   white-space: nowrap;
   overflow: hidden;
@@ -872,7 +872,7 @@ onActivated(() => {
 
 .empty-file-text {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   letter-spacing: 0.5px;
 }
 
@@ -898,7 +898,7 @@ onActivated(() => {
 /* 卡片标题 */
 .card-title {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #d0d0d0;
   margin: 0 0 6px 0;
@@ -916,7 +916,7 @@ onActivated(() => {
 /* 卡片描述 */
 .card-desc {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   color: #555;
   margin: 0 0 16px 0;
   line-height: 1.5;
@@ -936,7 +936,7 @@ onActivated(() => {
   padding-top: 12px;
   border-top: 1px solid #14202f;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.9rem;
   color: #444;
   font-weight: 500;
 }
@@ -955,11 +955,11 @@ onActivated(() => {
   gap: 6px;
   letter-spacing: 0.5px;
   font-weight: 600;
-  font-size: 0.65rem;
+  font-size: 0.9rem;
 }
 
 .card-footer .status-dot {
-  font-size: 0.5rem;
+  font-size: 0.875rem;
 }
 
 /* 进度状态颜色 - 底部 */
@@ -1111,7 +1111,7 @@ onActivated(() => {
   align-items: center;
   gap: 6px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 600;
   padding: 4px 8px;
   border-radius: 2px;
@@ -1124,7 +1124,7 @@ onActivated(() => {
 
 .modal-create-time {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: #555;
   letter-spacing: 0.3px;
 }
@@ -1164,7 +1164,7 @@ onActivated(() => {
 
 .modal-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: #555;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1227,7 +1227,7 @@ onActivated(() => {
 
 .modal-file-name {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #888;
   flex: 1;
   overflow: hidden;
@@ -1237,7 +1237,7 @@ onActivated(() => {
 
 .modal-empty {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #444;
   padding: 16px;
   background: #0d0d0d;
@@ -1263,7 +1263,7 @@ onActivated(() => {
 
 .divider-text {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   color: #444;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -1308,7 +1308,7 @@ onActivated(() => {
 
 .btn-step {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: #444;
   letter-spacing: 0.5px;
@@ -1323,7 +1323,7 @@ onActivated(() => {
 
 .btn-text {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   color: #888;
@@ -1348,7 +1348,7 @@ onActivated(() => {
 
 .hint-text {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   color: #444;
   letter-spacing: 0.3px;
   text-align: center;

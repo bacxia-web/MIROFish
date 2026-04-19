@@ -203,7 +203,7 @@ function taskMetrics(task) {
 .stat-num.teal { color: #3B82F6; }
 .stat-num.orange { color: #3B82F6; }
 .stat-label {
-  font-size: 11px;
+  font-size: 14px;
   color: #9a9a9a;
   margin-top: 10px;
   font-family: 'JetBrains Mono', monospace;
@@ -234,7 +234,7 @@ function taskMetrics(task) {
   justify-content: space-between;
 }
 .task-badge {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   background: rgba(59,130,246,0.12);
   color: #3B82F6;
@@ -244,7 +244,7 @@ function taskMetrics(task) {
   letter-spacing: 1px;
 }
 .task-model {
-  font-size: 11px;
+  font-size: 14px;
   color: #8a8a8a;
   font-family: monospace;
 }
@@ -266,7 +266,7 @@ function taskMetrics(task) {
   border-color: rgba(59,130,246,0.5);
 }
 .compare-label {
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   color: #a0a0a0;
   margin-bottom: 10px;
@@ -288,7 +288,7 @@ function taskMetrics(task) {
 }
 .stat-val.teal { color: #3B82F6; }
 .stat-val.warn { color: #e53e3e; }
-.stat-unit { font-size: 10px; color: #8a8a8a; }
+.stat-unit { font-size: 13px; color: #8a8a8a; }
 .compare-arrow-col {
   display: flex;
   flex-direction: column;
@@ -300,14 +300,14 @@ function taskMetrics(task) {
 }
 .compare-arrow-icon { font-size: 22px; color: #3B82F6; opacity: 0.7; }
 .reduction-badge {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   color: #3B82F6;
   text-align: center;
   line-height: 1.4;
   font-family: 'JetBrains Mono', monospace;
 }
-.reduction-sub { font-weight: 400; color: #9a9a9a; font-size: 10px; }
+.reduction-sub { font-weight: 400; color: #9a9a9a; font-size: 13px; }
 
 /* Decisions */
 .decisions-row {
@@ -316,12 +316,12 @@ function taskMetrics(task) {
   gap: 10px;
   background: #0d0d0d;
   padding: 10px 12px;
-  font-size: 13px;
+  font-size: 14px;
   color: #c0c0c0;
   border: 1px solid #1a2a3e;
 }
 .decisions-label {
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   color: #9a9a9a;
   flex-shrink: 0;
@@ -338,7 +338,7 @@ function taskMetrics(task) {
   padding: 12px;
 }
 .merge-list-title {
-  font-size: 10px;
+  font-size: 13px;
   color: #3B82F6;
   letter-spacing: 0.08em;
   margin-bottom: 8px;
@@ -346,7 +346,7 @@ function taskMetrics(task) {
   text-transform: uppercase;
 }
 .merge-item {
-  font-size: 13px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -357,7 +357,7 @@ function taskMetrics(task) {
 .merge-arrow { color: #707070; }
 .merge-canonical { color: #3B82F6; font-weight: 600; }
 .merge-label-tag {
-  font-size: 10px;
+  font-size: 13px;
   background: #1a1a1a;
   color: #a0a0a0;
   border: 1px solid #1a2a3e;
@@ -365,7 +365,7 @@ function taskMetrics(task) {
   margin-left: 6px;
 }
 .no-merge {
-  font-size: 12px;
+  font-size: 13px;
   color: #9a9a9a;
   background: #0d0d0d;
   padding: 10px 12px;
@@ -379,7 +379,7 @@ function taskMetrics(task) {
   border: 1px solid #1a2a3e;
 }
 .bar-chart-title {
-  font-size: 10px;
+  font-size: 13px;
   color: #9a9a9a;
   letter-spacing: 0.08em;
   margin-bottom: 10px;
@@ -394,7 +394,7 @@ function taskMetrics(task) {
   margin-bottom: 6px;
 }
 .bar-label {
-  font-size: 11px;
+  font-size: 14px;
   color: #b0b0b0;
   width: 48px;
   flex-shrink: 0;
@@ -416,7 +416,7 @@ function taskMetrics(task) {
 .bar-fill.raw { background: #3a3a3a; }
 .bar-fill.disamb { background: #3B82F6; }
 .bar-val {
-  font-size: 10px;
+  font-size: 13px;
   color: #ddd;
   font-weight: 600;
   white-space: nowrap;
@@ -425,7 +425,7 @@ function taskMetrics(task) {
   display: flex;
   gap: 14px;
   margin-top: 8px;
-  font-size: 10px;
+  font-size: 13px;
 }
 .legend-raw { color: #a0a0a0; }
 .legend-disamb { color: #3B82F6; }
