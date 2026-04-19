@@ -17,6 +17,7 @@ from ..utils.logger import get_logger
 from .zep_entity_reader import ZepEntityReader, FilteredEntities
 from .oasis_profile_generator import OasisProfileGenerator, OasisAgentProfile
 from .simulation_config_generator import SimulationConfigGenerator, SimulationParameters
+from ..utils.token_usage_service import usage_context
 from ..utils.locale import t
 
 logger = get_logger('mirofish.simulation')
@@ -336,17 +337,31 @@ class SimulationManager:
                 realtime_output_path = os.path.join(sim_dir, "twitter_profiles.csv")
                 realtime_platform = "twitter"
             
-            profiles = generator.generate_profiles_from_entities(
-                entities=filtered.entities,
-                use_llm=use_llm_for_profiles,
-                progress_callback=profile_progress,
-                graph_id=state.graph_id,  # 传入graph_id用于Zep检索
-                parallel_count=parallel_profile_count,  # 并行生成数量
-                realtime_output_path=realtime_output_path,  # 实时保存路径
-                output_platform=realtime_platform  # 输出格式
-            )
+            with usage_context(state.project_id, 2):
+                profiles = generator.generate_profiles_from_entities(
+                    entities=filtered.entities,
+                    use_llm=use_llm_for_profiles,
+                    progress_callback=profile_progress,
+                    graph_id=state.graph_id,  # 传入graph_id用于Zep检索
+                    parallel_count=parallel_profile_count,  # 并行生成数量
+                    realtime_output_path=realtime_output_path,  # 实时保存路径
+                    output_platform=realtime_platform  # 输出格式
+                )
             
             state.profiles_count = len(profiles)
+
+            try:
+                from .quality_metrics_service import (
+                    record_simulation_profile_metrics,
+                    refresh_project_quality_metrics,
+                )
+
+                record_simulation_profile_metrics(
+                    state.project_id, state.graph_id, profiles
+                )
+                refresh_project_quality_metrics(state.project_id)
+            except Exception as qe:
+                logger.debug('quality metrics after profiles: %s', qe)
             
             # 保存Profile文件（注意：Twitter使用CSV格式，Reddit使用JSON格式）
             # Reddit 已经在生成过程中实时保存了，这里再保存一次确保完整性
@@ -400,16 +415,17 @@ class SimulationManager:
                     total=3
                 )
             
-            sim_params = config_generator.generate_config(
-                simulation_id=simulation_id,
-                project_id=state.project_id,
-                graph_id=state.graph_id,
-                simulation_requirement=simulation_requirement,
-                document_text=document_text,
-                entities=filtered.entities,
-                enable_twitter=state.enable_twitter,
-                enable_reddit=state.enable_reddit
-            )
+            with usage_context(state.project_id, 2):
+                sim_params = config_generator.generate_config(
+                    simulation_id=simulation_id,
+                    project_id=state.project_id,
+                    graph_id=state.graph_id,
+                    simulation_requirement=simulation_requirement,
+                    document_text=document_text,
+                    entities=filtered.entities,
+                    enable_twitter=state.enable_twitter,
+                    enable_reddit=state.enable_reddit
+                )
             
             if progress_callback:
                 progress_callback(

@@ -16,6 +16,7 @@ from ..models.project import ProjectManager
 from ..models.task import TaskManager, TaskStatus
 from ..utils.logger import get_logger
 from ..utils.locale import t, get_locale, set_locale
+from ..utils.token_usage_service import usage_context
 
 logger = get_logger('mirofish.api.report')
 
@@ -151,13 +152,20 @@ def generate_report():
                     )
                 
                 # 生成报告（传入预先生成的 report_id）
-                report = agent.generate_report(
-                    progress_callback=progress_callback,
-                    report_id=report_id
-                )
+                with usage_context(state.project_id, 4):
+                    report = agent.generate_report(
+                        progress_callback=progress_callback,
+                        report_id=report_id
+                    )
                 
                 # 保存报告
                 ReportManager.save_report(report)
+                try:
+                    from ..services.quality_metrics_service import refresh_project_quality_metrics
+
+                    refresh_project_quality_metrics(state.project_id)
+                except Exception as qe:
+                    logger.debug(f"报告生成后刷新质量指标失败: {qe}")
                 
                 if report.status == ReportStatus.COMPLETED:
                     task_manager.complete_task(
@@ -548,7 +556,14 @@ def chat_with_report_agent():
             simulation_requirement=simulation_requirement
         )
         
-        result = agent.chat(message=message, chat_history=chat_history)
+        with usage_context(state.project_id, 5):
+            result = agent.chat(message=message, chat_history=chat_history)
+        try:
+            from ..services.quality_metrics_service import refresh_project_quality_metrics
+
+            refresh_project_quality_metrics(state.project_id)
+        except Exception as qe:
+            logger.debug(f"报告对话后刷新质量指标失败: {qe}")
         
         return jsonify({
             "success": True,

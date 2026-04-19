@@ -142,7 +142,9 @@ class TaskManager:
                 if error is not None:
                     task.error = error
                 if progress_detail is not None:
-                    task.progress_detail = progress_detail
+                    base = dict(task.progress_detail or {})
+                    base.update(progress_detail)
+                    task.progress_detail = base
     
     def complete_task(self, task_id: str, result: Dict):
         """标记任务完成"""

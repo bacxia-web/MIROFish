@@ -42,7 +42,10 @@ class Project:
     
     # 图谱信息（接口2完成后填充）
     graph_id: Optional[str] = None
+    graph_id_raw: Optional[str] = None
+    graph_id_disamb: Optional[str] = None
     graph_build_task_id: Optional[str] = None
+    quality_metrics: Optional[Dict[str, Any]] = None
     
     # 配置
     simulation_requirement: Optional[str] = None
@@ -65,7 +68,10 @@ class Project:
             "ontology": self.ontology,
             "analysis_summary": self.analysis_summary,
             "graph_id": self.graph_id,
+            "graph_id_raw": self.graph_id_raw,
+            "graph_id_disamb": self.graph_id_disamb,
             "graph_build_task_id": self.graph_build_task_id,
+            "quality_metrics": self.quality_metrics,
             "simulation_requirement": self.simulation_requirement,
             "chunk_size": self.chunk_size,
             "chunk_overlap": self.chunk_overlap,
@@ -90,7 +96,10 @@ class Project:
             ontology=data.get('ontology'),
             analysis_summary=data.get('analysis_summary'),
             graph_id=data.get('graph_id'),
+            graph_id_raw=data.get('graph_id_raw'),
+            graph_id_disamb=data.get('graph_id_disamb'),
             graph_build_task_id=data.get('graph_build_task_id'),
+            quality_metrics=data.get('quality_metrics'),
             simulation_requirement=data.get('simulation_requirement'),
             chunk_size=data.get('chunk_size', 500),
             chunk_overlap=data.get('chunk_overlap', 50),
@@ -302,4 +311,111 @@ class ProjectManager:
             for f in os.listdir(files_dir) 
             if os.path.isfile(os.path.join(files_dir, f))
         ]
+
+    @classmethod
+    def _get_disambiguation_report_path(cls, project_id: str) -> str:
+        return os.path.join(cls._get_project_dir(project_id), 'disambiguation_merges.json')
+
+    @classmethod
+    def _get_disambiguation_pair_decisions_path(cls, project_id: str) -> str:
+        return os.path.join(
+            cls._get_project_dir(project_id), 'disambiguation_pair_decisions.json'
+        )
+
+    @classmethod
+    def _get_retrieval_benchmark_path(cls, project_id: str) -> str:
+        return os.path.join(cls._get_project_dir(project_id), 'retrieval_benchmark.json')
+
+    @classmethod
+    def _get_profile_diversity_eval_path(cls, project_id: str) -> str:
+        return os.path.join(
+            cls._get_project_dir(project_id), 'profile_diversity_eval.json'
+        )
+
+    @classmethod
+    def save_disambiguation_report(cls, project_id: str, report: Dict[str, Any]) -> None:
+        """写入本地图谱实体消歧合并明细（与 Neo4j 实验组图消歧步骤对应）。"""
+        cls._ensure_projects_dir()
+        project_dir = cls._get_project_dir(project_id)
+        os.makedirs(project_dir, exist_ok=True)
+        path = cls._get_disambiguation_report_path(project_id)
+        with open(path, 'w', encoding='utf-8') as f:
+            json.dump(report, f, ensure_ascii=False, indent=2)
+
+    @classmethod
+    def get_disambiguation_report(cls, project_id: str) -> Optional[Dict[str, Any]]:
+        path = cls._get_disambiguation_report_path(project_id)
+        if not os.path.isfile(path):
+            return None
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            return None
+
+    @classmethod
+    def save_disambiguation_pair_decisions(
+        cls, project_id: str, payload: Dict[str, Any]
+    ) -> None:
+        cls._ensure_projects_dir()
+        project_dir = cls._get_project_dir(project_id)
+        os.makedirs(project_dir, exist_ok=True)
+        path = cls._get_disambiguation_pair_decisions_path(project_id)
+        with open(path, 'w', encoding='utf-8') as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+
+    @classmethod
+    def get_disambiguation_pair_decisions(
+        cls, project_id: str
+    ) -> Optional[Dict[str, Any]]:
+        path = cls._get_disambiguation_pair_decisions_path(project_id)
+        if not os.path.isfile(path):
+            return None
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            return None
+
+    @classmethod
+    def save_retrieval_benchmark(cls, project_id: str, payload: Dict[str, Any]) -> None:
+        cls._ensure_projects_dir()
+        project_dir = cls._get_project_dir(project_id)
+        os.makedirs(project_dir, exist_ok=True)
+        path = cls._get_retrieval_benchmark_path(project_id)
+        with open(path, 'w', encoding='utf-8') as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+
+    @classmethod
+    def get_retrieval_benchmark(cls, project_id: str) -> Optional[Dict[str, Any]]:
+        path = cls._get_retrieval_benchmark_path(project_id)
+        if not os.path.isfile(path):
+            return None
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            return None
+
+    @classmethod
+    def save_profile_diversity_eval(
+        cls, project_id: str, payload: Dict[str, Any]
+    ) -> None:
+        cls._ensure_projects_dir()
+        project_dir = cls._get_project_dir(project_id)
+        os.makedirs(project_dir, exist_ok=True)
+        path = cls._get_profile_diversity_eval_path(project_id)
+        with open(path, 'w', encoding='utf-8') as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+
+    @classmethod
+    def get_profile_diversity_eval(cls, project_id: str) -> Optional[Dict[str, Any]]:
+        path = cls._get_profile_diversity_eval_path(project_id)
+        if not os.path.isfile(path):
+            return None
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            return None
 

@@ -12,6 +12,7 @@
 
 import json
 import math
+import re
 from typing import Dict, Any, List, Optional, Callable
 from dataclasses import dataclass, field, asdict
 from datetime import datetime
@@ -19,8 +20,10 @@ from datetime import datetime
 from openai import OpenAI
 
 from ..config import Config
+from ..utils.llm_client import chat_completions_with_model_fallback
 from ..utils.logger import get_logger
 from ..utils.locale import get_language_instruction, t
+from ..utils.token_usage_service import record_llm_usage
 from .zep_entity_reader import EntityNode, ZepEntityReader
 
 logger = get_logger('mirofish.simulation_config')
@@ -230,7 +233,10 @@ class SimulationConfigGenerator:
     ):
         self.api_key = api_key or Config.LLM_API_KEY
         self.base_url = base_url or Config.LLM_BASE_URL
-        self.model_name = model_name or Config.LLM_MODEL_NAME
+        self._llm_models: List[str] = (
+            [model_name] if model_name else list(Config.LLM_MODEL_CHAIN)
+        )
+        self.model_name = self._llm_models[0]
         
         if not self.api_key:
             raise ValueError("LLM_API_KEY 未配置")
@@ -440,18 +446,40 @@ class SimulationConfigGenerator:
         
         for attempt in range(max_attempts):
             try:
-                response = self.client.chat.completions.create(
-                    model=self.model_name,
+                response = chat_completions_with_model_fallback(
+                    self.client,
+                    self._llm_models,
                     messages=[
                         {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": prompt}
+                        {"role": "user", "content": prompt},
                     ],
                     response_format={"type": "json_object"},
-                    temperature=0.7 - (attempt * 0.1)  # 每次重试降低温度
-                    # 不设置max_tokens，让LLM自由发挥
+                    temperature=0.7 - (attempt * 0.1),
+                    max_tokens=None,
                 )
+                try:
+                    usage = getattr(response, "usage", None)
+                    prompt_tokens = int(getattr(usage, "prompt_tokens", 0) or 0)
+                    completion_tokens = int(getattr(usage, "completion_tokens", 0) or 0)
+                    total_tokens = int(
+                        getattr(usage, "total_tokens", 0) or (prompt_tokens + completion_tokens)
+                    )
+                    model_name = str(getattr(response, "model", "") or "")
+                    record_llm_usage(
+                        prompt_tokens=prompt_tokens,
+                        completion_tokens=completion_tokens,
+                        total_tokens=total_tokens,
+                        model=model_name,
+                    )
+                except Exception:
+                    pass
                 
-                content = response.choices[0].message.content
+                content = response.choices[0].message.content or ""
+                content = re.sub(
+                    r"<think>[\s\S]*?</redacted_thinking>",
+                    "",
+                    content,
+                ).strip()
                 finish_reason = response.choices[0].finish_reason
                 
                 # 检查是否被截断

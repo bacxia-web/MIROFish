@@ -21,6 +21,7 @@ from queue import Queue
 from ..config import Config
 from ..utils.logger import get_logger
 from ..utils.locale import get_locale, set_locale
+from ..utils.token_usage_service import record_llm_usage
 from .zep_graph_memory_updater import ZepGraphMemoryManager
 from .simulation_ipc import SimulationIPCClient, CommandType, IPCResponse
 
@@ -102,6 +103,8 @@ class RoundSummary:
 class SimulationRunState:
     """模拟运行状态（实时）"""
     simulation_id: str
+    project_id: str = ""
+    graph_id: str = ""
     runner_status: RunnerStatus = RunnerStatus.IDLE
     
     # 进度信息
@@ -160,6 +163,8 @@ class SimulationRunState:
     def to_dict(self) -> Dict[str, Any]:
         return {
             "simulation_id": self.simulation_id,
+            "project_id": self.project_id,
+            "graph_id": self.graph_id,
             "runner_status": self.runner_status.value,
             "current_round": self.current_round,
             "total_rounds": self.total_rounds,
@@ -226,6 +231,39 @@ class SimulationRunner:
     
     # 图谱记忆更新配置
     _graph_memory_enabled: Dict[str, bool] = {}  # simulation_id -> enabled
+
+    @classmethod
+    def _record_step3_usage_from_ipc_result(cls, payload: Any) -> None:
+        """从 IPC interview 结果递归提取 usage 并写入 step3 聚合。"""
+        total_prompt = 0
+        total_completion = 0
+        total_tokens = 0
+
+        def walk(obj: Any) -> None:
+            nonlocal total_prompt, total_completion, total_tokens
+            if isinstance(obj, dict):
+                usage = obj.get("usage") or obj.get("token_usage") or obj.get("llm_usage")
+                if isinstance(usage, dict):
+                    p = int(usage.get("prompt_tokens", 0) or 0)
+                    c = int(usage.get("completion_tokens", 0) or 0)
+                    t = int(usage.get("total_tokens", 0) or (p + c))
+                    total_prompt += p
+                    total_completion += c
+                    total_tokens += t
+                for v in obj.values():
+                    walk(v)
+            elif isinstance(obj, list):
+                for item in obj:
+                    walk(item)
+
+        walk(payload)
+        if total_prompt or total_completion or total_tokens:
+            record_llm_usage(
+                prompt_tokens=total_prompt,
+                completion_tokens=total_completion,
+                total_tokens=total_tokens,
+                model="oasis_interview",
+            )
     
     @classmethod
     def get_run_state(cls, simulation_id: str) -> Optional[SimulationRunState]:
@@ -252,6 +290,8 @@ class SimulationRunner:
             
             state = SimulationRunState(
                 simulation_id=simulation_id,
+                project_id=data.get("project_id", ""),
+                graph_id=data.get("graph_id", ""),
                 runner_status=RunnerStatus(data.get("runner_status", "idle")),
                 current_round=data.get("current_round", 0),
                 total_rounds=data.get("total_rounds", 0),
@@ -345,6 +385,14 @@ class SimulationRunner:
         
         with open(config_path, 'r', encoding='utf-8') as f:
             config = json.load(f)
+        state_meta_path = os.path.join(sim_dir, "state.json")
+        state_meta: Dict[str, Any] = {}
+        try:
+            if os.path.exists(state_meta_path):
+                with open(state_meta_path, 'r', encoding='utf-8') as f:
+                    state_meta = json.load(f)
+        except Exception:
+            state_meta = {}
         
         # 初始化运行状态
         time_config = config.get("time_config", {})
@@ -361,6 +409,8 @@ class SimulationRunner:
         
         state = SimulationRunState(
             simulation_id=simulation_id,
+            project_id=str(state_meta.get("project_id", "") or ""),
+            graph_id=str(state_meta.get("graph_id", "") or ""),
             runner_status=RunnerStatus.STARTING,
             total_rounds=total_rounds,
             total_simulation_hours=total_hours,
@@ -638,6 +688,13 @@ class SimulationRunner:
                                         state.runner_status = RunnerStatus.COMPLETED
                                         state.completed_at = datetime.now().isoformat()
                                         logger.info(f"所有平台模拟已完成: {state.simulation_id}")
+                                        try:
+                                            if state.project_id:
+                                                from .quality_metrics_service import refresh_project_quality_metrics
+
+                                                refresh_project_quality_metrics(state.project_id)
+                                        except Exception as qe:
+                                            logger.debug("模拟完成后刷新质量指标失败: %s", qe)
                                 
                                 # 更新轮次信息（从 round_end 事件）
                                 elif event_type == "round_end":
@@ -674,6 +731,18 @@ class SimulationRunner:
                                 success=action_data.get("success", True),
                             )
                             state.add_action(action)
+                            if action.action_type == "CREATE_POST":
+                                try:
+                                    from .quality_metrics_service import record_simulation_post_metrics
+
+                                    record_simulation_post_metrics(
+                                        project_id=state.project_id,
+                                        graph_id=state.graph_id,
+                                        platform=platform,
+                                        post_content=(action.action_args or {}).get("content", ""),
+                                    )
+                                except Exception as qe:
+                                    logger.debug("记录重复发帖统计失败: %s", qe)
                             
                             # 更新轮次
                             if action.round_num and action.round_num > state.current_round:
@@ -1470,6 +1539,8 @@ class SimulationRunner:
             platform=platform,
             timeout=timeout
         )
+        if response.status.value == "completed":
+            cls._record_step3_usage_from_ipc_result(response.result)
 
         if response.status.value == "completed":
             return {
@@ -1531,6 +1602,8 @@ class SimulationRunner:
             platform=platform,
             timeout=timeout
         )
+        if response.status.value == "completed":
+            cls._record_step3_usage_from_ipc_result(response.result)
 
         if response.status.value == "completed":
             return {

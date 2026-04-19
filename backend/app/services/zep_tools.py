@@ -10,6 +10,8 @@ Zep检索工具服务
 
 import time
 import json
+import re
+import concurrent.futures
 from typing import Dict, Any, List, Optional
 from dataclasses import dataclass, field
 
@@ -483,7 +485,7 @@ class ZepToolsService:
         graph_id: str, 
         query: str, 
         limit: int = 10,
-        scope: str = "edges"
+        scope: str = "both"
     ) -> SearchResult:
         """
         图谱语义搜索
@@ -501,11 +503,59 @@ class ZepToolsService:
             SearchResult: 搜索结果
         """
         logger.info(t("console.graphSearch", graphId=graph_id, query=query[:50]))
-        
+        scope = (scope or "both").lower()
+        if scope not in ("edges", "nodes", "both"):
+            scope = "both"
+
+        queries = self._rewrite_queries(query)
+        results: List[SearchResult] = []
+        with concurrent.futures.ThreadPoolExecutor(max_workers=min(4, len(queries) or 1)) as ex:
+            futures = [ex.submit(self._search_graph_single, graph_id, q, limit, scope) for q in queries]
+            for fut in concurrent.futures.as_completed(futures):
+                try:
+                    results.append(fut.result())
+                except Exception as e:
+                    logger.debug(f"并行检索子查询失败: {e}")
+
+        merged = self._merge_search_results(query, results)
+
+        # 空结果二次降级重试：短查询 + 放宽范围 + 增大 limit
+        if merged.total_count == 0:
+            retry_queries = self._build_retry_queries(query)
+            retry_results: List[SearchResult] = []
+            for rq in retry_queries:
+                try:
+                    retry_results.append(
+                        self._search_graph_single(
+                            graph_id=graph_id,
+                            query=rq,
+                            limit=max(limit * 2, 20),
+                            scope="both",
+                        )
+                    )
+                except Exception as e:
+                    logger.debug(f"降级重试失败: {e}")
+            if retry_results:
+                merged = self._merge_search_results(query, retry_results)
+
+        try:
+            from .quality_metrics_service import record_search_graph_metrics
+
+            record_search_graph_metrics(graph_id, merged.total_count, query=query)
+        except Exception:
+            pass
+        return merged
+
+    def _search_graph_single(
+        self,
+        graph_id: str,
+        query: str,
+        limit: int = 10,
+        scope: str = "both",
+    ) -> SearchResult:
+        """单次检索执行（不做指标上报）。"""
         if self._neo:
             return self._search_graph_local(graph_id, query, limit, scope)
-        
-        # 尝试使用Zep Cloud Search API
         try:
             search_results = self._call_with_retry(
                 func=lambda: self.client.graph.search(
@@ -513,62 +563,137 @@ class ZepToolsService:
                     query=query,
                     limit=limit,
                     scope=scope,
-                    reranker="cross_encoder"
+                    reranker="cross_encoder",
                 ),
-                operation_name=t("console.graphSearchOp", graphId=graph_id)
+                operation_name=t("console.graphSearchOp", graphId=graph_id),
             )
-            
-            facts = []
-            edges = []
-            nodes = []
-            
-            # 解析边搜索结果
-            if hasattr(search_results, 'edges') and search_results.edges:
+            facts: List[str] = []
+            edges: List[Dict[str, Any]] = []
+            nodes: List[Dict[str, Any]] = []
+            if hasattr(search_results, "edges") and search_results.edges:
                 for edge in search_results.edges:
-                    if hasattr(edge, 'fact') and edge.fact:
+                    if hasattr(edge, "fact") and edge.fact:
                         facts.append(edge.fact)
-                    edges.append({
-                        "uuid": getattr(edge, 'uuid_', None) or getattr(edge, 'uuid', ''),
-                        "name": getattr(edge, 'name', ''),
-                        "fact": getattr(edge, 'fact', ''),
-                        "source_node_uuid": getattr(edge, 'source_node_uuid', ''),
-                        "target_node_uuid": getattr(edge, 'target_node_uuid', ''),
-                    })
-            
-            # 解析节点搜索结果
-            if hasattr(search_results, 'nodes') and search_results.nodes:
+                    edges.append(
+                        {
+                            "uuid": getattr(edge, "uuid_", None) or getattr(edge, "uuid", ""),
+                            "name": getattr(edge, "name", ""),
+                            "fact": getattr(edge, "fact", ""),
+                            "source_node_uuid": getattr(edge, "source_node_uuid", ""),
+                            "target_node_uuid": getattr(edge, "target_node_uuid", ""),
+                        }
+                    )
+            if hasattr(search_results, "nodes") and search_results.nodes:
                 for node in search_results.nodes:
-                    nodes.append({
-                        "uuid": getattr(node, 'uuid_', None) or getattr(node, 'uuid', ''),
-                        "name": getattr(node, 'name', ''),
-                        "labels": getattr(node, 'labels', []),
-                        "summary": getattr(node, 'summary', ''),
-                    })
-                    # 节点摘要也算作事实
-                    if hasattr(node, 'summary') and node.summary:
+                    nodes.append(
+                        {
+                            "uuid": getattr(node, "uuid_", None) or getattr(node, "uuid", ""),
+                            "name": getattr(node, "name", ""),
+                            "labels": getattr(node, "labels", []),
+                            "summary": getattr(node, "summary", ""),
+                        }
+                    )
+                    if hasattr(node, "summary") and node.summary:
                         facts.append(f"[{node.name}]: {node.summary}")
-            
-            logger.info(t("console.searchComplete", count=len(facts)))
-            
             return SearchResult(
                 facts=facts,
                 edges=edges,
                 nodes=nodes,
                 query=query,
-                total_count=len(facts)
+                total_count=len(facts),
             )
-            
         except Exception as e:
             logger.warning(t("console.zepSearchApiFallback", error=str(e)))
-            # 降级：使用本地关键词匹配搜索
             return self._local_search(graph_id, query, limit, scope)
+
+    def _rewrite_queries(self, query: str, max_queries: int = 4) -> List[str]:
+        """将长查询改写为短查询并去重。"""
+        q = (query or "").strip()
+        if not q:
+            return [""]
+        out: List[str] = [q]
+        # 基于中文/英文标点切分长句
+        parts = re.split(r"[，,。；;！？!?\n]+", q)
+        for p in parts:
+            s = p.strip()
+            if len(s) >= 4 and s not in out:
+                out.append(s)
+            if len(out) >= max_queries:
+                break
+        # 额外提取连续中文片段作为短语
+        if len(out) < max_queries:
+            chunks = re.findall(r"[\u4e00-\u9fff]{2,8}", q)
+            for c in chunks:
+                if c not in out:
+                    out.append(c)
+                if len(out) >= max_queries:
+                    break
+        return out[:max_queries]
+
+    def _build_retry_queries(self, query: str) -> List[str]:
+        """空结果时的二次降级查询。"""
+        q = (query or "").strip()
+        if not q:
+            return [q]
+        retry: List[str] = []
+        # 只保留关键词字符，缩短为更容易命中的短句
+        compact = " ".join(re.findall(r"[\u4e00-\u9fff]{2,8}|[a-zA-Z0-9]{2,}", q))
+        if compact:
+            retry.append(compact[:80].strip())
+        # 取前半句
+        if len(q) > 12:
+            retry.append(q[: max(12, len(q) // 2)].strip())
+        retry.extend(self._rewrite_queries(q, max_queries=2))
+        dedup: List[str] = []
+        for item in retry:
+            s = (item or "").strip()
+            if s and s not in dedup:
+                dedup.append(s)
+        return dedup[:3] or [q]
+
+    def _merge_search_results(self, original_query: str, results: List[SearchResult]) -> SearchResult:
+        """合并并去重多次检索结果。"""
+        facts: List[str] = []
+        edges: List[Dict[str, Any]] = []
+        nodes: List[Dict[str, Any]] = []
+        seen_facts = set()
+        seen_edges = set()
+        seen_nodes = set()
+        for r in results:
+            for f in r.facts or []:
+                if f and f not in seen_facts:
+                    seen_facts.add(f)
+                    facts.append(f)
+            for e in r.edges or []:
+                key = e.get("uuid") or (
+                    e.get("source_node_uuid", ""),
+                    e.get("name", ""),
+                    e.get("target_node_uuid", ""),
+                    e.get("fact", ""),
+                )
+                if key not in seen_edges:
+                    seen_edges.add(key)
+                    edges.append(e)
+            for n in r.nodes or []:
+                key = n.get("uuid") or (n.get("name", ""), n.get("summary", ""))
+                if key not in seen_nodes:
+                    seen_nodes.add(key)
+                    nodes.append(n)
+        return SearchResult(
+            facts=facts,
+            edges=edges,
+            nodes=nodes,
+            query=original_query,
+            total_count=len(facts),
+        )
+                  
     
     def _local_search(
         self, 
         graph_id: str, 
         query: str, 
         limit: int = 10,
-        scope: str = "edges"
+        scope: str = "both"
     ) -> SearchResult:
         """
         本地关键词匹配搜索（作为Zep Search API的降级方案）
@@ -659,20 +784,20 @@ class ZepToolsService:
         except Exception as e:
             logger.error(t("console.localSearchFailed", error=str(e)))
         
-            return SearchResult(
-                facts=facts,
-                edges=edges_result,
-                nodes=nodes_result,
-                query=query,
-                total_count=len(facts)
-            )
+        return SearchResult(
+            facts=facts,
+            edges=edges_result,
+            nodes=nodes_result,
+            query=query,
+            total_count=len(facts)
+        )
     
     def _search_graph_local(
         self,
         graph_id: str,
         query: str,
         limit: int = 10,
-        scope: str = "edges",
+        scope: str = "both",
     ) -> SearchResult:
         """向量检索 Qdrant + 关键词兜底（与 _local_search 合并）。"""
         facts: List[str] = []
@@ -1099,7 +1224,7 @@ class ZepToolsService:
                 graph_id=graph_id,
                 query=sub_query,
                 limit=15,
-                scope="edges"
+                scope="both"
             )
             
             for fact in search_result.facts:
@@ -1114,7 +1239,7 @@ class ZepToolsService:
             graph_id=graph_id,
             query=query,
             limit=20,
-            scope="edges"
+            scope="both"
         )
         for fact in main_search.facts:
             if fact not in seen_facts:
@@ -1364,7 +1489,7 @@ class ZepToolsService:
             graph_id=graph_id,
             query=query,
             limit=limit,
-            scope="edges"
+            scope="both"
         )
         
         logger.info(t("console.quickSearchComplete", count=result.total_count))

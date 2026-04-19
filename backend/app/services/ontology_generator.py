@@ -173,6 +173,19 @@ B. **具体类型（8个，根据文本内容设计）**：
 """
 
 
+_ENHANCED_FALLBACK_PATCH = """
+
+**兜底类型排他性（严格遵守）**：
+- `Person` 是**严格兜底**——仅用于无法归入任何具体人物类型的自然人（如路人、匿名网友）。如果此人同时符合 Official / Celebrity / Professor 等具体类型，**必须使用具体类型，禁止使用 Person**。
+- `Organization` 是**严格兜底**——仅用于无法归入任何具体组织类型的机构。如果此组织同时符合 Company / University / GovernmentAgency 等具体类型，**必须使用具体类型，禁止使用 Organization**。
+
+**examples 互斥规则（必须遵守）**：
+- Person 的 examples 不得包含任何可归入具体人物类型的实例（如官员、教授、明星等）
+- Organization 的 examples 不得包含任何可归入具体组织类型的实例（如大学、政府机构等）
+- 如有重叠，该 example 必须只出现在具体类型中
+"""
+
+
 class OntologyGenerator:
     """
     本体生成器
@@ -186,7 +199,8 @@ class OntologyGenerator:
         self,
         document_texts: List[str],
         simulation_requirement: str,
-        additional_context: Optional[str] = None
+        additional_context: Optional[str] = None,
+        enhanced: bool = False,
     ) -> Dict[str, Any]:
         """
         生成本体定义
@@ -207,7 +221,10 @@ class OntologyGenerator:
         )
         
         lang_instruction = get_language_instruction()
-        system_prompt = f"{ONTOLOGY_SYSTEM_PROMPT}\n\n{lang_instruction}\nIMPORTANT: Entity type names MUST be in English PascalCase (e.g., 'PersonEntity', 'MediaOrganization'). Relationship type names MUST be in English UPPER_SNAKE_CASE (e.g., 'WORKS_FOR'). Attribute names MUST be in English snake_case. Only description fields and analysis_summary should use the specified language above."
+        base_prompt = ONTOLOGY_SYSTEM_PROMPT
+        if enhanced:
+            base_prompt += _ENHANCED_FALLBACK_PATCH
+        system_prompt = f"{base_prompt}\n\n{lang_instruction}\nIMPORTANT: Entity type names MUST be in English PascalCase (e.g., 'PersonEntity', 'MediaOrganization'). Relationship type names MUST be in English UPPER_SNAKE_CASE (e.g., 'WORKS_FOR'). Attribute names MUST be in English snake_case. Only description fields and analysis_summary should use the specified language above."
         messages = [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_message}
@@ -221,7 +238,7 @@ class OntologyGenerator:
         )
         
         # 验证和后处理
-        result = self._validate_and_process(result)
+        result = self._validate_and_process(result, enhanced=enhanced)
         
         return result
     
@@ -274,7 +291,7 @@ class OntologyGenerator:
         
         return message
     
-    def _validate_and_process(self, result: Dict[str, Any]) -> Dict[str, Any]:
+    def _validate_and_process(self, result: Dict[str, Any], enhanced: bool = False) -> Dict[str, Any]:
         """验证和后处理结果"""
         
         # 确保必要字段存在
@@ -388,6 +405,21 @@ class OntologyGenerator:
             # 添加兜底类型
             result["entity_types"].extend(fallbacks_to_add)
         
+        # examples 互斥（仅增强模式）：从兜底类型中移除已出现在具体类型的 examples
+        if enhanced:
+            fallback_names = {"Person", "Organization"}
+            specific_examples: set = set()
+            for entity in result["entity_types"]:
+                if entity.get("name") not in fallback_names:
+                    for ex in entity.get("examples", []):
+                        specific_examples.add((ex or "").strip().lower())
+            for entity in result["entity_types"]:
+                if entity.get("name") in fallback_names:
+                    entity["examples"] = [
+                        ex for ex in entity.get("examples", [])
+                        if (ex or "").strip().lower() not in specific_examples
+                    ]
+
         # 最终确保不超过限制（防御性编程）
         if len(result["entity_types"]) > MAX_ENTITY_TYPES:
             result["entity_types"] = result["entity_types"][:MAX_ENTITY_TYPES]

@@ -296,6 +296,32 @@ class ParallelIPCHandler:
             os.remove(command_file)
         except OSError:
             pass
+
+    def _extract_usage_dict(self, info: Any) -> Optional[Dict[str, int]]:
+        """从 interview info 中提取 token usage（若有）。"""
+        if not isinstance(info, dict):
+            return None
+        cand = info.get("usage") or info.get("token_usage") or info.get("llm_usage")
+        if isinstance(cand, dict):
+            p = int(cand.get("prompt_tokens", 0) or 0)
+            c = int(cand.get("completion_tokens", 0) or 0)
+            t = int(cand.get("total_tokens", 0) or (p + c))
+            return {
+                "prompt_tokens": p,
+                "completion_tokens": c,
+                "total_tokens": t,
+            }
+        # 兼容 usage 直接平铺在 info 顶层
+        if any(k in info for k in ("prompt_tokens", "completion_tokens", "total_tokens")):
+            p = int(info.get("prompt_tokens", 0) or 0)
+            c = int(info.get("completion_tokens", 0) or 0)
+            t = int(info.get("total_tokens", 0) or (p + c))
+            return {
+                "prompt_tokens": p,
+                "completion_tokens": c,
+                "total_tokens": t,
+            }
+        return None
     
     def _get_env_and_graph(self, platform: str):
         """
@@ -547,6 +573,9 @@ class ParallelIPCHandler:
                     info = json.loads(info_json) if info_json else {}
                     result["response"] = info.get("response", info)
                     result["timestamp"] = created_at
+                    usage = self._extract_usage_dict(info)
+                    if usage:
+                        result["usage"] = usage
                 except json.JSONDecodeError:
                     result["response"] = info_json
             
@@ -1030,10 +1059,16 @@ def create_model(config: Dict[str, Any], use_boost: bool = False):
         os.environ["OPENAI_API_BASE_URL"] = llm_base_url
     
     print(f"{config_label} model={llm_model}, base_url={llm_base_url[:40] if llm_base_url else '默认'}...")
-    
+
+    model_config_dict = {}
+    # DashScope 的 qwen3 系列在非流式调用下要求显式关闭 thinking。
+    if (llm_model or "").lower().startswith("qwen3"):
+        model_config_dict["extra_body"] = {"enable_thinking": False}
+
     return ModelFactory.create(
         model_platform=ModelPlatformType.OPENAI,
         model_type=llm_model,
+        model_config_dict=model_config_dict,
     )
 
 

@@ -301,6 +301,37 @@ class GraphBuilderService:
                 edges=edge_definitions if edge_definitions else None,
             )
     
+    def build_local_raw_and_disambiguated(
+        self,
+        graph_name: str,
+        chunks: List[str],
+        ontology: Dict[str, Any],
+        batch_size: int = 3,
+        progress_callback: Optional[Callable[[str, float], None]] = None,
+        ontology_enhanced: Optional[Dict[str, Any]] = None,
+        persist_project_graph_ids: Optional[Callable[[Dict[str, Any]], None]] = None,
+        chunk_stream_hook: Optional[Callable[[], None]] = None,
+    ):
+        """本地 Neo4j：A/B 双管线构图。
+
+        Args:
+            ontology: 对照组本体（原始 prompt 生成）
+            ontology_enhanced: 实验组本体（增强 prompt 生成）；为 None 时两组共享 ontology。
+        返回 (graph_id_raw, graph_id_disamb, DisambiguationResult)。
+        """
+        if not self._local_builder:
+            raise RuntimeError('build_local_raw_and_disambiguated 仅在 GRAPH_BACKEND=local 时可用')
+        return self._local_builder.build_raw_then_disambiguated(
+            graph_name,
+            chunks,
+            ontology,
+            batch_size,
+            progress_callback,
+            ontology_enhanced=ontology_enhanced,
+            persist_project_graph_ids=persist_project_graph_ids,
+            chunk_stream_hook=chunk_stream_hook,
+        )
+
     def add_text_batches(
         self,
         graph_id: str,
@@ -373,7 +404,7 @@ class GraphBuilderService:
         """等待所有 episode 处理完成（通过查询每个 episode 的 processed 状态）"""
         if self._local_builder:
             if progress_callback:
-                progress_callback("本地构图已完成", 1.0)
+                progress_callback(t('progress.localGraphPipelineDone'), 1.0)
             return
         if not episode_uuids:
             if progress_callback:
@@ -483,6 +514,7 @@ class GraphBuilderService:
                     'labels': node.labels or [],
                     'summary': node.summary or '',
                     'attributes': node.attributes or {},
+                    'primary_label': getattr(node, 'primary_label', None) or (node.labels[0] if node.labels else None),
                     'created_at': None,
                 })
             edges_data = []
