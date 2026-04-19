@@ -270,12 +270,16 @@
     </div>
 
     <!-- Bottom Info / Logs -->
-    <div class="system-logs">
-      <div class="log-header">
-        <span class="log-title">SIMULATION MONITOR</span>
+    <div v-if="systemLogs.length > 0" class="system-logs" :class="{ collapsed: sysCollapsed }">
+      <div class="log-header" @click="sysCollapsed = !sysCollapsed">
+        <div class="log-header-left">
+          <span class="log-toggle">{{ sysCollapsed ? '▶' : '▼' }}</span>
+          <span class="log-title">SIMULATION MONITOR</span>
+          <span class="log-count">{{ systemLogs.length }} lines</span>
+        </div>
         <span class="log-id">{{ simulationId || 'NO_SIMULATION' }}</span>
       </div>
-      <div class="log-content" ref="logContent">
+      <div v-if="!sysCollapsed" class="log-content" ref="logContent">
         <div class="log-line" v-for="(log, idx) in systemLogs" :key="idx">
           <span class="log-time">{{ log.time }}</span>
           <span class="log-msg">{{ log.msg }}</span>
@@ -287,7 +291,7 @@
 
 <script setup>
 import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import {
   startSimulation,
@@ -314,6 +318,7 @@ const props = defineProps({
 const emit = defineEmits(['go-back', 'next-step', 'add-log', 'update-status'])
 
 const router = useRouter()
+const route = useRoute()
 
 // State
 const isGeneratingReport = ref(false)
@@ -656,20 +661,50 @@ const handleNextStep = async () => {
   addLog(t('log.startingReportGen'))
   
   try {
-    const res = await generateReport({
-      simulation_id: props.simulationId,
-      force_regenerate: true
-    })
-    
-    if (res.success && res.data) {
-      const reportId = res.data.report_id
-      addLog(t('log.reportGenTaskStarted', { reportId }))
-      
-      // 跳转到报告页面
-      router.push({ name: 'Report', params: { reportId } })
+    const rawSim = typeof route.query.rawSimulationId === 'string' ? route.query.rawSimulationId : ''
+    const disambSim = typeof route.query.disambSimulationId === 'string' ? route.query.disambSimulationId : ''
+    const isDual = !!(rawSim && disambSim && rawSim !== disambSim)
+
+    const createReport = async (sid) => {
+      const res = await generateReport({
+        simulation_id: sid,
+        force_regenerate: true
+      })
+      if (!res.success || !res.data?.report_id) {
+        throw new Error(res.error || t('common.unknownError'))
+      }
+      return res.data.report_id
+    }
+
+    if (isDual) {
+      const [rawRes, disRes] = await Promise.allSettled([
+        createReport(rawSim),
+        createReport(disambSim)
+      ])
+      const rawReportId = rawRes.status === 'fulfilled' ? rawRes.value : ''
+      const disambReportId = disRes.status === 'fulfilled' ? disRes.value : ''
+      const currentIsRaw = props.simulationId === rawSim
+      const primary = currentIsRaw ? (rawReportId || disambReportId) : (disambReportId || rawReportId)
+      if (!primary) {
+        addLog(t('log.reportGenFailed', { error: 'raw/disamb 均失败' }))
+        isGeneratingReport.value = false
+        return
+      }
+      addLog(`AB并行：报告任务已触发 raw=${rawReportId || 'failed'} disamb=${disambReportId || 'failed'}`)
+      router.push({
+        name: 'Report',
+        params: { reportId: primary },
+        query: {
+          rawReportId: rawReportId || undefined,
+          disambReportId: disambReportId || undefined,
+          rawSimulationId: rawSim,
+          disambSimulationId: disambSim
+        }
+      })
     } else {
-      addLog(t('log.reportGenFailed', { error: res.error || t('common.unknownError') }))
-      isGeneratingReport.value = false
+      const reportId = await createReport(props.simulationId)
+      addLog(t('log.reportGenTaskStarted', { reportId }))
+      router.push({ name: 'Report', params: { reportId } })
     }
   } catch (err) {
     addLog(t('log.reportGenException', { error: err.message }))
@@ -679,6 +714,7 @@ const handleNextStep = async () => {
 
 // Scroll log to bottom
 const logContent = ref(null)
+const sysCollapsed = ref(true)
 watch(() => props.systemLogs?.length, () => {
   nextTick(() => {
     if (logContent.value) {
@@ -1212,23 +1248,30 @@ onUnmounted(() => {
 
 /* Logs */
 .system-logs {
-  background: #000;
+  background: #0a0a0a;
   color: #DDD;
-  padding: 16px;
   font-family: 'JetBrains Mono', monospace;
-  border-top: 1px solid #222;
+  border-top: 1px solid #1e1e1e;
   flex-shrink: 0;
 }
+.system-logs.collapsed .log-header { border-bottom: none; }
 
 .log-header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #333;
-  padding-bottom: 8px;
-  margin-bottom: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+  user-select: none;
   font-size: 10px;
-  color: #666;
+  color: #555;
+  transition: background 0.15s;
 }
+.log-header:hover { background: #111; color: #888; }
+.log-header-left { display: flex; align-items: center; gap: 8px; }
+.log-toggle { font-size: 8px; color: #444; }
+.log-count { font-size: 10px; color: #3a3a3a; }
+.log-id { font-size: 10px; color: #333; }
 
 .log-content {
   display: flex;
@@ -1236,11 +1279,12 @@ onUnmounted(() => {
   gap: 4px;
   height: 100px;
   overflow-y: auto;
-  padding-right: 4px;
+  padding: 8px 14px 10px;
+  border-top: 1px solid #1a1a1a;
 }
 
 .log-content::-webkit-scrollbar { width: 4px; }
-.log-content::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+.log-content::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
 
 .log-line {
   font-size: 11px;
@@ -1250,7 +1294,7 @@ onUnmounted(() => {
 }
 
 .log-time { color: #555; min-width: 75px; }
-.log-msg { color: #BBB; word-break: break-all; }
+.log-msg { color: #888; word-break: break-all; }
 .mono { font-family: 'JetBrains Mono', monospace; }
 
 /* Loading spinner for button */

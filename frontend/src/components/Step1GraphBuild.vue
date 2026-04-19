@@ -140,6 +140,33 @@
               <span class="stat-label">{{ $t('step1.schemaTypes') }}</span>
             </div>
           </div>
+          <div
+            v-if="currentPhase === 1 && buildProgress?.graphStream"
+            class="graph-stream-panel"
+          >
+            <div
+              v-if="buildProgress.graphStream.control"
+              class="graph-stream-line"
+            >
+              {{
+                $t('graph.streamControl', {
+                  nodes: buildProgress.graphStream.control.node_count ?? 0,
+                  edges: buildProgress.graphStream.control.edge_count ?? 0,
+                })
+              }}
+            </div>
+            <div
+              v-if="buildProgress.graphStream.experimental"
+              class="graph-stream-line"
+            >
+              {{
+                $t('graph.streamExperimental', {
+                  nodes: buildProgress.graphStream.experimental.node_count ?? 0,
+                  edges: buildProgress.graphStream.experimental.edge_count ?? 0,
+                })
+              }}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -171,12 +198,16 @@
     </div>
 
     <!-- Bottom Info / Logs -->
-    <div class="system-logs">
-      <div class="log-header">
-        <span class="log-title">SYSTEM DASHBOARD</span>
+    <div v-if="systemLogs.length > 0" class="system-logs" :class="{ collapsed: sysCollapsed }">
+      <div class="log-header" @click="sysCollapsed = !sysCollapsed">
+        <div class="log-header-left">
+          <span class="log-toggle">{{ sysCollapsed ? '▶' : '▼' }}</span>
+          <span class="log-title">SYSTEM DASHBOARD</span>
+          <span class="log-count">{{ systemLogs.length }} lines</span>
+        </div>
         <span class="log-id">{{ projectData?.project_id || 'NO_PROJECT' }}</span>
       </div>
-      <div class="log-content" ref="logContent">
+      <div v-if="!sysCollapsed" class="log-content" ref="logContent">
         <div class="log-line" v-for="(log, idx) in systemLogs" :key="idx">
           <span class="log-time">{{ log.time }}</span>
           <span class="log-msg">{{ log.msg }}</span>
@@ -201,6 +232,7 @@ const props = defineProps({
   ontologyProgress: Object,
   buildProgress: Object,
   graphData: Object,
+  effectiveGraphId: { type: String, default: '' },
   systemLogs: { type: Array, default: () => [] }
 })
 
@@ -208,7 +240,12 @@ defineEmits(['next-step'])
 
 const selectedOntologyItem = ref(null)
 const logContent = ref(null)
+const sysCollapsed = ref(true)
 const creatingSimulation = ref(false)
+const hasDualGraph = computed(() => {
+  const p = props.projectData
+  return !!(p?.graph_id_raw && p?.graph_id_disamb && p.graph_id_raw !== p.graph_id_disamb)
+})
 
 // 进入环境搭建 - 创建 simulation 并跳转
 const handleEnterEnvSetup = async () => {
@@ -220,23 +257,61 @@ const handleEnterEnvSetup = async () => {
   creatingSimulation.value = true
   
   try {
-    const res = await createSimulation({
-      project_id: props.projectData.project_id,
-      graph_id: props.projectData.graph_id,
-      enable_twitter: true,
-      enable_reddit: true
-    })
-    
-    if (res.success && res.data?.simulation_id) {
-      // 跳转到 simulation 页面
+    const gid = props.effectiveGraphId || props.projectData.graph_id
+    const createOne = async (graphId) => {
+      const res = await createSimulation({
+        project_id: props.projectData.project_id,
+        graph_id: graphId,
+        enable_twitter: true,
+        enable_reddit: true
+      })
+      if (!res.success || !res.data?.simulation_id) {
+        throw new Error(res.error || t('common.unknownError'))
+      }
+      return res.data.simulation_id
+    }
+
+    if (hasDualGraph.value) {
+      const rawId = props.projectData.graph_id_raw
+      const disambId = props.projectData.graph_id_disamb
+      const [rawRes, disambRes] = await Promise.allSettled([createOne(rawId), createOne(disambId)])
+      const created = {}
+      if (rawRes.status === 'fulfilled') created.raw = rawRes.value
+      if (disambRes.status === 'fulfilled') created.disamb = disambRes.value
+
+      if (!created.raw && !created.disamb) {
+        const errRaw = rawRes.status === 'rejected' ? rawRes.reason?.message : ''
+        const errDis = disambRes.status === 'rejected' ? disambRes.reason?.message : ''
+        alert(t('step1.createSimulationFailed', { error: `raw=${errRaw}; disamb=${errDis}` }))
+        return
+      }
+
+      if (!created.raw || !created.disamb) {
+        alert('AB双流程仅部分创建成功，请重试。')
+      }
+
+      const preferRaw = gid === rawId
+      const primary = preferRaw ? (created.raw || created.disamb) : (created.disamb || created.raw)
+      const shadow = primary === created.raw ? created.disamb : created.raw
+
+      const query = {
+        rawSimulationId: created.raw || '',
+        disambSimulationId: created.disamb || ''
+      }
+      if (shadow) query.shadowSimulationId = shadow
       router.push({
         name: 'Simulation',
-        params: { simulationId: res.data.simulation_id }
+        params: { simulationId: primary },
+        query
       })
-    } else {
-      console.error('创建模拟失败:', res.error)
-      alert(t('step1.createSimulationFailed', { error: res.error || t('common.unknownError') }))
+      return
     }
+
+    const simId = await createOne(gid)
+    router.push({
+      name: 'Simulation',
+      params: { simulationId: simId }
+    })
   } catch (err) {
     console.error('创建模拟异常:', err)
     alert(t('step1.createSimulationException', { error: err.message }))
@@ -580,6 +655,21 @@ watch(() => props.systemLogs.length, () => {
   border-radius: 6px;
 }
 
+.graph-stream-panel {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  font-size: 11px;
+  color: #166534;
+  line-height: 1.5;
+}
+
+.graph-stream-line + .graph-stream-line {
+  margin-top: 4px;
+}
+
 .stat-card {
   text-align: center;
 }
@@ -645,41 +735,56 @@ watch(() => props.systemLogs.length, () => {
 
 /* System Logs */
 .system-logs {
-  background: #000;
+  background: #0a0a0a;
   color: #DDD;
-  padding: 16px;
   font-family: 'JetBrains Mono', monospace;
-  border-top: 1px solid #222;
+  border-top: 1px solid #1e1e1e;
   flex-shrink: 0;
+}
+
+.system-logs.collapsed .log-header {
+  border-bottom: none;
 }
 
 .log-header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #333;
-  padding-bottom: 8px;
-  margin-bottom: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+  user-select: none;
   font-size: 10px;
+  color: #555;
+  transition: background 0.15s;
+}
+
+.log-header:hover {
+  background: #111;
   color: #888;
 }
+
+.log-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.log-toggle { font-size: 8px; color: #444; }
+.log-count { font-size: 10px; color: #3a3a3a; }
+.log-id { font-size: 10px; color: #333; }
 
 .log-content {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  height: 80px; /* Approx 4 lines visible */
+  height: 100px;
   overflow-y: auto;
-  padding-right: 4px;
+  padding: 8px 14px 10px;
+  border-top: 1px solid #1a1a1a;
 }
 
-.log-content::-webkit-scrollbar {
-  width: 4px;
-}
-
-.log-content::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 2px;
-}
+.log-content::-webkit-scrollbar { width: 4px; }
+.log-content::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
 
 .log-line {
   font-size: 11px;
