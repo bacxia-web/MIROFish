@@ -374,13 +374,17 @@
       </div>
     </div>
 
-    <!-- Bottom Console Logs -->
-    <div class="console-logs">
-      <div class="log-header">
-        <span class="log-title">CONSOLE OUTPUT</span>
+    <!-- Bottom Console Logs：有日志时显示可折叠面板，无日志时完全隐藏 -->
+    <div v-if="consoleLogs.length > 0" class="console-logs" :class="{ collapsed: consoleCollapsed }">
+      <div class="log-header" @click="consoleCollapsed = !consoleCollapsed">
+        <div class="log-header-left">
+          <span class="log-toggle">{{ consoleCollapsed ? '▶' : '▼' }}</span>
+          <span class="log-title">CONSOLE OUTPUT</span>
+          <span class="log-count">{{ consoleLogs.length }} lines</span>
+        </div>
         <span class="log-id">{{ reportId || 'NO_REPORT' }}</span>
       </div>
-      <div class="log-content" ref="logContent">
+      <div v-if="!consoleCollapsed" class="log-content" ref="logContent">
         <div class="log-line" v-for="(log, idx) in consoleLogs" :key="idx">
           <span class="log-msg" :class="getLogLevelClass(log)">{{ log }}</span>
         </div>
@@ -391,11 +395,12 @@
 
 <script setup>
 import { ref, computed, watch, onMounted, onUnmounted, nextTick, h, reactive } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { getAgentLog, getConsoleLog } from '../api/report'
 
 const router = useRouter()
+const route = useRoute()
 const { t } = useI18n()
 
 const props = defineProps({
@@ -409,13 +414,14 @@ const emit = defineEmits(['add-log', 'update-status'])
 // Navigation
 const goToInteraction = () => {
   if (props.reportId) {
-    router.push({ name: 'Interaction', params: { reportId: props.reportId } })
+    router.push({ name: 'Interaction', params: { reportId: props.reportId }, query: route.query })
   }
 }
 
 // State
 const agentLogs = ref([])
 const consoleLogs = ref([])
+const consoleCollapsed = ref(true) // 默认折叠，不干扰正常阅读
 const agentLogLine = ref(0)
 const consoleLogLine = ref(0)
 const reportOutline = ref(null)
@@ -2141,7 +2147,9 @@ const fetchConsoleLog = async () => {
       if (newLogs.length > 0) {
         consoleLogs.value.push(...newLogs)
         consoleLogLine.value = res.data.from_line + newLogs.length
-        
+        // 生成中自动展开控制台，让用户看到进度
+        if (!isComplete.value) consoleCollapsed.value = false
+
         nextTick(() => {
           if (logContent.value) {
             logContent.value.scrollTop = logContent.value.scrollHeight
@@ -5104,22 +5112,39 @@ watch(() => props.reportId, (newId) => {
 
 /* Console Logs - 与 Step3Simulation.vue 保持一致 */
 .console-logs {
-  background: #000;
+  background: #0a0a0a;
   color: #DDD;
-  padding: 16px;
   font-family: 'JetBrains Mono', monospace;
-  border-top: 1px solid #222;
+  border-top: 1px solid #1e1e1e;
   flex-shrink: 0;
 }
 
 .log-header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #333;
-  padding-bottom: 8px;
-  margin-bottom: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+  user-select: none;
   font-size: 10px;
-  color: #666;
+  color: #555;
+  transition: background 0.15s;
+}
+
+.log-header:hover {
+  background: #111;
+  color: #888;
+}
+
+.log-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.log-toggle {
+  font-size: 8px;
+  color: #444;
 }
 
 .log-title {
@@ -5127,17 +5152,28 @@ watch(() => props.reportId, (newId) => {
   letter-spacing: 0.1em;
 }
 
+.log-count {
+  font-size: 10px;
+  color: #3a3a3a;
+}
+
+.log-id {
+  font-size: 10px;
+  color: #333;
+}
+
 .log-content {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  height: 100px;
+  height: 120px;
   overflow-y: auto;
-  padding-right: 4px;
+  padding: 8px 14px 10px;
+  border-top: 1px solid #1a1a1a;
 }
 
 .log-content::-webkit-scrollbar { width: 4px; }
-.log-content::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+.log-content::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
 
 .log-line {
   font-size: 11px;
@@ -5145,8 +5181,13 @@ watch(() => props.reportId, (newId) => {
 }
 
 .log-msg {
-  color: #BBB;
+  color: #666;
   word-break: break-all;
+}
+
+/* 折叠态只露一行 header */
+.console-logs.collapsed .log-header {
+  border-bottom: none;
 }
 
 .log-msg.error { color: #EF5350; }
