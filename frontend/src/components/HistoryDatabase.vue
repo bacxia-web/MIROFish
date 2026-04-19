@@ -281,72 +281,38 @@ const CARD_GAP = 24
 // 动态计算容器高度样式
 const containerStyle = computed(() => {
   if (!isExpanded.value) {
-    // 折叠态：固定高度
+    // 折叠态：固定高度（扇形堆叠用绝对定位，需要手动撑高）
     return { minHeight: '420px' }
   }
-  
-  // 展开态：根据卡片数量动态计算高度
-  const total = visibleProjects.value.length
-  if (total === 0) {
-    return { minHeight: '280px' }
-  }
-  
-  const rows = Math.ceil(total / CARDS_PER_ROW)
-  // 计算实际需要的高度：行数 * 卡片高度 + (行数-1) * 间距 + 少量底部间距
-  const expandedHeight = rows * CARD_HEIGHT + (rows - 1) * CARD_GAP + 10
-  
-  return { minHeight: `${expandedHeight}px` }
+  // 展开态：CSS Grid 自动撑高，不需要手动计算
+  return {}
 })
 
 // 获取卡片样式
 const getCardStyle = (index) => {
-  const total = visibleProjects.value.length
-  
   if (isExpanded.value) {
-    // 展开态：网格布局
-    const transition = 'transform 700ms cubic-bezier(0.23, 1, 0.32, 1), opacity 700ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease, border-color 0.3s ease'
-
-    const col = index % CARDS_PER_ROW
-    const row = Math.floor(index / CARDS_PER_ROW)
-    
-    // 计算当前行的卡片数量，确保每行居中
-    const currentRowStart = row * CARDS_PER_ROW
-    const currentRowCards = Math.min(CARDS_PER_ROW, total - currentRowStart)
-    
-    const rowWidth = currentRowCards * CARD_WIDTH + (currentRowCards - 1) * CARD_GAP
-    
-    const startX = -(rowWidth / 2) + (CARD_WIDTH / 2)
-    const colInRow = index % CARDS_PER_ROW
-    const x = startX + colInRow * (CARD_WIDTH + CARD_GAP)
-    
-    // 向下展开，增加与标题的间距
-    const y = 20 + row * (CARD_HEIGHT + CARD_GAP)
-
+    // 展开态：CSS Grid 接管布局，卡片不需要 transform
     return {
-      transform: `translate(${x}px, ${y}px) rotate(0deg) scale(1)`,
-      zIndex: 100 + index,
       opacity: 1,
-      transition: transition
+      transition: 'box-shadow 0.3s ease, border-color 0.3s ease'
     }
-  } else {
-    // 折叠态：扇形堆叠
-    const transition = 'transform 700ms cubic-bezier(0.23, 1, 0.32, 1), opacity 700ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease, border-color 0.3s ease'
+  }
 
-    const centerIndex = (total - 1) / 2
-    const offset = index - centerIndex
-    
-    const x = offset * 35
-    // 调整起始位置，靠近标题但保持适当间距
-    const y = 25 + Math.abs(offset) * 8
-    const r = offset * 3
-    const s = 0.95 - Math.abs(offset) * 0.05
-    
-    return {
-      transform: `translate(${x}px, ${y}px) rotate(${r}deg) scale(${s})`,
-      zIndex: 10 + index,
-      opacity: 1,
-      transition: transition
-    }
+  // 折叠态：扇形堆叠（绝对定位）
+  const total = visibleProjects.value.length
+  const transition = 'transform 700ms cubic-bezier(0.23, 1, 0.32, 1), opacity 700ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease, border-color 0.3s ease'
+  const centerIndex = (total - 1) / 2
+  const offset = index - centerIndex
+  const x = offset * 35
+  const y = 25 + Math.abs(offset) * 8
+  const r = offset * 3
+  const s = 0.95 - Math.abs(offset) * 0.05
+
+  return {
+    transform: `translate(${x}px, ${y}px) rotate(${r}deg) scale(${s})`,
+    zIndex: 10 + index,
+    opacity: 1,
+    transition: transition
   }
 }
 
@@ -641,15 +607,27 @@ onActivated(() => {
 /* 卡片容器 */
 .cards-container {
   position: relative;
+  width: 100%;
+  transition: min-height 700ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* 展开态：CSS Grid，自动撑满容器宽度 */
+.cards-container.expanded {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding-top: 10px;
+  position: static;
+}
+
+/* 折叠态：保留绝对定位扇形堆叠 */
+.cards-container:not(.expanded) {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 0;
-  transition: min-height 700ms cubic-bezier(0.23, 1, 0.32, 1);
-  /* min-height 由 JS 动态计算，根据卡片数量自适应 */
 }
 
-/* 项目卡片 */
+/* 项目卡片 - 折叠态（绝对定位扇形） */
 .project-card {
   position: absolute;
   width: 280px;
@@ -660,6 +638,13 @@ onActivated(() => {
   cursor: pointer;
   box-shadow: none;
   transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 700ms cubic-bezier(0.23, 1, 0.32, 1), opacity 700ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* 展开态：回归文档流，让 Grid 控制尺寸 */
+.project-card.expanded {
+  position: static;
+  width: 100%;
+  min-height: 280px;
 }
 
 .card-hide-btn {
@@ -1013,17 +998,33 @@ onActivated(() => {
 
 /* 响应式 */
 @media (max-width: 1200px) {
-  .project-card {
+  /* 折叠态扇形卡片宽度 */
+  .project-card:not(.expanded) {
     width: 240px;
+  }
+  /* 展开态 Grid：中屏改为3列 */
+  .cards-container.expanded {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 768px) {
-  .cards-container {
-    padding: 0 20px;
+@media (max-width: 900px) {
+  /* 展开态 Grid：小屏改为2列 */
+  .cards-container.expanded {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .project-card {
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    padding: 0;
+  }
+  .project-card:not(.expanded) {
     width: 200px;
+  }
+  /* 展开态 Grid：手机改为1列 */
+  .cards-container.expanded {
+    grid-template-columns: 1fr;
   }
 }
 
