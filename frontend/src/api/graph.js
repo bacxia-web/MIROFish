@@ -68,3 +68,13 @@ export function getProject(projectId) {
     method: 'get'
   })
 }
+
+/**
+ * 项目三层质量指标（与 quality_metrics.json 同源）
+ */
+export function getQualityMetrics(projectId) {
+  return service({
+    url: `/api/graph/project/${projectId}/quality-metrics`,
+    method: 'get'
+  })
+}

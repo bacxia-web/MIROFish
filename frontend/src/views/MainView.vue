@@ -37,14 +37,50 @@
 
     <!-- Main Content Area -->
     <main class="content-area">
-      <!-- Left Panel: Graph -->
+      <!-- Left Panel: Graph（构图中对照组/实验组双栏实时渲染） -->
       <div class="panel-wrapper left" :style="leftPanelStyle">
-        <GraphPanel 
+        <div v-if="showDualBuildGraphs" class="dual-graph-build">
+          <div class="dual-graph-pane">
+            <div class="dual-graph-label">{{ $t('graph.controlGroup') }}</div>
+            <GraphPanel
+              :graphData="graphDataRaw"
+              :loading="graphLoadingRaw"
+              :currentPhase="currentPhase"
+              :graphVariant="'raw'"
+              :showGraphVariantTabs="false"
+              @refresh="() => refreshGraphVariant('raw')"
+              @toggle-maximize="toggleMaximize('graph')"
+              @select-variant="() => {}"
+            />
+          </div>
+          <div class="dual-graph-pane dual-graph-pane--experimental">
+            <div class="dual-graph-label">{{ $t('graph.experimentalGroup') }}</div>
+            <div v-if="!projectData?.graph_id_disamb" class="dual-graph-waiting">
+              {{ $t('graph.experimentalPending') }}
+            </div>
+            <GraphPanel
+              v-else
+              :graphData="graphDataDisamb"
+              :loading="graphLoadingDisamb"
+              :currentPhase="currentPhase"
+              :graphVariant="'disamb'"
+              :showGraphVariantTabs="false"
+              @refresh="() => refreshGraphVariant('disamb')"
+              @toggle-maximize="toggleMaximize('graph')"
+              @select-variant="() => {}"
+            />
+          </div>
+        </div>
+        <GraphPanel
+          v-else
           :graphData="graphData"
           :loading="graphLoading"
           :currentPhase="currentPhase"
+          :graphVariant="graphVariant"
+          :showGraphVariantTabs="hasDualGraph"
           @refresh="refreshGraph"
           @toggle-maximize="toggleMaximize('graph')"
+          @select-variant="onGraphVariantSelect"
         />
       </div>
 
@@ -58,6 +94,7 @@
           :ontologyProgress="ontologyProgress"
           :buildProgress="buildProgress"
           :graphData="graphData"
+          :effectiveGraphId="effectiveGraphId"
           :systemLogs="systemLogs"
           @next-step="handleNextStep"
         />
@@ -71,18 +108,23 @@
           @next-step="handleNextStep"
           @add-log="addLog"
         />
+        <QualityMetricsPanel
+          v-if="currentProjectId && currentProjectId !== 'new'"
+          :project-id="currentProjectId"
+        />
       </div>
     </main>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import GraphPanel from '../components/GraphPanel.vue'
 import Step1GraphBuild from '../components/Step1GraphBuild.vue'
 import Step2EnvSetup from '../components/Step2EnvSetup.vue'
+import QualityMetricsPanel from '../components/QualityMetricsPanel.vue'
 import { generateOntology, getProject, buildGraph, getTaskStatus, getGraphData } from '../api/graph'
 import { getPendingUpload, clearPendingUpload } from '../store/pendingUpload'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
@@ -105,14 +147,77 @@ const graphLoading = ref(false)
 const error = ref('')
 const projectData = ref(null)
 const graphData = ref(null)
+/** 本地双管线构图：对照组 / 实验组各自图谱数据（仅构建阶段双栏） */
+const graphDataRaw = ref(null)
+const graphDataDisamb = ref(null)
+const graphLoadingRaw = ref(false)
+const graphLoadingDisamb = ref(false)
 const currentPhase = ref(-1) // -1: Upload, 0: Ontology, 1: Build, 2: Complete
 const ontologyProgress = ref(null)
 const buildProgress = ref(null)
 const systemLogs = ref([])
 
+/** @type {import('vue').Ref<'raw'|'disamb'>} */
+const graphVariant = ref('disamb')
+
+const hasDualGraph = computed(() => {
+  const p = projectData.value
+  return !!(p?.graph_id_raw && p?.graph_id_disamb && p.graph_id_raw !== p.graph_id_disamb)
+})
+
+/** Step1 构图进行中且为本地 A/B：双栏实时预览 */
+const showDualBuildGraphs = computed(() => {
+  if (currentPhase.value !== 1) return false
+  const p = projectData.value
+  if (!p?.graph_id_raw) return false
+  const d = p.graph_id_disamb
+  if (!d) return true
+  return d !== p.graph_id_raw
+})
+
+const GRAPH_POLL_BUILD_MS = 1800
+
+function resolveGraphId(project, variant) {
+  if (!project) return null
+  if (
+    project.graph_id_raw &&
+    project.graph_id_disamb &&
+    project.graph_id_raw !== project.graph_id_disamb &&
+    variant === 'raw'
+  ) {
+    return project.graph_id_raw
+  }
+  return project.graph_id_disamb || project.graph_id
+}
+
+const effectiveGraphId = computed(() =>
+  resolveGraphId(projectData.value, graphVariant.value)
+)
+
+function storageKeyGraphVariant(pid) {
+  return pid ? `mirofish_gv_${pid}` : null
+}
+
+function restoreGraphVariant(pid) {
+  const key = storageKeyGraphVariant(pid)
+  if (!key) return
+  const v = localStorage.getItem(key)
+  graphVariant.value = v === 'raw' ? 'raw' : 'disamb'
+}
+
+const onGraphVariantSelect = (v) => {
+  if (v !== 'raw' && v !== 'disamb') return
+  graphVariant.value = v
+  const key = storageKeyGraphVariant(currentProjectId.value)
+  if (key) localStorage.setItem(key, v)
+  const gid = resolveGraphId(projectData.value, v)
+  if (gid) loadGraph(gid)
+}
+
 // Polling timers
 let pollTimer = null
 let graphPollTimer = null
+let graphPollInFlight = false
 
 // --- Computed Layout Styles ---
 const leftPanelStyle = computed(() => {
@@ -249,7 +354,8 @@ const loadProject = async () => {
         startGraphPolling()
       } else if (res.data.status === 'graph_completed' && res.data.graph_id) {
         currentPhase.value = 2
-        await loadGraph(res.data.graph_id)
+        restoreGraphVariant(currentProjectId.value)
+        await loadGraph(resolveGraphId(res.data, graphVariant.value))
       }
     } else {
       error.value = res.error
@@ -294,27 +400,86 @@ const startBuildGraph = async () => {
   }
 }
 
+const shouldPollGraphData = computed(() => {
+  // 只在 Step1 且构图阶段进行“全量图数据”轮询，避免 Step2 创建人设时反复拉图
+  return currentStep.value === 1 && currentPhase.value === 1
+})
+
 const startGraphPolling = () => {
-  addLog('Started polling for graph data...')
+  if (!shouldPollGraphData.value) return
+  addLog('Started polling for graph data (live build refresh)...')
+  stopGraphPolling()
   fetchGraphData()
-  graphPollTimer = setInterval(fetchGraphData, 10000)
+  graphPollTimer = setInterval(fetchGraphData, GRAPH_POLL_BUILD_MS)
 }
 
 const fetchGraphData = async () => {
+  if (!shouldPollGraphData.value) return
+  if (graphPollInFlight) return
+  graphPollInFlight = true
   try {
-    // Refresh project info to check for graph_id
     const projRes = await getProject(currentProjectId.value)
-    if (projRes.success && projRes.data.graph_id) {
-      const gRes = await getGraphData(projRes.data.graph_id)
-      if (gRes.success) {
-        graphData.value = gRes.data
-        const nodeCount = gRes.data.node_count || gRes.data.nodes?.length || 0
-        const edgeCount = gRes.data.edge_count || gRes.data.edges?.length || 0
-        addLog(`Graph data refreshed. Nodes: ${nodeCount}, Edges: ${edgeCount}`)
+    if (!projRes.success || !projRes.data) return
+    projectData.value = projRes.data
+
+    if (showDualBuildGraphs.value) {
+      const rId = projRes.data.graph_id_raw
+      const dId = projRes.data.graph_id_disamb
+      if (rId) {
+        try {
+          const r = await getGraphData(rId)
+          if (r.success) graphDataRaw.value = r.data
+        } catch (_) { /* 构建中数据可能持续增长 */ }
+      } else {
+        graphDataRaw.value = null
       }
+      if (dId) {
+        try {
+          const r = await getGraphData(dId)
+          if (r.success) graphDataDisamb.value = r.data
+        } catch (_) { /* ok */ }
+      } else {
+        graphDataDisamb.value = null
+      }
+      graphData.value =
+        graphVariant.value === 'raw' ? graphDataRaw.value : graphDataDisamb.value
+      return
+    }
+
+    const gid = resolveGraphId(projRes.data, graphVariant.value)
+    if (!gid) return
+    const gRes = await getGraphData(gid)
+    if (gRes.success) {
+      graphData.value = gRes.data
+      const nodeCount = gRes.data.node_count || gRes.data.nodes?.length || 0
+      const edgeCount = gRes.data.edge_count || gRes.data.edges?.length || 0
+      addLog(`Graph data refreshed. Nodes: ${nodeCount}, Edges: ${edgeCount}`)
     }
   } catch (err) {
     console.warn('Graph fetch error:', err)
+  } finally {
+    graphPollInFlight = false
+  }
+}
+
+const refreshGraphVariant = async (variant) => {
+  const v = variant === 'raw' ? 'raw' : 'disamb'
+  const loadingRef = v === 'raw' ? graphLoadingRaw : graphLoadingDisamb
+  loadingRef.value = true
+  try {
+    const projRes = await getProject(currentProjectId.value)
+    if (!projRes.success || !projRes.data) return
+    projectData.value = projRes.data
+    const gid = v === 'raw' ? projRes.data.graph_id_raw : projRes.data.graph_id_disamb
+    if (!gid) return
+    const gRes = await getGraphData(gid)
+    if (gRes.success) {
+      if (v === 'raw') graphDataRaw.value = gRes.data
+      else graphDataDisamb.value = gRes.data
+      addLog(`Graph refreshed (${v})`)
+    }
+  } finally {
+    loadingRef.value = false
   }
 }
 
@@ -334,19 +499,25 @@ const pollTaskStatus = async (taskId) => {
         addLog(task.message)
       }
       
-      buildProgress.value = { progress: task.progress || 0, message: task.message }
-      
+      buildProgress.value = {
+        progress: task.progress || 0,
+        message: task.message,
+        graphStream: task.progress_detail?.graph_stream || null,
+      }
+
       if (task.status === 'completed') {
         addLog('Graph build task completed.')
         stopPolling()
         stopGraphPolling() // Stop polling, do final load
         currentPhase.value = 2
-        
+        graphDataRaw.value = null
+        graphDataDisamb.value = null
+
         // Final load
         const projRes = await getProject(currentProjectId.value)
         if (projRes.success && projRes.data.graph_id) {
             projectData.value = projRes.data
-            await loadGraph(projRes.data.graph_id)
+            await loadGraph(resolveGraphId(projRes.data, graphVariant.value))
         }
       } else if (task.status === 'failed') {
         stopPolling()
@@ -378,9 +549,10 @@ const loadGraph = async (graphId) => {
 }
 
 const refreshGraph = () => {
-  if (projectData.value?.graph_id) {
+  const gid = resolveGraphId(projectData.value, graphVariant.value)
+  if (gid) {
     addLog('Manual graph refresh triggered.')
-    loadGraph(projectData.value.graph_id)
+    loadGraph(gid)
   }
 }
 
@@ -398,6 +570,12 @@ const stopGraphPolling = () => {
     addLog('Graph polling stopped.')
   }
 }
+
+// 进入 Step2（创建人设）或离开构图阶段时，强制停止图谱全量轮询，避免后台继续拉 /graph/data
+watch(shouldPollGraphData, (ok) => {
+  if (!ok) stopGraphPolling()
+  else if (!graphPollTimer) startGraphPolling()
+}, { immediate: true })
 
 onMounted(() => {
   initProject()
@@ -422,12 +600,13 @@ onUnmounted(() => {
 /* Header */
 .app-header {
   height: 60px;
-  border-bottom: 1px solid #EAEAEA;
+  border-bottom: 1px solid #1a2a3e;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  background: #FFF;
+  background: rgba(4,8,16,0.95);
+  backdrop-filter: blur(16px);
   z-index: 100;
   position: relative;
 }
@@ -443,12 +622,13 @@ onUnmounted(() => {
   font-weight: 800;
   font-size: 18px;
   letter-spacing: 1px;
+  color: #e2e8f0;
   cursor: pointer;
 }
 
 .view-switcher {
   display: flex;
-  background: #F5F5F5;
+  background: #0e1724;
   padding: 4px;
   border-radius: 6px;
   gap: 4px;
@@ -460,16 +640,16 @@ onUnmounted(() => {
   padding: 6px 16px;
   font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: #64748b;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .switch-btn.active {
-  background: #FFF;
-  color: #000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background: #1a2a3e;
+  color: #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .status-indicator {
@@ -477,7 +657,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: #666;
+  color: #64748b;
   font-weight: 500;
 }
 
@@ -497,28 +677,28 @@ onUnmounted(() => {
 .step-num {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
-  color: #999;
+  color: #64748b;
 }
 
 .step-name {
   font-weight: 700;
-  color: #000;
+  color: #e2e8f0;
 }
 
 .step-divider {
   width: 1px;
   height: 14px;
-  background-color: #E0E0E0;
+  background-color: #1a2a3e;
 }
 
 .dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #CCC;
+  background: #2d3a4a;
 }
 
-.status-indicator.processing .dot { background: #FF5722; animation: pulse 1s infinite; }
+.status-indicator.processing .dot { background: #3B82F6; animation: pulse 1s infinite; }
 .status-indicator.completed .dot { background: #4CAF50; }
 .status-indicator.error .dot { background: #F44336; }
 
@@ -541,5 +721,54 @@ onUnmounted(() => {
 
 .panel-wrapper.left {
   border-right: 1px solid #EAEAEA;
+}
+
+.dual-graph-build {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  height: 100%;
+  min-height: 0;
+}
+
+.dual-graph-pane {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  border-right: 1px solid #EAEAEA;
+}
+
+.dual-graph-pane:last-child {
+  border-right: none;
+}
+
+.dual-graph-label {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #666;
+  background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+  border-bottom: 1px solid #eee;
+}
+
+.dual-graph-pane :deep(.graph-panel) {
+  flex: 1;
+  min-height: 0;
+}
+
+.dual-graph-waiting {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-size: 13px;
+  color: #888;
+  text-align: center;
+  background: #fafafa;
 }
 </style>

@@ -24,8 +24,40 @@
           <div class="header-left">
             <span class="header-deco">◆</span>
             <span class="header-title">实时知识图谱</span>
+            <div v-if="showDualBuildGraphs" class="build-graph-tabs">
+              <button
+                type="button"
+                :class="{ active: buildGraphTab === 'raw' }"
+                @click="setBuildGraphTab('raw')"
+              >
+                {{ t('graph.variantControl') }}
+              </button>
+              <button
+                type="button"
+                :class="{ active: buildGraphTab === 'disamb' }"
+                :disabled="!projectData?.graph_id_disamb"
+                @click="setBuildGraphTab('disamb')"
+              >
+                {{ t('graph.variantExperimental') }}
+              </button>
+            </div>
           </div>
           <div class="header-right">
+            <template v-if="buildProgress?.graphStream">
+              <span
+                v-if="buildProgress.graphStream.control"
+                class="stat-item stream-chip"
+              >
+                {{ t('graph.streamControl', { nodes: buildProgress.graphStream.control.node_count ?? 0, edges: buildProgress.graphStream.control.edge_count ?? 0 }) }}
+              </span>
+              <span
+                v-if="buildProgress.graphStream.experimental"
+                class="stat-item stream-chip"
+              >
+                {{ t('graph.streamExperimental', { nodes: buildProgress.graphStream.experimental.node_count ?? 0, edges: buildProgress.graphStream.experimental.edge_count ?? 0 }) }}
+              </span>
+              <span class="stat-divider">|</span>
+            </template>
             <template v-if="graphData">
               <span class="stat-item">{{ graphData.node_count || graphData.nodes?.length || 0 }} 节点</span>
               <span class="stat-divider">|</span>
@@ -317,7 +349,7 @@
               <div class="detail-section">
                 <div class="detail-label">接口说明</div>
                 <div class="detail-content">
-                  基于生成的本体，将文档分块后调用 Zep API 构建知识图谱，提取实体和关系
+                  {{ t('step1.graphRagDesc') }}
                 </div>
               </div>
               
@@ -413,6 +445,7 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import { generateOntology, getProject, buildGraph, getTaskStatus, getGraphData } from '../api/graph'
 import { getPendingUpload, clearPendingUpload } from '../store/pendingUpload'
@@ -420,6 +453,7 @@ import * as d3 from 'd3'
 
 const route = useRoute()
 const router = useRouter()
+const { t } = useI18n()
 
 // 当前项目ID（可能从'new'变为实际ID）
 const currentProjectId = ref(route.params.projectId)
@@ -430,6 +464,10 @@ const graphLoading = ref(false)
 const error = ref('')
 const projectData = ref(null)
 const graphData = ref(null)
+const graphDataRaw = ref(null)
+const graphDataDisamb = ref(null)
+/** @type {import('vue').Ref<'raw'|'disamb'>} */
+const buildGraphTab = ref('raw')
 const buildProgress = ref(null)
 const ontologyProgress = ref(null) // 本体生成进度
 const currentPhase = ref(-1) // -1: 上传中, 0: 本体生成中, 1: 图谱构建, 2: 完成
@@ -458,6 +496,17 @@ const statusText = computed(() => {
   return '初始化中'
 })
 
+const showDualBuildGraphs = computed(() => {
+  if (currentPhase.value !== 1) return false
+  const p = projectData.value
+  if (!p?.graph_id_raw) return false
+  const d = p.graph_id_disamb
+  if (!d) return true
+  return d !== p.graph_id_raw
+})
+
+const GRAPH_POLL_BUILD_MS = 1800
+
 const entityTypes = computed(() => {
   if (!graphData.value?.nodes) return []
   
@@ -476,6 +525,13 @@ const entityTypes = computed(() => {
 })
 
 // 方法
+const setBuildGraphTab = async (tab) => {
+  buildGraphTab.value = tab
+  graphData.value = tab === 'raw' ? graphDataRaw.value : graphDataDisamb.value
+  await nextTick()
+  renderGraph()
+}
+
 const goHome = () => {
   router.push('/')
 }
@@ -636,6 +692,7 @@ const loadProject = async () => {
       // 继续轮询构建中的任务
       if (response.data.status === 'graph_building' && response.data.graph_build_task_id) {
         currentPhase.value = 1
+        startGraphPolling()
         startPollingTask(response.data.graph_build_task_id)
       }
       
@@ -712,13 +769,11 @@ let graphPollTimer = null
 
 // 启动图谱数据轮询
 const startGraphPolling = () => {
-  // 立即获取一次
+  stopGraphPolling()
   fetchGraphData()
-  
-  // 每 10 秒自动获取一次图谱数据
-  graphPollTimer = setInterval(async () => {
-    await fetchGraphData()
-  }, 10000)
+  graphPollTimer = setInterval(() => {
+    fetchGraphData()
+  }, GRAPH_POLL_BUILD_MS)
 }
 
 // 手动刷新图谱
@@ -739,24 +794,71 @@ const stopGraphPolling = () => {
 // 获取图谱数据
 const fetchGraphData = async () => {
   try {
-    // 先获取项目信息以获取 graph_id
     const projectResponse = await getProject(currentProjectId.value)
-    
-    if (projectResponse.success && projectResponse.data.graph_id) {
+    if (!projectResponse.success || !projectResponse.data) return
+    projectData.value = projectResponse.data
+
+    if (
+      showDualBuildGraphs.value &&
+      (projectResponse.data.graph_id_raw ||
+        projectResponse.data.graph_id_disamb)
+    ) {
+      const rId = projectResponse.data.graph_id_raw
+      const dId = projectResponse.data.graph_id_disamb
+      let changed = false
+      if (rId) {
+        try {
+          const r = await getGraphData(rId)
+          if (r.success && r.data) {
+            const nc = r.data.node_count || r.data.nodes?.length || 0
+            const oc = graphDataRaw.value?.node_count || graphDataRaw.value?.nodes?.length || 0
+            if (nc !== oc) changed = true
+            graphDataRaw.value = r.data
+          }
+        } catch (_) { /* 构建中 */ }
+      } else {
+        graphDataRaw.value = null
+      }
+      if (dId) {
+        try {
+          const r = await getGraphData(dId)
+          if (r.success && r.data) {
+            const nc = r.data.node_count || r.data.nodes?.length || 0
+            const oc =
+              graphDataDisamb.value?.node_count ||
+              graphDataDisamb.value?.nodes?.length ||
+              0
+            if (nc !== oc) changed = true
+            graphDataDisamb.value = r.data
+          }
+        } catch (_) { /* ok */ }
+      } else {
+        graphDataDisamb.value = null
+      }
+
+      const nextView =
+        buildGraphTab.value === 'raw' ? graphDataRaw.value : graphDataDisamb.value
+      const newNodeCount = nextView?.node_count || nextView?.nodes?.length || 0
+      const oldNodeCount =
+        graphData.value?.node_count || graphData.value?.nodes?.length || 0
+      if (changed || newNodeCount !== oldNodeCount || !graphData.value) {
+        graphData.value = nextView
+        await nextTick()
+        renderGraph()
+      }
+      return
+    }
+
+    if (projectResponse.data.graph_id) {
       const graphId = projectResponse.data.graph_id
-      projectData.value = projectResponse.data
-      
-      // 获取图谱数据
       const graphResponse = await getGraphData(graphId)
-      
+
       if (graphResponse.success && graphResponse.data) {
         const newData = graphResponse.data
         const newNodeCount = newData.node_count || newData.nodes?.length || 0
-        const oldNodeCount = graphData.value?.node_count || graphData.value?.nodes?.length || 0
-        
-        console.log('Fetching graph data, nodes:', newNodeCount, 'edges:', newData.edge_count || newData.edges?.length || 0)
-        
-        // 数据有变化时更新渲染
+        const oldNodeCount =
+          graphData.value?.node_count || graphData.value?.nodes?.length || 0
+
         if (newNodeCount !== oldNodeCount || !graphData.value) {
           graphData.value = newData
           await nextTick()
@@ -788,10 +890,11 @@ const pollTaskStatus = async (taskId) => {
     if (response.success) {
       const task = response.data
       
-      // 更新进度显示
+      // 更新进度显示（含后端 graph_stream 快照）
       buildProgress.value = {
         progress: task.progress || 0,
-        message: task.message || '处理中...'
+        message: task.message || '处理中...',
+        graphStream: task.progress_detail?.graph_stream || null,
       }
       
       console.log('Task status:', task.status, 'Progress:', task.progress)
@@ -802,11 +905,13 @@ const pollTaskStatus = async (taskId) => {
         stopPolling()
         stopGraphPolling()
         currentPhase.value = 2
-        
+        graphDataRaw.value = null
+        graphDataDisamb.value = null
+
         // 更新进度显示为完成状态
         buildProgress.value = {
           progress: 100,
-          message: '构建完成，正在加载图谱...'
+          message: '构建完成，正在加载图谱...',
         }
         
         // 重新加载项目数据获取 graph_id
@@ -1243,6 +1348,43 @@ onUnmounted(() => {
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.05em;
+}
+
+.build-graph-tabs {
+  display: flex;
+  gap: 6px;
+  margin-left: 12px;
+}
+
+.build-graph-tabs button {
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  padding: 4px 10px;
+  font-size: 11px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #555;
+}
+
+.build-graph-tabs button.active {
+  background: #fff;
+  border-color: #ff6b35;
+  color: #000;
+  font-weight: 600;
+}
+
+.build-graph-tabs button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.stat-item.stream-chip {
+  font-size: 10px;
+  color: #166534;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .header-right {

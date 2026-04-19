@@ -32,6 +32,10 @@
           <span class="dot"></span>
           {{ statusText }}
         </span>
+        <div v-if="hasDualGraph" class="ab-status-bar">
+          <span class="ab-pill">RAW: {{ abReportStatus.raw }}</span>
+          <span class="ab-pill">DISAMB: {{ abReportStatus.disamb }}</span>
+        </div>
       </div>
     </header>
 
@@ -44,8 +48,11 @@
           :loading="graphLoading"
           :currentPhase="5"
           :isSimulating="false"
+          :graphVariant="graphVariant"
+          :showGraphVariantTabs="hasDualGraph"
           @refresh="refreshGraph"
           @toggle-maximize="toggleMaximize('graph')"
+          @select-variant="onGraphVariantSelect"
         />
       </div>
 
@@ -64,12 +71,17 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import GraphPanel from '../components/GraphPanel.vue'
 import Step5Interaction from '../components/Step5Interaction.vue'
 import { getProject, getGraphData } from '../api/graph'
+import {
+  effectiveGraphIdFromProject,
+  getGraphVariantForProject,
+  resolveProjectGraphId
+} from '../utils/graphVariant'
 import { getSimulation } from '../api/simulation'
 import { getReport } from '../api/report'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
@@ -89,11 +101,22 @@ const viewMode = ref('workbench')
 // Data State
 const currentReportId = ref(route.params.reportId)
 const simulationId = ref(null)
+const reportIds = ref({
+  raw: '',
+  disamb: ''
+})
 const projectData = ref(null)
 const graphData = ref(null)
 const graphLoading = ref(false)
+const graphVariant = ref('disamb')
+const hasDualGraph = computed(() => {
+  const p = projectData.value
+  return !!(p?.graph_id_raw && p?.graph_id_disamb && p.graph_id_raw !== p.graph_id_disamb)
+})
 const systemLogs = ref([])
 const currentStatus = ref('ready') // ready | processing | completed | error
+const abReportStatus = ref({ raw: '-', disamb: '-' })
+let abStatusTimer = null
 
 // --- Computed Layout Styles ---
 const leftPanelStyle = computed(() => {
@@ -143,15 +166,16 @@ const toggleMaximize = (target) => {
 }
 
 // --- Data Logic ---
-const loadReportData = async () => {
+const loadReportData = async (targetReportId = currentReportId.value) => {
   try {
-    addLog(t('log.loadReportData', { id: currentReportId.value }))
+    addLog(t('log.loadReportData', { id: targetReportId }))
 
     // 获取 report 信息以获取 simulation_id
-    const reportRes = await getReport(currentReportId.value)
+    const reportRes = await getReport(targetReportId)
     if (reportRes.success && reportRes.data) {
       const reportData = reportRes.data
       simulationId.value = reportData.simulation_id
+      currentReportId.value = targetReportId
 
       if (simulationId.value) {
         // 获取 simulation 信息
@@ -164,11 +188,25 @@ const loadReportData = async () => {
             const projRes = await getProject(simData.project_id)
             if (projRes.success && projRes.data) {
               projectData.value = projRes.data
+              graphVariant.value = getGraphVariantForProject(projRes.data.project_id)
+              const qRaw = typeof route.query.rawReportId === 'string' ? route.query.rawReportId : ''
+              const qDis = typeof route.query.disambReportId === 'string' ? route.query.disambReportId : ''
+              reportIds.value = {
+                raw: qRaw || currentReportId.value,
+                disamb: qDis || currentReportId.value
+              }
+              if (hasDualGraph.value) {
+                const switchedId = graphVariant.value === 'raw' ? reportIds.value.raw : reportIds.value.disamb
+                if (switchedId && switchedId !== currentReportId.value) {
+                  return loadReportData(switchedId)
+                }
+              }
+              refreshAbReportStatus()
               addLog(t('log.projectLoadSuccess', { id: projRes.data.project_id }))
 
-              // 获取 graph 数据
-              if (projRes.data.graph_id) {
-                await loadGraph(projRes.data.graph_id)
+              const gid = effectiveGraphIdFromProject(projRes.data, projRes.data.project_id)
+              if (gid) {
+                await loadGraph(gid)
               }
             }
           }
@@ -199,9 +237,48 @@ const loadGraph = async (graphId) => {
 }
 
 const refreshGraph = () => {
-  if (projectData.value?.graph_id) {
-    loadGraph(projectData.value.graph_id)
+  const pid = projectData.value?.project_id
+  const gid = effectiveGraphIdFromProject(projectData.value, pid)
+  if (gid) loadGraph(gid)
+}
+
+const onGraphVariantSelect = (v) => {
+  if (v !== 'raw' && v !== 'disamb') return
+  graphVariant.value = v
+  const pid = projectData.value?.project_id
+  if (pid) localStorage.setItem(`mirofish_gv_${pid}`, v)
+  const mappedReport = v === 'raw' ? reportIds.value.raw : reportIds.value.disamb
+  if (mappedReport && mappedReport !== currentReportId.value) {
+    router.replace({
+      name: 'Interaction',
+      params: { reportId: mappedReport },
+      query: {
+        ...route.query,
+        rawReportId: reportIds.value.raw || undefined,
+        disambReportId: reportIds.value.disamb || undefined
+      }
+    })
+    loadReportData(mappedReport)
   }
+  const gid = resolveProjectGraphId(projectData.value, v)
+  if (gid) loadGraph(gid)
+}
+
+const refreshAbReportStatus = async () => {
+  if (!hasDualGraph.value) return
+  const map = { raw: reportIds.value.raw, disamb: reportIds.value.disamb }
+  const next = { raw: '-', disamb: '-' }
+  for (const k of ['raw', 'disamb']) {
+    const rid = map[k]
+    if (!rid) continue
+    try {
+      const r = await getReport(rid)
+      next[k] = r?.success ? (r.data?.status || 'unknown') : 'error'
+    } catch {
+      next[k] = 'error'
+    }
+  }
+  abReportStatus.value = next
 }
 
 // Watch route params
@@ -215,6 +292,11 @@ watch(() => route.params.reportId, (newId) => {
 onMounted(() => {
   addLog(t('log.interactionViewInit'))
   loadReportData()
+  abStatusTimer = setInterval(refreshAbReportStatus, 5000)
+})
+
+onUnmounted(() => {
+  if (abStatusTimer) clearInterval(abStatusTimer)
 })
 </script>
 
@@ -231,12 +313,13 @@ onMounted(() => {
 /* Header */
 .app-header {
   height: 60px;
-  border-bottom: 1px solid #EAEAEA;
+  border-bottom: 1px solid #1a2a3e;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  background: #FFF;
+  background: rgba(4,8,16,0.95);
+  backdrop-filter: blur(16px);
   z-index: 100;
   position: relative;
 }
@@ -252,12 +335,13 @@ onMounted(() => {
   font-weight: 800;
   font-size: 18px;
   letter-spacing: 1px;
+  color: #e2e8f0;
   cursor: pointer;
 }
 
 .view-switcher {
   display: flex;
-  background: #F5F5F5;
+  background: #0e1724;
   padding: 4px;
   border-radius: 6px;
   gap: 4px;
@@ -269,16 +353,16 @@ onMounted(() => {
   padding: 6px 16px;
   font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: #64748b;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .switch-btn.active {
-  background: #FFF;
-  color: #000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background: #1a2a3e;
+  color: #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .header-right {
@@ -297,18 +381,18 @@ onMounted(() => {
 .step-num {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
-  color: #999;
+  color: #64748b;
 }
 
 .step-name {
   font-weight: 700;
-  color: #000;
+  color: #e2e8f0;
 }
 
 .step-divider {
   width: 1px;
   height: 14px;
-  background-color: #E0E0E0;
+  background-color: #1a2a3e;
 }
 
 .status-indicator {
@@ -316,7 +400,7 @@ onMounted(() => {
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: #666;
+  color: #64748b;
   font-weight: 500;
 }
 
@@ -324,13 +408,26 @@ onMounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #CCC;
+  background: #2d3a4a;
 }
 
 .status-indicator.ready .dot { background: #4CAF50; }
-.status-indicator.processing .dot { background: #FF9800; animation: pulse 1s infinite; }
+.status-indicator.processing .dot { background: #60a5fa; animation: pulse 1s infinite; }
 .status-indicator.completed .dot { background: #4CAF50; }
 .status-indicator.error .dot { background: #F44336; }
+
+.ab-status-bar {
+  display: flex;
+  gap: 6px;
+}
+
+.ab-pill {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 11px;
+  color: #555;
+}
 
 @keyframes pulse { 50% { opacity: 0.5; } }
 

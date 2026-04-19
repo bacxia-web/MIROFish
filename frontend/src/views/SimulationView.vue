@@ -32,6 +32,10 @@
           <span class="dot"></span>
           {{ statusText }}
         </span>
+        <div v-if="hasDualGraph" class="ab-status-bar">
+          <span class="ab-pill">RAW: {{ abSimStatus.raw }}</span>
+          <span class="ab-pill">DISAMB: {{ abSimStatus.disamb }}</span>
+        </div>
       </div>
     </header>
 
@@ -43,8 +47,11 @@
           :graphData="graphData"
           :loading="graphLoading"
           :currentPhase="2"
+          :graphVariant="graphVariant"
+          :showGraphVariantTabs="hasDualGraph"
           @refresh="refreshGraph"
           @toggle-maximize="toggleMaximize('graph')"
+          @select-variant="onGraphVariantSelect"
         />
       </div>
 
@@ -71,6 +78,11 @@ import { useRoute, useRouter } from 'vue-router'
 import GraphPanel from '../components/GraphPanel.vue'
 import Step2EnvSetup from '../components/Step2EnvSetup.vue'
 import { getProject, getGraphData } from '../api/graph'
+import {
+  effectiveGraphIdFromProject,
+  getGraphVariantForProject,
+  resolveProjectGraphId
+} from '../utils/graphVariant'
 import { getSimulation, stopSimulation, getEnvStatus, closeSimulationEnv } from '../api/simulation'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import { useI18n } from 'vue-i18n'
@@ -89,11 +101,23 @@ const viewMode = ref('split')
 
 // Data State
 const currentSimulationId = ref(route.params.simulationId)
+const simulationIds = ref({
+  raw: '',
+  disamb: ''
+})
 const projectData = ref(null)
 const graphData = ref(null)
 const graphLoading = ref(false)
 const systemLogs = ref([])
 const currentStatus = ref('processing') // processing | completed | error
+const abSimStatus = ref({ raw: '-', disamb: '-' })
+let abStatusTimer = null
+
+const graphVariant = ref('disamb')
+const hasDualGraph = computed(() => {
+  const p = projectData.value
+  return !!(p?.graph_id_raw && p?.graph_id_disamb && p.graph_id_raw !== p.graph_id_disamb)
+})
 
 // --- Computed Layout Styles ---
 const leftPanelStyle = computed(() => {
@@ -163,12 +187,16 @@ const handleNextStep = (params = {}) => {
   // 构建路由参数
   const routeParams = {
     name: 'SimulationRun',
-    params: { simulationId: currentSimulationId.value }
+    params: { simulationId: currentSimulationId.value },
+    query: {
+      rawSimulationId: simulationIds.value.raw || undefined,
+      disambSimulationId: simulationIds.value.disamb || undefined
+    }
   }
   
   // 如果有自定义轮数，通过 query 参数传递
   if (params.maxRounds) {
-    routeParams.query = { maxRounds: params.maxRounds }
+    routeParams.query.maxRounds = params.maxRounds
   }
   
   // 跳转到 Step 3 页面
@@ -254,11 +282,27 @@ const loadSimulationData = async () => {
         const projRes = await getProject(simData.project_id)
         if (projRes.success && projRes.data) {
           projectData.value = projRes.data
+          graphVariant.value = getGraphVariantForProject(projRes.data.project_id)
+          const qRaw = typeof route.query.rawSimulationId === 'string' ? route.query.rawSimulationId : ''
+          const qDis = typeof route.query.disambSimulationId === 'string' ? route.query.disambSimulationId : ''
+          simulationIds.value = {
+            raw: qRaw || currentSimulationId.value,
+            disamb: qDis || currentSimulationId.value
+          }
+          if (hasDualGraph.value) {
+            const switchedId = graphVariant.value === 'raw' ? simulationIds.value.raw : simulationIds.value.disamb
+            if (switchedId && switchedId !== currentSimulationId.value) {
+              currentSimulationId.value = switchedId
+              return loadSimulationData()
+            }
+          }
+          refreshAbSimulationStatus()
           addLog(t('log.projectLoadSuccess', { id: projRes.data.project_id }))
           
           // 获取 graph 数据
-          if (projRes.data.graph_id) {
-            await loadGraph(projRes.data.graph_id)
+          const gid = effectiveGraphIdFromProject(projRes.data, projRes.data.project_id)
+          if (gid) {
+            await loadGraph(gid)
           }
         }
       }
@@ -268,6 +312,23 @@ const loadSimulationData = async () => {
   } catch (err) {
     addLog(t('log.loadException', { error: err.message }))
   }
+}
+
+const refreshAbSimulationStatus = async () => {
+  if (!hasDualGraph.value) return
+  const map = { raw: simulationIds.value.raw, disamb: simulationIds.value.disamb }
+  const next = { raw: '-', disamb: '-' }
+  for (const k of ['raw', 'disamb']) {
+    const sid = map[k]
+    if (!sid) continue
+    try {
+      const r = await getSimulation(sid)
+      next[k] = r?.success ? (r.data?.status || 'unknown') : 'error'
+    } catch {
+      next[k] = 'error'
+    }
+  }
+  abSimStatus.value = next
 }
 
 const loadGraph = async (graphId) => {
@@ -286,9 +347,32 @@ const loadGraph = async (graphId) => {
 }
 
 const refreshGraph = () => {
-  if (projectData.value?.graph_id) {
-    loadGraph(projectData.value.graph_id)
+  const pid = projectData.value?.project_id
+  const gid = effectiveGraphIdFromProject(projectData.value, pid)
+  if (gid) loadGraph(gid)
+}
+
+const onGraphVariantSelect = (v) => {
+  if (v !== 'raw' && v !== 'disamb') return
+  graphVariant.value = v
+  const pid = projectData.value?.project_id
+  if (pid) localStorage.setItem(`mirofish_gv_${pid}`, v)
+  const mappedSim = v === 'raw' ? simulationIds.value.raw : simulationIds.value.disamb
+  if (mappedSim && mappedSim !== currentSimulationId.value) {
+    currentSimulationId.value = mappedSim
+    router.replace({
+      name: 'Simulation',
+      params: { simulationId: mappedSim },
+      query: {
+        ...route.query,
+        rawSimulationId: simulationIds.value.raw || undefined,
+        disambSimulationId: simulationIds.value.disamb || undefined
+      }
+    })
+    loadSimulationData()
   }
+  const gid = resolveProjectGraphId(projectData.value, v)
+  if (gid) loadGraph(gid)
 }
 
 onMounted(async () => {
@@ -299,6 +383,11 @@ onMounted(async () => {
   
   // 加载模拟数据
   loadSimulationData()
+  abStatusTimer = setInterval(refreshAbSimulationStatus, 5000)
+})
+
+onUnmounted(() => {
+  if (abStatusTimer) clearInterval(abStatusTimer)
 })
 </script>
 
@@ -315,12 +404,13 @@ onMounted(async () => {
 /* Header */
 .app-header {
   height: 60px;
-  border-bottom: 1px solid #EAEAEA;
+  border-bottom: 1px solid #1a2a3e;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  background: #FFF;
+  background: rgba(4,8,16,0.95);
+  backdrop-filter: blur(16px);
   z-index: 100;
   position: relative;
 }
@@ -330,6 +420,7 @@ onMounted(async () => {
   font-weight: 800;
   font-size: 18px;
   letter-spacing: 1px;
+  color: #e2e8f0;
   cursor: pointer;
 }
 
@@ -341,7 +432,7 @@ onMounted(async () => {
 
 .view-switcher {
   display: flex;
-  background: #F5F5F5;
+  background: #0e1724;
   padding: 4px;
   border-radius: 6px;
   gap: 4px;
@@ -353,16 +444,16 @@ onMounted(async () => {
   padding: 6px 16px;
   font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: #64748b;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .switch-btn.active {
-  background: #FFF;
-  color: #000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background: #1a2a3e;
+  color: #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .header-right {
@@ -381,18 +472,18 @@ onMounted(async () => {
 .step-num {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
-  color: #999;
+  color: #64748b;
 }
 
 .step-name {
   font-weight: 700;
-  color: #000;
+  color: #e2e8f0;
 }
 
 .step-divider {
   width: 1px;
   height: 14px;
-  background-color: #E0E0E0;
+  background-color: #1a2a3e;
 }
 
 .status-indicator {
@@ -400,7 +491,7 @@ onMounted(async () => {
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: #666;
+  color: #64748b;
   font-weight: 500;
 }
 
@@ -408,12 +499,25 @@ onMounted(async () => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #CCC;
+  background: #2d3a4a;
 }
 
-.status-indicator.processing .dot { background: #FF5722; animation: pulse 1s infinite; }
+.status-indicator.processing .dot { background: #3B82F6; animation: pulse 1s infinite; }
 .status-indicator.completed .dot { background: #4CAF50; }
 .status-indicator.error .dot { background: #F44336; }
+
+.ab-status-bar {
+  display: flex;
+  gap: 6px;
+}
+
+.ab-pill {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 11px;
+  color: #555;
+}
 
 @keyframes pulse { 50% { opacity: 0.5; } }
 

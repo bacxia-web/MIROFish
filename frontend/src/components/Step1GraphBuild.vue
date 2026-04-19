@@ -377,8 +377,8 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .step-card.active {
-  border-color: #FF5722;
-  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.08);
+  border-color: #3B82F6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
 }
 
 .card-header {
@@ -421,8 +421,8 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .badge.success { background: #E8F5E9; color: #2E7D32; }
-.badge.processing { background: #FF5722; color: #FFF; }
-.badge.accent { background: #FF5722; color: #FFF; }
+.badge.processing { background: #3B82F6; color: #FFF; }
+.badge.accent { background: #3B82F6; color: #FFF; }
 .badge.pending { background: #F5F5F5; color: #999; }
 
 .api-note {
@@ -718,7 +718,7 @@ watch(() => props.systemLogs.length, () => {
   align-items: center;
   gap: 10px;
   font-size: 12px;
-  color: #FF5722;
+  color: #3B82F6;
   margin-bottom: 12px;
 }
 
@@ -726,7 +726,7 @@ watch(() => props.systemLogs.length, () => {
   width: 14px;
   height: 14px;
   border: 2px solid #FFCCBC;
-  border-top-color: #FF5722;
+  border-top-color: #3B82F6;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
