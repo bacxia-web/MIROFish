@@ -1,0 +1,1249 @@
+{
+  "graph_id": "mirofish_f47341095a174c3c",
+  "nodes": [
+    {
+      "uuid": "228c5690-aa19-4890-b211-8e1c4dba7eee",
+      "name": "慧科讯业Wisers",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "发布2024年315全媒体舆情分析与品牌洞察报告的商业企业。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "09168da9-872b-4ab7-a9a6-1164a75c2b5b",
+      "name": "慧科讯业有限公司",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "提供媒体监测与分析服务的商业公司，拥有报告的修改权和最终解释权。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "3fa0cd09-8a5d-4b1d-bc98-b95d81e20cf9",
+      "name": "慧科讯业（北京）网络科技有限公司",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "拥有并发布《2024年315全媒体舆情分析与品牌洞察报告》的商业企业。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "7c63fcd7-7348-409e-b5c8-9f22798399ea",
+      "name": "www.wisers.com.cn",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "全球领先的基于AI技术+大数据的营销服务提供商，提供舆情监测与数字营销解决方案。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "c4dd0c07-5949-45b0-b00a-0cf33f4b0694",
+      "name": "人人信",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "被提及为非法不合规借贷平台之一。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "766b00de-ed29-4b34-ad27-88db89bc59f1",
+      "name": "借贷宝",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "被提及为不合规借贷平台之一。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "e2da8412-2beb-451c-85ee-0afc6558124f",
+      "name": "同程旅行",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "其金融业务被指转为高利贷产品，损害消费者权益。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "6e60dbc8-40be-499e-93bf-c11c8f6a0297",
+      "name": "中新经纬",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "发表评论批评同程金融违规经营的新闻媒体。",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "dc87f34a-c1b9-4138-8fb2-32717725ca6e",
+      "name": "同程数科公司",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "涉事企业，其金融App被指存在礼品卡套路和变相现金贷行为。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "927d7450-f654-4d1a-a4bc-51a44cb19765",
+      "name": "OPPO应用商店",
+      "labels": [
+        "PlatformOperator",
+        "Entity"
+      ],
+      "summary": "下架同程金融App的应用商店平台之一。",
+      "attributes": {},
+      "primary_label": "PlatformOperator",
+      "created_at": null
+    },
+    {
+      "uuid": "2c2e81b3-2fea-4a47-a889-bf4682058384",
+      "name": "华为应用商店",
+      "labels": [
+        "PlatformOperator",
+        "Entity"
+      ],
+      "summary": "下架同程金融App的应用商店平台之一。",
+      "attributes": {},
+      "primary_label": "PlatformOperator",
+      "created_at": null
+    },
+    {
+      "uuid": "ed5e1f9e-3f6f-4806-a12d-9d909c2111d1",
+      "name": "小米应用商店",
+      "labels": [
+        "PlatformOperator",
+        "Entity"
+      ],
+      "summary": "下架同程金融App的应用商店平台之一。",
+      "attributes": {},
+      "primary_label": "PlatformOperator",
+      "created_at": null
+    },
+    {
+      "uuid": "3134cb77-ec82-4b13-b2bb-028b87dd5321",
+      "name": "苹果商城",
+      "labels": [
+        "PlatformOperator",
+        "Entity"
+      ],
+      "summary": "下架同程金融App的应用商店平台之一。",
+      "attributes": {},
+      "primary_label": "PlatformOperator",
+      "created_at": null
+    },
+    {
+      "uuid": "d08453a2-166a-438e-a2cd-1363893af7fa",
+      "name": "浦东检察院",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "对同程金融展开调查的政府监管机构。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "b86f6bfe-eb3e-48a0-9f7c-ce960772f5b1",
+      "name": "同程金融",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "被315晚会曝光通过礼品卡套路变相提供高利贷的金融App运营方。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "174e514d-6cff-4861-a2c1-c6a2b89117ca",
+      "name": "车主",
+      "labels": [
+        "ConsumerAdvocate",
+        "Entity"
+      ],
+      "summary": "投诉传动轴异响问题并要求退换车的消费者群体。",
+      "attributes": {},
+      "primary_label": "ConsumerAdvocate",
+      "created_at": null
+    },
+    {
+      "uuid": "20601f81-0d05-4a71-800a-8b193e53cc61",
+      "name": "宝马4S店",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "宝马授权经销商，负责销售与维修，对退换车诉求不予支持。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "c113d13e-1b53-4845-9626-f1c95db1abdd",
+      "name": "宝马",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "汽车制造商，因传动轴异响问题被315曝光并发布官方回应。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "4d4948d1-ba63-4361-a8e5-289025db3bf2",
+      "name": "广州金桂根消防设备有限公司",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "被3·15晚会曝光涉及非标灭火器生产的公司之一。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "414aa296-9e7f-4855-82b5-af026c50c647",
+      "name": "创亿消防器材有限公司",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "被3·15晚会曝光涉及非标灭火器生产的公司之一。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "5b9ed413-db27-42e8-942d-2b49f7c97eca",
+      "name": "湖南闽湘消防设备有限公司",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "被3·15晚会曝光涉及非标灭火器生产的公司之一。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "49263551-324c-445a-85c7-03ba0135ebf3",
+      "name": "湘达龙灭火器",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "被3·15晚会曝光涉及非标灭火器生产的公司之一。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "9e0a264f-6541-40d5-a08c-74f191fdf02e",
+      "name": "株洲市监局",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "组织相关部门检查并严肃查处灭火器相关违法行为。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "ee507ceb-5a9e-4a05-937d-75defc4546de",
+      "name": "广州市市场监管局",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "对3·15曝光灭火器事件采取执法行动并联合公安消防部门核查处置。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "bc7901d7-e5e4-42c2-97f3-e4333fb9e264",
+      "name": "抖音",
+      "labels": [
+        "PlatformOperator",
+        "Entity"
+      ],
+      "summary": "运营短视频平台并直播315晚会，推动事件传播。",
+      "attributes": {},
+      "primary_label": "PlatformOperator",
+      "created_at": null
+    },
+    {
+      "uuid": "5ab81c7a-f101-4fb3-bd95-dbc2de71dbcf",
+      "name": "国务院食安办",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "负责全国食品安全工作的国务院机构。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "158d4fc7-21a0-4c89-a526-1e56ab200d7c",
+      "name": "公安部",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "负责全国公共安全和打击犯罪的政府部门。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "ec53812f-30d1-4f28-9afb-b250e8792014",
+      "name": "农业农村部",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "负责农业与农村经济发展的国家部门。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "a327bddc-cd74-4453-a149-f11e910388d9",
+      "name": "市场监管总局",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "负责市场秩序监管和产品质量监督的国家级机构。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "30bc1617-bbc6-45ed-9a6c-6481bca0a7d8",
+      "name": "阜阳市市场监督管理局",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "地方市场监管机构，负责阜阳市内市场执法与产品监管。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "5b64b52e-b718-4dc7-844a-b4b9092bad58",
+      "name": "安徽省市场监管局",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "省级市场监管机构，统筹指导省内市场执法行动。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "df9f5493-4a90-47d6-8cd5-ac41c792db87",
+      "name": "阜阳市",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "地方政府部门负责现场处置肉类产品违法事件。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "72756324-5896-4169-a850-251173efa139",
+      "name": "北京日报",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "报道并评论劣质槽头肉用于梅菜扣肉的食品安全事件。",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "f8ef0770-d212-4201-a067-e43c38f6cfe7",
+      "name": "青海春天",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "听花酒的生产商，因315晚会曝光其产品涉嫌违法广告而收到监管函并致歉。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "cafa6b6f-9c6a-46f1-a6e5-ce179132773e",
+      "name": "央视315晚会",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "曝光听花酒涉嫌违反广告法及夸大宣传的媒体节目。",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "4e428a50-06b8-4c81-839f-3d1dc26e6b44",
+      "name": "上海证券交易所",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "向青海春天发出监管工作函的政府监管机构。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "1c884cba-15fa-4d56-9e13-782c1073a075",
+      "name": "湖南汝城县市场监督管理局",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "对湖南云抖科技有限公司展开突击执法检查的监管部门。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "a028064f-bf57-4d6d-aee3-cca1abbd9bed",
+      "name": "深圳市市场监督管理局",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "会同公安机关查处深圳涉事企业云机侠与云承未来的监管部门。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "7b62cc05-8e98-4269-8fc9-3cbfd8dfaf70",
+      "name": "湖南云抖科技有限公司",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "被央视315点名并遭联合执法检查的涉黑灰产主板机企业。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "ce3c9445-1509-4d52-8568-95249be12e3b",
+      "name": "云机侠",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "位于深圳、被315曝光并遭市场监管部门查处的主板机相关企业。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "39738a02-cbef-4a71-9227-1e4f9d43d16c",
+      "name": "云承未来",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "位于深圳、被315曝光并遭市场监管部门查处的主板机相关企业。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "f7f43d02-d857-4c97-856d-726e71ed8ce9",
+      "name": "央视315",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "点名曝光主板机黑灰产业链的权威媒体节目。",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "24c185ec-ecad-4efe-829e-15cba5d49b47",
+      "name": "深圳市市场监管局",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "负责监管市场的政府机构，约谈了珍爱网负责人。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "9aa85494-38c9-46d4-a134-f1b5a8859f1a",
+      "name": "世纪佳缘",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "婚恋平台公司，因诱导消费等问题发布致歉声明并暂停涉事门店经营。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "6123f2f7-9f9c-4d38-b502-703e0b787e6d",
+      "name": "珍爱网",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "婚恋平台公司，因类似问题致歉、成立专项小组并接受政府部门调查。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "94e5abd3-8f85-4bd4-8c37-b8150836f95b",
+      "name": "经纬快评",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "发表评论文章批评婚介平台将客户当猎物，呼吁加强监管。",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "6bea7c03-ab38-435e-a63e-0dfe86e61198",
+      "name": "天津市静海区市场监督管理局",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "负责对涉事企业进行查封和产品封存的监管部门。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "59fd3e3f-b4cb-40c4-9e36-f0fc4328e2c1",
+      "name": "天津顺玻玻璃科技有限公司",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "被曝光生产假冒伪劣防火玻璃并被查封的企业。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "6cd446b7-cbac-45d1-8976-4c668d038298",
+      "name": "天津保建节能玻璃有限公司",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "被曝光生产假冒伪劣防火玻璃并被查封的企业。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "632f5520-e3a0-4171-8f8d-00a6840cb727",
+      "name": "廊坊永彬玻璃科技有限公司",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "被央视曝光涉及防火玻璃问题，但否认实际从事相关业务的企业。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "4c19b870-d2ee-4f82-baba-3ca5e1c3051e",
+      "name": "三河市双福铝塑门窗有限公司",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "被点名涉事但暂无回应的企业。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "95a3f29c-64c8-43e1-b1a3-619da5d56c12",
+      "name": "河北市监局",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "对涉事企业问题产品查封扣押，并组织全省排查整治的监管部门。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "a5c1b9c3-d387-4671-b0d2-78bdc9913f94",
+      "name": "天津顺玻玻璃",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "假防火玻璃事件中被媒体高度关注的涉事企业。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "b8cc288d-236c-4ddc-b9e8-7ba4bfa2d1eb",
+      "name": "市场监管机构",
+      "labels": [
+        "GovernmentAgency",
+        "Entity"
+      ],
+      "summary": "被舆论指责在假防火玻璃事件中严重失职的监管部门。",
+      "attributes": {},
+      "primary_label": "GovernmentAgency",
+      "created_at": null
+    }
+  ],
+  "edges": [
+    {
+      "uuid": "909af4d1-f882-4887-a6f1-97d85b5beeaa",
+      "name": "REPORTS_ON",
+      "fact": "北京日报报道阜阳市涉事企业使用劣质槽头肉制作梅菜扣肉。",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "72756324-5896-4169-a850-251173efa139",
+      "target_node_uuid": "df9f5493-4a90-47d6-8cd5-ac41c792db87",
+      "source_node_name": "北京日报",
+      "target_node_name": "阜阳市",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "2fe2311d-3d9a-47a3-bd27-1e956f6d314b",
+      "name": "RESPONDS_TO",
+      "fact": "阜阳市派出工作组并开展专项整治行动，回应媒体曝光的食品安全问题。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "df9f5493-4a90-47d6-8cd5-ac41c792db87",
+      "target_node_uuid": "72756324-5896-4169-a850-251173efa139",
+      "source_node_name": "阜阳市",
+      "target_node_name": "北京日报",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "9fd3087f-8930-4f02-97a1-6c0928acded7",
+      "name": "REGULATES",
+      "fact": "上海证券交易所向青海春天发出监管工作函要求回应媒体报道事项。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "4e428a50-06b8-4c81-839f-3d1dc26e6b44",
+      "target_node_uuid": "f8ef0770-d212-4201-a067-e43c38f6cfe7",
+      "source_node_name": "上海证券交易所",
+      "target_node_name": "青海春天",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "2c4e6a72-774a-4127-880f-99117636b99f",
+      "name": "REPORTS_ON",
+      "fact": "央视315晚会报道青海春天旗下听花酒涉嫌违法广告和夸大宣传。",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "cafa6b6f-9c6a-46f1-a6e5-ce179132773e",
+      "target_node_uuid": "f8ef0770-d212-4201-a067-e43c38f6cfe7",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "青海春天",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "c14e67a0-0dbd-4cc7-ac33-4146ab267280",
+      "name": "RESPONDS_TO",
+      "fact": "青海春天就央视315晚会曝光问题发布声明致歉并成立专项整改小组。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "f8ef0770-d212-4201-a067-e43c38f6cfe7",
+      "target_node_uuid": "cafa6b6f-9c6a-46f1-a6e5-ce179132773e",
+      "source_node_name": "青海春天",
+      "target_node_name": "央视315晚会",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "6a3ce6d0-fa32-488f-ad2b-f4fe650eba07",
+      "name": "REPORTS_ON",
+      "fact": "点名曝光其涉及主板机黑灰产业链。",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "f7f43d02-d857-4c97-856d-726e71ed8ce9",
+      "target_node_uuid": "7b62cc05-8e98-4269-8fc9-3cbfd8dfaf70",
+      "source_node_name": "央视315",
+      "target_node_name": "湖南云抖科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "5b602f46-e56f-41f8-b02b-f7930315cede",
+      "name": "REGULATES",
+      "fact": "对湖南云抖科技有限公司展开突击执法检查。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "1c884cba-15fa-4d56-9e13-782c1073a075",
+      "target_node_uuid": "7b62cc05-8e98-4269-8fc9-3cbfd8dfaf70",
+      "source_node_name": "湖南汝城县市场监督管理局",
+      "target_node_name": "湖南云抖科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "c029b8f3-38b1-42a3-a09e-0f5d0ce08d11",
+      "name": "REPORTS_ON",
+      "fact": "点名曝光其涉及主板机黑灰产业链。",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "f7f43d02-d857-4c97-856d-726e71ed8ce9",
+      "target_node_uuid": "ce3c9445-1509-4d52-8568-95249be12e3b",
+      "source_node_name": "央视315",
+      "target_node_name": "云机侠",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "bd13e6dc-9e39-4a56-acc2-706c56c7fe70",
+      "name": "REGULATES",
+      "fact": "会同公安查处云机侠公司。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "a028064f-bf57-4d6d-aee3-cca1abbd9bed",
+      "target_node_uuid": "ce3c9445-1509-4d52-8568-95249be12e3b",
+      "source_node_name": "深圳市市场监督管理局",
+      "target_node_name": "云机侠",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "731d0478-4386-4573-811d-5e3d59509708",
+      "name": "REPORTS_ON",
+      "fact": "点名曝光其涉及主板机黑灰产业链。",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "f7f43d02-d857-4c97-856d-726e71ed8ce9",
+      "target_node_uuid": "39738a02-cbef-4a71-9227-1e4f9d43d16c",
+      "source_node_name": "央视315",
+      "target_node_name": "云承未来",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "c06496c1-eb75-45d9-9f5f-97c2acc7f12e",
+      "name": "REGULATES",
+      "fact": "会同公安查处云承未来公司。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "a028064f-bf57-4d6d-aee3-cca1abbd9bed",
+      "target_node_uuid": "39738a02-cbef-4a71-9227-1e4f9d43d16c",
+      "source_node_name": "深圳市市场监督管理局",
+      "target_node_name": "云承未来",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "f9b0702e-8dce-4bfe-b6ad-03c11eba506a",
+      "name": "COMMENTS_ON",
+      "fact": "批评珍爱网等平台把客户当猎物，沦为婚骗网。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "94e5abd3-8f85-4bd4-8c37-b8150836f95b",
+      "target_node_uuid": "6123f2f7-9f9c-4d38-b502-703e0b787e6d",
+      "source_node_name": "经纬快评",
+      "target_node_name": "珍爱网",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "9a416a39-bcf2-46f2-abf4-85d4066c7107",
+      "name": "REGULATES",
+      "fact": "深圳市市场监管局约谈珍爱网负责人，实施行政监管。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "24c185ec-ecad-4efe-829e-15cba5d49b47",
+      "target_node_uuid": "6123f2f7-9f9c-4d38-b502-703e0b787e6d",
+      "source_node_name": "深圳市市场监管局",
+      "target_node_name": "珍爱网",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "5c9f0cdd-08ef-48b2-a87b-5c7cb33cc1cb",
+      "name": "REGULATES",
+      "fact": "对该公司进行查封并封存涉嫌违法产品。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "6bea7c03-ab38-435e-a63e-0dfe86e61198",
+      "target_node_uuid": "59fd3e3f-b4cb-40c4-9e36-f0fc4328e2c1",
+      "source_node_name": "天津市静海区市场监督管理局",
+      "target_node_name": "天津顺玻玻璃科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "1a96f315-79fa-4b32-aa7e-bbd78f969e28",
+      "name": "REGULATES",
+      "fact": "对该公司进行查封并封存涉嫌违法产品。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "6bea7c03-ab38-435e-a63e-0dfe86e61198",
+      "target_node_uuid": "6cd446b7-cbac-45d1-8976-4c668d038298",
+      "source_node_name": "天津市静海区市场监督管理局",
+      "target_node_name": "天津保建节能玻璃有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "16504f58-d567-41b6-8cb4-90feb04b1278",
+      "name": "REGULATES",
+      "fact": "查封扣押其问题产品并组织调查。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "95a3f29c-64c8-43e1-b1a3-619da5d56c12",
+      "target_node_uuid": "632f5520-e3a0-4171-8f8d-00a6840cb727",
+      "source_node_name": "河北市监局",
+      "target_node_name": "廊坊永彬玻璃科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "95488355-729e-493a-a0f9-b04a58de16eb",
+      "name": "OPPOSES",
+      "fact": "舆论指责市场监管机构失职，应先查办监管者再处理厂家。",
+      "fact_type": "OPPOSES",
+      "source_node_uuid": "b8cc288d-236c-4ddc-b9e8-7ba4bfa2d1eb",
+      "target_node_uuid": "4c19b870-d2ee-4f82-baba-3ca5e1c3051e",
+      "source_node_name": "市场监管机构",
+      "target_node_name": "三河市双福铝塑门窗有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "f2f33624-5c4e-4722-9561-957edd966216",
+      "name": "REGULATES",
+      "fact": "市场监管机构对涉事企业实施查封、调查等监管措施。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "b8cc288d-236c-4ddc-b9e8-7ba4bfa2d1eb",
+      "target_node_uuid": "4c19b870-d2ee-4f82-baba-3ca5e1c3051e",
+      "source_node_name": "市场监管机构",
+      "target_node_name": "三河市双福铝塑门窗有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "b5441964-0ac3-454f-a705-052ac34ff632",
+      "name": "REGULATES",
+      "fact": "查封扣押其问题产品并组织调查。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "95a3f29c-64c8-43e1-b1a3-619da5d56c12",
+      "target_node_uuid": "4c19b870-d2ee-4f82-baba-3ca5e1c3051e",
+      "source_node_name": "河北市监局",
+      "target_node_name": "三河市双福铝塑门窗有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "9c08eac1-cded-479c-a3fe-79ca5a3f140d",
+      "name": "REGULATES",
+      "fact": "市场监管机构对天津顺玻玻璃展开调查，因其涉嫌生产假防火玻璃。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "b8cc288d-236c-4ddc-b9e8-7ba4bfa2d1eb",
+      "target_node_uuid": "a5c1b9c3-d387-4671-b0d2-78bdc9913f94",
+      "source_node_name": "市场监管机构",
+      "target_node_name": "天津顺玻玻璃",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "1b099acc-3f8b-4625-9b83-f51fa574b8d8",
+      "name": "REGULATES",
+      "fact": "广州市市场监管局对湘达龙灭火器涉事企业开展执法核查。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "ee507ceb-5a9e-4a05-937d-75defc4546de",
+      "target_node_uuid": "49263551-324c-445a-85c7-03ba0135ebf3",
+      "source_node_name": "广州市市场监管局",
+      "target_node_name": "湘达龙灭火器",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "01d6218f-e9d4-4b1a-8cdc-f8a89e876617",
+      "name": "REGULATES",
+      "fact": "株洲市监局对湖南闽湘消防设备有限公司开展检查并查处违法行为。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "9e0a264f-6541-40d5-a08c-74f191fdf02e",
+      "target_node_uuid": "5b9ed413-db27-42e8-942d-2b49f7c97eca",
+      "source_node_name": "株洲市监局",
+      "target_node_name": "湖南闽湘消防设备有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "18c94ba8-abf1-49bb-b971-906681707c7e",
+      "name": "REGULATES",
+      "fact": "株洲市监局对创亿消防器材有限公司开展检查并查处违法行为。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "9e0a264f-6541-40d5-a08c-74f191fdf02e",
+      "target_node_uuid": "414aa296-9e7f-4855-82b5-af026c50c647",
+      "source_node_name": "株洲市监局",
+      "target_node_name": "创亿消防器材有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "9dd70afb-aed6-4463-a381-7e8edcef19b6",
+      "name": "REGULATES",
+      "fact": "广州市市场监管局对广州金桂根消防设备有限公司开展执法核查。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "ee507ceb-5a9e-4a05-937d-75defc4546de",
+      "target_node_uuid": "4d4948d1-ba63-4361-a8e5-289025db3bf2",
+      "source_node_name": "广州市市场监管局",
+      "target_node_name": "广州金桂根消防设备有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "9facb308-2349-4ec9-8cf6-ab876ac776c8",
+      "name": "AFFILIATED_WITH",
+      "fact": "4S店为宝马品牌授权经销商，执行其售后政策。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "20601f81-0d05-4a71-800a-8b193e53cc61",
+      "target_node_uuid": "c113d13e-1b53-4845-9626-f1c95db1abdd",
+      "source_node_name": "宝马4S店",
+      "target_node_name": "宝马",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "fa0f0ab3-c0c7-4c9b-90fa-cb68b3dfc7bb",
+      "name": "COMMENTS_ON",
+      "fact": "车主投诉传动轴异响且对4S店处理措施不满。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "174e514d-6cff-4861-a2c1-c6a2b89117ca",
+      "target_node_uuid": "c113d13e-1b53-4845-9626-f1c95db1abdd",
+      "source_node_name": "车主",
+      "target_node_name": "宝马",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "fd6af7af-eb84-42fa-9e83-03899fe858da",
+      "name": "REPORTS_ON",
+      "fact": "央视315曝光宝马传动轴异响及售后处理不当问题。",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "f7f43d02-d857-4c97-856d-726e71ed8ce9",
+      "target_node_uuid": "c113d13e-1b53-4845-9626-f1c95db1abdd",
+      "source_node_name": "央视315",
+      "target_node_name": "宝马",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "353a8370-eba7-4bc7-9ca5-247fba03784d",
+      "name": "RESPONDS_TO",
+      "fact": "宝马官方回应称异响不影响安全并承诺免费维修。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "c113d13e-1b53-4845-9626-f1c95db1abdd",
+      "target_node_uuid": "174e514d-6cff-4861-a2c1-c6a2b89117ca",
+      "source_node_name": "宝马",
+      "target_node_name": "车主",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "7a07686a-fb35-4ba9-aec6-8bc04fbf3ea3",
+      "name": "RESPONDS_TO",
+      "fact": "OPPO应用商店下架同程金融App以响应曝光事件。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "927d7450-f654-4d1a-a4bc-51a44cb19765",
+      "target_node_uuid": "b86f6bfe-eb3e-48a0-9f7c-ce960772f5b1",
+      "source_node_name": "OPPO应用商店",
+      "target_node_name": "同程金融",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "07127015-d769-4e6a-adbf-852609e0503d",
+      "name": "RESPONDS_TO",
+      "fact": "华为应用商店下架同程金融App以响应曝光事件。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "2c2e81b3-2fea-4a47-a889-bf4682058384",
+      "target_node_uuid": "b86f6bfe-eb3e-48a0-9f7c-ce960772f5b1",
+      "source_node_name": "华为应用商店",
+      "target_node_name": "同程金融",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "974b2547-a185-43e4-84cd-503fe1c655a8",
+      "name": "RESPONDS_TO",
+      "fact": "小米应用商店下架同程金融App以响应曝光事件。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "ed5e1f9e-3f6f-4806-a12d-9d909c2111d1",
+      "target_node_uuid": "b86f6bfe-eb3e-48a0-9f7c-ce960772f5b1",
+      "source_node_name": "小米应用商店",
+      "target_node_name": "同程金融",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "cbd99256-14fc-4fdc-ac8b-1264a2946da3",
+      "name": "RESPONDS_TO",
+      "fact": "苹果商城下架同程金融App以响应曝光事件。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "3134cb77-ec82-4b13-b2bb-028b87dd5321",
+      "target_node_uuid": "b86f6bfe-eb3e-48a0-9f7c-ce960772f5b1",
+      "source_node_name": "苹果商城",
+      "target_node_name": "同程金融",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "aa3412ba-56e7-40da-85ed-28e843401f73",
+      "name": "REGULATES",
+      "fact": "浦东检察院进入同程金融关联公司展开调查。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "d08453a2-166a-438e-a2cd-1363893af7fa",
+      "target_node_uuid": "b86f6bfe-eb3e-48a0-9f7c-ce960772f5b1",
+      "source_node_name": "浦东检察院",
+      "target_node_name": "同程金融",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "b05989c4-318c-46ea-ac84-495189198294",
+      "name": "REGULATES",
+      "fact": "浦东检察院已进入同程数科公司进行调查。",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "d08453a2-166a-438e-a2cd-1363893af7fa",
+      "target_node_uuid": "dc87f34a-c1b9-4138-8fb2-32717725ca6e",
+      "source_node_name": "浦东检察院",
+      "target_node_name": "同程数科公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "46a47444-98a6-4c71-b3a4-3851a74ef359",
+      "name": "OPPOSES",
+      "fact": "中新经纬公开反对同程旅行漠视消费者权益的行为。",
+      "fact_type": "OPPOSES",
+      "source_node_uuid": "6e60dbc8-40be-499e-93bf-c11c8f6a0297",
+      "target_node_uuid": "e2da8412-2beb-451c-85ee-0afc6558124f",
+      "source_node_name": "中新经纬",
+      "target_node_name": "同程旅行",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "692bf508-0128-4333-b6c0-b92501c249ed",
+      "name": "COMMENTS_ON",
+      "fact": "中新经纬指出同程旅行金融业务披着旅行外衣做高利贷生意。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "6e60dbc8-40be-499e-93bf-c11c8f6a0297",
+      "target_node_uuid": "e2da8412-2beb-451c-85ee-0afc6558124f",
+      "source_node_name": "中新经纬",
+      "target_node_name": "同程旅行",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "79f4f1a8-1d19-4dae-b844-94b65364d473",
+      "name": "REPORTS_ON",
+      "fact": "中新经纬报道并批评同程旅行金融业务违规操作。",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "6e60dbc8-40be-499e-93bf-c11c8f6a0297",
+      "target_node_uuid": "e2da8412-2beb-451c-85ee-0afc6558124f",
+      "source_node_name": "中新经纬",
+      "target_node_name": "同程旅行",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    }
+  ],
+  "node_count": 54,
+  "edge_count": 37
+}

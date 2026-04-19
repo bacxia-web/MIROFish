@@ -1,0 +1,2061 @@
+{
+  "graph_id": "mirofish_41281db6e06645ce",
+  "nodes": [
+    {
+      "uuid": "141cfa6b-8949-4edd-813b-f166ff2a1c31",
+      "name": "慧科讯业Wisers",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "发布315全媒体舆情分析与品牌洞察报告的机构",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "2d594c09-00a4-4812-9bbb-6c51bee176e9",
+      "name": "慧科讯业有限公司",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "一家网络科技公司，发布了315全媒体舆情分析报告",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "bb05051d-a323-406c-8df9-8637c35107d9",
+      "name": "政府部门",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "参与315晚会联动整治的政府监管机构",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "b98ed6f2-a66f-45ff-aa12-1cc43b64cc5a",
+      "name": "媒体集团",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "新闻媒体机构集合",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "340f0814-a10b-4dce-b668-a9ee80c2e2ea",
+      "name": "预制菜",
+      "labels": [
+        "FoodManufacturer",
+        "Entity"
+      ],
+      "summary": "被315晚会点名的食品行业类别",
+      "attributes": {},
+      "primary_label": "FoodManufacturer",
+      "created_at": null
+    },
+    {
+      "uuid": "4caf9a72-c7e8-41cc-a45b-190553b59f4c",
+      "name": "劣质防火玻璃",
+      "labels": [
+        "FoodManufacturer",
+        "Entity"
+      ],
+      "summary": "防火玻璃生产企业",
+      "attributes": {},
+      "primary_label": "FoodManufacturer",
+      "created_at": null
+    },
+    {
+      "uuid": "a7a88776-98b4-4a29-96aa-ae1648895c8d",
+      "name": "普通民众",
+      "labels": [
+        "Consumer",
+        "Entity"
+      ],
+      "summary": "普通消费者群体",
+      "attributes": {},
+      "primary_label": "Consumer",
+      "created_at": null
+    },
+    {
+      "uuid": "a8ad5580-d23d-45db-81c6-654c7725cb59",
+      "name": "社交平台",
+      "labels": [
+        "EcommercePlatform",
+        "Entity"
+      ],
+      "summary": "社交媒体平台",
+      "attributes": {},
+      "primary_label": "EcommercePlatform",
+      "created_at": null
+    },
+    {
+      "uuid": "35450d8e-64ff-411b-86a5-e529b688436b",
+      "name": "各大主流媒体",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "泛指主要新闻媒体机构",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "ddd3aefb-fd2c-453d-82b5-8267c601be18",
+      "name": "Wehour",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "进行315观察和危机管理研究的团队",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "a96532b4-17c1-4099-85fa-7eecac86e5bb",
+      "name": "央视3·15晚会",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "中央电视台举办的3·15消费者权益保护节目",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "2f638a1d-d633-43e9-a85e-a2d81d1aa2c7",
+      "name": "企业",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "需要加强技术研发和风险控制的组织",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "a7b45271-06a5-4331-bc7d-04ba269d9480",
+      "name": "AI诈骗",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "利用AI技术进行的诈骗活动",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "b299e541-585d-4fda-a39d-d448a4f5fdf1",
+      "name": "公众",
+      "labels": [
+        "Consumer",
+        "Entity"
+      ],
+      "summary": "关注被点名品牌的回应和处理情况",
+      "attributes": {},
+      "primary_label": "Consumer",
+      "created_at": null
+    },
+    {
+      "uuid": "a5b5f6de-d837-45a3-afc9-aa0c4f4ad2e9",
+      "name": "各类媒体",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "对被点名品牌进行进一步跟进报道",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "ead71165-5e2b-4fd9-b2dc-a1f3d9f1a3fc",
+      "name": "宝马",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "被315晚会点名的品牌之一",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "285f429c-2655-4345-a3e1-698abaec2b6d",
+      "name": "同程金融",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "被315晚会点名的品牌之一",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "43636a31-cd3c-40ba-96cd-21b57b617b88",
+      "name": "非标灭火器",
+      "labels": [
+        "FoodManufacturer",
+        "Entity"
+      ],
+      "summary": "315晚会上涉及的消防安全产品",
+      "attributes": {},
+      "primary_label": "FoodManufacturer",
+      "created_at": null
+    },
+    {
+      "uuid": "21296838-ed36-4675-904c-7f959316d66b",
+      "name": "防火玻璃",
+      "labels": [
+        "FoodManufacturer",
+        "Entity"
+      ],
+      "summary": "315晚会上涉及的消防安全产品",
+      "attributes": {},
+      "primary_label": "FoodManufacturer",
+      "created_at": null
+    },
+    {
+      "uuid": "79e7e14c-3bc2-452c-9995-6ca167a0a874",
+      "name": "315晚会",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "持续关注食品安全问题的媒体平台",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "6ea70ee7-baaa-4ad1-9c14-079921f21043",
+      "name": "糟心肉",
+      "labels": [
+        "FoodManufacturer",
+        "Entity"
+      ],
+      "summary": "2024年315晚会重点关注的食品安全问题",
+      "attributes": {},
+      "primary_label": "FoodManufacturer",
+      "created_at": null
+    },
+    {
+      "uuid": "1550ece7-6781-4685-ad50-4c85069d64f8",
+      "name": "假香米",
+      "labels": [
+        "FoodManufacturer",
+        "Entity"
+      ],
+      "summary": "2023年315晚会曝光的食品安全问题产品",
+      "attributes": {},
+      "primary_label": "FoodManufacturer",
+      "created_at": null
+    },
+    {
+      "uuid": "7eb233cd-3c8a-40b8-9807-e032adb62257",
+      "name": "老坛酸菜",
+      "labels": [
+        "FoodManufacturer",
+        "Entity"
+      ],
+      "summary": "2022年315晚会曝光的食品安全问题产品",
+      "attributes": {},
+      "primary_label": "FoodManufacturer",
+      "created_at": null
+    },
+    {
+      "uuid": "3acb793a-76ab-4ed3-be41-15756fe40e78",
+      "name": "中国消费协会",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "认证年度十大热点舆情的消费者保护组织",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "635d79fc-410b-4fc6-9760-717066d49d65",
+      "name": "中新经纬",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "发表关于同程金融合规问题评论的媒体",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "9e363fdd-ea89-4a12-b0f7-21fcf6fee565",
+      "name": "浦东检察院",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "对涉事企业进行调查的检察机关",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "cf0c930e-e219-4c28-93cd-8f6aeef1ba98",
+      "name": "同程数科公司",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "同程金融App关联企业",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "1642ccf3-bf61-45c2-b196-ad1873e427f4",
+      "name": "315",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "曝光同程金融App礼品卡套路的媒体",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "92c7d37c-1010-4ae4-aee3-c41b685bad45",
+      "name": "同程金融App",
+      "labels": [
+        "EcommercePlatform",
+        "Entity"
+      ],
+      "summary": "金融借贷平台",
+      "attributes": {},
+      "primary_label": "EcommercePlatform",
+      "created_at": null
+    },
+    {
+      "uuid": "7c278a6f-4c83-42f5-83c5-87d0a042c975",
+      "name": "车主",
+      "labels": [
+        "Consumer",
+        "Entity"
+      ],
+      "summary": "购买宝马汽车的消费者，遭遇传动轴异响问题",
+      "attributes": {},
+      "primary_label": "Consumer",
+      "created_at": null
+    },
+    {
+      "uuid": "a91e1b71-05ab-4119-b9ab-77d819dc8299",
+      "name": "株洲市监局",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "对灭火器问题开展检查的监管部门",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "8554254a-acf3-43ec-8720-e5eb26e29345",
+      "name": "公安消防部门",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "参与灭火器问题核查处置的部门",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "05cb6127-d153-42c1-83a5-eb0cfc48d5ea",
+      "name": "广州市市场监管局",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "对灭火器问题采取执法行动的监管部门",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "4024d261-5a51-418b-a578-acf00a23a744",
+      "name": "广州金桂根消防设备有限公司",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "被曝光的非法生产灭火器的黑工厂",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "cbb2a5af-8937-4742-8dff-754eab49b03b",
+      "name": "创亿消防器材有限公司",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "被曝光的非法生产灭火器的黑工厂",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "995bdbfe-9b30-4a9c-b50f-65ef1caf55de",
+      "name": "湖南闽湘消防设备有限公司",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "被曝光的非法生产灭火器的黑工厂",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "c041d3f6-e958-440c-abe5-c5a8a3509296",
+      "name": "湘达龙灭火器",
+      "labels": [
+        "FoodManufacturer",
+        "Entity"
+      ],
+      "summary": "被曝光生产偷工减料灭火器的企业",
+      "attributes": {},
+      "primary_label": "FoodManufacturer",
+      "created_at": null
+    },
+    {
+      "uuid": "8badd1a1-91da-4575-96e6-d825001fd655",
+      "name": "监管部门",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "对涉事企业进行控制的监管部门",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "00658afc-2c3e-4743-9df6-6f55816a4ae5",
+      "name": "央视",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "曝光防火玻璃问题的媒体",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "b14de04a-6599-4d80-aeb0-251238f9e2db",
+      "name": "河北市监局",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "河北省市场监管部门",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "c0c85eba-1c07-45f9-b325-cc18d6fb2b3d",
+      "name": "天津市静海区市场监督管理局",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "天津市静海区市场监管部门",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "cd3aa52b-caed-47dc-83c0-29f172dbea91",
+      "name": "廊坊永彬玻璃科技有限公司",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "生产质量不达标防火玻璃的企业",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "3c2bb600-625f-41e7-b7ec-d59276989e06",
+      "name": "三河市双福铝塑门窗有限公司",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "生产质量不达标防火玻璃的企业",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "a18b079e-f71f-4e36-9151-e0843f6686d7",
+      "name": "天津顺玻玻璃科技有限公司",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "生产质量不达标防火玻璃的企业",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "14c48da6-1766-4f96-b8e2-7c1752e1c82c",
+      "name": "天津保建节能玻璃公司",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "生产质量不达标防火玻璃的企业",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "ce9b4f21-fe23-4df5-bac9-c9d2e61240eb",
+      "name": "经纬快评",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "媒体机构，发表对婚介机构的批评评论",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "8089ae8c-d846-49c9-8ba7-67bd21e15693",
+      "name": "网民",
+      "labels": [
+        "Consumer",
+        "Entity"
+      ],
+      "summary": "参与网络讨论的普通消费者",
+      "attributes": {},
+      "primary_label": "Consumer",
+      "created_at": null
+    },
+    {
+      "uuid": "3684e023-4439-4a82-890e-1df7ab67dc62",
+      "name": "抖音",
+      "labels": [
+        "EcommercePlatform",
+        "Entity"
+      ],
+      "summary": "短视频平台成为3·15晚会传播的重要渠道",
+      "attributes": {},
+      "primary_label": "EcommercePlatform",
+      "created_at": null
+    },
+    {
+      "uuid": "29353fe9-d4a7-4855-9cf7-e8ff3770906e",
+      "name": "国务院食安办",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "国家食品安全监管部门",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "30bd2d33-a8c6-4ae8-9a3f-092e0fea2458",
+      "name": "公安部",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "公安部门参与肉类违法犯罪专项整治",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "e4ea94c7-f097-4ccd-aa18-776fe01bb244",
+      "name": "农业农村部",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "农业部门参与肉类违法犯罪专项整治",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "e14d7c05-65de-40ba-8235-bc9a9028a944",
+      "name": "市场监管总局",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "市场监管部门参与肉类违法犯罪专项整治",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "701dcb37-b4cb-49f3-a9c3-370eaf0db1a3",
+      "name": "阜阳市市场监督管理局",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "地方市场监管部门对涉事企业进行查封",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "53013354-04a1-4bb3-8644-adcda85a1c06",
+      "name": "安徽省市场监管局",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "省级市场监管部门派工作组现场指导处置",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "3ee7131c-2d9a-4422-9d1b-34ca96d3b5a0",
+      "name": "消费者",
+      "labels": [
+        "Consumer",
+        "Entity"
+      ],
+      "summary": "对食品安全事件表示关注讨论",
+      "attributes": {},
+      "primary_label": "Consumer",
+      "created_at": null
+    },
+    {
+      "uuid": "f13db4e0-01ee-45cf-b82c-4a7d75afe892",
+      "name": "北京日报",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "新闻媒体机构报道食品安全事件",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "c639f0f7-e76a-4b5b-ae9a-29637de04720",
+      "name": "劣质槽头肉",
+      "labels": [
+        "FoodManufacturer",
+        "Entity"
+      ],
+      "summary": "涉及食品安全问题的肉类产品",
+      "attributes": {},
+      "primary_label": "FoodManufacturer",
+      "created_at": null
+    },
+    {
+      "uuid": "f72bdb8c-95d2-45f4-abcf-fd8066eef80b",
+      "name": "梅菜扣肉",
+      "labels": [
+        "FoodManufacturer",
+        "Entity"
+      ],
+      "summary": "被消费者抵制的预制菜产品",
+      "attributes": {},
+      "primary_label": "FoodManufacturer",
+      "created_at": null
+    },
+    {
+      "uuid": "21851176-b5f4-4ed5-937a-22b8ca01b9ae",
+      "name": "网友",
+      "labels": [
+        "Consumer",
+        "Entity"
+      ],
+      "summary": "参与食品安全话题讨论的普通消费者",
+      "attributes": {},
+      "primary_label": "Consumer",
+      "created_at": null
+    },
+    {
+      "uuid": "a951b529-6cdf-4203-8305-4cf67b930e99",
+      "name": "王海",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "提及小杨哥和东方甄选销售槽头肉扣肉的个人",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "77437251-b75d-4f79-9288-eb4429408a6d",
+      "name": "小杨哥",
+      "labels": [
+        "Influencer",
+        "Entity"
+      ],
+      "summary": "被指销售过槽头肉扣肉的网络影响者",
+      "attributes": {},
+      "primary_label": "Influencer",
+      "created_at": null
+    },
+    {
+      "uuid": "9bb0ab92-c86b-4973-b0e2-9758ae52662a",
+      "name": "东方甄选",
+      "labels": [
+        "EcommercePlatform",
+        "Entity"
+      ],
+      "summary": "被指销售过槽头肉扣肉的电商平台",
+      "attributes": {},
+      "primary_label": "EcommercePlatform",
+      "created_at": null
+    },
+    {
+      "uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "name": "央视315晚会",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "点名听花酒的电视媒体节目",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "9cccda57-89ed-4950-ab93-ea47c921d9dc",
+      "name": "听花酒",
+      "labels": [
+        "FoodManufacturer",
+        "Entity"
+      ],
+      "summary": "被315晚会曝光的高端白酒产品",
+      "attributes": {},
+      "primary_label": "FoodManufacturer",
+      "created_at": null
+    },
+    {
+      "uuid": "e9df272d-8502-4302-bd0a-85b8ce13c173",
+      "name": "青海春天",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "生产听花酒的公司",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "35929d61-109e-4aeb-bc4e-6e69bc39fac4",
+      "name": "湖南云抖科技有限公司",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "被315曝光的涉事主板机公司之一",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "103c5b98-4f48-468b-9881-7ea71268f059",
+      "name": "云机侠（深圳）科技有限公司",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "被315曝光的涉事主板机公司之一",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "f9432510-bc37-4225-9476-24ebe8ef58f5",
+      "name": "深圳云承未来科技有限公司",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "被315曝光的涉事主板机公司之一",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "1f67d7bb-f15d-4440-8da4-c3904d6bc999",
+      "name": "央视315",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "媒体机构点名主板机黑灰产业链",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "09e17f23-fc9c-4ce4-b49c-b4f011703154",
+      "name": "湖南汝城县市场监督管理局",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "地方市场监管部门对曝光企业进行突击执法检查",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "0b7cab85-9b2b-4084-a21e-99ba60ce3a7c",
+      "name": "深圳市市场监督管理局",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "深圳市市场监管部门赴宝安、坪山查处涉事企业",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "4b494458-5c7f-41e0-834a-767b938a92a0",
+      "name": "公安部门",
+      "labels": [
+        "RegulatoryAgency",
+        "Entity"
+      ],
+      "summary": "配合市场监管部门查处涉事企业",
+      "attributes": {},
+      "primary_label": "RegulatoryAgency",
+      "created_at": null
+    },
+    {
+      "uuid": "9a700f93-077c-47c6-a7b4-846437314ebb",
+      "name": "315全媒体舆情报告",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "发布关于主板机黑灰产业链的舆情报告",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "dfb1a803-0fec-471f-90f1-9e92ab32c3e5",
+      "name": "世纪佳缘",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "婚恋平台企业",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "1bf8d820-64e8-4700-a5d0-35183e6830e0",
+      "name": "珍爱网",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "婚恋平台企业",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    }
+  ],
+  "edges": [
+    {
+      "uuid": "84aa36eb-0659-440f-8173-c586c623c396",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "3·15晚会通过慧科讯业Wisers平台进行传播",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "a96532b4-17c1-4099-85fa-7eecac86e5bb",
+      "target_node_uuid": "141cfa6b-8949-4edd-813b-f166ff2a1c31",
+      "source_node_name": "央视3·15晚会",
+      "target_node_name": "慧科讯业Wisers",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "925761dc-3960-4c44-b8fc-3bd522872380",
+      "name": "SELLS_PRODUCT",
+      "fact": "东方甄选销售过槽头肉扣肉",
+      "fact_type": "SELLS_PRODUCT",
+      "source_node_uuid": "9bb0ab92-c86b-4973-b0e2-9758ae52662a",
+      "target_node_uuid": "c639f0f7-e76a-4b5b-ae9a-29637de04720",
+      "source_node_name": "东方甄选",
+      "target_node_name": "劣质槽头肉",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "524a5d5d-47e4-4ae2-b61a-15c69611d99f",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "北京日报报道劣质槽头肉制作梅菜扣肉的食品安全问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "f13db4e0-01ee-45cf-b82c-4a7d75afe892",
+      "target_node_uuid": "c639f0f7-e76a-4b5b-ae9a-29637de04720",
+      "source_node_name": "北京日报",
+      "target_node_name": "劣质槽头肉",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "dc923e22-7d02-4c40-8b60-7a032ae4138d",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315晚会曝光梅菜扣肉的糟心肉问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "target_node_uuid": "f72bdb8c-95d2-45f4-abcf-fd8066eef80b",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "梅菜扣肉",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "84aa36eb-0659-440f-8173-c586c623c396",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "3·15晚会曝光听花酒宣传广告违法",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "a96532b4-17c1-4099-85fa-7eecac86e5bb",
+      "target_node_uuid": "9cccda57-89ed-4950-ab93-ea47c921d9dc",
+      "source_node_name": "央视3·15晚会",
+      "target_node_name": "听花酒",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "1592faf3-0633-481a-9568-7fee92763dd3",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315晚会曝光听花酒问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "target_node_uuid": "9cccda57-89ed-4950-ab93-ea47c921d9dc",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "听花酒",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "2b0c734e-7572-4852-b25d-cc27bc3679ae",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "央视315晚会点名曝光听花酒过度营销、夸大宣传、价格昂贵等问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "target_node_uuid": "9cccda57-89ed-4950-ab93-ea47c921d9dc",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "听花酒",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "cc59095f-3133-4db8-8f58-9259ffb13fe1",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "央视315晚会点名听花酒宣传广告违法",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "target_node_uuid": "9cccda57-89ed-4950-ab93-ea47c921d9dc",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "听花酒",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "033f4afb-6d4f-4806-8c24-32d8059ddb84",
+      "name": "REGULATES",
+      "fact": "湖南汝城县市场监督管理局对曝光企业进行突击执法检查",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "09e17f23-fc9c-4ce4-b49c-b4f011703154",
+      "target_node_uuid": "35929d61-109e-4aeb-bc4e-6e69bc39fac4",
+      "source_node_name": "湖南汝城县市场监督管理局",
+      "target_node_name": "湖南云抖科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "c5696705-2d5f-41ac-999c-1f91aea49d95",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "央视315点名主板机黑灰产业链",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "1f67d7bb-f15d-4440-8da4-c3904d6bc999",
+      "target_node_uuid": "35929d61-109e-4aeb-bc4e-6e69bc39fac4",
+      "source_node_name": "央视315",
+      "target_node_name": "湖南云抖科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "933d95fb-6eb4-42ea-99b1-aef1cf912b46",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "央视315晚会曝光湖南云抖科技有限公司涉及主板机黑灰产业链",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "target_node_uuid": "35929d61-109e-4aeb-bc4e-6e69bc39fac4",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "湖南云抖科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "566d2617-dfc8-4e18-b4dc-d085a8e888be",
+      "name": "REGULATES",
+      "fact": "深圳市市场监督管理局赴宝安、坪山查处涉事企业",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "0b7cab85-9b2b-4084-a21e-99ba60ce3a7c",
+      "target_node_uuid": "103c5b98-4f48-468b-9881-7ea71268f059",
+      "source_node_name": "深圳市市场监督管理局",
+      "target_node_name": "云机侠（深圳）科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "566d2617-dfc8-4e18-b4dc-d085a8e888be",
+      "name": "REGULATES",
+      "fact": "公安机关会同市场监管部门赴宝安、坪山查处涉事企业",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "4b494458-5c7f-41e0-834a-767b938a92a0",
+      "target_node_uuid": "103c5b98-4f48-468b-9881-7ea71268f059",
+      "source_node_name": "公安部门",
+      "target_node_name": "云机侠（深圳）科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "37b60877-6f65-45f4-b8a0-9df27e4a5488",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "央视315晚会曝光云机侠（深圳）科技有限公司涉及主板机黑灰产业链",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "target_node_uuid": "103c5b98-4f48-468b-9881-7ea71268f059",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "云机侠（深圳）科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "7ed49531-f8c6-4779-bf37-0cd34a1200e0",
+      "name": "REGULATES",
+      "fact": "公安机关会同市场监管部门赴宝安、坪山查处涉事企业",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "4b494458-5c7f-41e0-834a-767b938a92a0",
+      "target_node_uuid": "f9432510-bc37-4225-9476-24ebe8ef58f5",
+      "source_node_name": "公安部门",
+      "target_node_name": "深圳云承未来科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "7ed49531-f8c6-4779-bf37-0cd34a1200e0",
+      "name": "REGULATES",
+      "fact": "深圳市市场监督管理局赴宝安、坪山查处涉事企业",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "0b7cab85-9b2b-4084-a21e-99ba60ce3a7c",
+      "target_node_uuid": "f9432510-bc37-4225-9476-24ebe8ef58f5",
+      "source_node_name": "深圳市市场监督管理局",
+      "target_node_name": "深圳云承未来科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "1710ec39-0ebb-4fc4-ba4f-95ca7fef7dc1",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "央视315晚会曝光深圳云承未来科技有限公司涉及主板机黑灰产业链",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "target_node_uuid": "f9432510-bc37-4225-9476-24ebe8ef58f5",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "深圳云承未来科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "b2ed6645-ff96-4df2-8da8-7229be0506d2",
+      "name": "COMMENTS_ON",
+      "fact": "网友对315全媒体舆情报告中曝光的灭火器质量问题发表评论",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "21851176-b5f4-4ed5-937a-22b8ca01b9ae",
+      "target_node_uuid": "9a700f93-077c-47c6-a7b4-846437314ebb",
+      "source_node_name": "网友",
+      "target_node_name": "315全媒体舆情报告",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "31471522-aefc-40d8-a50a-06797318cd06",
+      "name": "COMMENTS_ON",
+      "fact": "网民扒出世纪佳缘相关悲剧事件并声讨",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "8089ae8c-d846-49c9-8ba7-67bd21e15693",
+      "target_node_uuid": "dfb1a803-0fec-471f-90f1-9e92ab32c3e5",
+      "source_node_name": "网民",
+      "target_node_name": "世纪佳缘",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "20a141bb-abed-4d59-adbf-1a6d559f4610",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315全媒体舆情报告曝光世纪佳缘婚恋平台套路",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "9a700f93-077c-47c6-a7b4-846437314ebb",
+      "target_node_uuid": "dfb1a803-0fec-471f-90f1-9e92ab32c3e5",
+      "source_node_name": "315全媒体舆情报告",
+      "target_node_name": "世纪佳缘",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "1f7554ff-75b0-4590-a2a0-d6456068a5fe",
+      "name": "REGULATES",
+      "fact": "深圳市市场监管局约谈珍爱网负责人",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "0b7cab85-9b2b-4084-a21e-99ba60ce3a7c",
+      "target_node_uuid": "1bf8d820-64e8-4700-a5d0-35183e6830e0",
+      "source_node_name": "深圳市市场监督管理局",
+      "target_node_name": "珍爱网",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "822fa627-55bc-41e1-ab68-2d2b154f65a2",
+      "name": "COMMENTS_ON",
+      "fact": "网民声讨珍爱网的骗人行为",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "8089ae8c-d846-49c9-8ba7-67bd21e15693",
+      "target_node_uuid": "1bf8d820-64e8-4700-a5d0-35183e6830e0",
+      "source_node_name": "网民",
+      "target_node_name": "珍爱网",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "643d44d9-003b-4940-8fd9-a057545d4d7c",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "媒体批评珍爱网存在骗人套路，呼吁加强监管",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "ce9b4f21-fe23-4df5-bac9-c9d2e61240eb",
+      "target_node_uuid": "1bf8d820-64e8-4700-a5d0-35183e6830e0",
+      "source_node_name": "经纬快评",
+      "target_node_name": "珍爱网",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "e6fb09f3-39e7-43e0-9de9-e3c069c5876d",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315全媒体舆情报告曝光珍爱网婚恋平台套路",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "9a700f93-077c-47c6-a7b4-846437314ebb",
+      "target_node_uuid": "1bf8d820-64e8-4700-a5d0-35183e6830e0",
+      "source_node_name": "315全媒体舆情报告",
+      "target_node_name": "珍爱网",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "84aa36eb-0659-440f-8173-c586c623c396",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "3·15晚会曝光天津保建节能玻璃公司生产不防火的防火玻璃",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "a96532b4-17c1-4099-85fa-7eecac86e5bb",
+      "target_node_uuid": "14c48da6-1766-4f96-b8e2-7c1752e1c82c",
+      "source_node_name": "央视3·15晚会",
+      "target_node_name": "天津保建节能玻璃公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "ca0a01a4-9b94-40c0-b107-3343d9a07f13",
+      "name": "REGULATES",
+      "fact": "天津市静海区市场监督管理局对天津保建节能玻璃公司涉生产假冒伪劣防火玻璃情况进行监管",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "c0c85eba-1c07-45f9-b325-cc18d6fb2b3d",
+      "target_node_uuid": "14c48da6-1766-4f96-b8e2-7c1752e1c82c",
+      "source_node_name": "天津市静海区市场监督管理局",
+      "target_node_name": "天津保建节能玻璃公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "b356cb2d-edbd-4e4a-95a1-651798738dc1",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "媒体曝光天津顺玻玻璃等企业生产造假的黑产链",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "9a700f93-077c-47c6-a7b4-846437314ebb",
+      "target_node_uuid": "a18b079e-f71f-4e36-9151-e0843f6686d7",
+      "source_node_name": "315全媒体舆情报告",
+      "target_node_name": "天津顺玻玻璃科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "b356cb2d-edbd-4e4a-95a1-651798738dc1",
+      "name": "REGULATES",
+      "fact": "当地监管部门控制涉事企业",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "8badd1a1-91da-4575-96e6-d825001fd655",
+      "target_node_uuid": "a18b079e-f71f-4e36-9151-e0843f6686d7",
+      "source_node_name": "监管部门",
+      "target_node_name": "天津顺玻玻璃科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "b356cb2d-edbd-4e4a-95a1-651798738dc1",
+      "name": "REGULATES",
+      "fact": "公安部门控制涉事企业",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "4b494458-5c7f-41e0-834a-767b938a92a0",
+      "target_node_uuid": "a18b079e-f71f-4e36-9151-e0843f6686d7",
+      "source_node_name": "公安部门",
+      "target_node_name": "天津顺玻玻璃科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "0201e309-9fb9-4bd1-a36d-7449a68ecad7",
+      "name": "REGULATES",
+      "fact": "公安部门对天津顺玻玻璃科技有限公司涉嫌违法的防火玻璃产品进行处理",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "4b494458-5c7f-41e0-834a-767b938a92a0",
+      "target_node_uuid": "a18b079e-f71f-4e36-9151-e0843f6686d7",
+      "source_node_name": "公安部门",
+      "target_node_name": "天津顺玻玻璃科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "84aa36eb-0659-440f-8173-c586c623c396",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "3·15晚会曝光天津顺玻玻璃科技有限公司生产不防火的防火玻璃",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "a96532b4-17c1-4099-85fa-7eecac86e5bb",
+      "target_node_uuid": "a18b079e-f71f-4e36-9151-e0843f6686d7",
+      "source_node_name": "央视3·15晚会",
+      "target_node_name": "天津顺玻玻璃科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "b465930f-89b2-48cf-b7f8-22563c48f921",
+      "name": "REGULATES",
+      "fact": "河北市监局对涉事企业问题产品查封扣押",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "b14de04a-6599-4d80-aeb0-251238f9e2db",
+      "target_node_uuid": "a18b079e-f71f-4e36-9151-e0843f6686d7",
+      "source_node_name": "河北市监局",
+      "target_node_name": "天津顺玻玻璃科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "ab3fbbf6-346f-4d41-862e-ea53d359ecad",
+      "name": "REGULATES",
+      "fact": "天津市静海区市场监督管理局对天津顺玻玻璃科技有限公司涉生产假冒伪劣防火玻璃情况进行监管",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "c0c85eba-1c07-45f9-b325-cc18d6fb2b3d",
+      "target_node_uuid": "a18b079e-f71f-4e36-9151-e0843f6686d7",
+      "source_node_name": "天津市静海区市场监督管理局",
+      "target_node_name": "天津顺玻玻璃科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "84aa36eb-0659-440f-8173-c586c623c396",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "3·15晚会曝光三河市双福铝塑门窗有限公司生产不防火的防火玻璃",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "a96532b4-17c1-4099-85fa-7eecac86e5bb",
+      "target_node_uuid": "3c2bb600-625f-41e7-b7ec-d59276989e06",
+      "source_node_name": "央视3·15晚会",
+      "target_node_name": "三河市双福铝塑门窗有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "84aa36eb-0659-440f-8173-c586c623c396",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "3·15晚会曝光廊坊永彬玻璃科技有限公司生产不防火的防火玻璃",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "a96532b4-17c1-4099-85fa-7eecac86e5bb",
+      "target_node_uuid": "cd3aa52b-caed-47dc-83c0-29f172dbea91",
+      "source_node_name": "央视3·15晚会",
+      "target_node_name": "廊坊永彬玻璃科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "fc15d04d-143e-4489-b939-0fa148feadb7",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "央视曝光廊坊永彬玻璃科技有限公司的防火玻璃问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "00658afc-2c3e-4743-9df6-6f55816a4ae5",
+      "target_node_uuid": "cd3aa52b-caed-47dc-83c0-29f172dbea91",
+      "source_node_name": "央视",
+      "target_node_name": "廊坊永彬玻璃科技有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "f5cfafe7-d637-4069-9434-4c8a6e752a5c",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315晚会曝光灭火器问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "target_node_uuid": "c041d3f6-e958-440c-abe5-c5a8a3509296",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "湘达龙灭火器",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "84aa36eb-0659-440f-8173-c586c623c396",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "3·15晚会曝光湘达龙灭火器等企业的非标灭火器问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "a96532b4-17c1-4099-85fa-7eecac86e5bb",
+      "target_node_uuid": "c041d3f6-e958-440c-abe5-c5a8a3509296",
+      "source_node_name": "央视3·15晚会",
+      "target_node_name": "湘达龙灭火器",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "b2fb8b07-05ed-4e75-9473-cde7fc19bd71",
+      "name": "COMMENTS_ON",
+      "fact": "网友对315曝光的劣质灭火器事件发表评论",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "21851176-b5f4-4ed5-937a-22b8ca01b9ae",
+      "target_node_uuid": "c041d3f6-e958-440c-abe5-c5a8a3509296",
+      "source_node_name": "网友",
+      "target_node_name": "湘达龙灭火器",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "5bae2f22-c31c-4cdb-8d2b-e538b01f5174",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "媒体曝光湘达龙灭火器生产非标产品",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "9a700f93-077c-47c6-a7b4-846437314ebb",
+      "target_node_uuid": "c041d3f6-e958-440c-abe5-c5a8a3509296",
+      "source_node_name": "315全媒体舆情报告",
+      "target_node_name": "湘达龙灭火器",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "e563dfda-fac0-4dfd-bd1a-366e217b470c",
+      "name": "COMMENTS_ON",
+      "fact": "消费者对非标灭火器的安全隐患表示担忧",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "3ee7131c-2d9a-4422-9d1b-34ca96d3b5a0",
+      "target_node_uuid": "c041d3f6-e958-440c-abe5-c5a8a3509296",
+      "source_node_name": "消费者",
+      "target_node_name": "湘达龙灭火器",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "db990b9d-f0a3-4cab-83a5-f46d23846b9e",
+      "name": "REGULATES",
+      "fact": "株洲市监局对湘达龙灭火器等企业开展检查并查处违法行为",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "a91e1b71-05ab-4119-b9ab-77d819dc8299",
+      "target_node_uuid": "c041d3f6-e958-440c-abe5-c5a8a3509296",
+      "source_node_name": "株洲市监局",
+      "target_node_name": "湘达龙灭火器",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "6d0869ed-46e3-4d49-8bf3-d37f27869869",
+      "name": "REGULATES",
+      "fact": "广州市市场监管局对湘达龙灭火器等问题企业采取执法行动",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "05cb6127-d153-42c1-83a5-eb0cfc48d5ea",
+      "target_node_uuid": "c041d3f6-e958-440c-abe5-c5a8a3509296",
+      "source_node_name": "广州市市场监管局",
+      "target_node_name": "湘达龙灭火器",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "6e90d68a-9cb1-4557-9bc1-2a61b411f572",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315全媒体舆情报告曝光湘达龙灭火器偷工减料问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "9a700f93-077c-47c6-a7b4-846437314ebb",
+      "target_node_uuid": "c041d3f6-e958-440c-abe5-c5a8a3509296",
+      "source_node_name": "315全媒体舆情报告",
+      "target_node_name": "湘达龙灭火器",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "64f424d4-7a97-4653-9db7-83f91d5ff8d1",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315全媒体舆情报告曝光湖南闽湘消防设备有限公司非法生产问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "9a700f93-077c-47c6-a7b4-846437314ebb",
+      "target_node_uuid": "995bdbfe-9b30-4a9c-b50f-65ef1caf55de",
+      "source_node_name": "315全媒体舆情报告",
+      "target_node_name": "湖南闽湘消防设备有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "6f3606b8-f6d1-44f4-8dbc-046311d9b0ad",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315全媒体舆情报告曝光创亿消防器材有限公司非法生产问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "9a700f93-077c-47c6-a7b4-846437314ebb",
+      "target_node_uuid": "cbb2a5af-8937-4742-8dff-754eab49b03b",
+      "source_node_name": "315全媒体舆情报告",
+      "target_node_name": "创亿消防器材有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "b34e2159-40f6-4f45-8fb3-6791b132626a",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315全媒体舆情报告曝光广州金桂根消防设备有限公司非法生产问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "9a700f93-077c-47c6-a7b4-846437314ebb",
+      "target_node_uuid": "4024d261-5a51-418b-a578-acf00a23a744",
+      "source_node_name": "315全媒体舆情报告",
+      "target_node_name": "广州金桂根消防设备有限公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "8c0d8a85-c626-4482-954b-98396cf792ad",
+      "name": "COMMENTS_ON",
+      "fact": "消费者投诉同程金融变相现金贷",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "3ee7131c-2d9a-4422-9d1b-34ca96d3b5a0",
+      "target_node_uuid": "92c7d37c-1010-4ae4-aee3-c41b685bad45",
+      "source_node_name": "消费者",
+      "target_node_name": "同程金融App",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "f1fa2570-ce52-4cc2-a633-169964f7f458",
+      "name": "COMMENTS_ON",
+      "fact": "中新经纬评论同程金融披着旅行外衣做高利贷生意",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "635d79fc-410b-4fc6-9760-717066d49d65",
+      "target_node_uuid": "92c7d37c-1010-4ae4-aee3-c41b685bad45",
+      "source_node_name": "中新经纬",
+      "target_node_name": "同程金融App",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "7c3b81e0-6853-41c5-bd39-03f9951ef33b",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315全媒体舆情报告曝光同程金融APP礼品卡套路",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "9a700f93-077c-47c6-a7b4-846437314ebb",
+      "target_node_uuid": "92c7d37c-1010-4ae4-aee3-c41b685bad45",
+      "source_node_name": "315全媒体舆情报告",
+      "target_node_name": "同程金融App",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "23cd8ba8-867a-4562-8359-f89682cf6b1e",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315曝光同程金融App礼品卡套路变相引诱消费者借高利贷",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "1642ccf3-bf61-45c2-b196-ad1873e427f4",
+      "target_node_uuid": "92c7d37c-1010-4ae4-aee3-c41b685bad45",
+      "source_node_name": "315",
+      "target_node_name": "同程金融App",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "4deba0ed-72cb-4368-bf3b-ca6930c070b0",
+      "name": "PURCHASES_FROM",
+      "fact": "消费者从同程金融App借贷",
+      "fact_type": "PURCHASES_FROM",
+      "source_node_uuid": "3ee7131c-2d9a-4422-9d1b-34ca96d3b5a0",
+      "target_node_uuid": "92c7d37c-1010-4ae4-aee3-c41b685bad45",
+      "source_node_name": "消费者",
+      "target_node_name": "同程金融App",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "f8cb7f43-1d15-4454-8a0e-a5271ea2e3ec",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315全媒体舆情报告曝光同程金融App礼品卡套路",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "9a700f93-077c-47c6-a7b4-846437314ebb",
+      "target_node_uuid": "92c7d37c-1010-4ae4-aee3-c41b685bad45",
+      "source_node_name": "315全媒体舆情报告",
+      "target_node_name": "同程金融App",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "4b6f9b9d-258d-4489-98e6-9242b49c8036",
+      "name": "REGULATES",
+      "fact": "浦东检察院进入涉事企业进行调查",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "9e363fdd-ea89-4a12-b0f7-21fcf6fee565",
+      "target_node_uuid": "cf0c930e-e219-4c28-93cd-8f6aeef1ba98",
+      "source_node_name": "浦东检察院",
+      "target_node_name": "同程数科公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "6b6bcc6c-111c-4aa5-803a-f4d86db4d92e",
+      "name": "CONDUCTS_INSPECTION",
+      "fact": "浦东检察院进入涉事企业同程数科公司进行调查",
+      "fact_type": "CONDUCTS_INSPECTION",
+      "source_node_uuid": "9e363fdd-ea89-4a12-b0f7-21fcf6fee565",
+      "target_node_uuid": "cf0c930e-e219-4c28-93cd-8f6aeef1ba98",
+      "source_node_name": "浦东检察院",
+      "target_node_name": "同程数科公司",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "188c4d75-50e1-4512-8345-bffc7cf929f8",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "央视315晚会曝光老坛酸菜食品安全问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "target_node_uuid": "7eb233cd-3c8a-40b8-9807-e032adb62257",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "老坛酸菜",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "396237da-2628-4318-9615-d2821ea52c98",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "央视315晚会曝光假香米问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "target_node_uuid": "1550ece7-6781-4685-ad50-4c85069d64f8",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "假香米",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "39d4410a-8f57-4007-96ef-4ab18948bb12",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "央视315晚会重点关注糟心肉问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "target_node_uuid": "6ea70ee7-baaa-4ad1-9c14-079921f21043",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "糟心肉",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "08bf283b-ff70-481a-a7d0-468f241c79a3",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315晚会对防火玻璃问题进行曝光",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "79e7e14c-3bc2-452c-9995-6ca167a0a874",
+      "target_node_uuid": "21296838-ed36-4675-904c-7f959316d66b",
+      "source_node_name": "315晚会",
+      "target_node_name": "防火玻璃",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "8d7e9a6b-7fd7-46ae-8c4a-c6c4802ee5a5",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315晚会对非标灭火器问题进行曝光",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "79e7e14c-3bc2-452c-9995-6ca167a0a874",
+      "target_node_uuid": "43636a31-cd3c-40ba-96cd-21b57b617b88",
+      "source_node_name": "315晚会",
+      "target_node_name": "非标灭火器",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "e9b11454-0e02-4065-802e-4191d9eb7dee",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "央视315曝光宝马传动轴异响问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "1f67d7bb-f15d-4440-8da4-c3904d6bc999",
+      "target_node_uuid": "ead71165-5e2b-4fd9-b2dc-a1f3d9f1a3fc",
+      "source_node_name": "央视315",
+      "target_node_name": "宝马",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "06260438-1cc7-48c0-8da8-3a11562bec93",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315全媒体舆情报告曝光了AI诈骗事件",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "9a700f93-077c-47c6-a7b4-846437314ebb",
+      "target_node_uuid": "a7b45271-06a5-4331-bc7d-04ba269d9480",
+      "source_node_name": "315全媒体舆情报告",
+      "target_node_name": "AI诈骗",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "44279f22-12dc-4102-917c-bb596e6b2028",
+      "name": "REGULATES",
+      "fact": "政府部门对问题企业进行整治行动",
+      "fact_type": "REGULATES",
+      "source_node_uuid": "bb05051d-a323-406c-8df9-8637c35107d9",
+      "target_node_uuid": "2f638a1d-d633-43e9-a85e-a2d81d1aa2c7",
+      "source_node_name": "政府部门",
+      "target_node_name": "企业",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "a1905ec2-b7a3-44a2-a284-0d6ce1bef8df",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "央视315晚会曝光企业问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "target_node_uuid": "2f638a1d-d633-43e9-a85e-a2d81d1aa2c7",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "企业",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "63594f18-5b77-4708-b99c-268ef3c95b44",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "媒体集团点名企业",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "b98ed6f2-a66f-45ff-aa12-1cc43b64cc5a",
+      "target_node_uuid": "2f638a1d-d633-43e9-a85e-a2d81d1aa2c7",
+      "source_node_name": "媒体集团",
+      "target_node_name": "企业",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "9845c7bd-653c-4b2c-98c0-a27e42c06c46",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "央视315晚会点名企业",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "target_node_uuid": "2f638a1d-d633-43e9-a85e-a2d81d1aa2c7",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "企业",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "36a5c877-b286-4ccc-948c-57986a254000",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315点名企业上榜",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "1642ccf3-bf61-45c2-b196-ad1873e427f4",
+      "target_node_uuid": "2f638a1d-d633-43e9-a85e-a2d81d1aa2c7",
+      "source_node_name": "315",
+      "target_node_name": "企业",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "a5d50b86-589b-4cc6-8a04-d0a4900a66c2",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315晚会曝光企业违规问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "target_node_uuid": "2f638a1d-d633-43e9-a85e-a2d81d1aa2c7",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "企业",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "7bbf6663-24f5-40b9-91e2-c73b5a2a534d",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315晚会将重点关注新兴领域，加大对企业监督力度",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "79e7e14c-3bc2-452c-9995-6ca167a0a874",
+      "target_node_uuid": "2f638a1d-d633-43e9-a85e-a2d81d1aa2c7",
+      "source_node_name": "315晚会",
+      "target_node_name": "企业",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "e145c5b9-2962-4b63-886a-850c7d8e304f",
+      "name": "COMMENTS_ON",
+      "fact": "网友对3·15晚会曝光的防火玻璃问题发表评论",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "21851176-b5f4-4ed5-937a-22b8ca01b9ae",
+      "target_node_uuid": "a96532b4-17c1-4099-85fa-7eecac86e5bb",
+      "source_node_name": "网友",
+      "target_node_name": "央视3·15晚会",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "c8b804e4-db4c-44da-a385-f5595beb332c",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315晚会曝光劣质防火玻璃问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "50f6e395-9dad-44db-890d-b5fc8cc2b928",
+      "target_node_uuid": "4caf9a72-c7e8-41cc-a45b-190553b59f4c",
+      "source_node_name": "央视315晚会",
+      "target_node_name": "劣质防火玻璃",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "05a7b256-7706-4d8c-bd86-a45da37cebc9",
+      "name": "EXPOSES_VIOLATION",
+      "fact": "315全媒体舆情报告报道了预制菜行业的安全问题",
+      "fact_type": "EXPOSES_VIOLATION",
+      "source_node_uuid": "9a700f93-077c-47c6-a7b4-846437314ebb",
+      "target_node_uuid": "340f0814-a10b-4dce-b668-a9ee80c2e2ea",
+      "source_node_name": "315全媒体舆情报告",
+      "target_node_name": "预制菜",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    }
+  ],
+  "node_count": 75,
+  "edge_count": 72
+}

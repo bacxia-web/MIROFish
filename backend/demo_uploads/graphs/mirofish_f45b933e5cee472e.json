@@ -1,0 +1,1425 @@
+{
+  "graph_id": "mirofish_f45b933e5cee472e",
+  "nodes": [
+    {
+      "uuid": "00823020-3d6a-4955-8afd-eeaa563fc474",
+      "name": "封氏",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "甄士隐的嫡妻，性格贤淑且深明礼义。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "21e48d2c-c929-45c7-97cf-dbb620a24c5e",
+      "name": "娇杏",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "被贾雨村看中并送作二房的丫头。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "b144a0c0-0247-4533-bf88-95879ce1423a",
+      "name": "贾化",
+      "labels": [
+        "Official",
+        "Entity"
+      ],
+      "summary": "本府新升的太爷，与封肃的女婿旧日相交。",
+      "attributes": {},
+      "primary_label": "Official",
+      "created_at": null
+    },
+    {
+      "uuid": "85fb01b4-8dcc-413f-9932-f2ebb4831fc4",
+      "name": "冷子兴",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "在扬州城讲述荣国府故事的旁观者。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "c430d2d1-f6e9-4b99-adf1-3c23e40af0d2",
+      "name": "本府太爷",
+      "labels": [
+        "Official",
+        "Entity"
+      ],
+      "summary": "差人来传人问话的政府官员。",
+      "attributes": {},
+      "primary_label": "Official",
+      "created_at": null
+    },
+    {
+      "uuid": "9de788ea-1263-46e8-985e-eed2599d0680",
+      "name": "甄家大丫鬟",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "在门前买线时看到新太爷到任的丫鬟。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "224c5872-507b-429c-9cfa-699e787cb6bb",
+      "name": "跛足道人",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "一位疯癫落拓的道士，口中念着诗句。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "663c9f38-eaed-411c-a746-7b9ab3b25754",
+      "name": "封肃",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "甄士隐的岳丈，务农且家中殷实。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "d4426f23-1b10-4acb-9303-5ae28722753d",
+      "name": "霍启",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "甄士隐的家人，负责照顾英莲但导致其走失。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "a61b590e-0cea-47aa-8ec8-d0c9cdb76c77",
+      "name": "甄家丫鬟",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "甄家的丫鬟，注意到贾雨村的外貌并产生好奇。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "628be76d-d07e-438a-9c84-c103caaec29c",
+      "name": "道人",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "与僧一同出现的神秘道人，与士隐告别。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "d2a4be16-57ce-4349-a305-b16cddd38078",
+      "name": "那道人",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "与僧人一同讨论风月故事并计划下世度脱人物的仙人。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "8075d60a-c241-4784-b1fe-099b0a6b0102",
+      "name": "那僧",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "与道人一同讨论风月故事并计划下世度脱人物的仙人。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "909c662d-16ed-4cc1-ab87-323ad121014e",
+      "name": "士隐",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "一位年过半百、膝下无子仅有一女的书生。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "3ce1dd3f-bdf7-49d7-88aa-28753dbad8c0",
+      "name": "英莲",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "甄士隐与封氏的女儿，年仅三岁。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "ae94e491-d538-4d35-bd66-e176b2a87a88",
+      "name": "贾雨村",
+      "labels": [
+        "Official",
+        "Entity"
+      ],
+      "summary": "遣人答谢甄家娘子，并转托封肃要娇杏作二房。",
+      "attributes": {},
+      "primary_label": "Official",
+      "created_at": null
+    },
+    {
+      "uuid": "d04f8cd5-7557-4446-bc73-83ba3ffe321d",
+      "name": "贾琏",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "《红楼梦》中的人物，贾赦之长子，娶了王氏的内侄女。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "d3a0e24b-5404-4a91-a805-38ce15795f31",
+      "name": "赦老",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "贾府中的长辈，无子嗣。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "4f960c71-bcbc-492f-9805-3fa19380f905",
+      "name": "政公",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "贾府中的长辈，有衔玉之儿。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "3965c8b2-3142-4b2b-9e2c-ba7e161439e0",
+      "name": "林公之夫人",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "荣府中赦、政二公之胞妹，原名贾敏。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "21f65d6d-20f0-4f27-829a-203ffe75c67b",
+      "name": "巡盐御史林家",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "贾雨村目前任职的机构。",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "71f7baa9-5ebf-4985-857b-ccd7b024c1d6",
+      "name": "祖母",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "他的祖母，对他溺爱不明。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "a708db14-d139-4802-91a3-16dc525110f6",
+      "name": "他",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "他的父亲，曾多次责打他以纠正其行为。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "24b03ae5-6662-4e00-bddd-5548c3af4de1",
+      "name": "甄府",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "一个显贵且富而好礼的家庭机构。",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "4a7f9bbe-057d-4e93-a21b-941e43b1392b",
+      "name": "贾府",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "与甄家为老亲及世交的家族。",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "20c7daca-2568-4d2c-aeeb-76c064ed6ac6",
+      "name": "甄家",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "金陵城内的显赫家族，与贾府有世交关系。",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "86cb9b7d-2ae0-40e0-8bfb-232638c822a8",
+      "name": "史老太君",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "某人的祖母，非常疼爱他。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "8af8c18f-893b-4abf-a8bf-f6440f74ad9b",
+      "name": "政老爹",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "某人的父亲，对其志向表示不满。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "cc7b7708-ee1f-40f7-882c-6e42e6c53e89",
+      "name": "贾宝玉",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "贾政与王氏次子，出生时口中含玉，被视为奇事。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "0791205f-9a93-4440-b7ca-380789199a89",
+      "name": "贾元春",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "贾政与王氏所生的长女，生在大年初一。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "83ab998b-8299-43c4-adab-1fc5a96f0a5f",
+      "name": "贾珠",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "贾政与王氏的长子，早逝。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "ae2ddcb4-2932-4315-8459-14eef2ee1df7",
+      "name": "王氏",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "贾政之妻，生有贾珠、贾元春和贾宝玉。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "f1b6473b-834c-4949-bb7e-c48c0384a9c9",
+      "name": "贾政",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "贾代善次子，原欲以科甲出身，后被赐主事之衔，现为员外郎。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "b03cd9ec-9a17-49cf-9466-505f35b14213",
+      "name": "贾赦",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "贾代善长子，袭官。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "40003cce-995b-44b2-bed5-53474e0ffc23",
+      "name": "史侯家",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "金陵的世家勋贵家族，贾代善之妻的娘家。",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "60ec25cb-4e0a-4c5d-84f6-26bf809b28cf",
+      "name": "贾代善",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "荣公长子，袭官并娶金陵世勋史侯家小姐为妻。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "94c4e8c1-3f90-4c35-af5a-d58656d69c8c",
+      "name": "贾蓉",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "贾珍之子，今年十六岁，由其祖父完全不管教。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "2bfef8f2-fc7f-4652-9202-8f0790efff9a",
+      "name": "贾珍",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "贾敬之子，继承官职，行为放纵，无人敢管。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "a98bfe67-a3cf-46db-bc1a-52183ebbbac6",
+      "name": "贾敬",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "贾代化的次子，喜好炼丹修道，不关心家事。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "34a43947-81fc-4208-8e1c-05fffdc0364b",
+      "name": "贾敷",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "贾代化的长子，八九岁时去世。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "5657e0e4-5ec0-4982-8ad3-3051009fa5ed",
+      "name": "贾代化",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "宁国公之子，继承官职并生有两个儿子。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "b144eace-7d97-4d0e-8d1b-7830f5a7a802",
+      "name": "荣国公",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "荣国家族的祖先，与宁国公为同胞兄弟。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "de06e206-aa0e-4185-a60f-585d49585e13",
+      "name": "宁国公",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "宁国家族的祖先，与荣国公为同胞兄弟。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "1a482d2c-820d-4d46-bbb3-03a47b3555ff",
+      "name": "子兴",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "向贾雨村讲述宁国公与荣国公家族情况的人。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "f526dfe2-eb23-46ff-ab67-205619110b5c",
+      "name": "宁国府",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "贾府的一部分，位于街东。",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "fe049f12-2de4-49e8-8b77-9bc21654320d",
+      "name": "荣国府",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "贾府的一部分，位于街西。",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "eeae072e-0d8a-4356-9f6e-0d9457ffc041",
+      "name": "智通寺",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "位于山环水旋之地的破旧寺庙。",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "10067beb-b4c9-4425-ab9b-5ee4d02aa1cb",
+      "name": "林如海",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "女学生的父亲，希望女儿守制读书。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "f8017a25-a71b-4f1e-ac40-9847fb8ccbc2",
+      "name": "女学生",
+      "labels": [
+        "Student",
+        "Entity"
+      ],
+      "summary": "年幼体弱，由贾雨村教授功课。",
+      "attributes": {},
+      "primary_label": "Student",
+      "created_at": null
+    },
+    {
+      "uuid": "c3753fba-71e8-4105-a5a2-698d98dff33a",
+      "name": "鹾政",
+      "labels": [
+        "Official",
+        "Entity"
+      ],
+      "summary": "聘请贾雨村担任西宾的地方官员。",
+      "attributes": {},
+      "primary_label": "Official",
+      "created_at": null
+    },
+    {
+      "uuid": "57186c0b-006c-4c46-b36b-e7f5c4d90989",
+      "name": "黛玉",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "林如海之女，年方五岁，聪明清秀。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "1abcf0da-1cb5-41d9-b94e-e6b111cc1238",
+      "name": "林如海",
+      "labels": [
+        "Official",
+        "Entity"
+      ],
+      "summary": "现任巡盐御史，曾任兰台寺大夫，出身名门望族。",
+      "attributes": {},
+      "primary_label": "Official",
+      "created_at": null
+    },
+    {
+      "uuid": "7221a0db-403b-49b8-bb1c-0a38f5dbb076",
+      "name": "甄家娘子",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "因女儿走失而伤感，受到贾雨村赠礼。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "name": "贾雨村",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "一位潦倒落魄的书生，意图通过写作昭传闺阁女子的故事。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "bb329d02-768f-4a6f-8846-ee325173b41d",
+      "name": "女娲氏",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "中国古代神话中炼石补天的神祇。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "f3fe8fe9-77bd-4617-a55d-dfb158e5efb1",
+      "name": "顽石",
+      "labels": [
+        "Object",
+        "Entity"
+      ],
+      "summary": "未被选中用于补天的灵性石头，后产生凡心。",
+      "attributes": {},
+      "primary_label": "Object",
+      "created_at": null
+    },
+    {
+      "uuid": "afa41d6b-4352-44fb-afee-980d23dcbbc2",
+      "name": "建文君",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "出现在文本中的人物。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "65c874a1-dd51-450c-9c91-dc5df2ca1c26",
+      "name": "红娘小玉",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "出现在文本中的人物。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "1ad2ac44-88ad-4efb-a228-7e305973910f",
+      "name": "空空道人",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "听他人讲述并思考的道人角色。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "8cfa6e75-ad98-4cea-898e-bcf09357d273",
+      "name": "东鲁孔梅溪",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "题写书名的人物。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "ee41e1de-d09f-4499-9719-d54741e7aee1",
+      "name": "曹雪芹",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "在悼红轩中创作《红楼梦》的作者。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "c48c9eb1-fa6d-4381-993c-24f73a22e5b2",
+      "name": "甄士隐",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "姑苏城中一位恬淡的乡宦，喜爱观花修竹、吟诗酌酒。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    }
+  ],
+  "edges": [
+    {
+      "uuid": "4682627e-4ca3-4db6-8021-1115cb67de3f",
+      "name": "COMMENTS_ON",
+      "fact": "贾雨村评论贾琏娶妻后上下称颂其夫人。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "target_node_uuid": "d04f8cd5-7557-4446-bc73-83ba3ffe321d",
+      "source_node_name": "贾雨村",
+      "target_node_name": "贾琏",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "e2313a84-d515-45fa-ab97-9782ff63d9b9",
+      "name": "WORKS_FOR",
+      "fact": "贾雨村在巡盐御史林家做馆。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "target_node_uuid": "21f65d6d-20f0-4f27-829a-203ffe75c67b",
+      "source_node_name": "贾雨村",
+      "target_node_name": "巡盐御史林家",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "03b1052d-b9bf-4be7-8267-f1f341f971c9",
+      "name": "AFFECTS",
+      "fact": "祖母的溺爱导致孙辈辱骂老师并责备儿子。",
+      "fact_type": "AFFECTS",
+      "source_node_uuid": "71f7baa9-5ebf-4985-857b-ccd7b024c1d6",
+      "target_node_uuid": "a708db14-d139-4802-91a3-16dc525110f6",
+      "source_node_name": "祖母",
+      "target_node_name": "他",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "23ebde03-f8f1-4f7a-bc0f-32f8fb5fc6f8",
+      "name": "WORKS_FOR",
+      "fact": "贾雨村曾到甄府处馆工作。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "target_node_uuid": "24b03ae5-6662-4e00-bddd-5548c3af4de1",
+      "source_node_name": "贾雨村",
+      "target_node_name": "甄府",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "f38abcdb-0922-4eeb-86f8-543f390e1bce",
+      "name": "AFFILIATED_WITH",
+      "fact": "甄家与贾府为世交并保持密切往来。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "20c7daca-2568-4d2c-aeeb-76c064ed6ac6",
+      "target_node_uuid": "4a7f9bbe-057d-4e93-a21b-941e43b1392b",
+      "source_node_name": "甄家",
+      "target_node_name": "贾府",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "a35957f5-e8b0-478a-8993-f4b92983f327",
+      "name": "COMMENTS_ON",
+      "fact": "贾雨村反驳政老爹对某人的看法。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "target_node_uuid": "8af8c18f-893b-4abf-a8bf-f6440f74ad9b",
+      "source_node_name": "贾雨村",
+      "target_node_name": "政老爹",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "d7168647-c8a3-43b3-a7a5-83e9192052c9",
+      "name": "PARENT_OF",
+      "fact": "贾政是贾宝玉的父亲。",
+      "fact_type": "PARENT_OF",
+      "source_node_uuid": "f1b6473b-834c-4949-bb7e-c48c0384a9c9",
+      "target_node_uuid": "cc7b7708-ee1f-40f7-882c-6e42e6c53e89",
+      "source_node_name": "贾政",
+      "target_node_name": "贾宝玉",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "cbc58ff9-256b-4b6b-a991-e459d422e681",
+      "name": "PARENT_OF",
+      "fact": "贾政是贾元春的父亲。",
+      "fact_type": "PARENT_OF",
+      "source_node_uuid": "f1b6473b-834c-4949-bb7e-c48c0384a9c9",
+      "target_node_uuid": "0791205f-9a93-4440-b7ca-380789199a89",
+      "source_node_name": "贾政",
+      "target_node_name": "贾元春",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "dc392793-e850-47cf-a76b-8b0a96ea68e0",
+      "name": "PARENT_OF",
+      "fact": "贾政是贾珠的父亲。",
+      "fact_type": "PARENT_OF",
+      "source_node_uuid": "f1b6473b-834c-4949-bb7e-c48c0384a9c9",
+      "target_node_uuid": "83ab998b-8299-43c4-adab-1fc5a96f0a5f",
+      "source_node_name": "贾政",
+      "target_node_name": "贾珠",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "0f19ddc8-445c-4483-ab43-525bee0a9c0b",
+      "name": "MARRIED_TO",
+      "fact": "贾政与王氏结为夫妻。",
+      "fact_type": "MARRIED_TO",
+      "source_node_uuid": "f1b6473b-834c-4949-bb7e-c48c0384a9c9",
+      "target_node_uuid": "ae2ddcb4-2932-4315-8459-14eef2ee1df7",
+      "source_node_name": "贾政",
+      "target_node_name": "王氏",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "84e76e10-eee2-4715-a907-e2978905cb86",
+      "name": "PARENT_OF",
+      "fact": "贾代善是贾政的父亲。",
+      "fact_type": "PARENT_OF",
+      "source_node_uuid": "60ec25cb-4e0a-4c5d-84f6-26bf809b28cf",
+      "target_node_uuid": "f1b6473b-834c-4949-bb7e-c48c0384a9c9",
+      "source_node_name": "贾代善",
+      "target_node_name": "贾政",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "8d3de61b-a85a-41c4-86cb-f4139e4fe31e",
+      "name": "WORKS_FOR",
+      "fact": "贾琏在贾政家住着，帮着料理家务。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "d04f8cd5-7557-4446-bc73-83ba3ffe321d",
+      "target_node_uuid": "f1b6473b-834c-4949-bb7e-c48c0384a9c9",
+      "source_node_name": "贾琏",
+      "target_node_name": "贾政",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "1317b0e8-f434-4517-a0e2-4d43b336db59",
+      "name": "COMMENTS_ON",
+      "fact": "贾雨村评论贾政及其家庭情况。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "target_node_uuid": "f1b6473b-834c-4949-bb7e-c48c0384a9c9",
+      "source_node_name": "贾雨村",
+      "target_node_name": "贾政",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "4e5e001d-1ec7-4ac0-9d95-e9484fce4958",
+      "name": "PARENT_OF",
+      "fact": "贾代善是贾赦的父亲。",
+      "fact_type": "PARENT_OF",
+      "source_node_uuid": "60ec25cb-4e0a-4c5d-84f6-26bf809b28cf",
+      "target_node_uuid": "b03cd9ec-9a17-49cf-9466-505f35b14213",
+      "source_node_name": "贾代善",
+      "target_node_name": "贾赦",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "3362ebc8-2265-4a25-9592-1ee834c60580",
+      "name": "PARENT_OF",
+      "fact": "贾珍是贾蓉的父亲。",
+      "fact_type": "PARENT_OF",
+      "source_node_uuid": "2bfef8f2-fc7f-4652-9202-8f0790efff9a",
+      "target_node_uuid": "94c4e8c1-3f90-4c35-af5a-d58656d69c8c",
+      "source_node_name": "贾珍",
+      "target_node_name": "贾蓉",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "f5a0e22a-5faf-4211-95a4-88479c395a83",
+      "name": "PARENT_OF",
+      "fact": "贾敬是贾珍的父亲。",
+      "fact_type": "PARENT_OF",
+      "source_node_uuid": "a98bfe67-a3cf-46db-bc1a-52183ebbbac6",
+      "target_node_uuid": "2bfef8f2-fc7f-4652-9202-8f0790efff9a",
+      "source_node_name": "贾敬",
+      "target_node_name": "贾珍",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "d7981eb3-f167-46c1-95f0-885d60a7b7fb",
+      "name": "PARENT_OF",
+      "fact": "贾代化是贾敬的父亲。",
+      "fact_type": "PARENT_OF",
+      "source_node_uuid": "5657e0e4-5ec0-4982-8ad3-3051009fa5ed",
+      "target_node_uuid": "a98bfe67-a3cf-46db-bc1a-52183ebbbac6",
+      "source_node_name": "贾代化",
+      "target_node_name": "贾敬",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "99fe7182-15b7-4caf-a276-86739a623549",
+      "name": "PARENT_OF",
+      "fact": "贾代化是贾敷的父亲。",
+      "fact_type": "PARENT_OF",
+      "source_node_uuid": "5657e0e4-5ec0-4982-8ad3-3051009fa5ed",
+      "target_node_uuid": "34a43947-81fc-4208-8e1c-05fffdc0364b",
+      "source_node_name": "贾代化",
+      "target_node_name": "贾敷",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "45f690f9-4f42-41cd-a11f-f4ddc58ce600",
+      "name": "COMMENTS_ON",
+      "fact": "冷子兴提到宁国府的萧疏情况。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "85fb01b4-8dcc-413f-9932-f2ebb4831fc4",
+      "target_node_uuid": "f526dfe2-eb23-46ff-ab67-205619110b5c",
+      "source_node_name": "冷子兴",
+      "target_node_name": "宁国府",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "e32fa440-9eb8-4772-b136-7756b882860f",
+      "name": "COMMENTS_ON",
+      "fact": "贾雨村询问荣国府的现状。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "target_node_uuid": "fe049f12-2de4-49e8-8b77-9bc21654320d",
+      "source_node_name": "贾雨村",
+      "target_node_name": "荣国府",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "82904f7f-33ab-45bf-a41b-1cdc5cedd4e9",
+      "name": "COMMENTS_ON",
+      "fact": "冷子兴提到荣国府的萧疏情况。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "85fb01b4-8dcc-413f-9932-f2ebb4831fc4",
+      "target_node_uuid": "fe049f12-2de4-49e8-8b77-9bc21654320d",
+      "source_node_name": "冷子兴",
+      "target_node_name": "荣国府",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "82e01240-9cf2-43dc-a250-75760c0112c0",
+      "name": "WORKS_FOR",
+      "fact": "贾雨村受聘担任西宾。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "target_node_uuid": "c3753fba-71e8-4105-a5a2-698d98dff33a",
+      "source_node_name": "贾雨村",
+      "target_node_name": "鹾政",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "c70b4a81-a26c-4a99-b774-3b1dabe0fc44",
+      "name": "PARENT_OF",
+      "fact": "林如海是黛玉的父亲。",
+      "fact_type": "PARENT_OF",
+      "source_node_uuid": "1abcf0da-1cb5-41d9-b94e-e6b111cc1238",
+      "target_node_uuid": "57186c0b-006c-4c46-b36b-e7f5c4d90989",
+      "source_node_name": "林如海",
+      "target_node_name": "黛玉",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "1aefe2dd-ae33-4c56-8027-cfb704f2cad1",
+      "name": "COMMENTS_ON",
+      "fact": "贾雨村寄密书给封肃，转托甄家娘子将娇杏送作二房。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "ae94e491-d538-4d35-bd66-e176b2a87a88",
+      "target_node_uuid": "7221a0db-403b-49b8-bb1c-0a38f5dbb076",
+      "source_node_name": "贾雨村",
+      "target_node_name": "甄家娘子",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "8b946122-3f48-4e3c-941b-cbf96416799d",
+      "name": "COMMENTS_ON",
+      "fact": "士隐称赞雨村的抱负不浅。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "909c662d-16ed-4cc1-ab87-323ad121014e",
+      "target_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "source_node_name": "士隐",
+      "target_node_name": "贾雨村",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "031b7a7e-a73c-49f4-8297-b7a9924e8c6a",
+      "name": "COMMENTS_ON",
+      "fact": "甄士隐赞赏贾雨村的诗句并认为他前途无量。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "c48c9eb1-fa6d-4381-993c-24f73a22e5b2",
+      "target_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "source_node_name": "甄士隐",
+      "target_node_name": "贾雨村",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "88889d97-fdab-434c-b55b-27fbcdd8c904",
+      "name": "COMMENTS_ON",
+      "fact": "甄士隐欲写荐书给贾雨村带至神都。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "c48c9eb1-fa6d-4381-993c-24f73a22e5b2",
+      "target_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "source_node_name": "甄士隐",
+      "target_node_name": "贾雨村",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "6f32fbe2-db91-48ee-b5d8-c8affa916e5b",
+      "name": "STUDIES_AT",
+      "fact": "女学生跟随贾雨村学习功课。",
+      "fact_type": "STUDIES_AT",
+      "source_node_uuid": "f8017a25-a71b-4f1e-ac40-9847fb8ccbc2",
+      "target_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "source_node_name": "女学生",
+      "target_node_name": "贾雨村",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "5e852e5d-a275-41dc-bfff-e076581fb727",
+      "name": "COMMENTS_ON",
+      "fact": "冷子兴提到某人小时候的行为和性格特点。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "85fb01b4-8dcc-413f-9932-f2ebb4831fc4",
+      "target_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "source_node_name": "冷子兴",
+      "target_node_name": "贾雨村",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "6e6d710e-1e5d-43c9-b4d8-41ea6d15bd96",
+      "name": "COMMENTS_ON",
+      "fact": "冷子兴评论贾雨村多说话少喝酒。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "85fb01b4-8dcc-413f-9932-f2ebb4831fc4",
+      "target_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "source_node_name": "冷子兴",
+      "target_node_name": "贾雨村",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "77760e1b-b293-48c3-8921-610a529ff7f9",
+      "name": "WORKS_FOR",
+      "fact": "霍启是甄士隐的家人，为其服务。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "d4426f23-1b10-4acb-9303-5ae28722753d",
+      "target_node_uuid": "c48c9eb1-fa6d-4381-993c-24f73a22e5b2",
+      "source_node_name": "霍启",
+      "target_node_name": "甄士隐",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "a1398c1e-de72-48a4-bf4a-71aa105d979b",
+      "name": "MARRIED_TO",
+      "fact": "甄士隐与封氏结为夫妻。",
+      "fact_type": "MARRIED_TO",
+      "source_node_uuid": "c48c9eb1-fa6d-4381-993c-24f73a22e5b2",
+      "target_node_uuid": "00823020-3d6a-4955-8afd-eeaa563fc474",
+      "source_node_name": "甄士隐",
+      "target_node_name": "封氏",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "a9c412f6-7a33-46cd-b547-337d3072c5b8",
+      "name": "PARENT_OF",
+      "fact": "甄士隐是英莲的父亲。",
+      "fact_type": "PARENT_OF",
+      "source_node_uuid": "c48c9eb1-fa6d-4381-993c-24f73a22e5b2",
+      "target_node_uuid": "3ce1dd3f-bdf7-49d7-88aa-28753dbad8c0",
+      "source_node_name": "甄士隐",
+      "target_node_name": "英莲",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "81a687fb-7f9b-4ac6-b6bd-d39d8a3f2919",
+      "name": "PARENT_OF",
+      "fact": "封氏是英莲的母亲。",
+      "fact_type": "PARENT_OF",
+      "source_node_uuid": "00823020-3d6a-4955-8afd-eeaa563fc474",
+      "target_node_uuid": "3ce1dd3f-bdf7-49d7-88aa-28753dbad8c0",
+      "source_node_name": "封氏",
+      "target_node_name": "英莲",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "aef1ec3f-dbd9-4818-ace0-ebcfa92c4308",
+      "name": "COMMENTS_ON",
+      "fact": "甄士隐因女儿英莲失踪而悲痛欲绝。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "c48c9eb1-fa6d-4381-993c-24f73a22e5b2",
+      "target_node_uuid": "3ce1dd3f-bdf7-49d7-88aa-28753dbad8c0",
+      "source_node_name": "甄士隐",
+      "target_node_name": "英莲",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "e3c9ba98-e18e-4cc8-8ed0-0a190d2548b4",
+      "name": "COMMENTS_ON",
+      "fact": "贾雨村询问士隐倚门伫望的原因。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "target_node_uuid": "909c662d-16ed-4cc1-ab87-323ad121014e",
+      "source_node_name": "贾雨村",
+      "target_node_name": "士隐",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "367aed20-3c3d-4465-a4c2-5ee6e4db05f5",
+      "name": "COMMENTS_ON",
+      "fact": "雨村感谢士隐的厚爱并接受邀请。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "target_node_uuid": "909c662d-16ed-4cc1-ab87-323ad121014e",
+      "source_node_name": "贾雨村",
+      "target_node_name": "士隐",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "1213d4ec-3023-4022-9b9f-b3c86da50d89",
+      "name": "COMMENTS_ON",
+      "fact": "那道人提议一同下世度脱人物",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "d2a4be16-57ce-4349-a305-b16cddd38078",
+      "target_node_uuid": "8075d60a-c241-4784-b1fe-099b0a6b0102",
+      "source_node_name": "那道人",
+      "target_node_name": "那僧",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "092d6890-b75d-45a2-a441-7abd6d8534ae",
+      "name": "WORKS_FOR",
+      "fact": "甄士隐投奔岳丈封肃以安身。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "c48c9eb1-fa6d-4381-993c-24f73a22e5b2",
+      "target_node_uuid": "663c9f38-eaed-411c-a746-7b9ab3b25754",
+      "source_node_name": "甄士隐",
+      "target_node_name": "封肃",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "cca06ee9-7663-489a-81ae-aa6dea684a2b",
+      "name": "COMMENTS_ON",
+      "fact": "贾雨村称赞冷子兴是有作为大本领的人。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "426bf7cb-8e53-4ce3-b0a4-f530b3c88a15",
+      "target_node_uuid": "85fb01b4-8dcc-413f-9932-f2ebb4831fc4",
+      "source_node_name": "贾雨村",
+      "target_node_name": "冷子兴",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "cac6f287-77fa-4e23-8cb5-9c9c0d17f3c6",
+      "name": "COMMENTS_ON",
+      "fact": "封肃向贾化禀报家庭原故。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "663c9f38-eaed-411c-a746-7b9ab3b25754",
+      "target_node_uuid": "b144a0c0-0247-4533-bf88-95879ce1423a",
+      "source_node_name": "封肃",
+      "target_node_name": "贾化",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "3e106dea-11e7-4d75-b782-d14a8729c0a4",
+      "name": "COMMENTS_ON",
+      "fact": "贾化因见娇杏买线，误以为封肃女婿移住于此。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "b144a0c0-0247-4533-bf88-95879ce1423a",
+      "target_node_uuid": "21e48d2c-c929-45c7-97cf-dbb620a24c5e",
+      "source_node_name": "贾化",
+      "target_node_name": "娇杏",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    }
+  ],
+  "node_count": 62,
+  "edge_count": 42
+}

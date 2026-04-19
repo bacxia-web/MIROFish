@@ -1,0 +1,1357 @@
+{
+  "graph_id": "mirofish_272a8500795d47dc",
+  "nodes": [
+    {
+      "uuid": "b1e0617d-42f0-450b-aa54-31be81fded89",
+      "name": "阿里云",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "阿里巴巴集团旗下的云计算公司。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "4383810f-8856-4fc8-b6ac-0bb64bcc9b65",
+      "name": "千问人士",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "千问公司的员工，对系统崩溃问题进行了说明。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "cfab87b7-0d75-4b08-a61f-47d25a963429",
+      "name": "阿里",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "阿里巴巴集团，中国知名互联网企业。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "name": "淘宝闪购",
+      "labels": [
+        "Platform",
+        "Entity"
+      ],
+      "summary": "阿里巴巴旗下的即时零售平台。",
+      "attributes": {},
+      "primary_label": "Platform",
+      "created_at": null
+    },
+    {
+      "uuid": "717ade81-2da9-4356-9e8a-067f08cd0c1e",
+      "name": "马云",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "阿里巴巴创始人。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "51a723c3-be6a-471b-a986-8f629dc3d7c2",
+      "name": "晚点LatePost",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "报道科技和商业新闻的媒体机构。",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "f310a755-5adf-4b1b-b900-11036e9c260b",
+      "name": "千问app",
+      "labels": [
+        "Platform",
+        "Entity"
+      ],
+      "summary": "阿里旗下的AI助手应用。",
+      "attributes": {},
+      "primary_label": "Platform",
+      "created_at": null
+    },
+    {
+      "uuid": "0b152eae-6b58-4d21-86e3-9ff15b8d9d39",
+      "name": "字节跳动",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "以抖音和豆包为代表的科技公司。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "da37b371-36cc-41d5-a2a0-69beeaa01b77",
+      "name": "腾讯",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "中国领先的互联网公司，拥有社交平台优势。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "ecd1aaac-179c-4ec0-853c-24df874a6930",
+      "name": "美团",
+      "labels": [
+        "Platform",
+        "Entity"
+      ],
+      "summary": "中国主要的外卖及生活服务平台。",
+      "attributes": {},
+      "primary_label": "Platform",
+      "created_at": null
+    },
+    {
+      "uuid": "dddaa41a-885f-4f10-a544-e848d2f13262",
+      "name": "京东",
+      "labels": [
+        "Platform",
+        "Entity"
+      ],
+      "summary": "中国大型电商平台，涉足即时零售领域。",
+      "attributes": {},
+      "primary_label": "Platform",
+      "created_at": null
+    },
+    {
+      "uuid": "11dfd7a0-ba0a-47e0-ad80-1c4077e20d0c",
+      "name": "吴泽明",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "淘宝闪购的负责人，花名为范禹。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "b4bce0d5-8d57-412a-ab91-fe3b6d6bdb8e",
+      "name": "范禹",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "淘宝闪购的负责人，真实姓名为吴泽明。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "fd2e17d1-ecdb-496c-a79a-7a3002228421",
+      "name": "蜂鸟运力线",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "淘宝闪购的配送运力体系，包含多个子运力线。",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "b9385cae-5a59-4b1c-9557-07e18adc726c",
+      "name": "专送",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "淘宝闪购的一种运力线类型。",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "a2ad851a-8727-4022-93e6-c56060567174",
+      "name": "优选",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "淘宝闪购的一种运力线类型。",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "f8651be3-0653-442a-aaa2-47ed4db280e8",
+      "name": "普众",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "淘宝闪购的一种运力线类型。",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "7463f17c-77d6-4b2e-b188-4f1a14d56e1f",
+      "name": "优远",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "淘宝闪购的一种运力线类型。",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "8d41e4c2-a55a-46b0-9db6-3bc3a7c965e1",
+      "name": "蜂跑",
+      "labels": [
+        "Organization",
+        "Entity"
+      ],
+      "summary": "淘宝闪购的一种运力线类型。",
+      "attributes": {},
+      "primary_label": "Organization",
+      "created_at": null
+    },
+    {
+      "uuid": "180f2f57-5f43-49b4-90a6-94451b801abc",
+      "name": "广州",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "淘宝闪购配送业务发展的城市之一。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "2c9a79f5-bb99-410e-9d3a-88a743fa5756",
+      "name": "深圳",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "淘宝闪购配送业务发展的城市之一。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "0f46d636-0de7-486a-aa30-a688bee4d0cc",
+      "name": "成都",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "淘宝闪购配送业务发展的城市之一。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "ef0b9eaa-d867-42d6-ab8c-500166db9d43",
+      "name": "重庆",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "淘宝闪购配送业务发展的城市之一。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "cd886d43-4a31-4459-9f94-8a97c00ccde7",
+      "name": "武汉",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "淘宝闪购配送业务发展的城市之一。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "34f7fff1-6cbc-4579-8195-0dc894c7e691",
+      "name": "阿里巴巴",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "淘宝闪购的所有者，中国领先的互联网公司。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "96243ef6-3a6e-421c-a9e3-5d66315c974e",
+      "name": "盒马",
+      "labels": [
+        "Merchant",
+        "Entity"
+      ],
+      "summary": "提供生鲜商品的商家，与淘宝闪购合作。",
+      "attributes": {},
+      "primary_label": "Merchant",
+      "created_at": null
+    },
+    {
+      "uuid": "0ee7e1ad-2769-42c9-93d1-9b370ac5662d",
+      "name": "百雀羚",
+      "labels": [
+        "Merchant",
+        "Entity"
+      ],
+      "summary": "天猫官方旗舰店的品牌之一，参与闪购业务。",
+      "attributes": {},
+      "primary_label": "Merchant",
+      "created_at": null
+    },
+    {
+      "uuid": "9f61f3dc-87d6-4bf2-9631-fbef1f2e1dac",
+      "name": "Only",
+      "labels": [
+        "Merchant",
+        "Entity"
+      ],
+      "summary": "天猫官方旗舰店的品牌之一，参与闪购业务。",
+      "attributes": {},
+      "primary_label": "Merchant",
+      "created_at": null
+    },
+    {
+      "uuid": "41cea2b2-3802-4e9f-ada4-5dc3752b88d8",
+      "name": "Apple授权专营店",
+      "labels": [
+        "Merchant",
+        "Entity"
+      ],
+      "summary": "天猫官方旗舰店的品牌之一，参与闪购业务。",
+      "attributes": {},
+      "primary_label": "Merchant",
+      "created_at": null
+    },
+    {
+      "uuid": "a0de7c8d-2822-4589-8bc8-76661184bf01",
+      "name": "迪卡侬",
+      "labels": [
+        "Merchant",
+        "Entity"
+      ],
+      "summary": "天猫官方旗舰店的品牌之一，参与闪购业务。",
+      "attributes": {},
+      "primary_label": "Merchant",
+      "created_at": null
+    },
+    {
+      "uuid": "46d28383-11f5-4533-a4d2-b356a296c1dc",
+      "name": "Babycare",
+      "labels": [
+        "Merchant",
+        "Entity"
+      ],
+      "summary": "天猫官方旗舰店的品牌之一，参与闪购业务。",
+      "attributes": {},
+      "primary_label": "Merchant",
+      "created_at": null
+    },
+    {
+      "uuid": "6431fc15-8f14-4fbc-afed-5b1d2c4823b8",
+      "name": "天猫超市",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "阿里巴巴旗下提供即时零售服务的超市品牌。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "1d510d72-081f-4cfd-aa7e-adf59217a75b",
+      "name": "盒马",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "阿里巴巴旗下的即时零售业态品牌，拥有前置仓。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "afbc75cc-7312-4d81-ba17-e1fd9e894868",
+      "name": "菜鸟",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "阿里巴巴旗下物流服务公司，与天猫合作建设履约仓。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "7d5b93ff-9771-4967-86c1-14340cb0689b",
+      "name": "淘宝便利店",
+      "labels": [
+        "Platform",
+        "Entity"
+      ],
+      "summary": "淘宝闪购中的便利店模式，也称为闪电仓。",
+      "attributes": {},
+      "primary_label": "Platform",
+      "created_at": null
+    },
+    {
+      "uuid": "2976ee96-0d08-4715-ae8f-b401a55e93ee",
+      "name": "天猫官方旗舰店",
+      "labels": [
+        "Platform",
+        "Entity"
+      ],
+      "summary": "天猫平台上的商家店铺。",
+      "attributes": {},
+      "primary_label": "Platform",
+      "created_at": null
+    },
+    {
+      "uuid": "6d3a0c8b-d28a-40b2-85f6-92538edeecad",
+      "name": "盒马",
+      "labels": [
+        "Platform",
+        "Entity"
+      ],
+      "summary": "阿里巴巴旗下的新零售平台。",
+      "attributes": {},
+      "primary_label": "Platform",
+      "created_at": null
+    },
+    {
+      "uuid": "2d245280-1bf6-4d58-a979-45cb6bfa491f",
+      "name": "天猫超市",
+      "labels": [
+        "Platform",
+        "Entity"
+      ],
+      "summary": "天猫平台下的即时配送服务。",
+      "attributes": {},
+      "primary_label": "Platform",
+      "created_at": null
+    },
+    {
+      "uuid": "03635c48-b713-406f-b17b-68b87da1528b",
+      "name": "火山引擎",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "字节跳动旗下的技术品牌，为央视春晚提供AI云服务。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "d3d6a810-9f20-41c0-809c-645175ce670d",
+      "name": "千问",
+      "labels": [
+        "Platform",
+        "Entity"
+      ],
+      "summary": "阿里巴巴旗下的AI助手产品，与淘宝闪购合作推动消费习惯养成。",
+      "attributes": {},
+      "primary_label": "Platform",
+      "created_at": null
+    },
+    {
+      "uuid": "718ba1b2-ad3f-4419-bcd2-1538ebd1e7da",
+      "name": "豆包",
+      "labels": [
+        "Platform",
+        "Entity"
+      ],
+      "summary": "字节跳动推出的AI助手产品，参与央视春晚并有望争夺用户心智。",
+      "attributes": {},
+      "primary_label": "Platform",
+      "created_at": null
+    },
+    {
+      "uuid": "96a86048-9af4-4099-9fb3-d3bb9de67a36",
+      "name": "元宝",
+      "labels": [
+        "Platform",
+        "Entity"
+      ],
+      "summary": "腾讯旗下的AI助手产品，用于拉新活动。",
+      "attributes": {},
+      "primary_label": "Platform",
+      "created_at": null
+    },
+    {
+      "uuid": "b0df59de-9359-4970-82e7-2ade4a696f96",
+      "name": "淘宝",
+      "labels": [
+        "Platform",
+        "Entity"
+      ],
+      "summary": "一个电商平台。",
+      "attributes": {},
+      "primary_label": "Platform",
+      "created_at": null
+    }
+  ],
+  "edges": [
+    {
+      "uuid": "beb6ee8f-eb11-42bd-8d1d-e3fcce92fbbe",
+      "name": "AFFILIATED_WITH",
+      "fact": "淘宝闪购隶属于阿里巴巴集团。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "target_node_uuid": "cfab87b7-0d75-4b08-a61f-47d25a963429",
+      "source_node_name": "淘宝闪购",
+      "target_node_name": "阿里",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "f0d327ed-13bf-447a-ac7e-cbd9eb05b7bc",
+      "name": "WORKS_FOR",
+      "fact": "马云是阿里的创始人。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "717ade81-2da9-4356-9e8a-067f08cd0c1e",
+      "target_node_uuid": "cfab87b7-0d75-4b08-a61f-47d25a963429",
+      "source_node_name": "马云",
+      "target_node_name": "阿里",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "6bdc8484-fb32-474b-9294-851309272b7d",
+      "name": "AFFILIATED_WITH",
+      "fact": "千问与淘宝闪购存在合作关系，主要消费供给来自淘宝闪购",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "d3d6a810-9f20-41c0-809c-645175ce670d",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "千问",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "5479f572-bab0-4b95-9438-208628d7fb3d",
+      "name": "REPORTS_ON",
+      "fact": "百雀羚通过淘宝闪购平台开展销售活动。",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "0ee7e1ad-2769-42c9-93d1-9b370ac5662d",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "百雀羚",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "e066af34-a14b-4330-8742-d659d60c6c22",
+      "name": "WORKS_FOR",
+      "fact": "淘宝便利店作为淘宝闪购的一部分提供仓储服务。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "7d5b93ff-9771-4967-86c1-14340cb0689b",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "淘宝便利店",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "94b2a238-bd8e-477c-bba8-e37ceeb05dd6",
+      "name": "WORKS_FOR",
+      "fact": "菜鸟与天猫合作为淘宝闪购提供履约仓支持。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "afbc75cc-7312-4d81-ba17-e1fd9e894868",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "菜鸟",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "2b7d2771-d50b-425c-b746-dd5389b6275e",
+      "name": "WORKS_FOR",
+      "fact": "盒马为淘宝闪购提供前置仓支持。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "1d510d72-081f-4cfd-aa7e-adf59217a75b",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "盒马",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "893d6f84-1729-4ce9-8453-8c5f165ad689",
+      "name": "WORKS_FOR",
+      "fact": "天猫超市为淘宝闪购提供服务支持。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "6431fc15-8f14-4fbc-afed-5b1d2c4823b8",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "天猫超市",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "3a55f02a-1165-4968-98b8-a2f1c3d15f07",
+      "name": "WORKS_FOR",
+      "fact": "武汉是淘宝闪购配送业务发展的城市之一。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "cd886d43-4a31-4459-9f94-8a97c00ccde7",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "武汉",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "939eac2b-afd5-4d9c-9c2e-68e55425d5db",
+      "name": "WORKS_FOR",
+      "fact": "重庆曾是美团的后方，现为淘宝闪购的发展重点。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "ef0b9eaa-d867-42d6-ab8c-500166db9d43",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "重庆",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "e8a19d8b-1daa-4aed-8378-acf04dec40ee",
+      "name": "WORKS_FOR",
+      "fact": "成都曾是美团的后方，现为淘宝闪购的发展重点。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "0f46d636-0de7-486a-aa30-a688bee4d0cc",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "成都",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "ed02194f-3b1b-42a1-995a-d08319425502",
+      "name": "WORKS_FOR",
+      "fact": "深圳是淘宝闪购配送业务发展的重要城市。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "2c9a79f5-bb99-410e-9d3a-88a743fa5756",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "深圳",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "0a3d3a90-003e-4f1f-b773-4b6b6b9e3abf",
+      "name": "WORKS_FOR",
+      "fact": "广州是淘宝闪购配送业务发展的重要城市。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "180f2f57-5f43-49b4-90a6-94451b801abc",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "广州",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "fde2395b-62cc-44cb-ba55-8354c4ecf3e2",
+      "name": "AFFILIATED_WITH",
+      "fact": "蜂跑是淘宝闪购的运力线之一。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "8d41e4c2-a55a-46b0-9db6-3bc3a7c965e1",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "蜂跑",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "2bb389a3-d192-4c65-a9f8-b7bc4a78993b",
+      "name": "AFFILIATED_WITH",
+      "fact": "优远是淘宝闪购的运力线之一。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "7463f17c-77d6-4b2e-b188-4f1a14d56e1f",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "优远",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "6d9d8616-6668-4adf-8103-ba87b99518c5",
+      "name": "AFFILIATED_WITH",
+      "fact": "普众是淘宝闪购的运力线之一。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "f8651be3-0653-442a-aaa2-47ed4db280e8",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "普众",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "b34c581b-16b6-4749-b6db-badb63e36126",
+      "name": "AFFILIATED_WITH",
+      "fact": "优选是淘宝闪购的运力线之一。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "a2ad851a-8727-4022-93e6-c56060567174",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "优选",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "55d04c53-630f-47b3-bbc9-917b14889d8d",
+      "name": "AFFILIATED_WITH",
+      "fact": "专送是淘宝闪购的运力线之一。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "b9385cae-5a59-4b1c-9557-07e18adc726c",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "专送",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "b84732a8-95ad-4fe4-8f53-5273c950e23d",
+      "name": "AFFILIATED_WITH",
+      "fact": "蜂鸟运力线隶属于淘宝闪购。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "fd2e17d1-ecdb-496c-a79a-7a3002228421",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "蜂鸟运力线",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "d62462d3-2745-4ae1-af1f-38adc38e1acc",
+      "name": "WORKS_FOR",
+      "fact": "范禹在淘宝闪购工作，担任负责人。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "b4bce0d5-8d57-412a-ab91-fe3b6d6bdb8e",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "范禹",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "fd99a35b-bd65-435d-8a25-96ecb4a69baf",
+      "name": "WORKS_FOR",
+      "fact": "吴泽明在淘宝闪购工作，担任负责人。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "11dfd7a0-ba0a-47e0-ad80-1c4077e20d0c",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "吴泽明",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "f490363f-c903-4332-917e-fe9733736f48",
+      "name": "COMMENTS_ON",
+      "fact": "腾讯对淘宝闪购的AI助手大战发表评论。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "da37b371-36cc-41d5-a2a0-69beeaa01b77",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "腾讯",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "f7ebb86c-ca73-40bc-a6e1-ddcc94b27763",
+      "name": "COMMENTS_ON",
+      "fact": "字节跳动对淘宝闪购的AI助手大战发表评论。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "0b152eae-6b58-4d21-86e3-9ff15b8d9d39",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "字节跳动",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "5438a924-4b15-420c-b990-917af7abfced",
+      "name": "AFFILIATED_WITH",
+      "fact": "千问app隶属于淘宝闪购。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "f310a755-5adf-4b1b-b900-11036e9c260b",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "千问app",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "c5572977-0bef-45bc-8ab1-42d585942d52",
+      "name": "RESPONDS_TO",
+      "fact": "阿里在内部会议上对淘宝闪购表达了支持态度。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "cfab87b7-0d75-4b08-a61f-47d25a963429",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "阿里",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "bf1353e4-49c1-4300-abd4-ff594b3ad18e",
+      "name": "COMMENTS_ON",
+      "fact": "阿里核心管理层鼓励团队继续大胆做闪购。",
+      "fact_type": "COMMENTS_ON",
+      "source_node_uuid": "cfab87b7-0d75-4b08-a61f-47d25a963429",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "阿里",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "d0c1255d-6309-4f32-a29c-fb7cd9390ea0",
+      "name": "REPORTS_ON",
+      "fact": "晚点LatePost报道了阿里对淘宝闪购的大投入计划。",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "51a723c3-be6a-471b-a986-8f629dc3d7c2",
+      "target_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "source_node_name": "晚点LatePost",
+      "target_node_name": "淘宝闪购",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "c9d90c38-5b79-49d5-b47a-256b5b9b0334",
+      "name": "RESPONDS_TO",
+      "fact": "淘宝闪购响应千问app的活动进行补贴。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "target_node_uuid": "f310a755-5adf-4b1b-b900-11036e9c260b",
+      "source_node_name": "淘宝闪购",
+      "target_node_name": "千问app",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "d0d27a21-5451-4dad-b0f3-38de07968b01",
+      "name": "WORKS_FOR",
+      "fact": "火山引擎隶属于字节跳动",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "03635c48-b713-406f-b17b-68b87da1528b",
+      "target_node_uuid": "0b152eae-6b58-4d21-86e3-9ff15b8d9d39",
+      "source_node_name": "火山引擎",
+      "target_node_name": "字节跳动",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "a2f27e04-d2b0-4210-a826-ca61f84eb52d",
+      "name": "RESPONDS_TO",
+      "fact": "千问对美团的功能扩展做出回应。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "d3d6a810-9f20-41c0-809c-645175ce670d",
+      "target_node_uuid": "ecd1aaac-179c-4ec0-853c-24df874a6930",
+      "source_node_name": "千问",
+      "target_node_name": "美团",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "413b2cbd-e1fb-47c2-85fe-59cd501ac942",
+      "name": "RESPONDS_TO",
+      "fact": "淘宝闪购针对美团在酒类市场的领先优势做出响应。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "target_node_uuid": "ecd1aaac-179c-4ec0-853c-24df874a6930",
+      "source_node_name": "淘宝闪购",
+      "target_node_name": "美团",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "c9e4f8f9-e34f-4a16-9394-60682b9185d8",
+      "name": "RESPONDS_TO",
+      "fact": "淘宝闪购在配送策略上响应美团的做法。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "target_node_uuid": "ecd1aaac-179c-4ec0-853c-24df874a6930",
+      "source_node_name": "淘宝闪购",
+      "target_node_name": "美团",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "2dc17509-0af4-4090-adc3-843456c75a14",
+      "name": "RESPONDS_TO",
+      "fact": "淘宝闪购针对京东在酒类市场的领先优势做出响应。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "target_node_uuid": "dddaa41a-885f-4f10-a544-e848d2f13262",
+      "source_node_name": "淘宝闪购",
+      "target_node_name": "京东",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "872cbbff-c784-4cbc-8fce-45c96269929d",
+      "name": "AFFILIATED_WITH",
+      "fact": "阿里云隶属于阿里巴巴集团。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "b1e0617d-42f0-450b-aa54-31be81fded89",
+      "target_node_uuid": "34f7fff1-6cbc-4579-8195-0dc894c7e691",
+      "source_node_name": "阿里云",
+      "target_node_name": "阿里巴巴",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "3a118f92-d094-440f-8191-15a13278194f",
+      "name": "AFFILIATED_WITH",
+      "fact": "天猫超市隶属于阿里巴巴集团。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "2d245280-1bf6-4d58-a979-45cb6bfa491f",
+      "target_node_uuid": "34f7fff1-6cbc-4579-8195-0dc894c7e691",
+      "source_node_name": "天猫超市",
+      "target_node_name": "阿里巴巴",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "2481e319-1096-46f6-935a-bb15c4185b6f",
+      "name": "AFFILIATED_WITH",
+      "fact": "盒马隶属于阿里巴巴集团。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "6d3a0c8b-d28a-40b2-85f6-92538edeecad",
+      "target_node_uuid": "34f7fff1-6cbc-4579-8195-0dc894c7e691",
+      "source_node_name": "盒马",
+      "target_node_name": "阿里巴巴",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "1b295f4c-c36d-46d4-ab16-64d134dc132c",
+      "name": "AFFILIATED_WITH",
+      "fact": "淘宝闪购隶属于阿里巴巴集团。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "target_node_uuid": "34f7fff1-6cbc-4579-8195-0dc894c7e691",
+      "source_node_name": "淘宝闪购",
+      "target_node_name": "阿里巴巴",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "7152005f-20df-4137-8078-19bcf245c766",
+      "name": "AFFILIATED_WITH",
+      "fact": "京东与阿里巴巴在即时零售领域存在竞争关系。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "dddaa41a-885f-4f10-a544-e848d2f13262",
+      "target_node_uuid": "34f7fff1-6cbc-4579-8195-0dc894c7e691",
+      "source_node_name": "京东",
+      "target_node_name": "阿里巴巴",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "bc80617a-030f-4701-9039-a40b67b376d1",
+      "name": "AFFILIATED_WITH",
+      "fact": "美团与阿里巴巴在即时零售领域存在竞争关系。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "ecd1aaac-179c-4ec0-853c-24df874a6930",
+      "target_node_uuid": "34f7fff1-6cbc-4579-8195-0dc894c7e691",
+      "source_node_name": "美团",
+      "target_node_name": "阿里巴巴",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "5865e9a3-b650-43f5-91e0-b06beb86f617",
+      "name": "AFFILIATED_WITH",
+      "fact": "淘宝闪购隶属于阿里巴巴。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "target_node_uuid": "34f7fff1-6cbc-4579-8195-0dc894c7e691",
+      "source_node_name": "淘宝闪购",
+      "target_node_name": "阿里巴巴",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "4a343269-1142-421a-8a16-2e34e79b283e",
+      "name": "WORKS_FOR",
+      "fact": "盒马隶属于阿里巴巴集团。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "96243ef6-3a6e-421c-a9e3-5d66315c974e",
+      "target_node_uuid": "34f7fff1-6cbc-4579-8195-0dc894c7e691",
+      "source_node_name": "盒马",
+      "target_node_name": "阿里巴巴",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "af3dbfbf-e41d-42e2-bc8b-bdd927fa437a",
+      "name": "RESPONDS_TO",
+      "fact": "淘宝闪购与盒马在前置仓业态上联合发力。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "target_node_uuid": "96243ef6-3a6e-421c-a9e3-5d66315c974e",
+      "source_node_name": "淘宝闪购",
+      "target_node_name": "盒马",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "58c63981-2396-45fd-ad11-cdcee37ead57",
+      "name": "REPORTS_ON",
+      "fact": "淘宝闪购为百雀羚提供闪购选项。",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "target_node_uuid": "0ee7e1ad-2769-42c9-93d1-9b370ac5662d",
+      "source_node_name": "淘宝闪购",
+      "target_node_name": "百雀羚",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "0c288724-177a-4d57-aea8-ae93585f9ae3",
+      "name": "REPORTS_ON",
+      "fact": "淘宝闪购为Only提供闪购选项。",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "target_node_uuid": "9f61f3dc-87d6-4bf2-9631-fbef1f2e1dac",
+      "source_node_name": "淘宝闪购",
+      "target_node_name": "Only",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "e2618ca8-7f9a-41e2-b0b3-bebd28107bd1",
+      "name": "REPORTS_ON",
+      "fact": "淘宝闪购为Apple授权专营店提供闪购选项。",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "target_node_uuid": "41cea2b2-3802-4e9f-ada4-5dc3752b88d8",
+      "source_node_name": "淘宝闪购",
+      "target_node_name": "Apple授权专营店",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "339c9ef1-855b-4382-b311-042ded019abb",
+      "name": "REPORTS_ON",
+      "fact": "淘宝闪购为迪卡侬提供闪购选项。",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "target_node_uuid": "a0de7c8d-2822-4589-8bc8-76661184bf01",
+      "source_node_name": "淘宝闪购",
+      "target_node_name": "迪卡侬",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "7f22aa8e-6b31-4920-b62d-9c8e2a659bc2",
+      "name": "REPORTS_ON",
+      "fact": "淘宝闪购为Babycare提供闪购选项。",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "target_node_uuid": "46d28383-11f5-4533-a4d2-b356a296c1dc",
+      "source_node_name": "淘宝闪购",
+      "target_node_name": "Babycare",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "04c50ebd-1f53-48c7-a5f5-985b1fbdd47f",
+      "name": "WORKS_FOR",
+      "fact": "千问人士是千问公司的员工。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "4383810f-8856-4fc8-b6ac-0bb64bcc9b65",
+      "target_node_uuid": "d3d6a810-9f20-41c0-809c-645175ce670d",
+      "source_node_name": "千问人士",
+      "target_node_name": "千问",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "05b1be98-72f2-4363-b578-36e5a6c32c2a",
+      "name": "RESPONDS_TO",
+      "fact": "阿里回应千问在AI入口中培养用户消费习惯的需求",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "cfab87b7-0d75-4b08-a61f-47d25a963429",
+      "target_node_uuid": "d3d6a810-9f20-41c0-809c-645175ce670d",
+      "source_node_name": "阿里",
+      "target_node_name": "千问",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "a6b1854e-b71d-4596-aa76-e50235c263e6",
+      "name": "RESPONDS_TO",
+      "fact": "腾讯计划用10亿红包来给元宝拉新",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "da37b371-36cc-41d5-a2a0-69beeaa01b77",
+      "target_node_uuid": "96a86048-9af4-4099-9fb3-d3bb9de67a36",
+      "source_node_name": "腾讯",
+      "target_node_name": "元宝",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "51b60ad6-8fa1-4c30-8bfb-cf32c0abf3b4",
+      "name": "AFFILIATED_WITH",
+      "fact": "淘宝闪购隶属于淘宝平台。",
+      "fact_type": "AFFILIATED_WITH",
+      "source_node_uuid": "f4728a90-7a8c-4045-b11e-f4f3c8082c96",
+      "target_node_uuid": "b0df59de-9359-4970-82e7-2ade4a696f96",
+      "source_node_name": "淘宝闪购",
+      "target_node_name": "淘宝",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "eec17c75-556f-4a18-aa7a-ed12fab14a4e",
+      "name": "RESPONDS_TO",
+      "fact": "千问对系统崩溃问题作出回应，由千问人士说明情况。",
+      "fact_type": "RESPONDS_TO",
+      "source_node_uuid": "d3d6a810-9f20-41c0-809c-645175ce670d",
+      "target_node_uuid": "4383810f-8856-4fc8-b6ac-0bb64bcc9b65",
+      "source_node_name": "千问",
+      "target_node_name": "千问人士",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    }
+  ],
+  "node_count": 43,
+  "edge_count": 52
+}

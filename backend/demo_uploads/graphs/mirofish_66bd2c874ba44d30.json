@@ -1,0 +1,561 @@
+{
+  "graph_id": "mirofish_66bd2c874ba44d30",
+  "nodes": [
+    {
+      "uuid": "18b5e9c8-53f1-4c4d-a292-ae9935d3375e",
+      "name": "晚点",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "提供科技行业报道和评论的新闻媒体。",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "55383087-8a4f-4894-ada5-f3398b0b56f7",
+      "name": "汪滔",
+      "labels": [
+        "Founder",
+        "Entity"
+      ],
+      "summary": "大疆公司的创始人。",
+      "attributes": {},
+      "primary_label": "Founder",
+      "created_at": null
+    },
+    {
+      "uuid": "d38830e8-e0af-483b-a0fb-2119b75e4e8f",
+      "name": "大疆",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "涉及智能汽车、人工智能等领域的科技公司。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "70545d9d-dcbd-4892-b686-43f073d55bae",
+      "name": "贺乾明",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "关注手机、人工智能、云计算、智能汽车等领域，提供交流渠道。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "388f6bad-9143-44f8-9a41-253241ca19fe",
+      "name": "贺乾明",
+      "labels": [
+        "ContentCreator",
+        "Entity"
+      ],
+      "summary": "关注手机、人工智能、云计算、智能汽车等领域的自媒体创作者。",
+      "attributes": {},
+      "primary_label": "ContentCreator",
+      "created_at": null
+    },
+    {
+      "uuid": "2bbd4c9c-d187-40a7-9d8c-78a93c3230b5",
+      "name": "K3 模型",
+      "labels": [
+        "Product",
+        "Entity"
+      ],
+      "summary": "月之暗面正在研发的大语言模型。",
+      "attributes": {},
+      "primary_label": "Product",
+      "created_at": null
+    },
+    {
+      "uuid": "04578fc0-7cbb-4b7b-8283-8b12362d50af",
+      "name": "K2 Thinking",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "一款大模型产品，推动了月之暗面在海外的API收入增长。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "8430802a-905f-44ce-a7ee-6d4059350f95",
+      "name": "张予彤",
+      "labels": [
+        "Person",
+        "Entity"
+      ],
+      "summary": "月之暗面总裁，在公司战略和业务方向上发挥关键作用。",
+      "attributes": {},
+      "primary_label": "Person",
+      "created_at": null
+    },
+    {
+      "uuid": "46180c99-d936-4b76-8428-4b665baebc8a",
+      "name": "MiniMax",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "与智谱一同被提及的科技公司。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "0ad5c3b6-cf4a-4fe4-a6f9-24d4e1f3f955",
+      "name": "智谱",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "一家拥有大量现金储备的科技公司。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    },
+    {
+      "uuid": "3c911608-f2bc-4d1d-a3b3-88595b441bce",
+      "name": "《晚点 LatePost》",
+      "labels": [
+        "MediaOutlet",
+        "Entity"
+      ],
+      "summary": "报道月之暗面融资新闻的媒体机构。",
+      "attributes": {},
+      "primary_label": "MediaOutlet",
+      "created_at": null
+    },
+    {
+      "uuid": "d9a437e4-f5ec-4227-ae1e-0b474aa39920",
+      "name": "杨植麟",
+      "labels": [
+        "Founder",
+        "Entity"
+      ],
+      "summary": "月之暗面的创始人及CEO。",
+      "attributes": {},
+      "primary_label": "Founder",
+      "created_at": null
+    },
+    {
+      "uuid": "7be162d5-cf08-42c3-9246-46a38ce5c826",
+      "name": "王慧文",
+      "labels": [
+        "Investor",
+        "Entity"
+      ],
+      "summary": "累计投资月之暗面7000万美元的个人投资者。",
+      "attributes": {},
+      "primary_label": "Investor",
+      "created_at": null
+    },
+    {
+      "uuid": "380f6683-e896-4e7b-90f8-ffa7d5206aed",
+      "name": "腾讯",
+      "labels": [
+        "Investor",
+        "Entity"
+      ],
+      "summary": "参与投资月之暗面的老股东之一。",
+      "attributes": {},
+      "primary_label": "Investor",
+      "created_at": null
+    },
+    {
+      "uuid": "4722cbf6-6631-4e9c-bea9-10647ab0e95c",
+      "name": "阿里",
+      "labels": [
+        "Investor",
+        "Entity"
+      ],
+      "summary": "参与投资月之暗面的老股东之一。",
+      "attributes": {},
+      "primary_label": "Investor",
+      "created_at": null
+    },
+    {
+      "uuid": "ef92fd06-e90f-4e2a-ac39-6651e1fb0101",
+      "name": "IDG",
+      "labels": [
+        "Investor",
+        "Entity"
+      ],
+      "summary": "领投月之暗面C轮融资的投资机构。",
+      "attributes": {},
+      "primary_label": "Investor",
+      "created_at": null
+    },
+    {
+      "uuid": "9f464df1-dda6-4119-ac99-392be622bbfc",
+      "name": "Kimi",
+      "labels": [
+        "Product",
+        "Entity"
+      ],
+      "summary": "月之暗面公司推出的人工智能产品。",
+      "attributes": {},
+      "primary_label": "Product",
+      "created_at": null
+    },
+    {
+      "uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "name": "月之暗面",
+      "labels": [
+        "Company",
+        "Entity"
+      ],
+      "summary": "一家获得5亿美元融资的科技公司，旗下产品为Kimi。",
+      "attributes": {},
+      "primary_label": "Company",
+      "created_at": null
+    }
+  ],
+  "edges": [
+    {
+      "uuid": "9d1c61ff-ea08-4e36-91bd-a24ab5c1ae3f",
+      "name": "WORKS_FOR",
+      "fact": "杨植麟在月之暗面工作。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "d9a437e4-f5ec-4227-ae1e-0b474aa39920",
+      "target_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "source_node_name": "杨植麟",
+      "target_node_name": "月之暗面",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "c90132cd-4bd4-4567-accf-82d334b66910",
+      "name": "WORKS_FOR",
+      "fact": "张予彤担任月之暗面总裁",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "8430802a-905f-44ce-a7ee-6d4059350f95",
+      "target_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "source_node_name": "张予彤",
+      "target_node_name": "月之暗面",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "072a28c8-4e77-4964-84ba-5e1aca71a96a",
+      "name": "COMMENT_ON",
+      "fact": "张予彤就月之暗面的战略方向发表评论",
+      "fact_type": "COMMENT_ON",
+      "source_node_uuid": "8430802a-905f-44ce-a7ee-6d4059350f95",
+      "target_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "source_node_name": "张予彤",
+      "target_node_name": "月之暗面",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "8148c61b-c6ec-4737-8a03-70f2c2af26d2",
+      "name": "WORKS_FOR",
+      "fact": "杨植麟是月之暗面的创始人。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "d9a437e4-f5ec-4227-ae1e-0b474aa39920",
+      "target_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "source_node_name": "杨植麟",
+      "target_node_name": "月之暗面",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "b0536ad7-2234-411b-bcbb-be6a5efee70b",
+      "name": "FINANCES_WITH",
+      "fact": "MiniMax与月之暗面之间存在融资关系。",
+      "fact_type": "FINANCES_WITH",
+      "source_node_uuid": "46180c99-d936-4b76-8428-4b665baebc8a",
+      "target_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "source_node_name": "MiniMax",
+      "target_node_name": "月之暗面",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "e8c6a7bd-6481-42ea-ae9a-19a4f41f0fde",
+      "name": "FINANCES_WITH",
+      "fact": "智谱与月之暗面之间存在融资关系。",
+      "fact_type": "FINANCES_WITH",
+      "source_node_uuid": "0ad5c3b6-cf4a-4fe4-a6f9-24d4e1f3f955",
+      "target_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "source_node_name": "智谱",
+      "target_node_name": "月之暗面",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "05837865-8bad-48df-87fc-a88776f479e3",
+      "name": "REPORTS_ON",
+      "fact": "《晚点 LatePost》报道了月之暗面完成5亿美元融资的情况。",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "3c911608-f2bc-4d1d-a3b3-88595b441bce",
+      "target_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "source_node_name": "《晚点 LatePost》",
+      "target_node_name": "月之暗面",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "6a35f26d-5bd6-46ee-8e46-08521969caec",
+      "name": "COMMENT_ON",
+      "fact": "杨植麟在内部信中提到公司拥有超过100亿元人民币现金储备。",
+      "fact_type": "COMMENT_ON",
+      "source_node_uuid": "d9a437e4-f5ec-4227-ae1e-0b474aa39920",
+      "target_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "source_node_name": "杨植麟",
+      "target_node_name": "月之暗面",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "6a99eb19-52ba-4c7f-b89c-e6dbc5626fda",
+      "name": "WORKS_FOR",
+      "fact": "杨植麟是月之暗面的创始人及CEO。",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "d9a437e4-f5ec-4227-ae1e-0b474aa39920",
+      "target_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "source_node_name": "杨植麟",
+      "target_node_name": "月之暗面",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "8f9c0b59-edd4-4bbd-af7e-5b73f95f1c4c",
+      "name": "PUBLISHES_ARTICLE",
+      "fact": "《晚点 LatePost》独家报道了月之暗面完成5亿美元融资的消息。",
+      "fact_type": "PUBLISHES_ARTICLE",
+      "source_node_uuid": "3c911608-f2bc-4d1d-a3b3-88595b441bce",
+      "target_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "source_node_name": "《晚点 LatePost》",
+      "target_node_name": "月之暗面",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "42e3017a-cb57-4922-bcd8-14c942c8f298",
+      "name": "FINANCES_WITH",
+      "fact": "月之暗面获得IDG领投的5亿美元融资。",
+      "fact_type": "FINANCES_WITH",
+      "source_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "target_node_uuid": "ef92fd06-e90f-4e2a-ac39-6651e1fb0101",
+      "source_node_name": "月之暗面",
+      "target_node_name": "IDG",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "101f5b30-2c68-465d-b753-6d190fa288bf",
+      "name": "FINANCES_WITH",
+      "fact": "月之暗面获得阿里等老股东超额认购的融资。",
+      "fact_type": "FINANCES_WITH",
+      "source_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "target_node_uuid": "4722cbf6-6631-4e9c-bea9-10647ab0e95c",
+      "source_node_name": "月之暗面",
+      "target_node_name": "阿里",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "690fe512-fd64-490e-ab91-8f9112ae61fe",
+      "name": "FINANCES_WITH",
+      "fact": "月之暗面获得腾讯等老股东超额认购的融资。",
+      "fact_type": "FINANCES_WITH",
+      "source_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "target_node_uuid": "380f6683-e896-4e7b-90f8-ffa7d5206aed",
+      "source_node_name": "月之暗面",
+      "target_node_name": "腾讯",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "8689c590-1655-4d7f-96bb-49893092e0c7",
+      "name": "FINANCES_WITH",
+      "fact": "王慧文累计投资月之暗面7000万美元。",
+      "fact_type": "FINANCES_WITH",
+      "source_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "target_node_uuid": "7be162d5-cf08-42c3-9246-46a38ce5c826",
+      "source_node_name": "月之暗面",
+      "target_node_name": "王慧文",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "aeb23996-25cd-4b9d-8bd7-896e6c03bcac",
+      "name": "RESPONSE_TO",
+      "fact": "月之暗面的现金储备规模不输于IPO后的智谱。",
+      "fact_type": "RESPONSE_TO",
+      "source_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "target_node_uuid": "0ad5c3b6-cf4a-4fe4-a6f9-24d4e1f3f955",
+      "source_node_name": "月之暗面",
+      "target_node_name": "智谱",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "31a3030c-edf0-4e15-90ef-6edba8e8174f",
+      "name": "RESPONSE_TO",
+      "fact": "月之暗面的现金储备规模不输于MiniMax。",
+      "fact_type": "RESPONSE_TO",
+      "source_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "target_node_uuid": "46180c99-d936-4b76-8428-4b665baebc8a",
+      "source_node_name": "月之暗面",
+      "target_node_name": "MiniMax",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "00419187-876d-40bc-b467-05834b9e380a",
+      "name": "REPORTS_ON",
+      "fact": "月之暗面因K2 Thinking大模型带动而实现API收入增长",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "36de8870-f6cb-4024-b068-7e883c039613",
+      "target_node_uuid": "04578fc0-7cbb-4b7b-8283-8b12362d50af",
+      "source_node_name": "月之暗面",
+      "target_node_name": "K2 Thinking",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "17c0d7e0-43b2-4b2d-846a-d8d381b1aee4",
+      "name": "COMMENT_ON",
+      "fact": "杨植麟对 K3 模型的发展方向进行了评论。",
+      "fact_type": "COMMENT_ON",
+      "source_node_uuid": "d9a437e4-f5ec-4227-ae1e-0b474aa39920",
+      "target_node_uuid": "2bbd4c9c-d187-40a7-9d8c-78a93c3230b5",
+      "source_node_name": "杨植麟",
+      "target_node_name": "K3 模型",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "3511a67b-6358-4402-b3f0-1937cc64ef73",
+      "name": "WORKS_FOR",
+      "fact": "汪滔是大疆公司的创始人",
+      "fact_type": "WORKS_FOR",
+      "source_node_uuid": "55383087-8a4f-4894-ada5-f3398b0b56f7",
+      "target_node_uuid": "d38830e8-e0af-483b-a0fb-2119b75e4e8f",
+      "source_node_name": "汪滔",
+      "target_node_name": "大疆",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "98f58f3f-1db7-48a1-9256-c0e8816c073c",
+      "name": "REPORTS_ON",
+      "fact": "晚点报道了大疆相关的内容",
+      "fact_type": "REPORTS_ON",
+      "source_node_uuid": "18b5e9c8-53f1-4c4d-a292-ae9935d3375e",
+      "target_node_uuid": "d38830e8-e0af-483b-a0fb-2119b75e4e8f",
+      "source_node_name": "晚点",
+      "target_node_name": "大疆",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    },
+    {
+      "uuid": "5951af27-c908-4b0c-8c44-2f17d647f607",
+      "name": "COMMENT_ON",
+      "fact": "贺乾明对大疆相关话题进行评论",
+      "fact_type": "COMMENT_ON",
+      "source_node_uuid": "70545d9d-dcbd-4892-b686-43f073d55bae",
+      "target_node_uuid": "d38830e8-e0af-483b-a0fb-2119b75e4e8f",
+      "source_node_name": "贺乾明",
+      "target_node_name": "大疆",
+      "attributes": {},
+      "created_at": null,
+      "valid_at": null,
+      "invalid_at": null,
+      "expired_at": null,
+      "episodes": []
+    }
+  ],
+  "node_count": 18,
+  "edge_count": 21
+}
