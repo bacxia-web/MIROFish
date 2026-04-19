@@ -2,6 +2,26 @@
   <div class="graph-panel">
     <div class="panel-header">
       <span class="panel-title">{{ $t('graph.panelTitle') }}</span>
+      <div v-if="showGraphVariantTabs" class="graph-variant-tabs" role="tablist">
+        <button
+          type="button"
+          role="tab"
+          :aria-selected="graphVariant === 'raw'"
+          :class="{ active: graphVariant === 'raw' }"
+          @click="$emit('select-variant', 'raw')"
+        >
+          {{ $t('graph.variantControl') }}
+        </button>
+        <button
+          type="button"
+          role="tab"
+          :aria-selected="graphVariant === 'disamb'"
+          :class="{ active: graphVariant === 'disamb' }"
+          @click="$emit('select-variant', 'disamb')"
+        >
+          {{ $t('graph.variantExperimental') }}
+        </button>
+      </div>
       <!-- 顶部工具栏 (Internal Top Right) -->
       <div class="header-tools">
         <button class="tool-btn" @click="$emit('refresh')" :disabled="loading" :title="$t('graph.refreshGraph')">
@@ -243,10 +263,12 @@ const props = defineProps({
   graphData: Object,
   loading: Boolean,
   currentPhase: Number,
-  isSimulating: Boolean
+  isSimulating: Boolean,
+  graphVariant: { type: String, default: 'disamb' },
+  showGraphVariantTabs: { type: Boolean, default: false }
 })
 
-const emit = defineEmits(['refresh', 'toggle-maximize'])
+const emit = defineEmits(['refresh', 'toggle-maximize', 'select-variant'])
 
 const graphContainer = ref(null)
 const graphSvg = ref(null)
@@ -327,15 +349,21 @@ let linkLabelBgRef = null
 
 const renderGraph = () => {
   if (!graphSvg.value || !props.graphData) return
-  
+
+  const container = graphContainer.value
+  const width = container.clientWidth
+  const height = container.clientHeight
+
+  // 容器尚未完成布局（宽高为 0），延迟重试
+  if (width === 0 || height === 0) {
+    setTimeout(() => nextTick(renderGraph), 150)
+    return
+  }
+
   // 停止之前的仿真
   if (currentSimulation) {
     currentSimulation.stop()
   }
-  
-  const container = graphContainer.value
-  const width = container.clientWidth
-  const height = container.clientHeight
   
   const svg = d3.select(graphSvg.value)
     .attr('width', width)
@@ -801,12 +829,25 @@ const handleResize = () => {
   nextTick(renderGraph)
 }
 
+let resizeObserver = null
+
 onMounted(() => {
   window.addEventListener('resize', handleResize)
+  // 监听容器自身尺寸变化（分栏切换、侧边栏展开等），确保 D3 拿到正确尺寸
+  if (graphContainer.value && typeof ResizeObserver !== 'undefined') {
+    resizeObserver = new ResizeObserver(() => {
+      nextTick(renderGraph)
+    })
+    resizeObserver.observe(graphContainer.value)
+  }
 })
 
 onUnmounted(() => {
   window.removeEventListener('resize', handleResize)
+  if (resizeObserver) {
+    resizeObserver.disconnect()
+    resizeObserver = null
+  }
   if (currentSimulation) {
     currentSimulation.stop()
   }
@@ -843,6 +884,29 @@ onUnmounted(() => {
   font-weight: 600;
   color: #333;
   pointer-events: auto;
+}
+
+.graph-variant-tabs {
+  pointer-events: auto;
+  display: flex;
+  gap: 4px;
+  margin: 0 auto 0 12px;
+}
+
+.graph-variant-tabs button {
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #374151;
+  cursor: pointer;
+}
+
+.graph-variant-tabs button.active {
+  background: #111827;
+  color: #fff;
+  border-color: #111827;
 }
 
 .header-tools {
