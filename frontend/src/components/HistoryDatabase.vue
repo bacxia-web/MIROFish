@@ -614,10 +614,14 @@ onActivated(() => {
 /* 展开态：CSS Grid，自动撑满容器宽度 */
 .cards-container.expanded {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* minmax(0,1fr) 防止长文本内容撑爆列宽 */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
   padding-top: 10px;
-  position: static;
+  /* 保持 relative，让 absolute 子元素（隐藏按钮）正常定位 */
+  position: relative;
+  /* 防止任何溢出 */
+  overflow: hidden;
 }
 
 /* 折叠态：保留绝对定位扇形堆叠 */
@@ -642,9 +646,11 @@ onActivated(() => {
 
 /* 展开态：回归文档流，让 Grid 控制尺寸 */
 .project-card.expanded {
-  position: static;
+  position: relative;  /* relative 而非 static，让内部 absolute 子元素正常工作 */
   width: 100%;
+  min-width: 0;        /* 关键：防止内容撑宽 grid 列 */
   min-height: 280px;
+  overflow: hidden;    /* 超长文本截断而非撑宽 */
 }
 
 .card-hide-btn {
