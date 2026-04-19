@@ -21,26 +21,26 @@
   font-family: 'JetBrains Mono', 'Space Grotesk', 'Noto Sans SC', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #000000;
-  background-color: #ffffff;
+  color: #f0f0f0;
+  background-color: #0a0a0a;
 }
 
 /* 滚动条样式 */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #111111;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #000000;
+  background: #333333;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333333;
+  background: #555555;
 }
 
 /* 全局按钮样式 */

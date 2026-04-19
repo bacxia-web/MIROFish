@@ -46,8 +46,68 @@
         </div>
 
         <div class="hero-right">
-          <div class="logo-container">
-            <img src="../assets/logo/MiroFish_logo_left.jpeg" alt="MiroFish Logo" class="hero-logo" />
+          <div class="engine-panel">
+            <div class="engine-header">
+              <span class="engine-dot"></span>
+              <span class="engine-title">DISAMBIGUATION ENGINE</span>
+              <span class="engine-status">READY</span>
+            </div>
+            <div class="engine-body">
+              <div class="ba-compare">
+                <div class="ba-col">
+                  <div class="ba-label">RAW INPUT</div>
+                  <div class="ba-metric">
+                    <span class="ba-num">77</span>
+                    <span class="ba-unit">nodes</span>
+                  </div>
+                  <div class="ba-metric warn">
+                    <span class="ba-num">8</span>
+                    <span class="ba-unit">dup groups</span>
+                  </div>
+                </div>
+                <div class="ba-arrow-col">
+                  <div class="ba-arrow">⟹</div>
+                  <div class="ba-process">LLM × 10</div>
+                </div>
+                <div class="ba-col">
+                  <div class="ba-label ok">RESOLVED</div>
+                  <div class="ba-metric ok">
+                    <span class="ba-num">49</span>
+                    <span class="ba-unit">nodes</span>
+                  </div>
+                  <div class="ba-metric ok">
+                    <span class="ba-num">0</span>
+                    <span class="ba-unit">dup groups</span>
+                  </div>
+                </div>
+              </div>
+              <div class="engine-divider"></div>
+              <div class="prog-row">
+                <div class="prog-label">Node Compression</div>
+                <div class="prog-track-row">
+                  <div class="prog-track">
+                    <div class="prog-fill" style="width: 36.4%"></div>
+                  </div>
+                  <span class="prog-val">36.4%</span>
+                </div>
+              </div>
+              <div class="prog-row">
+                <div class="prog-label">Dup Elimination</div>
+                <div class="prog-track-row">
+                  <div class="prog-track">
+                    <div class="prog-fill full" style="width: 100%"></div>
+                  </div>
+                  <span class="prog-val">100%</span>
+                </div>
+              </div>
+              <div class="engine-divider"></div>
+              <div class="agent-grid">
+                <div v-for="i in 10" :key="i" class="agent-cell" :class="{ active: i <= 7, idle: i > 7 }">
+                  <span class="agent-dot"></span>
+                  <span class="agent-id">AGT_{{ String(i).padStart(2, '0') }}</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -370,23 +430,234 @@ const workflowSteps = [
 }
 
 .hero-right {
-  flex: 0.8;
+  flex: 0.75;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
 }
 
-.logo-container {
+/* Engine panel */
+.engine-panel {
   width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 20px;
+  max-width: 400px;
+  border: 1px solid #2a2a2a;
+  background: #0d0d0d;
+  font-family: var(--font-mono);
 }
 
-.hero-logo {
-  max-width: 460px;
-  width: 100%;
+.engine-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #2a2a2a;
+  background: #141414;
+}
+
+.engine-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FF4500;
+  box-shadow: 0 0 6px rgba(255, 69, 0, 0.6);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.engine-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #888;
+  letter-spacing: 2px;
+  flex: 1;
+}
+
+.engine-status {
+  font-size: 0.65rem;
+  color: #10B981;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.engine-body {
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Before/After compare */
+.ba-compare {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ba-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ba-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ba-label.ok {
+  color: #FF4500;
+}
+
+.ba-metric {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.ba-num {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #4a4a4a;
+  line-height: 1;
+}
+
+.ba-metric.warn .ba-num {
+  color: #cc3300;
+}
+
+.ba-metric.ok .ba-num {
+  color: #f0f0f0;
+}
+
+.ba-unit {
+  font-size: 0.65rem;
+  color: #555;
+  letter-spacing: 0.5px;
+}
+
+.ba-arrow-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 0 6px;
+}
+
+.ba-arrow {
+  font-size: 1.4rem;
+  color: #FF4500;
+  line-height: 1;
+}
+
+.ba-process {
+  font-size: 0.55rem;
+  color: #555;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.engine-divider {
+  height: 1px;
+  background: #1e1e1e;
+}
+
+/* Progress bars */
+.prog-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.prog-label {
+  font-size: 0.65rem;
+  color: #666;
+  letter-spacing: 0.5px;
+}
+
+.prog-track-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prog-track {
+  flex: 1;
+  height: 4px;
+  background: #1e1e1e;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.prog-fill {
+  height: 100%;
+  background: #333;
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+.prog-fill.full {
+  background: #FF4500;
+}
+
+.prog-val {
+  font-size: 0.7rem;
+  color: #666;
+  width: 36px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Agent grid */
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.agent-cell {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 6px;
+  border: 1px solid #1e1e1e;
+  background: #111;
+}
+
+.agent-cell.active {
+  border-color: rgba(255, 69, 0, 0.2);
+}
+
+.agent-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #333;
+  flex-shrink: 0;
+}
+
+.agent-cell.active .agent-dot {
+  background: #FF4500;
+  box-shadow: 0 0 4px rgba(255, 69, 0, 0.5);
+}
+
+.agent-id {
+  font-size: 0.5rem;
+  color: #444;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.agent-cell.active .agent-id {
+  color: #888;
 }
 
 /* Workflow strip */
@@ -598,8 +869,8 @@ const workflowSteps = [
 @media (max-width: 1024px) {
   .hero-section { flex-direction: column; }
   .hero-left { padding-right: 0; margin-bottom: 40px; }
-  .logo-container { justify-content: flex-start; padding-right: 0; }
-  .hero-logo { max-width: 280px; }
+  .hero-right { align-items: flex-start; }
+  .engine-panel { max-width: 100%; }
   .main-title { font-size: 3rem; }
   .strip-row { gap: 8px; }
   .strip-step { padding: 6px 10px; }
