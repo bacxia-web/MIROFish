@@ -22,7 +22,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #f0f0f0;
-  background-color: #0a0a0a;
+  background-color: #070c15;
 }
 
 /* 滚动条样式 */
@@ -32,15 +32,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #111111;
+  background: #0a1020;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333333;
+  background: #1a2a3e;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555555;
+  background: #2d4a6e;
 }
 
 /* 全局按钮样式 */

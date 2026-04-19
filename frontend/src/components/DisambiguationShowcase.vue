@@ -182,11 +182,11 @@ function taskMetrics(task) {
   gap: 0;
   flex-wrap: wrap;
   margin-bottom: 40px;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #1a2a3e;
 }
 .stat-card {
-  background: #141414;
-  border-right: 1px solid #2a2a2a;
+  background: #0e1724;
+  border-right: 1px solid #1a2a3e;
   padding: 24px 36px;
   min-width: 140px;
   text-align: center;
@@ -200,8 +200,8 @@ function taskMetrics(task) {
   line-height: 1;
   font-family: 'JetBrains Mono', monospace;
 }
-.stat-num.teal { color: #FF4500; }
-.stat-num.orange { color: #FF4500; }
+.stat-num.teal { color: #3B82F6; }
+.stat-num.orange { color: #3B82F6; }
 .stat-label {
   font-size: 11px;
   color: #9a9a9a;
@@ -221,8 +221,8 @@ function taskMetrics(task) {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 .task-card {
-  background: #141414;
-  border: 1px solid #2a2a2a;
+  background: #0e1724;
+  border: 1px solid #1a2a3e;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -236,9 +236,9 @@ function taskMetrics(task) {
 .task-badge {
   font-size: 11px;
   font-weight: 700;
-  background: rgba(255,69,0,0.12);
-  color: #FF4500;
-  border: 1px solid rgba(255,69,0,0.4);
+  background: rgba(59,130,246,0.12);
+  color: #3B82F6;
+  border: 1px solid rgba(59,130,246,0.4);
   padding: 3px 10px;
   font-family: 'JetBrains Mono', monospace;
   letter-spacing: 1px;
@@ -259,11 +259,11 @@ function taskMetrics(task) {
   flex: 1;
   background: #0d0d0d;
   padding: 12px 10px;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #1a2a3e;
 }
 .compare-col.disamb {
   background: #0f0a08;
-  border-color: rgba(255,69,0,0.5);
+  border-color: rgba(59,130,246,0.5);
 }
 .compare-label {
   font-size: 10px;
@@ -286,7 +286,7 @@ function taskMetrics(task) {
   color: #aaa;
   font-family: 'JetBrains Mono', monospace;
 }
-.stat-val.teal { color: #FF4500; }
+.stat-val.teal { color: #3B82F6; }
 .stat-val.warn { color: #e53e3e; }
 .stat-unit { font-size: 10px; color: #8a8a8a; }
 .compare-arrow-col {
@@ -298,11 +298,11 @@ function taskMetrics(task) {
   flex-shrink: 0;
   width: 52px;
 }
-.compare-arrow-icon { font-size: 22px; color: #FF4500; opacity: 0.7; }
+.compare-arrow-icon { font-size: 22px; color: #3B82F6; opacity: 0.7; }
 .reduction-badge {
   font-size: 11px;
   font-weight: 700;
-  color: #FF4500;
+  color: #3B82F6;
   text-align: center;
   line-height: 1.4;
   font-family: 'JetBrains Mono', monospace;
@@ -318,7 +318,7 @@ function taskMetrics(task) {
   padding: 10px 12px;
   font-size: 13px;
   color: #c0c0c0;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #1a2a3e;
 }
 .decisions-label {
   font-size: 10px;
@@ -329,17 +329,17 @@ function taskMetrics(task) {
   text-transform: uppercase;
   font-weight: 600;
 }
-.teal { color: #FF4500; }
+.teal { color: #3B82F6; }
 
 /* Merge list */
 .merge-list {
   background: #0d0d0d;
-  border: 1px solid rgba(255,69,0,0.3);
+  border: 1px solid rgba(59,130,246,0.3);
   padding: 12px;
 }
 .merge-list-title {
   font-size: 10px;
-  color: #FF4500;
+  color: #3B82F6;
   letter-spacing: 0.08em;
   margin-bottom: 8px;
   font-family: 'JetBrains Mono', monospace;
@@ -355,12 +355,12 @@ function taskMetrics(task) {
 }
 .merge-removed { color: #ff7070; text-decoration: line-through; opacity: 0.75; }
 .merge-arrow { color: #707070; }
-.merge-canonical { color: #FF4500; font-weight: 600; }
+.merge-canonical { color: #3B82F6; font-weight: 600; }
 .merge-label-tag {
   font-size: 10px;
   background: #1a1a1a;
   color: #a0a0a0;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #1a2a3e;
   padding: 1px 6px;
   margin-left: 6px;
 }
@@ -369,14 +369,14 @@ function taskMetrics(task) {
   color: #9a9a9a;
   background: #0d0d0d;
   padding: 10px 12px;
-  border: 1px dashed #2a2a2a;
+  border: 1px dashed #1a2a3e;
 }
 
 /* Bar chart */
 .bar-chart {
   background: #0d0d0d;
   padding: 14px;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #1a2a3e;
 }
 .bar-chart-title {
   font-size: 10px;
@@ -401,7 +401,7 @@ function taskMetrics(task) {
 }
 .bar-track {
   flex: 1;
-  background: #1e1e1e;
+  background: #14202f;
   height: 20px;
   overflow: hidden;
 }
@@ -414,7 +414,7 @@ function taskMetrics(task) {
   transition: width 0.6s ease;
 }
 .bar-fill.raw { background: #3a3a3a; }
-.bar-fill.disamb { background: #FF4500; }
+.bar-fill.disamb { background: #3B82F6; }
 .bar-val {
   font-size: 10px;
   color: #ddd;
@@ -428,5 +428,5 @@ function taskMetrics(task) {
   font-size: 10px;
 }
 .legend-raw { color: #a0a0a0; }
-.legend-disamb { color: #FF4500; }
+.legend-disamb { color: #3B82F6; }
 </style>

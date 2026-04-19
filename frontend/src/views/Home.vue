@@ -211,13 +211,13 @@ const workflowSteps = [
 
 <style scoped>
 :root {
-  --black: #000000;
+  --black: #040810;
   --white: #FFFFFF;
-  --orange: #FF4500;
-  --gray-light: #141414;
-  --gray-text: #888888;
-  --border: #2a2a2a;
-  --text-primary: #f0f0f0;
+  --accent: #3B82F6;
+  --gray-light: #0e1724;
+  --gray-text: #64748b;
+  --border: #1a2a3e;
+  --text-primary: #e2e8f0;
   --font-mono: 'JetBrains Mono', monospace;
   --font-sans: 'Space Grotesk', 'Noto Sans SC', system-ui, sans-serif;
   --font-cn: 'Noto Sans SC', system-ui, sans-serif;
@@ -225,7 +225,7 @@ const workflowSteps = [
 
 .home-container {
   min-height: 100vh;
-  background: #0a0a0a;
+  background: #070c15;
   font-family: var(--font-sans);
   color: var(--text-primary);
 }
@@ -268,7 +268,7 @@ const workflowSteps = [
 }
 .nav-link:hover {
   opacity: 1;
-  color: var(--orange);
+  color: var(--accent);
 }
 
 .github-link {
@@ -321,7 +321,7 @@ const workflowSteps = [
 }
 
 .orange-tag {
-  background: var(--orange);
+  background: var(--accent);
   color: var(--white);
   padding: 4px 10px;
   font-weight: 700;
@@ -345,7 +345,7 @@ const workflowSteps = [
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #ffffff 0%, #aaaaaa 100%);
+  background: linear-gradient(90deg, #e2e8f0 0%, #60a5fa 60%, #93c5fd 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -366,7 +366,7 @@ const workflowSteps = [
 }
 
 .highlight-bold { color: #fff; font-weight: 700; }
-.highlight-orange { color: var(--orange); font-weight: 700; font-family: var(--font-mono); }
+.highlight-orange { color: var(--accent); font-weight: 700; font-family: var(--font-mono); }
 .highlight-code {
   background: rgba(255, 255, 255, 0.08);
   padding: 2px 6px;
@@ -382,13 +382,13 @@ const workflowSteps = [
   font-weight: 520;
   color: var(--text-primary);
   letter-spacing: 1px;
-  border-left: 3px solid var(--orange);
+  border-left: 3px solid var(--accent);
   padding-left: 15px;
   margin-top: 16px;
 }
 
 .blinking-cursor {
-  color: var(--orange);
+  color: var(--accent);
   animation: blink 1s step-end infinite;
   font-weight: 700;
 }
@@ -404,9 +404,9 @@ const workflowSteps = [
   align-items: center;
   gap: 10px;
   padding: 16px 36px;
-  background: var(--orange);
+  background: var(--accent);
   color: var(--white);
-  border: 1px solid var(--orange);
+  border: 1px solid var(--accent);
   font-family: var(--font-mono);
   font-size: 1rem;
   font-weight: 700;
@@ -417,16 +417,16 @@ const workflowSteps = [
 }
 .try-demo-cta:hover {
   background: transparent;
-  border-color: var(--orange);
-  color: var(--orange);
+  border-color: var(--accent);
+  color: var(--accent);
   transform: translateY(-2px);
 }
 .try-demo-cta:active { transform: translateY(0); }
 
 @keyframes pulse-border {
-  0% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.4); }
-  70% { box-shadow: 0 0 0 12px rgba(255, 69, 0, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 69, 0, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(59, 130, 246, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
 }
 
 .hero-right {
@@ -441,8 +441,8 @@ const workflowSteps = [
 .engine-panel {
   width: 100%;
   max-width: 400px;
-  border: 1px solid #2a2a2a;
-  background: #0d0d0d;
+  border: 1px solid #1a2a3e;
+  background: #09101e;
   font-family: var(--font-mono);
 }
 
@@ -451,16 +451,16 @@ const workflowSteps = [
   align-items: center;
   gap: 10px;
   padding: 12px 16px;
-  border-bottom: 1px solid #2a2a2a;
-  background: #141414;
+  border-bottom: 1px solid #1a2a3e;
+  background: #0e1724;
 }
 
 .engine-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #FF4500;
-  box-shadow: 0 0 6px rgba(255, 69, 0, 0.6);
+  background: #3B82F6;
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.6);
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
@@ -514,7 +514,7 @@ const workflowSteps = [
 }
 
 .ba-label.ok {
-  color: #FF4500;
+  color: #3B82F6;
 }
 
 .ba-metric {
@@ -554,7 +554,7 @@ const workflowSteps = [
 
 .ba-arrow {
   font-size: 1.4rem;
-  color: #FF4500;
+  color: #3B82F6;
   line-height: 1;
 }
 
@@ -567,7 +567,7 @@ const workflowSteps = [
 
 .engine-divider {
   height: 1px;
-  background: #1e1e1e;
+  background: #14202f;
 }
 
 /* Progress bars */
@@ -592,7 +592,7 @@ const workflowSteps = [
 .prog-track {
   flex: 1;
   height: 4px;
-  background: #1e1e1e;
+  background: #14202f;
   border-radius: 2px;
   overflow: hidden;
 }
@@ -605,7 +605,7 @@ const workflowSteps = [
 }
 
 .prog-fill.full {
-  background: #FF4500;
+  background: #3B82F6;
 }
 
 .prog-val {
@@ -628,12 +628,12 @@ const workflowSteps = [
   align-items: center;
   gap: 5px;
   padding: 5px 6px;
-  border: 1px solid #1e1e1e;
+  border: 1px solid #14202f;
   background: #111;
 }
 
 .agent-cell.active {
-  border-color: rgba(255, 69, 0, 0.2);
+  border-color: rgba(59, 130, 246, 0.2);
 }
 
 .agent-dot {
@@ -645,8 +645,8 @@ const workflowSteps = [
 }
 
 .agent-cell.active .agent-dot {
-  background: #FF4500;
-  box-shadow: 0 0 4px rgba(255, 69, 0, 0.5);
+  background: #3B82F6;
+  box-shadow: 0 0 4px rgba(59, 130, 246, 0.5);
 }
 
 .agent-id {
@@ -696,17 +696,17 @@ const workflowSteps = [
   gap: 8px;
   padding: 8px 14px;
   border: 1px solid var(--border);
-  background: #141414;
+  background: #0e1724;
   font-family: var(--font-mono);
   transition: all 0.2s;
 }
 .strip-step:hover {
-  border-color: var(--orange);
-  background: #1e1e1e;
+  border-color: var(--accent);
+  background: #14202f;
 }
 .strip-num {
   font-weight: 700;
-  color: var(--orange);
+  color: var(--accent);
   font-size: 0.85rem;
 }
 .strip-title {
@@ -764,7 +764,7 @@ const workflowSteps = [
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--orange);
+  color: var(--accent);
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
@@ -788,8 +788,8 @@ const workflowSteps = [
   gap: 20px;
   padding: 18px 24px;
   border: 1px solid var(--border);
-  border-left: 3px solid var(--orange);
-  background: #141414;
+  border-left: 3px solid var(--accent);
+  background: #0e1724;
   margin-bottom: 64px;
   flex-wrap: wrap;
 }
@@ -797,7 +797,7 @@ const workflowSteps = [
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--orange);
+  color: var(--accent);
   letter-spacing: 1.5px;
   text-transform: uppercase;
   white-space: nowrap;
@@ -817,7 +817,7 @@ const workflowSteps = [
   white-space: nowrap;
 }
 .solution-step.highlight {
-  color: var(--orange);
+  color: var(--accent);
   font-weight: 700;
 }
 .solution-arrow {
@@ -852,16 +852,16 @@ const workflowSteps = [
 .view-full-link {
   font-family: var(--font-mono);
   font-size: 0.88rem;
-  color: var(--orange);
+  color: var(--accent);
   text-decoration: none;
   font-weight: 600;
-  border: 1px solid var(--orange);
+  border: 1px solid var(--accent);
   padding: 8px 16px;
   transition: all 0.2s;
   white-space: nowrap;
 }
 .view-full-link:hover {
-  background: var(--orange);
+  background: var(--accent);
   color: var(--white);
 }
 

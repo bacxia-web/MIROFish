@@ -582,8 +582,8 @@ onActivated(() => {
   right: 0;
   bottom: 0;
   background:
-    linear-gradient(to right, rgba(10, 10, 10, 0.95) 0%, transparent 15%, transparent 85%, rgba(10, 10, 10, 0.95) 100%),
-    linear-gradient(to bottom, rgba(10, 10, 10, 0.8) 0%, transparent 20%, transparent 80%, rgba(10, 10, 10, 0.8) 100%);
+    linear-gradient(to right, rgba(7, 12, 21, 0.95) 0%, transparent 15%, transparent 85%, rgba(7, 12, 21, 0.95) 100%),
+    linear-gradient(to bottom, rgba(7, 12, 21, 0.8) 0%, transparent 20%, transparent 80%, rgba(7, 12, 21, 0.8) 100%);
   pointer-events: none;
 }
 
@@ -603,7 +603,7 @@ onActivated(() => {
 .section-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #2a2a2a, transparent);
+  background: linear-gradient(90deg, transparent, #1a2a3e, transparent);
   max-width: 300px;
 }
 
@@ -622,8 +622,8 @@ onActivated(() => {
   transform: translateY(-50%);
   width: 36px;
   height: 32px;
-  border: 1px solid #2a2a2a;
-  background: #141414;
+  border: 1px solid #1a2a3e;
+  background: #0e1724;
   border-radius: 0;
   font-size: 1rem;
   line-height: 1;
@@ -633,7 +633,7 @@ onActivated(() => {
 }
 
 .layout-toggle:hover {
-  border-color: #FF4500;
+  border-color: #3B82F6;
   color: #f0f0f0;
   background: #1a1a1a;
 }
@@ -653,8 +653,8 @@ onActivated(() => {
 .project-card {
   position: absolute;
   width: 280px;
-  background: #141414;
-  border: 1px solid #2a2a2a;
+  background: #0e1724;
+  border: 1px solid #1a2a3e;
   border-radius: 0;
   padding: 14px;
   cursor: pointer;
@@ -688,13 +688,13 @@ onActivated(() => {
 }
 
 .card-hide-btn:focus-visible {
-  outline: 2px solid rgba(255, 69, 0, 0.5);
+  outline: 2px solid rgba(59, 130, 246, 0.5);
   outline-offset: 1px;
 }
 
 .project-card:hover {
-  box-shadow: 0 0 0 1px rgba(255, 69, 0, 0.3);
-  border-color: #FF4500;
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.3);
+  border-color: #3B82F6;
   z-index: 1000 !important;
 }
 
@@ -777,7 +777,7 @@ onActivated(() => {
   padding: 8px 10px;
   background: #0d0d0d;
   border-radius: 0;
-  border: 1px solid #1e1e1e;
+  border: 1px solid #14202f;
   overflow: hidden;
 }
 
@@ -878,7 +878,7 @@ onActivated(() => {
 
 /* 悬停时文件区域效果 */
 .project-card:hover .card-files-wrapper {
-  border-color: rgba(255, 69, 0, 0.2);
+  border-color: rgba(59, 130, 246, 0.2);
   background: #111;
 }
 
@@ -910,7 +910,7 @@ onActivated(() => {
 }
 
 .project-card:hover .card-title {
-  color: #FF4500;
+  color: #3B82F6;
 }
 
 /* 卡片描述 */
@@ -934,7 +934,7 @@ onActivated(() => {
   justify-content: space-between;
   align-items: center;
   padding-top: 12px;
-  border-top: 1px solid #1e1e1e;
+  border-top: 1px solid #14202f;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.65rem;
   color: #444;
@@ -974,7 +974,7 @@ onActivated(() => {
   left: 0;
   height: 2px;
   width: 0;
-  background-color: #FF4500;
+  background-color: #3B82F6;
   transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   z-index: 20;
 }
@@ -1001,7 +1001,7 @@ onActivated(() => {
 .loading-spinner {
   width: 24px;
   height: 24px;
-  border: 2px solid #2a2a2a;
+  border: 2px solid #1a2a3e;
   border-top-color: #555;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
@@ -1043,12 +1043,12 @@ onActivated(() => {
 }
 
 .modal-content {
-  background: #141414;
+  background: #0e1724;
   width: 560px;
   max-width: 90vw;
   max-height: 85vh;
   overflow-y: auto;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #1a2a3e;
   border-radius: 0;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
 }
@@ -1089,7 +1089,7 @@ onActivated(() => {
   align-items: center;
   padding: 20px 32px;
   border-bottom: 1px solid #222;
-  background: #141414;
+  background: #0e1724;
 }
 
 .modal-title-section {
@@ -1120,7 +1120,7 @@ onActivated(() => {
 
 .modal-progress.completed { color: #10B981; background: rgba(16, 185, 129, 0.1); }
 .modal-progress.in-progress { color: #F59E0B; background: rgba(245, 158, 11, 0.1); }
-.modal-progress.not-started { color: #555; background: #1e1e1e; }
+.modal-progress.not-started { color: #555; background: #14202f; }
 
 .modal-create-time {
   font-family: 'JetBrains Mono', monospace;
@@ -1145,7 +1145,7 @@ onActivated(() => {
 }
 
 .modal-close:hover {
-  background: #1e1e1e;
+  background: #14202f;
   color: #f0f0f0;
 }
 
@@ -1178,7 +1178,7 @@ onActivated(() => {
   line-height: 1.6;
   padding: 16px;
   background: #0d0d0d;
-  border: 1px solid #1e1e1e;
+  border: 1px solid #14202f;
   border-radius: 0;
 }
 
@@ -1216,13 +1216,13 @@ onActivated(() => {
   gap: 12px;
   padding: 10px 14px;
   background: #0d0d0d;
-  border: 1px solid #1e1e1e;
+  border: 1px solid #14202f;
   border-radius: 0;
   transition: all 0.2s ease;
 }
 
 .modal-file-item:hover {
-  border-color: rgba(255, 69, 0, 0.3);
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
 .modal-file-name {
@@ -1241,7 +1241,7 @@ onActivated(() => {
   color: #444;
   padding: 16px;
   background: #0d0d0d;
-  border: 1px dashed #2a2a2a;
+  border: 1px dashed #1a2a3e;
   border-radius: 0;
   text-align: center;
 }
@@ -1252,13 +1252,13 @@ onActivated(() => {
   align-items: center;
   gap: 16px;
   padding: 10px 32px 0;
-  background: #141414;
+  background: #0e1724;
 }
 
 .divider-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #2a2a2a, transparent);
+  background: linear-gradient(90deg, transparent, #1a2a3e, transparent);
 }
 
 .divider-text {
@@ -1275,7 +1275,7 @@ onActivated(() => {
   display: flex;
   gap: 12px;
   padding: 20px 32px;
-  background: #141414;
+  background: #0e1724;
 }
 
 .modal-btn {
@@ -1285,7 +1285,7 @@ onActivated(() => {
   align-items: center;
   gap: 8px;
   padding: 16px;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #1a2a3e;
   border-radius: 0;
   background: #0d0d0d;
   cursor: pointer;
@@ -1295,15 +1295,15 @@ onActivated(() => {
 }
 
 .modal-btn:hover:not(:disabled) {
-  border-color: #FF4500;
+  border-color: #3B82F6;
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(255, 69, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
 }
 
 .modal-btn:disabled {
   opacity: 0.3;
   cursor: not-allowed;
-  background: #0a0a0a;
+  background: #070c15;
 }
 
 .btn-step {
@@ -1343,7 +1343,7 @@ onActivated(() => {
   align-items: center;
   justify-content: center;
   padding: 0 32px 20px;
-  background: #141414;
+  background: #0e1724;
 }
 
 .hint-text {
