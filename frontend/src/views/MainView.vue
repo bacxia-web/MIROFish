@@ -108,10 +108,6 @@
           @next-step="handleNextStep"
           @add-log="addLog"
         />
-        <QualityMetricsPanel
-          v-if="currentProjectId && currentProjectId !== 'new'"
-          :project-id="currentProjectId"
-        />
       </div>
     </main>
   </div>
@@ -124,7 +120,6 @@ import { useI18n } from 'vue-i18n'
 import GraphPanel from '../components/GraphPanel.vue'
 import Step1GraphBuild from '../components/Step1GraphBuild.vue'
 import Step2EnvSetup from '../components/Step2EnvSetup.vue'
-import QualityMetricsPanel from '../components/QualityMetricsPanel.vue'
 import { generateOntology, getProject, buildGraph, getTaskStatus, getGraphData } from '../api/graph'
 import { getPendingUpload, clearPendingUpload } from '../store/pendingUpload'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
