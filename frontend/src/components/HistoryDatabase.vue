@@ -73,37 +73,24 @@
         </div>
 
         <!-- 文件列表区域 -->
-        <div class="card-files-wrapper">
-          <!-- 角落装饰 - 取景框风格 -->
-          <div class="corner-mark top-left-only"></div>
-          
-          <!-- 文件列表 -->
-          <div class="files-list" v-if="project.files && project.files.length > 0">
-            <div 
-              v-for="(file, fileIndex) in project.files.slice(0, 3)" 
-              :key="fileIndex"
-              class="file-item"
-            >
-              <span class="file-tag" :class="getFileType(file.filename)">{{ getFileTypeLabel(file.filename) }}</span>
-              <span class="file-name">{{ truncateFilename(file.filename, 20) }}</span>
-            </div>
-            <!-- 如果有更多文件，显示提示 -->
-            <div v-if="project.files.length > 3" class="files-more">
-              {{ $t('history.moreFiles', { count: project.files.length - 3 }) }}
-            </div>
-          </div>
-          <!-- 无文件时的占位 -->
-          <div class="files-empty" v-else>
-            <span class="empty-file-icon">◇</span>
-            <span class="empty-file-text">{{ $t('history.noFiles') }}</span>
-          </div>
+        <div class="card-files-wrapper" v-if="project.files && project.files.length > 0">
+          <a
+            v-for="(file, fileIndex) in project.files.slice(0, 3)"
+            :key="fileIndex"
+            class="file-item"
+            :href="file.file_url || '#'"
+            :target="file.file_url ? '_blank' : undefined"
+            rel="noopener"
+            @click.stop
+          >
+            <span class="file-tag" :class="getFileType(file.filename)">{{ getFileTypeLabel(file.filename) }}</span>
+            <span class="file-name">{{ file.filename }}</span>
+            <span v-if="file.file_url" class="file-open-icon">↗</span>
+          </a>
         </div>
 
-        <!-- 卡片标题（使用模拟需求的前20字作为标题） -->
-        <h3 class="card-title">{{ getSimulationTitle(project.simulation_requirement) }}</h3>
-
-        <!-- 卡片描述（模拟需求完整展示） -->
-        <p class="card-desc">{{ truncateText(project.simulation_requirement, 55) }}</p>
+        <!-- 预测方向文案：完整展示，不截断 -->
+        <p class="card-desc">{{ project.simulation_requirement }}</p>
 
         <!-- 卡片底部 -->
         <div class="card-footer">
@@ -647,8 +634,10 @@ onActivated(() => {
   position: relative;  /* relative 而非 static，让内部 absolute 子元素正常工作 */
   width: 100%;
   min-width: 0;        /* 关键：防止内容撑宽 grid 列 */
-  min-height: 280px;
-  overflow: hidden;    /* 超长文本截断而非撑宽 */
+  min-height: 0;       /* 高度由内容撑开 */
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-hide-btn {
@@ -758,51 +747,27 @@ onActivated(() => {
 
 /* 文件列表区域 */
 .card-files-wrapper {
-  position: relative;
-  width: 100%;
-  min-height: 48px;
-  max-height: 110px;
-  margin-bottom: 12px;
-  padding: 8px 10px;
-  background: #0d0d0d;
-  border-radius: 0;
-  border: 1px solid #14202f;
-  overflow: hidden;
-}
-
-.files-list {
   display: flex;
   flex-direction: column;
   gap: 4px;
-}
-
-/* 更多文件提示 */
-.files-more {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3px 6px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.875rem;
-  color: #555;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 2px;
-  letter-spacing: 0.3px;
+  margin-bottom: 12px;
 }
 
 .file-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
-  padding: 4px 6px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 2px;
+  padding: 7px 10px;
+  background: #0d0d0d;
+  border: 1px solid #14202f;
+  text-decoration: none;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .file-item:hover {
-  background: rgba(255, 255, 255, 0.06);
-  transform: translateX(2px);
+  background: #0e1a2e;
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
 /* 简约文件标签样式 */
@@ -811,6 +776,7 @@ onActivated(() => {
   align-items: center;
   justify-content: center;
   height: 16px;
+  margin-top: 1px;
   padding: 0 4px;
   border-radius: 2px;
   font-family: 'JetBrains Mono', monospace;
@@ -836,38 +802,33 @@ onActivated(() => {
 
 .file-name {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.9rem;
-  color: #777;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 0.78rem;
+  color: #7a8fa8;
+  line-height: 1.4;
+  word-break: break-all;
+  flex: 1;
   letter-spacing: 0.1px;
 }
 
-/* 无文件时的占位 */
-.files-empty {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  height: 48px;
-  color: #444;
+.file-item:hover .file-name {
+  color: #a8bdd0;
 }
 
-.empty-file-icon {
-  font-size: 1rem;
-  opacity: 0.4;
+.file-open-icon {
+  font-size: 0.7rem;
+  color: #3B82F6;
+  flex-shrink: 0;
+  margin-top: 1px;
+  opacity: 0.7;
 }
 
-.empty-file-text {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.82rem;
-  letter-spacing: 0.5px;
+.file-item:hover .file-open-icon {
+  opacity: 1;
 }
 
 /* 悬停时文件区域效果 */
 .project-card:hover .card-files-wrapper {
-  border-color: rgba(59, 130, 246, 0.2);
+  /* no global override needed */
   background: #111;
 }
 
@@ -885,35 +846,17 @@ onActivated(() => {
 }
 
 /* 卡片标题 */
-.card-title {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #d0d0d0;
-  margin: 0 0 6px 0;
-  line-height: 1.4;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: color 0.3s ease;
-}
-
-.project-card:hover .card-title {
-  color: #3B82F6;
-}
-
-/* 卡片描述 */
+/* 预测方向文案：完整展示 */
 .card-desc {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.82rem;
-  color: #555;
+  font-size: 0.85rem;
+  color: #7a8fa8;
   margin: 0 0 16px 0;
-  line-height: 1.5;
-  height: 34px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.project-card:hover .card-desc {
+  color: #94a3b8;
 }
 
 /* 卡片底部 */

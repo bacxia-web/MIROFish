@@ -9,7 +9,8 @@ import traceback
 import threading
 from dataclasses import asdict
 from datetime import datetime
-from flask import request, jsonify
+import json as _json
+from flask import request, jsonify, send_file as _send_file
 
 from . import graph_bp
 from ..config import Config
@@ -150,6 +151,36 @@ def get_project_profile_diversity_eval(project_id: str):
     if not data:
         return jsonify({'success': True, 'data': None, 'message': 'no_profile_diversity_eval'})
     return jsonify({'success': True, 'data': data})
+
+
+@graph_bp.route('/project/<project_id>/file/<path:filename>', methods=['GET'])
+def serve_project_file(project_id: str, filename: str):
+    """
+    按原始文件名提供项目上传文件下载（PDF 等）
+    先查 uploads/，再查 demo_uploads/（Railway 静态回退）
+    """
+    candidates = [
+        os.path.join(Config.UPLOAD_FOLDER, 'projects', project_id, 'files'),
+        os.path.join(os.path.dirname(Config.UPLOAD_FOLDER), 'demo_uploads', 'projects', project_id, 'files'),
+    ]
+    for files_dir in candidates:
+        proj_json = os.path.join(os.path.dirname(files_dir), 'project.json')
+        if not os.path.exists(proj_json):
+            continue
+        try:
+            meta = _json.load(open(proj_json, encoding='utf-8'))
+            for f in meta.get('files', []):
+                if f.get('filename') == filename:
+                    # find the actual file (any file in the dir matches hash-name)
+                    for fname in os.listdir(files_dir):
+                        full = os.path.join(files_dir, fname)
+                        if os.path.isfile(full):
+                            return _send_file(full, as_attachment=False,
+                                             download_name=filename,
+                                             mimetype='application/pdf')
+        except Exception:
+            pass
+    return jsonify({"success": False, "error": "File not found"}), 404
 
 
 @graph_bp.route('/project/<project_id>', methods=['GET'])

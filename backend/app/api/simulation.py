@@ -999,11 +999,14 @@ def get_simulation_history():
                 sim_dict["runner_status"] = "idle"
                 sim_dict["total_rounds"] = recommended_rounds
             
-            # 获取关联项目的文件列表（最多3个）
+            # 获取关联项目的文件列表（最多3个），附带可访问的 file_url
             project = ProjectManager.get_project(sim.project_id)
             if project and hasattr(project, 'files') and project.files:
                 sim_dict["files"] = [
-                    {"filename": f.get("filename", "未知文件")} 
+                    {
+                        "filename": f.get("filename", "未知文件"),
+                        "file_url": f"/api/graph/project/{sim.project_id}/file/{f.get('filename', '')}"
+                    }
                     for f in project.files[:3]
                 ]
             else:
