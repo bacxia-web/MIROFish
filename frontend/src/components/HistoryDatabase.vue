@@ -172,38 +172,32 @@
               <span class="divider-line"></span>
             </div>
 
-            <!-- 导航按钮 -->
+            <!-- 导航按钮：主入口是报告页，次级入口是构建过程 -->
             <div class="modal-actions">
-              <button 
-                class="modal-btn btn-project" 
-                @click="goToProject"
-                :disabled="!selectedProject.project_id"
-              >
-                <span class="btn-step">Step1</span>
-                <span class="btn-icon">◇</span>
-                <span class="btn-text">{{ $t('history.step1Button') }}</span>
-              </button>
-              <button 
-                class="modal-btn btn-simulation" 
-                @click="goToSimulation"
-              >
-                <span class="btn-step">Step2</span>
-                <span class="btn-icon">◈</span>
-                <span class="btn-text">{{ $t('history.step2Button') }}</span>
-              </button>
-              <button 
-                class="modal-btn btn-report" 
+              <button
+                class="modal-btn btn-report btn-primary-action"
                 @click="goToReport"
                 :disabled="!selectedProject.report_id"
               >
-                <span class="btn-step">Step4</span>
                 <span class="btn-icon">◆</span>
                 <span class="btn-text">{{ $t('history.step4Button') }}</span>
               </button>
             </div>
-            <!-- 不可回放提示 -->
-            <div class="modal-playback-hint">
-              <span class="hint-text">{{ $t('history.replayHint') }}</span>
+            <div class="modal-secondary-actions">
+              <button
+                class="modal-link-btn"
+                @click="goToProject"
+                :disabled="!selectedProject.project_id"
+              >
+                {{ $t('history.step1Button') }}
+              </button>
+              <span class="secondary-sep">·</span>
+              <button
+                class="modal-link-btn"
+                @click="goToSimulation"
+              >
+                {{ $t('history.step2Button') }}
+              </button>
             </div>
           </div>
         </div>
@@ -419,9 +413,13 @@ const truncateFilename = (filename, maxLength) => {
   return truncatedName + ext
 }
 
-// 打开项目详情弹窗
+// 卡片点击：有 report 直接跳 Report，否则打开弹窗
 const navigateToProject = (simulation) => {
-  selectedProject.value = simulation
+  if (simulation.report_id) {
+    router.push({ name: 'Report', params: { reportId: simulation.report_id } })
+  } else {
+    selectedProject.value = simulation
+  }
 }
 
 // 关闭弹窗
@@ -1281,17 +1279,18 @@ onActivated(() => {
 .modal-actions {
   display: flex;
   gap: 12px;
-  padding: 20px 32px;
+  padding: 20px 32px 12px;
   background: #0e1724;
 }
 
 .modal-btn {
   flex: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 8px;
-  padding: 16px;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
   border: 1px solid #1a2a3e;
   border-radius: 0;
   background: #0d0d0d;
@@ -1301,9 +1300,19 @@ onActivated(() => {
   overflow: hidden;
 }
 
+.modal-btn.btn-primary-action {
+  background: #1a2a3e;
+  border-color: #3B82F6;
+}
+
+.modal-btn.btn-primary-action:hover:not(:disabled) {
+  background: #1e3a5f;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+}
+
 .modal-btn:hover:not(:disabled) {
   border-color: #3B82F6;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
 }
 
@@ -1313,35 +1322,59 @@ onActivated(() => {
   background: #070c15;
 }
 
-.btn-step {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #444;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
 .btn-icon {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1;
+  color: #10B981;
   transition: color 0.2s ease;
 }
 
 .btn-text {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-  color: #888;
+  color: #e2e8f0;
 }
 
-.modal-btn.btn-project .btn-icon { color: #3B82F6; }
-.modal-btn.btn-simulation .btn-icon { color: #F59E0B; }
-.modal-btn.btn-report .btn-icon { color: #10B981; }
-
 .modal-btn:hover:not(:disabled) .btn-text {
-  color: #f0f0f0;
+  color: #fff;
+}
+
+/* 次级链接按钮 */
+.modal-secondary-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 32px 20px;
+  background: #0e1724;
+}
+
+.modal-link-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.2s;
+}
+
+.modal-link-btn:hover:not(:disabled) {
+  color: #94a3b8;
+  text-decoration: underline;
+}
+
+.modal-link-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.secondary-sep {
+  color: #2d3a4a;
+  font-size: 0.9rem;
 }
 
 /* 不可回放提示 */

@@ -41,19 +41,39 @@
 
     <!-- Main Content Area -->
     <main class="content-area">
-      <!-- Left Panel: Graph -->
+      <!-- Left Panel: Graph / Agents tab -->
       <div class="panel-wrapper left" :style="leftPanelStyle">
-        <GraphPanel 
-          :graphData="graphData"
-          :loading="graphLoading"
-          :currentPhase="4"
-          :isSimulating="false"
-          :graphVariant="graphVariant"
-          :showGraphVariantTabs="hasDualGraph"
-          @refresh="refreshGraph"
-          @toggle-maximize="toggleMaximize('graph')"
-          @select-variant="onGraphVariantSelect"
-        />
+        <!-- Tab switcher -->
+        <div class="left-tab-bar">
+          <button
+            class="left-tab"
+            :class="{ active: leftTab === 'graph' }"
+            @click="leftTab = 'graph'"
+          >Graph</button>
+          <button
+            class="left-tab"
+            :class="{ active: leftTab === 'agents' }"
+            @click="leftTab = 'agents'"
+          >Agents <span v-if="simulationId" class="tab-dot">●</span></button>
+        </div>
+        <div class="left-tab-content">
+          <GraphPanel
+            v-show="leftTab === 'graph'"
+            :graphData="graphData"
+            :loading="graphLoading"
+            :currentPhase="4"
+            :isSimulating="false"
+            :graphVariant="graphVariant"
+            :showGraphVariantTabs="hasDualGraph"
+            @refresh="refreshGraph"
+            @toggle-maximize="toggleMaximize('graph')"
+            @select-variant="onGraphVariantSelect"
+          />
+          <AgentsPanel
+            v-if="leftTab === 'agents'"
+            :simulationId="simulationId"
+          />
+        </div>
       </div>
 
       <!-- Right Panel: Step4 报告生成 -->
@@ -76,6 +96,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import GraphPanel from '../components/GraphPanel.vue'
 import Step4Report from '../components/Step4Report.vue'
+import AgentsPanel from '../components/AgentsPanel.vue'
 import { getProject, getGraphData } from '../api/graph'
 import {
   effectiveGraphIdFromProject,
@@ -97,6 +118,9 @@ const props = defineProps({
 
 // Layout State - 默认切换到工作台视角
 const viewMode = ref('workbench')
+
+// 左侧面板 tab：graph | agents
+const leftTab = ref('graph')
 
 // Data State
 const currentReportId = ref(route.params.reportId)
@@ -445,6 +469,69 @@ onUnmounted(() => {
 }
 
 .panel-wrapper.left {
-  border-right: 1px solid #EAEAEA;
+  border-right: 1px solid #1a2a3e;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left panel tab bar */
+.left-tab-bar {
+  display: flex;
+  border-bottom: 1px solid #1a2a3e;
+  background: #0e1724;
+  flex-shrink: 0;
+  height: 36px;
+}
+
+.left-tab {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.left-tab.active {
+  color: #e2e8f0;
+  background: #131e2e;
+}
+
+.left-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #3B82F6;
+}
+
+.left-tab:hover:not(.active) {
+  color: #94a3b8;
+  background: rgba(255,255,255,0.03);
+}
+
+.tab-dot {
+  font-size: 7px;
+  color: #10B981;
+  vertical-align: middle;
+  margin-left: 3px;
+}
+
+.left-tab-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.left-tab-content > * {
+  height: 100%;
 }
 </style>
