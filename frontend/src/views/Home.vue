@@ -354,10 +354,7 @@ const workflowSteps = [
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #e2e8f0 0%, #60a5fa 60%, #93c5fd 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
+  color: #e2e8f0;
 }
 
 .hero-desc {

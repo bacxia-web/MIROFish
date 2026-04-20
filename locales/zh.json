@@ -34,7 +34,7 @@
   },
   "home": {
     "tagline": "简洁通用的群体智能引擎",
-    "version": "/ v0.1-预览版",
+    "version": "/ v0.11-预览版",
     "heroTitle1": "上传任意报告",
     "heroTitle2": "即刻推演未来",
     "heroDesc": "即使只有一段文字，{brand} 也能基于其中的现实种子，全自动生成与之对应的至多{agentScale}构成的平行世界。通过上帝视角注入变量，在复杂的群体交互中寻找动态环境下的{optimalSolution}",
