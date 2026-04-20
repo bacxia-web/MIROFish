@@ -67,10 +67,6 @@
         />
       </div>
     </main>
-    <QualityMetricsPanel
-      v-if="projectData?.project_id"
-      :project-id="projectData.project_id"
-    />
   </div>
 </template>
 
@@ -80,7 +76,6 @@ import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import GraphPanel from '../components/GraphPanel.vue'
 import Step4Report from '../components/Step4Report.vue'
-import QualityMetricsPanel from '../components/QualityMetricsPanel.vue'
 import { getProject, getGraphData } from '../api/graph'
 import {
   effectiveGraphIdFromProject,
