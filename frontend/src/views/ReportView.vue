@@ -49,12 +49,12 @@
             class="left-tab"
             :class="{ active: leftTab === 'graph' }"
             @click="leftTab = 'graph'"
-          >Graph</button>
+          >知识图谱</button>
           <button
             class="left-tab"
             :class="{ active: leftTab === 'agents' }"
             @click="leftTab = 'agents'"
-          >Agents <span v-if="simulationId" class="tab-dot">●</span></button>
+          >角色人设 <span v-if="simulationId" class="tab-dot">●</span></button>
         </div>
         <div class="left-tab-content">
           <GraphPanel
@@ -161,9 +161,9 @@ const statusClass = computed(() => {
 })
 
 const statusText = computed(() => {
-  if (currentStatus.value === 'error') return 'Error'
-  if (currentStatus.value === 'completed') return 'Completed'
-  return 'Generating'
+  if (currentStatus.value === 'error') return '出错了'
+  if (currentStatus.value === 'completed') return '已完成'
+  return '生成中'
 })
 
 // --- Helpers ---

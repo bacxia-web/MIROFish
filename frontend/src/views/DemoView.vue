@@ -4,7 +4,7 @@
     <nav class="demo-nav">
       <div class="nav-left">
         <div class="nav-brand">MIROFISH</div>
-        <span class="nav-badge">Entity Disambiguation Showcase</span>
+        <span class="nav-badge">实体消歧能力展示</span>
       </div>
       <div class="nav-right">
         <a href="https://mirofish-production-7f8c.up.railway.app/" target="_blank" class="nav-live">
@@ -18,14 +18,14 @@
 
     <!-- Hero -->
     <section class="hero">
-      <div class="hero-tag">Knowledge Graph · 图谱构建</div>
+      <div class="hero-tag">知识图谱 · 图谱构建</div>
       <h1 class="hero-title">
         实体消歧效果展示
         <span class="hero-title-en">Entity Disambiguation</span>
       </h1>
       <p class="hero-desc">
-        MiroFish 在构建仿真世界的知识图谱时，通过 LLM 对候选实体对进行语义判断，
-        识别并合并指向同一真实实体的冗余节点，显著提升图谱质量与后续检索效率。
+        MiroFish 在构建仿真世界的知识图谱时，会自动识别并合并文档中指向同一真实人物或机构的冗余节点——
+        例如"新太爷"与"新任官员"实为同一人。这项去重处理让后续的模拟 Agent 拥有更准确的人设，推演结论更可信。
       </p>
     </section>
 
@@ -41,9 +41,9 @@
         <span class="tech-tag">Python 3.11</span>
         <span class="tech-tag">Flask 3.0</span>
         <span class="tech-tag">Vue 3</span>
-        <span class="tech-tag">Zep Memory Graph</span>
-        <span class="tech-tag">GraphRAG</span>
-        <span class="tech-tag">HDBSCAN</span>
+        <span class="tech-tag">知识图谱存储</span>
+        <span class="tech-tag">图检索增强生成</span>
+        <span class="tech-tag">密度聚类算法</span>
         <span class="tech-tag">qwen3-max</span>
         <span class="tech-tag">ECharts</span>
         <span class="tech-tag">D3.js</span>
@@ -54,7 +54,7 @@
     <!-- Footer -->
     <footer class="demo-footer">
       <div class="footer-brand">MIROFISH</div>
-      <div class="footer-sub">Multi-Agent Swarm Intelligence Simulation Engine</div>
+      <div class="footer-sub">多智能体舆情推演引擎</div>
       <div class="footer-links">
         <a href="https://mirofish-production-7f8c.up.railway.app/" target="_blank" class="footer-link footer-link-primary">
           🚀 进入项目主页 →
@@ -75,7 +75,7 @@ import DisambiguationShowcase from '../components/DisambiguationShowcase.vue'
 /* ── Base ── */
 .demo-page {
   min-height: 100vh;
-  background: #080c14;
+  background: #070c15;
   color: #e2e8f0;
   font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
@@ -86,10 +86,10 @@ import DisambiguationShowcase from '../components/DisambiguationShowcase.vue'
   align-items: center;
   justify-content: space-between;
   padding: 16px 40px;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid #1a2a3e;
   position: sticky;
   top: 0;
-  background: rgba(8, 12, 20, 0.92);
+  background: rgba(4,8,16,0.95);
   backdrop-filter: blur(12px);
   z-index: 100;
 }
@@ -177,8 +177,8 @@ import DisambiguationShowcase from '../components/DisambiguationShowcase.vue'
   margin-bottom: 80px;
 }
 .stat-card {
-  background: #0f172a;
-  border: 1px solid #1e293b;
+  background: #131e2e;
+  border: 1px solid #1a2a3e;
   border-radius: 12px;
   padding: 20px 32px;
   min-width: 110px;
@@ -190,7 +190,7 @@ import DisambiguationShowcase from '../components/DisambiguationShowcase.vue'
   line-height: 1;
 }
 .stat-num.teal { color: #3B82F6; }
-.stat-num.orange { color: #f97316; }
+.stat-num.orange { color: #3B82F6; }
 .stat-label {
   font-size: 12px;
   color: #64748b;
@@ -209,7 +209,7 @@ import DisambiguationShowcase from '../components/DisambiguationShowcase.vue'
   color: #f8fafc;
   margin: 0 0 8px;
   padding-bottom: 12px;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid #1a2a3e;
 }
 .section-sub {
   font-size: 13px;
@@ -228,8 +228,8 @@ import DisambiguationShowcase from '../components/DisambiguationShowcase.vue'
 .pipeline-step {
   flex: 1;
   min-width: 160px;
-  background: #0f172a;
-  border: 1px solid #1e293b;
+  background: #131e2e;
+  border: 1px solid #1a2a3e;
   border-radius: 10px;
   padding: 20px 16px;
   text-align: center;
@@ -257,8 +257,8 @@ import DisambiguationShowcase from '../components/DisambiguationShowcase.vue'
   margin-top: 28px;
 }
 .task-card {
-  background: #0f172a;
-  border: 1px solid #1e293b;
+  background: #131e2e;
+  border: 1px solid #1a2a3e;
   border-radius: 12px;
   padding: 20px;
   display: flex;
@@ -293,7 +293,7 @@ import DisambiguationShowcase from '../components/DisambiguationShowcase.vue'
 }
 .compare-col {
   flex: 1;
-  background: #080c14;
+  background: #070c15;
   border-radius: 8px;
   padding: 12px 10px;
   border: 1px solid #1e293b;
@@ -344,7 +344,7 @@ import DisambiguationShowcase from '../components/DisambiguationShowcase.vue'
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #080c14;
+  background: #070c15;
   border-radius: 8px;
   padding: 10px 12px;
   font-size: 13px;
@@ -360,7 +360,7 @@ import DisambiguationShowcase from '../components/DisambiguationShowcase.vue'
 
 /* Merge list */
 .merge-list {
-  background: #080c14;
+  background: #070c15;
   border: 1px solid #3B82F630;
   border-radius: 8px;
   padding: 12px;
@@ -392,7 +392,7 @@ import DisambiguationShowcase from '../components/DisambiguationShowcase.vue'
 .no-merge {
   font-size: 12px;
   color: #475569;
-  background: #080c14;
+  background: #070c15;
   border-radius: 8px;
   padding: 10px 12px;
   border: 1px dashed #1e293b;
@@ -400,7 +400,7 @@ import DisambiguationShowcase from '../components/DisambiguationShowcase.vue'
 
 /* CSS bar chart */
 .bar-chart {
-  background: #080c14;
+  background: #070c15;
   border-radius: 8px;
   padding: 12px;
   border: 1px solid #1e293b;
@@ -466,8 +466,8 @@ import DisambiguationShowcase from '../components/DisambiguationShowcase.vue'
 }
 .tech-tag {
   font-size: 13px;
-  background: #0f172a;
-  border: 1px solid #1e293b;
+  background: #131e2e;
+  border: 1px solid #1a2a3e;
   color: #94a3b8;
   border-radius: 6px;
   padding: 6px 14px;
@@ -478,7 +478,7 @@ import DisambiguationShowcase from '../components/DisambiguationShowcase.vue'
   border-top: 1px solid #1e293b;
   padding: 40px 24px;
   text-align: center;
-  background: #080c14;
+  background: #070c15;
 }
 .footer-brand {
   font-size: 16px;

@@ -90,6 +90,7 @@
         </div>
 
         <!-- 预测方向文案：完整展示，不截断 -->
+        <div class="card-req-label">预测需求</div>
         <p class="card-desc">{{ project.simulation_requirement }}</p>
 
         <!-- 卡片底部 -->
@@ -843,6 +844,16 @@ onActivated(() => {
   border-left: 1.5px solid rgba(255, 255, 255, 0.15);
   pointer-events: none;
   z-index: 10;
+}
+
+/* 预测需求标签 */
+.card-req-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #3B82F6;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+  text-transform: none;
 }
 
 /* 卡片标题 */

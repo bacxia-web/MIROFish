@@ -62,7 +62,7 @@
                   </div>
                   <div class="ba-metric warn">
                     <span class="ba-num">8</span>
-                    <span class="ba-unit">dup groups</span>
+                    <span class="ba-unit">重名组</span>
                   </div>
                 </div>
                 <div class="ba-arrow-col">
@@ -77,13 +77,13 @@
                   </div>
                   <div class="ba-metric ok">
                     <span class="ba-num">0</span>
-                    <span class="ba-unit">dup groups</span>
+                    <span class="ba-unit">重名组</span>
                   </div>
                 </div>
               </div>
               <div class="engine-divider"></div>
               <div class="prog-row">
-                <div class="prog-label">Node Compression</div>
+                <div class="prog-label">节点压缩率</div>
                 <div class="prog-track-row">
                   <div class="prog-track">
                     <div class="prog-fill" style="width: 36.4%"></div>
@@ -92,7 +92,7 @@
                 </div>
               </div>
               <div class="prog-row">
-                <div class="prog-label">Dup Elimination</div>
+                <div class="prog-label">重名消除率</div>
                 <div class="prog-track-row">
                   <div class="prog-track">
                     <div class="prog-fill full" style="width: 100%"></div>
