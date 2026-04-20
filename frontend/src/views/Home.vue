@@ -49,16 +49,16 @@
           <div class="engine-panel">
             <div class="engine-header">
               <span class="engine-dot"></span>
-              <span class="engine-title">DISAMBIGUATION ENGINE</span>
-              <span class="engine-status">READY</span>
+              <span class="engine-title">实体消歧引擎</span>
+              <span class="engine-status">就绪</span>
             </div>
             <div class="engine-body">
               <div class="ba-compare">
                 <div class="ba-col">
-                  <div class="ba-label">RAW INPUT</div>
+                  <div class="ba-label">消歧前</div>
                   <div class="ba-metric">
                     <span class="ba-num">77</span>
-                    <span class="ba-unit">nodes</span>
+                    <span class="ba-unit">个节点</span>
                   </div>
                   <div class="ba-metric warn">
                     <span class="ba-num">8</span>
@@ -67,13 +67,13 @@
                 </div>
                 <div class="ba-arrow-col">
                   <div class="ba-arrow">⟹</div>
-                  <div class="ba-process">LLM × 10</div>
+                  <div class="ba-process">AI推理 × 10</div>
                 </div>
                 <div class="ba-col">
-                  <div class="ba-label ok">RESOLVED</div>
+                  <div class="ba-label ok">消歧后</div>
                   <div class="ba-metric ok">
                     <span class="ba-num">49</span>
-                    <span class="ba-unit">nodes</span>
+                    <span class="ba-unit">个节点</span>
                   </div>
                   <div class="ba-metric ok">
                     <span class="ba-num">0</span>
@@ -101,10 +101,16 @@
                 </div>
               </div>
               <div class="engine-divider"></div>
-              <div class="agent-grid">
-                <div v-for="i in 10" :key="i" class="agent-cell" :class="{ active: i <= 7, idle: i > 7 }">
-                  <span class="agent-dot"></span>
-                  <span class="agent-id">AGT_{{ String(i).padStart(2, '0') }}</span>
+              <div class="agent-status-section">
+                <div class="agent-status-header">
+                  <span class="agent-status-label">模拟推演员</span>
+                  <span class="agent-status-count"><span class="agent-count-active">7</span> / 10 运行中</span>
+                </div>
+                <div class="agent-grid">
+                  <div v-for="i in 10" :key="i" class="agent-cell" :class="{ active: i <= 7, idle: i > 7 }">
+                    <span class="agent-dot"></span>
+                    <span class="agent-id">{{ String(i).padStart(2, '0') }}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -475,7 +481,7 @@ const workflowSteps = [
 .engine-title {
   font-size: 0.7rem;
   font-weight: 700;
-  color: #888;
+  color: #94a3b8;
   letter-spacing: 2px;
   flex: 1;
 }
@@ -511,9 +517,8 @@ const workflowSteps = [
 .ba-label {
   font-size: 0.72rem;
   font-weight: 700;
-  color: #555;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 1px;
 }
 
 .ba-label.ok {
@@ -529,7 +534,7 @@ const workflowSteps = [
 .ba-num {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #4a4a4a;
+  color: #64748b;
   line-height: 1;
 }
 
@@ -543,7 +548,7 @@ const workflowSteps = [
 
 .ba-unit {
   font-size: 0.78rem;
-  color: #555;
+  color: #64748b;
   letter-spacing: 0.5px;
 }
 
@@ -563,14 +568,14 @@ const workflowSteps = [
 
 .ba-process {
   font-size: 0.78rem;
-  color: #555;
+  color: #64748b;
   letter-spacing: 0.5px;
   white-space: nowrap;
 }
 
 .engine-divider {
   height: 1px;
-  background: #14202f;
+  background: #1a2a3e;
 }
 
 /* Progress bars */
@@ -582,7 +587,7 @@ const workflowSteps = [
 
 .prog-label {
   font-size: 0.78rem;
-  color: #666;
+  color: #94a3b8;
   letter-spacing: 0.5px;
 }
 
@@ -595,14 +600,14 @@ const workflowSteps = [
 .prog-track {
   flex: 1;
   height: 4px;
-  background: #14202f;
+  background: #1a2a3e;
   border-radius: 2px;
   overflow: hidden;
 }
 
 .prog-fill {
   height: 100%;
-  background: #333;
+  background: #2d4a6e;
   border-radius: 2px;
   transition: width 1s ease;
 }
@@ -613,10 +618,39 @@ const workflowSteps = [
 
 .prog-val {
   font-size: 0.7rem;
-  color: #666;
+  color: #94a3b8;
   width: 36px;
   text-align: right;
   flex-shrink: 0;
+}
+
+/* Agent status section */
+.agent-status-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.agent-status-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.agent-status-label {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.agent-status-count {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-family: var(--font-mono);
+}
+
+.agent-count-active {
+  color: #3B82F6;
+  font-weight: 700;
 }
 
 /* Agent grid */
@@ -631,19 +665,21 @@ const workflowSteps = [
   align-items: center;
   gap: 5px;
   padding: 5px 6px;
-  border: 1px solid #14202f;
-  background: #111;
+  border: 1px solid #1a2a3e;
+  background: #0d1623;
+  border-radius: 3px;
 }
 
 .agent-cell.active {
-  border-color: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.25);
+  background: #0f1e35;
 }
 
 .agent-dot {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #333;
+  background: #2d3f55;
   flex-shrink: 0;
 }
 
@@ -653,14 +689,14 @@ const workflowSteps = [
 }
 
 .agent-id {
-  font-size: 0.78rem;
-  color: #444;
+  font-size: 0.72rem;
+  color: #475569;
   letter-spacing: 0.3px;
   white-space: nowrap;
 }
 
 .agent-cell.active .agent-id {
-  color: #888;
+  color: #94a3b8;
 }
 
 /* Workflow strip */
