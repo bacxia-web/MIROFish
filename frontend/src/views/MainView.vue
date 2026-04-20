@@ -587,7 +587,7 @@ onUnmounted(() => {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #FFF;
+  background: #0e1724;
   overflow: hidden;
   font-family: 'Space Grotesk', 'Noto Sans SC', system-ui, sans-serif;
 }
@@ -745,9 +745,9 @@ onUnmounted(() => {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #666;
-  background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
-  border-bottom: 1px solid #eee;
+  color: #64748b;
+  background: #131e2e;
+  border-bottom: 1px solid #1a2a3e;
 }
 
 .dual-graph-pane :deep(.graph-panel) {
@@ -762,8 +762,8 @@ onUnmounted(() => {
   justify-content: center;
   padding: 24px;
   font-size: 13px;
-  color: #888;
+  color: #64748b;
   text-align: center;
-  background: #fafafa;
+  background: #131e2e;
 }
 </style>
