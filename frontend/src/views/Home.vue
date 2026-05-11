@@ -57,7 +57,7 @@
                 <div class="ba-col">
                   <div class="ba-label">消歧前</div>
                   <div class="ba-metric">
-                    <span class="ba-num">77</span>
+                    <span class="ba-num">138</span>
                     <span class="ba-unit">个节点</span>
                   </div>
                   <div class="ba-metric warn">
@@ -72,7 +72,7 @@
                 <div class="ba-col">
                   <div class="ba-label ok">消歧后</div>
                   <div class="ba-metric ok">
-                    <span class="ba-num">49</span>
+                    <span class="ba-num">57</span>
                     <span class="ba-unit">个节点</span>
                   </div>
                   <div class="ba-metric ok">
@@ -86,9 +86,9 @@
                 <div class="prog-label">节点压缩率</div>
                 <div class="prog-track-row">
                   <div class="prog-track">
-                    <div class="prog-fill" style="width: 36.4%"></div>
+                    <div class="prog-fill" style="width: 58.7%"></div>
                   </div>
-                  <span class="prog-val">36.4%</span>
+                  <span class="prog-val">58.7%</span>
                 </div>
               </div>
               <div class="prog-row">
