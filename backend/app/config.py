@@ -124,6 +124,84 @@ class Config:
     REPORT_AGENT_MAX_TOOL_CALLS = int(os.environ.get('REPORT_AGENT_MAX_TOOL_CALLS', '5'))
     REPORT_AGENT_MAX_REFLECTION_ROUNDS = int(os.environ.get('REPORT_AGENT_MAX_REFLECTION_ROUNDS', '2'))
     REPORT_AGENT_TEMPERATURE = float(os.environ.get('REPORT_AGENT_TEMPERATURE', '0.5'))
+
+    # ── 上下文压缩 & 步骤裁剪开关 ────────────────────────────────────────
+    # 主开关：是否启用 ReACT 历史压缩（true/false），默认关闭以兼容旧行为
+    REPORT_CONTEXT_COMPRESSION_ENABLED = os.environ.get(
+        'REPORT_CONTEXT_COMPRESSION_ENABLED', 'false'
+    ).strip().lower() in ('1', 'true', 'yes', 'on')
+    # 用于压缩 observation 的小模型；留空时复用 LLM_MODEL_CHAIN 的末位（一般是最便宜的）
+    REPORT_COMPRESSOR_MODEL = os.environ.get('REPORT_COMPRESSOR_MODEL', '').strip()
+    # 压缩后 observation 的目标 token 上限
+    REPORT_COMPRESSOR_MAX_TOKENS = int(os.environ.get('REPORT_COMPRESSOR_MAX_TOKENS', '180'))
+    # 是否保留"最后一次工具结果"原文不压缩（保证 Final Answer 能引用真实数据）
+    REPORT_KEEP_LAST_TOOL_RAW = os.environ.get(
+        'REPORT_KEEP_LAST_TOOL_RAW', 'true'
+    ).strip().lower() in ('1', 'true', 'yes', 'on')
+    # 步骤裁剪：动态降低 min_tool_calls；开启压缩后默认从 3 降到 1
+    REPORT_MIN_TOOL_CALLS = int(os.environ.get('REPORT_MIN_TOOL_CALLS', '0'))  # 0 = 跟随是否开启压缩
+    # 步骤裁剪：前置章节上下文从 4000 字截断改为 N 字摘要（0 关闭）
+    REPORT_PREV_SECTION_BUDGET = int(os.environ.get('REPORT_PREV_SECTION_BUDGET', '0'))
+    # token 统计 variant 标签（用于 A/B 对比），如 "baseline" / "optimized"
+    REPORT_TOKEN_VARIANT_LABEL = os.environ.get(
+        'REPORT_TOKEN_VARIANT_LABEL', ''
+    ).strip()
+
+    # ── Phase 1-5 独立 flags（D1）─────────────────────────────────────
+    # 每个改动一个独立开关，默认全 false。生产先关，eval 建立基准后一个一个开。
+
+    # Plan #4：interview 双重摘要去重
+    INTERVIEW_DEDUP_ENABLED = os.environ.get(
+        'INTERVIEW_DEDUP_ENABLED', 'false'
+    ).strip().lower() in ('1', 'true', 'yes', 'on')
+
+    # Plan #1：chunk_extractor 批处理
+    CHUNK_EXTRACT_BATCH_ENABLED = os.environ.get(
+        'CHUNK_EXTRACT_BATCH_ENABLED', 'false'
+    ).strip().lower() in ('1', 'true', 'yes', 'on')
+    CHUNK_EXTRACT_BATCH_SIZE = int(os.environ.get('CHUNK_EXTRACT_BATCH_SIZE', '3'))
+    CHUNK_KNOWN_ENTITIES_TRIM_ENABLED = os.environ.get(
+        'CHUNK_KNOWN_ENTITIES_TRIM_ENABLED', 'false'
+    ).strip().lower() in ('1', 'true', 'yes', 'on')
+
+    # Plan #2：profile_generator 按类型批生成
+    PROFILE_BATCH_GEN_ENABLED = os.environ.get(
+        'PROFILE_BATCH_GEN_ENABLED', 'false'
+    ).strip().lower() in ('1', 'true', 'yes', 'on')
+    PROFILE_BATCH_SIZE_INDIVIDUAL = int(os.environ.get('PROFILE_BATCH_SIZE_INDIVIDUAL', '5'))
+    PROFILE_BATCH_SIZE_GROUP = int(os.environ.get('PROFILE_BATCH_SIZE_GROUP', '3'))
+
+    # Plan #3：报告对话 RAG
+    REPORT_CHAT_RAG_ENABLED = os.environ.get(
+        'REPORT_CHAT_RAG_ENABLED', 'false'
+    ).strip().lower() in ('1', 'true', 'yes', 'on')
+    REPORT_CHAT_RAG_TOPK = int(os.environ.get('REPORT_CHAT_RAG_TOPK', '3'))
+
+    # D15：prompt caching（隐式，依赖 Qwen DashScope / Anthropic prefix cache）
+    PROMPT_CACHING_HINT_ENABLED = os.environ.get(
+        'PROMPT_CACHING_HINT_ENABLED', 'true'
+    ).strip().lower() in ('1', 'true', 'yes', 'on')
+
+    @classmethod
+    def get_optimization_flags(cls) -> dict:
+        """D2：返回当前所有优化开关的快照，写入报告/profile 元数据。
+        eval 框架据此知道一份数据是在什么配置下生成的。"""
+        return {
+            'report_context_compression': bool(cls.REPORT_CONTEXT_COMPRESSION_ENABLED),
+            'report_prev_section_budget': int(cls.REPORT_PREV_SECTION_BUDGET or 0),
+            'report_min_tool_calls': int(cls.REPORT_MIN_TOOL_CALLS or 0),
+            'interview_dedup': bool(cls.INTERVIEW_DEDUP_ENABLED),
+            'chunk_extract_batch': bool(cls.CHUNK_EXTRACT_BATCH_ENABLED),
+            'chunk_extract_batch_size': int(cls.CHUNK_EXTRACT_BATCH_SIZE),
+            'chunk_known_entities_trim': bool(cls.CHUNK_KNOWN_ENTITIES_TRIM_ENABLED),
+            'profile_batch_gen': bool(cls.PROFILE_BATCH_GEN_ENABLED),
+            'profile_batch_size_individual': int(cls.PROFILE_BATCH_SIZE_INDIVIDUAL),
+            'profile_batch_size_group': int(cls.PROFILE_BATCH_SIZE_GROUP),
+            'report_chat_rag': bool(cls.REPORT_CHAT_RAG_ENABLED),
+            'report_chat_rag_topk': int(cls.REPORT_CHAT_RAG_TOPK),
+            'prompt_caching_hint': bool(cls.PROMPT_CACHING_HINT_ENABLED),
+            'variant_label': str(cls.REPORT_TOKEN_VARIANT_LABEL or ''),
+        }
     
     @classmethod
     def is_local_graph(cls) -> bool:

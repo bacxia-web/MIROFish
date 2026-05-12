@@ -1501,7 +1501,8 @@ class ZepToolsService:
         interview_requirement: str,
         simulation_requirement: str = "",
         max_agents: int = 5,
-        custom_questions: List[str] = None
+        custom_questions: List[str] = None,
+        include_summary: bool = True,
     ) -> InterviewResult:
         """
         【InterviewAgents - 深度采访】
@@ -1697,8 +1698,8 @@ class ZepToolsService:
             result.summary = f"采访过程发生错误：{str(e)}"
             return result
         
-        # Step 6: 生成采访摘要
-        if result.interviews:
+        # Step 6: 生成采访摘要（D14：可由调用方关闭，ReACT 内部会用 section_compressor 统一处理）
+        if result.interviews and include_summary:
             result.summary = self._generate_interview_summary(
                 interviews=result.interviews,
                 interview_requirement=interview_requirement

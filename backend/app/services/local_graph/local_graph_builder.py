@@ -5,13 +5,17 @@ from __future__ import annotations
 import uuid
 from typing import Any, Callable, Dict, List, Optional, Tuple
 
+from ...config import Config
 from ...utils.locale import t
+from ...utils.logger import get_logger
 
 from .chunk_extractor import ChunkOntologyExtractor
 from .embedding import EmbeddingService
 from .entity_disambiguator import DisambiguationResult, EntityDisambiguator
 from .neo4j_store import Neo4jGraphStore
 from .qdrant_index import QdrantChunkIndex
+
+logger = get_logger('mirofish.local_graph_builder')
 
 
 class LocalGraphBuilder:
@@ -85,30 +89,85 @@ class LocalGraphBuilder:
 
         Args:
             enhanced: True 时启用跨块上下文 + 跨标签类型提升（实验组）；False 为旧逻辑（对照组）。
+
+        Plan #1：当 CHUNK_EXTRACT_BATCH_ENABLED 时按 batch_size 打包抽取，
+        分摊本体说明 + known_entities 头部的重复发送成本。
         """
+        batch_enabled = bool(getattr(Config, 'CHUNK_EXTRACT_BATCH_ENABLED', False))
+        configured_bs = int(getattr(Config, 'CHUNK_EXTRACT_BATCH_SIZE', 3) or 3)
+        bs = max(1, min(configured_bs, 10)) if batch_enabled else 1
+
         uuids: List[str] = []
         known_entities: Dict[str, str] = {}
         total = len(chunks)
-        for i, chunk in enumerate(chunks):
-            cu, new_ents = self.ingest_chunk(
-                graph_id, chunk, ontology, known_entities,
-                enhanced=enhanced, progress_callback=progress_callback,
-            )
-            uuids.append(cu)
-            if enhanced:
-                for nm, et in new_ents.items():
-                    existing = known_entities.get(nm, '')
-                    if existing in self._FALLBACK_TYPES or not existing:
-                        known_entities[nm] = et
-                    elif et not in self._FALLBACK_TYPES:
-                        known_entities[nm] = et
+
+        # 进度回调辅助
+        def _tick(done_idx: int):
             if progress_callback and total:
                 progress_callback(
-                    t('progress.localIngestChunks', current=i + 1, total=total),
-                    (i + 1) / total,
+                    t('progress.localIngestChunks', current=done_idx, total=total),
+                    done_idx / total,
                 )
             if chunk_complete_callback and total:
-                chunk_complete_callback(i + 1, total)
+                chunk_complete_callback(done_idx, total)
+
+        def _accumulate_known(new_ents: Dict[str, str]):
+            if not enhanced:
+                return
+            for nm, et in new_ents.items():
+                existing = known_entities.get(nm, '')
+                if existing in self._FALLBACK_TYPES or not existing:
+                    known_entities[nm] = et
+                elif et not in self._FALLBACK_TYPES:
+                    known_entities[nm] = et
+
+        if bs <= 1:
+            # 旧路径
+            for i, chunk in enumerate(chunks):
+                cu, new_ents = self.ingest_chunk(
+                    graph_id, chunk, ontology, known_entities,
+                    enhanced=enhanced, progress_callback=progress_callback,
+                )
+                uuids.append(cu)
+                _accumulate_known(new_ents)
+                _tick(i + 1)
+            return uuids
+
+        # 新路径：批处理
+        i = 0
+        while i < total:
+            batch_chunks = chunks[i:i + bs]
+            ctx = known_entities if enhanced else None
+            try:
+                batch_results = self.extractor.extract_batch(batch_chunks, ontology, ctx)
+            except Exception as ex:
+                logger.warning(f'extract_batch 调用异常，回退单块: {str(ex)[:120]}')
+                batch_results = [self.extractor.extract(c, ontology, ctx) for c in batch_chunks]
+
+            # 入库 + 累计 known_entities
+            for offset, (chunk_text, extracted) in enumerate(zip(batch_chunks, batch_results)):
+                chunk_uuid = self.neo.ingest_chunk_with_extract(
+                    graph_id, chunk_text, extracted, cross_label_promotion=enhanced,
+                )
+                new_entities: Dict[str, str] = {}
+                for ent in extracted.get('entities') or []:
+                    if isinstance(ent, dict):
+                        nm = (ent.get('name') or '').strip()
+                        et = (ent.get('entity_type') or '').strip()
+                        if nm and et:
+                            new_entities[nm] = et
+                uuids.append(chunk_uuid)
+                _accumulate_known(new_entities)
+
+                # 向量化（与单块路径一致）
+                try:
+                    vec = self.embedder.embed_one(chunk_text)
+                    self.qd.upsert_chunk(graph_id, chunk_uuid, chunk_text, vec)
+                except Exception as ex:
+                    if progress_callback:
+                        progress_callback(t('progress.vectorIndexSkip', error=str(ex)), 0)
+                _tick(i + offset + 1)
+            i += bs
         return uuids
 
     def build_raw_then_disambiguated(

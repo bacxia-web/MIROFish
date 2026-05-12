@@ -22,10 +22,15 @@ from ..config import Config
 from ..utils.llm_client import LLMClient
 from ..utils.logger import get_logger
 from ..utils.locale import get_language_instruction, t
+from ..utils.token_usage_service import (
+    usage_tags,
+    dump_snapshot_to_file,
+)
+from .report_rag_index import get_report_rag
 from .zep_tools import (
-    ZepToolsService, 
-    SearchResult, 
-    InsightForgeResult, 
+    ZepToolsService,
+    SearchResult,
+    InsightForgeResult,
     PanoramaResult,
     InterviewResult
 )
@@ -451,7 +456,9 @@ class Report:
     created_at: str = ""
     completed_at: str = ""
     error: Optional[str] = None
-    
+    # D2：记录生成时的优化开关快照，给 eval 框架做归因
+    optimization_flags: Dict[str, Any] = field(default_factory=dict)
+
     def to_dict(self) -> Dict[str, Any]:
         return {
             "report_id": self.report_id,
@@ -463,7 +470,8 @@ class Report:
             "markdown_content": self.markdown_content,
             "created_at": self.created_at,
             "completed_at": self.completed_at,
-            "error": self.error
+            "error": self.error,
+            "optimization_flags": self.optimization_flags,
         }
 
 
@@ -619,7 +627,7 @@ SECTION_SYSTEM_PROMPT_TEMPLATE = """\
 报告摘要: {report_summary}
 预测场景（模拟需求）: {simulation_requirement}
 
-当前要撰写的章节: {section_title}
+（注：当前要撰写的具体章节标题会在用户消息中提供）
 
 ═══════════════════════════════════════════════════════════════
 【核心理念】
@@ -905,16 +913,52 @@ class ReportAgent:
         
         self.llm = llm_client or LLMClient()
         self.zep_tools = zep_tools or ZepToolsService()
-        
+
+        # ── 上下文压缩 & 步骤裁剪 ───────────────────────────────────────
+        self._compression_enabled = bool(getattr(Config, "REPORT_CONTEXT_COMPRESSION_ENABLED", False))
+        self._keep_last_tool_raw = bool(getattr(Config, "REPORT_KEEP_LAST_TOOL_RAW", True))
+        self._compressor_max_tokens = int(getattr(Config, "REPORT_COMPRESSOR_MAX_TOKENS", 180) or 180)
+        # 压缩器使用便宜模型；留空则取 LLM_MODEL_CHAIN 末位（一般是最便宜的 flash 类）
+        compressor_model = (getattr(Config, "REPORT_COMPRESSOR_MODEL", "") or "").strip()
+        if not compressor_model:
+            chain = list(getattr(Config, "LLM_MODEL_CHAIN", []) or [])
+            compressor_model = chain[-1] if chain else ""
+        self._compressor_model = compressor_model
+        # 复用同一 LLMClient 实例避免重新建立 HTTP 连接；compressor 通过 model= 指定
+        try:
+            self._compressor_llm: Optional[LLMClient] = (
+                LLMClient(model=compressor_model) if (self._compression_enabled and compressor_model) else None
+            )
+        except Exception as _e:
+            logger.warning(f"compressor LLMClient 初始化失败，回退为关闭压缩: {_e}")
+            self._compressor_llm = None
+            self._compression_enabled = False
+
+        # 步骤裁剪：min_tool_calls 配置 0 表示跟随压缩开关（开则 1，关则 3）
+        configured_min = int(getattr(Config, "REPORT_MIN_TOOL_CALLS", 0) or 0)
+        if configured_min > 0:
+            self._min_tool_calls = max(0, configured_min)
+        else:
+            self._min_tool_calls = 1 if self._compression_enabled else 3
+
+        # 前置章节上下文预算（0 = 维持原 4000 字截断）
+        self._prev_section_budget = int(getattr(Config, "REPORT_PREV_SECTION_BUDGET", 0) or 0)
+
         # 工具定义
         self.tools = self._define_tools()
-        
+
         # 日志记录器（在 generate_report 中初始化）
         self.report_logger: Optional[ReportLogger] = None
         # 控制台日志记录器（在 generate_report 中初始化）
         self.console_logger: Optional[ReportConsoleLogger] = None
-        
+
         logger.info(t('report.agentInitDone', graphId=graph_id, simulationId=simulation_id))
+        if self._compression_enabled:
+            logger.info(
+                f"[opt] ReACT 历史压缩已启用 · 压缩模型={self._compressor_model} · "
+                f"min_tool_calls={self._min_tool_calls} · keep_last_raw={self._keep_last_tool_raw} · "
+                f"prev_section_budget={self._prev_section_budget}"
+            )
     
     def _define_tools(self) -> Dict[str, Dict[str, Any]]:
         """定义可用工具"""
@@ -1012,11 +1056,15 @@ class ReportAgent:
                 if isinstance(max_agents, str):
                     max_agents = int(max_agents)
                 max_agents = min(max_agents, 10)
+                # D14：开启 INTERVIEW_DEDUP 时不让 zep_tools 再生成 800-token 摘要
+                # ReACT 循环的 section_compressor 会做更贴章节话题的统一压缩，避免双重摘要
+                _dedup = bool(getattr(Config, 'INTERVIEW_DEDUP_ENABLED', False))
                 result = self.zep_tools.interview_agents(
                     simulation_id=self.simulation_id,
                     interview_requirement=interview_topic,
                     simulation_requirement=self.simulation_requirement,
-                    max_agents=max_agents
+                    max_agents=max_agents,
+                    include_summary=(not _dedup),
                 )
                 return result.to_text()
             
@@ -1134,8 +1182,91 @@ class ReportAgent:
                 desc_parts.append(f"  参数: {params_desc}")
         return "\n".join(desc_parts)
     
+    # ── 上下文压缩 & 前置章节摘要 ──────────────────────────────────────
+    def _compress_observation(
+        self,
+        tool_name: str,
+        tool_result: str,
+        section_title: str,
+        assistant_thought: Optional[str] = None,
+    ) -> str:
+        """用便宜模型把"上一步工具调用 + 结果"压成 ≤max_tokens 个 token 的 observation。
+
+        失败时回退为简单字符串截断（保证主流程不中断）。
+        所有压缩调用都用 category=section_compressor 打标，便于 token 对比。
+        """
+        # 极短的结果直接返回，免得"压缩"反而更费
+        try:
+            raw = (tool_result or "").strip()
+            if len(raw) <= 600:
+                return raw
+        except Exception:
+            raw = str(tool_result or "")
+
+        if not (self._compressor_llm and self._compression_enabled):
+            return raw[:600] + ("…(已截断)" if len(raw) > 600 else "")
+
+        sys_prompt = (
+            "你是 ReACT Agent 的上下文压缩器。把给定的工具调用结果压成最多 3 行 "
+            "结构化要点，保留：1) 调用了什么工具、查的是什么；2) 拿到的关键事实/数据；"
+            "3) 对当前章节最相关的 1-2 条信息。禁止编造，禁止解释，只输出要点。"
+        )
+        user_prompt = (
+            f"【当前章节】{section_title}\n"
+            f"【工具】{tool_name}\n"
+            + (f"【上一步思考】{(assistant_thought or '')[:400]}\n" if assistant_thought else "")
+            + f"【工具结果原文】\n{raw[:6000]}"
+        )
+        try:
+            with usage_tags(category="section_compressor"):
+                summary = self._compressor_llm.chat(
+                    messages=[
+                        {"role": "system", "content": sys_prompt},
+                        {"role": "user", "content": user_prompt},
+                    ],
+                    temperature=0.1,
+                    max_tokens=self._compressor_max_tokens,
+                )
+            return (summary or "").strip() or raw[:600]
+        except Exception as e:
+            logger.warning(f"observation 压缩失败，回退为截断: {e}")
+            return raw[:600] + ("…(已截断)" if len(raw) > 600 else "")
+
+    def _summarize_previous_section(self, content: str) -> str:
+        """对前置章节做摘要式截断；预算 0 时退回原 4000 字硬截。"""
+        if not content:
+            return content
+        if self._prev_section_budget <= 0:
+            return content[:4000] + ("..." if len(content) > 4000 else "")
+        budget = self._prev_section_budget
+        if len(content) <= budget:
+            return content
+        if not (self._compressor_llm and self._compression_enabled):
+            return content[:budget] + "...(已截断)"
+        try:
+            with usage_tags(category="section_compressor"):
+                summary = self._compressor_llm.chat(
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": (
+                                "你是报告前置章节的摘要器。把章节内容压成不超过 "
+                                f"{budget} 字的中文要点摘要，保留：核心结论、关键数据、可被后续章节引用的事实。"
+                                "不要解释，不要复读章节标题。"
+                            ),
+                        },
+                        {"role": "user", "content": content[:8000]},
+                    ],
+                    temperature=0.1,
+                    max_tokens=max(120, budget // 2),
+                )
+            return (summary or "").strip() or content[:budget]
+        except Exception as e:
+            logger.warning(f"前置章节摘要失败，回退为截断: {e}")
+            return content[:budget] + "...(已截断)"
+
     def plan_outline(
-        self, 
+        self,
         progress_callback: Optional[Callable] = None
     ) -> ReportOutline:
         """
@@ -1174,14 +1305,15 @@ class ReportAgent:
         )
 
         try:
-            response = self.llm.chat_json(
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt}
-                ],
-                temperature=0.3
-            )
-            
+            with usage_tags(category="outline"):
+                response = self.llm.chat_json(
+                    messages=[
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": user_prompt}
+                    ],
+                    temperature=0.3
+                )
+
             if progress_callback:
                 progress_callback("planning", 80, t('progress.parsingOutline'))
             
@@ -1252,22 +1384,21 @@ class ReportAgent:
         if self.report_logger:
             self.report_logger.log_section_start(section.title, section_index)
         
+        # D15 prompt caching：system prompt 在同一份报告内保持稳定
+        # （section_title 已挪到 user prompt，不再每章变化），让 DashScope 隐式缓存生效
         system_prompt = SECTION_SYSTEM_PROMPT_TEMPLATE.format(
             report_title=outline.title,
             report_summary=outline.summary,
             simulation_requirement=self.simulation_requirement,
-            section_title=section.title,
             tools_description=self._get_tools_description(),
         )
         system_prompt = f"{system_prompt}\n\n{get_language_instruction()}"
 
-        # 构建用户prompt - 每个已完成章节各传入最大4000字
+        # 构建用户prompt - 优先使用摘要预算（开启时），否则维持原 4000 字硬截
         if previous_sections:
             previous_parts = []
             for sec in previous_sections:
-                # 每个章节最多4000字
-                truncated = sec[:4000] + "..." if len(sec) > 4000 else sec
-                previous_parts.append(truncated)
+                previous_parts.append(self._summarize_previous_section(sec))
             previous_content = "\n\n---\n\n".join(previous_parts)
         else:
             previous_content = "（这是第一个章节）"
@@ -1285,7 +1416,7 @@ class ReportAgent:
         # ReACT循环
         tool_calls_count = 0
         max_iterations = 5  # 最大迭代轮数
-        min_tool_calls = 3  # 最少工具调用次数
+        min_tool_calls = self._min_tool_calls  # 最少工具调用次数（受配置控制：默认 3，开启压缩时 1）
         conflict_retries = 0  # 工具调用与Final Answer同时出现的连续冲突次数
         used_tools = set()  # 记录已调用过的工具名
         all_tools = {"insight_forge", "panorama_search", "quick_search", "interview_agents"}
@@ -1301,12 +1432,13 @@ class ReportAgent:
                     t('progress.deepSearchAndWrite', current=tool_calls_count, max=self.MAX_TOOL_CALLS_PER_SECTION)
                 )
             
-            # 调用LLM
-            response = self.llm.chat(
-                messages=messages,
-                temperature=0.5,
-                max_tokens=4096
-            )
+            # 调用LLM（主线推理，token 计入 section_main）
+            with usage_tags(category="section_main"):
+                response = self.llm.chat(
+                    messages=messages,
+                    temperature=0.5,
+                    max_tokens=4096
+                )
 
             # 检查 LLM 返回是否为 None（API 异常或内容为空）
             if response is None:
@@ -1453,18 +1585,55 @@ class ReportAgent:
                 if unused_tools and tool_calls_count < self.MAX_TOOL_CALLS_PER_SECTION:
                     unused_hint = REACT_UNUSED_TOOLS_HINT.format(unused_list="、".join(unused_tools))
 
-                messages.append({"role": "assistant", "content": response})
-                messages.append({
-                    "role": "user",
-                    "content": REACT_OBSERVATION_TEMPLATE.format(
+                # ── 上下文压缩：把"上一步 thought + tool 调用 + tool 结果"压成 ≤N token 的 observation ──
+                # 策略：
+                #   - 关闭压缩：维持原行为（assistant 原文 + 完整 observation 模板）
+                #   - 开启压缩：
+                #       a) assistant 端只保留"决策标记"占位，不重复 thought 原文
+                #       b) tool_result 用便宜模型压成要点
+                #       c) keep_last_tool_raw=true 且这是"最后一次允许的工具调用"时，保留原文不压
+                is_last_allowed_tool_call = tool_calls_count >= self.MAX_TOOL_CALLS_PER_SECTION
+                will_compress = (
+                    self._compression_enabled
+                    and not (self._keep_last_tool_raw and is_last_allowed_tool_call)
+                )
+
+                if will_compress:
+                    compressed_result = self._compress_observation(
                         tool_name=call["name"],
-                        result=result,
-                        tool_calls_count=tool_calls_count,
-                        max_tool_calls=self.MAX_TOOL_CALLS_PER_SECTION,
-                        used_tools_str=", ".join(used_tools),
-                        unused_hint=unused_hint,
-                    ),
-                })
+                        tool_result=result,
+                        section_title=section.title,
+                        assistant_thought=response,
+                    )
+                    # assistant 端只保留极简标记，丢弃原始 thought（KV cache 友好且大幅省 token）
+                    messages.append({
+                        "role": "assistant",
+                        "content": f"[已调用 {call['name']}]",
+                    })
+                    messages.append({
+                        "role": "user",
+                        "content": REACT_OBSERVATION_TEMPLATE.format(
+                            tool_name=call["name"],
+                            result=compressed_result,
+                            tool_calls_count=tool_calls_count,
+                            max_tool_calls=self.MAX_TOOL_CALLS_PER_SECTION,
+                            used_tools_str=", ".join(used_tools),
+                            unused_hint=unused_hint,
+                        ),
+                    })
+                else:
+                    messages.append({"role": "assistant", "content": response})
+                    messages.append({
+                        "role": "user",
+                        "content": REACT_OBSERVATION_TEMPLATE.format(
+                            tool_name=call["name"],
+                            result=result,
+                            tool_calls_count=tool_calls_count,
+                            max_tool_calls=self.MAX_TOOL_CALLS_PER_SECTION,
+                            used_tools_str=", ".join(used_tools),
+                            unused_hint=unused_hint,
+                        ),
+                    })
                 continue
 
             # ── 情况3：既没有工具调用，也没有 Final Answer ──
@@ -1568,7 +1737,8 @@ class ReportAgent:
             graph_id=self.graph_id,
             simulation_requirement=self.simulation_requirement,
             status=ReportStatus.PENDING,
-            created_at=datetime.now().isoformat()
+            created_at=datetime.now().isoformat(),
+            optimization_flags=Config.get_optimization_flags(),  # D2：固化当前 flags
         )
         
         # 已完成的章节标题列表（用于进度追踪）
@@ -1724,17 +1894,47 @@ class ReportAgent:
                 report_id, "completed", 100, t('progress.reportComplete'),
                 completed_sections=completed_section_titles
             )
+
+            # Plan #3 · D11：异步建 RAG 索引（不阻塞用户）
+            try:
+                if bool(getattr(Config, 'REPORT_CHAT_RAG_ENABLED', False)) and report.markdown_content:
+                    get_report_rag().build_async(report.report_id, report.markdown_content)
+            except Exception as _e:
+                logger.warning(f"触发 RAG 异步建索引失败: {_e}")
             
             if progress_callback:
                 progress_callback("completed", 100, t('progress.reportComplete'))
             
             logger.info(t('report.reportGenDone', reportId=report_id))
-            
+
+            # ── token 用量快照自动落盘（A/B 对比用）───────────────────────
+            # 环境变量 REPORT_TOKEN_DUMP_PATH 提供落盘路径；可用 {variant}/{report_id}/{ts} 占位符
+            try:
+                dump_path = os.environ.get("REPORT_TOKEN_DUMP_PATH", "").strip()
+                if dump_path:
+                    from ..utils.token_usage_service import _thread_local as _tl  # type: ignore
+                    pid = getattr(_tl, "project_id", "") or ""
+                    if pid:
+                        variant = (
+                            getattr(Config, "REPORT_TOKEN_VARIANT_LABEL", "")
+                            or ("optimized" if self._compression_enabled else "baseline")
+                        )
+                        rendered = dump_path.format(
+                            variant=variant,
+                            report_id=report_id,
+                            project_id=pid,
+                            ts=int(time.time()),
+                        )
+                        dump_snapshot_to_file(pid, rendered, detailed=True)
+                        logger.info(f"[opt] token usage snapshot 已落盘: {rendered}")
+            except Exception as _e:
+                logger.warning(f"token usage snapshot 落盘失败: {_e}")
+
             # 关闭控制台日志记录器
             if self.console_logger:
                 self.console_logger.close()
                 self.console_logger = None
-            
+
             return report
             
         except Exception as e:
@@ -1789,14 +1989,41 @@ class ReportAgent:
         chat_history = chat_history or []
         
         # 获取已生成的报告内容
+        # Plan #3：开启 RAG → 按用户消息检索 top-K 段落；否则保留旧的"前 15000 字硬塞"
         report_content = ""
         try:
             report = ReportManager.get_report_by_simulation(self.simulation_id)
             if report and report.markdown_content:
-                # 限制报告长度，避免上下文过长
-                report_content = report.markdown_content[:15000]
-                if len(report.markdown_content) > 15000:
-                    report_content += "\n\n... [报告内容已截断] ..."
+                rag_enabled = bool(getattr(Config, 'REPORT_CHAT_RAG_ENABLED', False))
+                used_rag = False
+                if rag_enabled:
+                    try:
+                        topk = int(getattr(Config, 'REPORT_CHAT_RAG_TOPK', 3) or 3)
+                        hits = get_report_rag().query(report.report_id, message, k=topk)
+                        if hits:
+                            parts = []
+                            for h in hits:
+                                title = h.get('section_title', '')
+                                txt = h.get('text', '')
+                                parts.append(f"## {title}\n\n{txt}")
+                            report_content = (
+                                "（以下是与你问题相关的报告段落，已通过语义检索筛选）\n\n"
+                                + "\n\n---\n\n".join(parts)
+                            )
+                            used_rag = True
+                    except Exception as e:
+                        logger.warning(f"report RAG 检索失败，回退硬塞: {e}")
+                if not used_rag:
+                    # fallback：保留旧行为
+                    report_content = report.markdown_content[:15000]
+                    if len(report.markdown_content) > 15000:
+                        report_content += "\n\n... [报告内容已截断] ..."
+                    # RAG 已开启但索引未建好 → 顺手触发一次异步建（下次对话即可命中）
+                    if rag_enabled:
+                        try:
+                            get_report_rag().build_async(report.report_id, report.markdown_content)
+                        except Exception:
+                            pass
         except Exception as e:
             logger.warning(t('report.fetchReportFailed', error=e))
         
@@ -2590,7 +2817,8 @@ class ReportManager:
             markdown_content=markdown_content,
             created_at=data.get('created_at', ''),
             completed_at=data.get('completed_at', ''),
-            error=data.get('error')
+            error=data.get('error'),
+            optimization_flags=data.get('optimization_flags', {}) or {},
         )
     
     @classmethod

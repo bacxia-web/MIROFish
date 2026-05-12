@@ -23,7 +23,7 @@ from ..config import Config
 from ..utils.llm_client import chat_completions_with_model_fallback
 from ..utils.logger import get_logger
 from ..utils.locale import get_language_instruction, get_locale, set_locale, t
-from ..utils.token_usage_service import record_llm_usage
+from ..utils.token_usage_service import record_llm_usage, usage_tags
 from .zep_entity_reader import EntityNode, ZepEntityReader
 
 logger = get_logger('mirofish.oasis_profile')
@@ -58,7 +58,10 @@ class OasisAgentProfile:
     # 来源实体信息
     source_entity_uuid: Optional[str] = None
     source_entity_type: Optional[str] = None
-    
+
+    # D2：记录生成时的优化开关（用于 eval 归因）
+    optimization_flags: Dict[str, Any] = field(default_factory=dict)
+
     created_at: str = field(default_factory=lambda: datetime.now().strftime("%Y-%m-%d"))
     
     def to_reddit_format(self) -> Dict[str, Any]:
@@ -907,6 +910,155 @@ class OasisProfileGenerator:
                 "interested_topics": ["General", "Social Issues"],
             }
     
+    # ── Plan #2 批生成 ────────────────────────────────────────────────
+    def _generate_profiles_batch(
+        self,
+        entities_batch: List[EntityNode],
+        is_individual: bool,
+    ) -> Optional[List[Dict[str, Any]]]:
+        """Plan #2：一次 LLM 调用为一批同类型实体生成人设。
+
+        D6：默认个体型 5/批、群体型 3/批。共享 context 部分（system prompt + 模拟需求等）
+        只发一次，分摊重复开销。
+
+        返回长度 = len(entities_batch) 的 dict 列表（每个 dict 同
+        _generate_profile_with_llm 返回的格式）。任何解析失败返回 None，由调用方
+        D8 按部分接受策略回退到单实体生成。
+        """
+        if not entities_batch:
+            return []
+
+        # 共享 context 来自第一个实体（同桶共享上下文，是这件事的省钱点）
+        # 注意：context 现在用每个实体各自的，长度可能差异大；保险起见我们把每个实体
+        # 的关键 context 都附在 prompt 里，避免误认对方资料。
+        per_entity_blocks: List[str] = []
+        for idx, ent in enumerate(entities_batch):
+            entity_type = ent.get_entity_type() or "Entity"
+            ctx = self._build_entity_context(ent)
+            ctx_str = ctx[:1500] if ctx else "（无额外上下文）"
+            attrs = json.dumps(ent.attributes or {}, ensure_ascii=False)
+            per_entity_blocks.append(
+                f"\n[entity_index={idx}]\n"
+                f"  name: {ent.name}\n"
+                f"  type: {entity_type}\n"
+                f"  summary: {(ent.summary or '')[:300]}\n"
+                f"  attributes: {attrs}\n"
+                f"  context: {ctx_str}"
+            )
+
+        if is_individual:
+            requirement_block = """请为下列每个实体生成详细的个人社交媒体人设（JSON 数组，长度与输入实体数一致）。
+
+JSON 数组格式：
+[
+  {
+    "entity_index": 0,
+    "bio": "200字社交媒体简介",
+    "persona": "2000字详细人设描述，包含基本信息、人物背景、性格特征、社交媒体行为、立场观点、独特特征、个人记忆",
+    "age": 整数,
+    "gender": "male" 或 "female",
+    "mbti": "MBTI类型如 INTJ",
+    "country": "国家中文名",
+    "profession": "职业",
+    "interested_topics": ["话题1","话题2",...]
+  },
+  ...
+]
+
+要求：
+- 每条人设独立、风格各异，避免雷同
+- gender 必须英文 male/female，age 必须整数
+- 所有字段值必须是字符串或数字，不要使用换行符
+"""
+        else:
+            requirement_block = """请为下列每个机构/群体实体生成详细的社交媒体账号设定（JSON 数组）。
+
+JSON 数组格式：
+[
+  {
+    "entity_index": 0,
+    "bio": "200字账号简介",
+    "persona": "2000字详细设定（组织定位、对外发声风格、内容倾向、话题立场等）",
+    "country": "国家中文名",
+    "profession": "组织类别",
+    "interested_topics": ["话题1","话题2",...]
+  },
+  ...
+]
+
+要求：
+- 每个组织独立、风格各异
+- 所有字段值必须是字符串或字符串数组
+"""
+
+        user_prompt = requirement_block + "\n实体列表：" + "\n".join(per_entity_blocks)
+
+        try:
+            with usage_tags(category="profile_batch"):
+                response = chat_completions_with_model_fallback(
+                    self.client,
+                    self._llm_models,
+                    messages=[
+                        {"role": "system", "content": self._get_system_prompt(is_individual)},
+                        {"role": "user", "content": user_prompt},
+                    ],
+                    response_format={"type": "json_object"},
+                    temperature=0.6,
+                    max_tokens=None,
+                )
+            try:
+                usage = getattr(response, "usage", None)
+                pt = int(getattr(usage, "prompt_tokens", 0) or 0)
+                ct = int(getattr(usage, "completion_tokens", 0) or 0)
+                tt = int(getattr(usage, "total_tokens", 0) or (pt + ct))
+                mn = str(getattr(response, "model", "") or "")
+                record_llm_usage(pt, ct, tt, mn)
+            except Exception:
+                pass
+
+            content = response.choices[0].message.content or ""
+            content = re.sub(r"<redacted_thinking>[\s\S]*?</redacted_thinking>", "", content).strip()
+            # 找数组
+            arr_start = content.find('[')
+            arr_end = content.rfind(']')
+            if arr_start < 0 or arr_end <= arr_start:
+                # 也可能整个就是个对象，里面有 results
+                try:
+                    obj = json.loads(content)
+                    if isinstance(obj, dict):
+                        for key in ('results', 'profiles', 'data', 'items'):
+                            if isinstance(obj.get(key), list):
+                                arr = obj[key]
+                                break
+                        else:
+                            return None
+                    else:
+                        return None
+                except Exception:
+                    return None
+            else:
+                arr = json.loads(content[arr_start:arr_end + 1])
+
+            if not isinstance(arr, list):
+                return None
+
+            # 按 entity_index 回填
+            out: List[Optional[Dict[str, Any]]] = [None] * len(entities_batch)
+            for item in arr:
+                if not isinstance(item, dict):
+                    continue
+                try:
+                    idx = int(item.get('entity_index', -1))
+                except Exception:
+                    idx = -1
+                if 0 <= idx < len(entities_batch):
+                    out[idx] = item
+            # 任何位置为 None 视为局部失败，由调用方对该 entity 单独走 fallback
+            return out  # type: ignore[return-value]
+        except Exception as e:
+            logger.warning(f"profile_batch 调用失败: {str(e)[:120]}")
+            return None
+
     def set_graph_id(self, graph_id: str):
         """设置图谱ID用于Zep检索"""
         self.graph_id = graph_id
@@ -938,15 +1090,165 @@ class OasisProfileGenerator:
         """
         import concurrent.futures
         from threading import Lock
-        
+
         # 设置graph_id用于Zep检索
         if graph_id:
             self.graph_id = graph_id
-        
+
         total = len(entities)
         profiles = [None] * total  # 预分配列表保持顺序
         completed_count = [0]  # 使用列表以便在闭包中修改
         lock = Lock()
+
+        # ── Plan #2 批生成路径（按类型分桶 → 批生成 → 部分接受兜底）──
+        batch_enabled = bool(getattr(Config, 'PROFILE_BATCH_GEN_ENABLED', False))
+        if use_llm and batch_enabled and total > 1:
+            bs_individual = max(1, int(getattr(Config, 'PROFILE_BATCH_SIZE_INDIVIDUAL', 5) or 5))
+            bs_group = max(1, int(getattr(Config, 'PROFILE_BATCH_SIZE_GROUP', 3) or 3))
+            flags_snapshot = Config.get_optimization_flags()
+
+            # 内联实时保存（避免依赖后面才定义的 save_profiles_realtime）
+            def _save_realtime():
+                if not realtime_output_path:
+                    return
+                with lock:
+                    existing = [p for p in profiles if p is not None]
+                    if not existing:
+                        return
+                    try:
+                        if output_platform == "reddit":
+                            data = [p.to_reddit_format() for p in existing]
+                            with open(realtime_output_path, 'w', encoding='utf-8') as f:
+                                json.dump(data, f, ensure_ascii=False, indent=2)
+                        else:
+                            import csv
+                            data = [p.to_twitter_format() for p in existing]
+                            if data:
+                                fieldnames = list(data[0].keys())
+                                with open(realtime_output_path, 'w', encoding='utf-8', newline='') as f:
+                                    writer = csv.DictWriter(f, fieldnames=fieldnames)
+                                    writer.writeheader()
+                                    writer.writerows(data)
+                    except Exception as e:
+                        logger.warning(f"批路径实时保存失败: {e}")
+
+            def _wrap_profile_data(idx: int, entity: EntityNode, profile_data: Dict[str, Any]) -> OasisAgentProfile:
+                entity_type = entity.get_entity_type() or "Entity"
+                return OasisAgentProfile(
+                    user_id=idx,
+                    user_name=self._generate_username(entity.name),
+                    name=entity.name,
+                    bio=profile_data.get("bio", f"{entity_type}: {entity.name}"),
+                    persona=profile_data.get("persona", entity.summary or f"A {entity_type} named {entity.name}."),
+                    karma=profile_data.get("karma", random.randint(500, 5000)),
+                    friend_count=profile_data.get("friend_count", random.randint(50, 500)),
+                    follower_count=profile_data.get("follower_count", random.randint(100, 1000)),
+                    statuses_count=profile_data.get("statuses_count", random.randint(100, 2000)),
+                    age=profile_data.get("age"),
+                    gender=profile_data.get("gender"),
+                    mbti=profile_data.get("mbti"),
+                    country=profile_data.get("country"),
+                    profession=profile_data.get("profession"),
+                    interested_topics=profile_data.get("interested_topics", []),
+                    source_entity_uuid=entity.uuid,
+                    source_entity_type=entity_type,
+                    optimization_flags=flags_snapshot,
+                )
+
+            def _fallback_single(idx: int, entity: EntityNode) -> OasisAgentProfile:
+                """D8：批失败时单个回退（部分接受）。"""
+                try:
+                    p = self.generate_profile_from_entity(entity=entity, user_id=idx, use_llm=True)
+                    p.optimization_flags = flags_snapshot
+                    return p
+                except Exception as e:
+                    logger.error(f"批 fallback 单实体失败 {entity.name}: {e}")
+                    entity_type = entity.get_entity_type() or "Entity"
+                    return OasisAgentProfile(
+                        user_id=idx,
+                        user_name=self._generate_username(entity.name),
+                        name=entity.name,
+                        bio=f"{entity_type}: {entity.name}",
+                        persona=entity.summary or "A participant in social discussions.",
+                        source_entity_uuid=entity.uuid,
+                        source_entity_type=entity_type,
+                        optimization_flags=flags_snapshot,
+                    )
+
+            # 按 individual / group 分桶
+            individual_idx: List[int] = []
+            group_idx: List[int] = []
+            other_idx: List[int] = []
+            for i, ent in enumerate(entities):
+                et = (ent.get_entity_type() or "Entity")
+                if self._is_individual_entity(et):
+                    individual_idx.append(i)
+                elif self._is_group_entity(et):
+                    group_idx.append(i)
+                else:
+                    other_idx.append(i)
+
+            # 跑一个桶 + batch_size 的辅助
+            def _run_bucket(idx_list: List[int], is_individual: bool, batch_size: int):
+                k = 0
+                while k < len(idx_list):
+                    chunk_idx = idx_list[k:k + batch_size]
+                    chunk_ents = [entities[i] for i in chunk_idx]
+                    out_list = self._generate_profiles_batch(chunk_ents, is_individual=is_individual)
+                    if out_list is None:
+                        # 整批失败 → 全部回退单实体
+                        for i, ent in zip(chunk_idx, chunk_ents):
+                            profiles[i] = _fallback_single(i, ent)
+                            with lock:
+                                completed_count[0] += 1
+                                cur = completed_count[0]
+                            if progress_callback:
+                                try:
+                                    progress_callback(cur, total, f"批回退单实体 {ent.name}")
+                                except Exception:
+                                    pass
+                            _save_realtime()
+                    else:
+                        # D8：部分接受 —— 命中的位置直接接受，未命中的 slot 走 fallback
+                        for offset, (i, ent) in enumerate(zip(chunk_idx, chunk_ents)):
+                            pdata = out_list[offset] if offset < len(out_list) else None
+                            if isinstance(pdata, dict) and pdata.get("bio"):
+                                profiles[i] = _wrap_profile_data(i, ent, pdata)
+                            else:
+                                profiles[i] = _fallback_single(i, ent)
+                            with lock:
+                                completed_count[0] += 1
+                                cur = completed_count[0]
+                            if progress_callback:
+                                try:
+                                    progress_callback(cur, total, f"批生成 {ent.name}")
+                                except Exception:
+                                    pass
+                            _save_realtime()
+                    k += batch_size
+
+            logger.info(
+                f"[opt] profile 批生成启动 · 个体 {len(individual_idx)} (batch={bs_individual}) "
+                f"+ 群体 {len(group_idx)} (batch={bs_group}) + 其他 {len(other_idx)}（按单实体走）"
+            )
+            _run_bucket(individual_idx, is_individual=True, batch_size=bs_individual)
+            _run_bucket(group_idx, is_individual=False, batch_size=bs_group)
+            # 其他类型：按单实体走（落入 fallback 路径，保证稳定）
+            for i in other_idx:
+                profiles[i] = _fallback_single(i, entities[i])
+                with lock:
+                    completed_count[0] += 1
+                    cur = completed_count[0]
+                if progress_callback:
+                    try:
+                        progress_callback(cur, total, f"其他类型 {entities[i].name}")
+                    except Exception:
+                        pass
+                _save_realtime()
+
+            # 转换为非 None 列表返回
+            final_profiles: List[OasisAgentProfile] = [p for p in profiles if p is not None]
+            return final_profiles
         
         # 实时写入文件的辅助函数
         def save_profiles_realtime():
